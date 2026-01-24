@@ -98,7 +98,7 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <Link to={ROUTES.HOME} className="flex items-center group">
-                            <span className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-blue-700 transition-colors">Calc<span className="text-blue-600">Guide</span></span>
+                            <img src="/logo.png" alt="CalcGuide Logo" className="h-10 w-auto" />
                         </Link>
                         <TypewriterText />
                     </div>
