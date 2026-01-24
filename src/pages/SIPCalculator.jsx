@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import MetaManager from '../components/MetaManager'
 import SEOSection from '../components/SEOSection'
 import { ROUTES } from '../routes/paths'
 
@@ -50,19 +50,19 @@ export default function SIPCalculator() {
         "@type": "Calculator",
         "name": "SIP Calculator",
         "description": "Calculate Mutual Fund SIP returns instantly. See how small monthly investments grow into crores with the power of compounding.",
-        "url": "https://calcguide.com/sip",
+        "url": "https://calcguide.in/calculators/investment/sip-calculator",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any"
     }
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>SIP Calculator - Mutual Fund Returns Calculator India | CalcGuide</title>
-                <meta name="description" content="Calculate the future value of your monthly SIP investments. See wealth gain and maturity amount with free Mutual Fund SIP Calculator." />
-                <link rel="canonical" href="https://calcguide.com/sip" />
-                <script type="application/ld+json">{JSON.stringify(schema)}</script>
-            </Helmet>
+            <MetaManager
+                title="SIP Calculator - Mutual Fund Returns Calculator India"
+                description="Calculate how much your monthly SIP investments can grow. Check wealth gain and maturity amount with our free Mutual Fund SIP Calculator."
+                keywords="sip calculator, mutual fund calculator, sip returns, investment calculator india"
+            />
+            <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
