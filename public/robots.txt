@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /calculators/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?query=*
+Disallow: /*?search=*
+Disallow: /private/
+
+Sitemap: https://calcguide.com/sitemap.xml
