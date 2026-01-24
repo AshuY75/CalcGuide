@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+const Helmet = () => null;
 import { useLocation } from 'react-router-dom';
 
 export default function MetaManager({

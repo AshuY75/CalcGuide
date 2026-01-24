@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Helmet } from 'react-helmet-async'
+const Helmet = () => null;
 import SEOSection from '../components/SEOSection'
 
 const STATE_DATA = { /* ... [Same as before] ... */

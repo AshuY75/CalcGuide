@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+const Helmet = () => null;
 import { ROUTES } from '../routes/paths'
 
 export default function NotFound() {

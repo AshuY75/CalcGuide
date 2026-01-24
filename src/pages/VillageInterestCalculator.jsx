@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+const Helmet = () => null;
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'

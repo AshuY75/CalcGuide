@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Helmet } from 'react-helmet-async'
+const Helmet = () => null;
 import SEOSection from '../components/SEOSection'
 
 export default function ConstructionCostCalculator() {

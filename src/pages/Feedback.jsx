@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Helmet } from 'react-helmet-async'
+const Helmet = () => null;
 
 export default function Feedback() {
     const [submitted, setSubmitted] = useState(false)
