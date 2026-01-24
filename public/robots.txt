@@ -7,4 +7,4 @@ Disallow: /*?query=*
 Disallow: /*?search=*
 Disallow: /private/
 
-Sitemap: https://calcguide.com/sitemap.xml
+Sitemap: https://calcguide.in/sitemap.xml

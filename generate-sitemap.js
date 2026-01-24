@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const BASE_URL = 'https://calcguide.com';
+const BASE_URL = 'https://calcguide.in';
 
 // Source of truth for paths
 // We can't import the JS object directly in Node environment easily without babel-node if it uses ES modules like 'export const'.
@@ -52,7 +52,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       return `
   <url>
     <loc>${BASE_URL}${page}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>`;
