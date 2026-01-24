@@ -34,5 +34,16 @@ export const ROUTES = {
         PRIVACY: "/privacy-policy",
         TERMS: "/terms-of-service",
         FEEDBACK: "/feedback"
+    },
+    SEO: {
+        SIP_5000: "/sip-calculator-5000-per-month",
+        SIP_1CR_LANDING: "/sip-1-crore-calculator",
+        FD_VS_SIP: "/fd-vs-sip-india",
+        EMI_HOME: "/emi-calculator-home-loan-india",
+        LAND_UP: "/bigha-to-acre-uttar-pradesh"
+    },
+    LEARN: {
+        SIP_VS_FD: "/learn/why-sip-beats-fd-long-term",
+        VILLAGE_INT_EXPL: "/learn/how-village-interest-sood-vaddi-works"
     }
 };

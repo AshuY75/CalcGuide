@@ -1,5 +1,24 @@
-import React from 'react';
-const Helmet = () => null;
+import { useEffect } from 'react';
+
+const InjectSchema = ({ id, schema }) => {
+    useEffect(() => {
+        let script = document.getElementById(id);
+        if (!script) {
+            script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.id = id;
+            document.head.appendChild(script);
+        }
+        script.text = JSON.stringify(schema);
+
+        return () => {
+            // Optional: cleanup
+            // document.head.removeChild(script);
+        };
+    }, [id, schema]);
+
+    return null;
+};
 
 export const SchemaGenerator = ({
     type = "WebPage",
@@ -21,19 +40,13 @@ export const SchemaGenerator = ({
             "name": "CalcGuide",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://calcguide.com/logo.png"
+                "url": "https://calcguide.in/logo.png"
             }
         },
         ...data
     };
 
-    return (
-        <Helmet>
-            <script type="application/ld+json">
-                {JSON.stringify(baseSchema)}
-            </script>
-        </Helmet>
-    );
+    return <InjectSchema id={`schema-${type}-${name.replace(/\s+/g, '-')}`} schema={baseSchema} />;
 };
 
 export const BreadcrumbSchema = ({ items }) => {
@@ -48,11 +61,5 @@ export const BreadcrumbSchema = ({ items }) => {
         }))
     };
 
-    return (
-        <Helmet>
-            <script type="application/ld+json">
-                {JSON.stringify(schema)}
-            </script>
-        </Helmet>
-    );
+    return <InjectSchema id="schema-breadcrumb" schema={schema} />;
 };

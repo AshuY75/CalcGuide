@@ -38,7 +38,16 @@ const pages = [
   // Legal
   '/privacy-policy',
   '/terms-of-service',
-  '/feedback'
+  '/feedback',
+  // SEO Landing Pages
+  '/sip-calculator-5000-per-month',
+  '/sip-1-crore-calculator',
+  '/fd-vs-sip-india',
+  '/emi-calculator-home-loan-india',
+  '/bigha-to-acre-uttar-pradesh',
+  // Learn
+  '/learn/why-sip-beats-fd-long-term',
+  '/learn/how-village-interest-sood-vaddi-works'
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
