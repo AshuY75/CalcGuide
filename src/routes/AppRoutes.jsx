@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { ROUTES } from './paths';
 import MainLayout from '../layouts/MainLayout';
 import NotFound from '../pages/NotFound';
+import GlobalErrorBoundary from '../components/GlobalErrorBoundary';
 
 // Lazy Load Pages
 const Home = lazy(() => import('../pages/Home'));
@@ -53,13 +54,21 @@ const HowSIPReturnsCalculated = lazy(() => import('../pages/learn/HowSIPWorks'))
 const WhySIPBeatsFD = lazy(() => import('../pages/learn/WhySIPBeatsFD'));
 const VillageInterestExplainer = lazy(() => import('../pages/learn/VillageInterestExplainer'));
 
-
-
-// Loading Fallback
+// Standard Loading Fallback
 const PageLoader = () => (
     <div className="min-h-[60vh] flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
     </div>
+);
+
+// High-Reliability Route Wrapper
+// Guarantees: Error Boundary + Suspense + Min content height
+const RouteWrapper = ({ Component }) => (
+    <GlobalErrorBoundary>
+        <Suspense fallback={<PageLoader />}>
+            <Component />
+        </Suspense>
+    </GlobalErrorBoundary>
 );
 
 export default function AppRoutes() {
@@ -67,59 +76,56 @@ export default function AppRoutes() {
         <Suspense fallback={<PageLoader />}>
             <Routes>
                 <Route path={ROUTES.HOME} element={<MainLayout />}>
-                    <Route index element={<Home />} />
+                    <Route index element={<RouteWrapper Component={Home} />} />
 
                     {/* Loans */}
-                    <Route path={ROUTES.CALCULATORS.LOAN.EMI} element={<EMICalculator />} />
-                    <Route path={ROUTES.CALCULATORS.LOAN.ELIGIBILITY} element={<LoanEligibility />} />
-                    <Route path={ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST} element={<VillageInterest />} />
+                    <Route path={ROUTES.CALCULATORS.LOAN.EMI} element={<RouteWrapper Component={EMICalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.LOAN.ELIGIBILITY} element={<RouteWrapper Component={LoanEligibility} />} />
+                    <Route path={ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST} element={<RouteWrapper Component={VillageInterest} />} />
 
                     {/* Investments */}
-                    <Route path={ROUTES.CALCULATORS.INVESTMENT.SIP} element={<SIPCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE} element={<SIP1CrCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.INVESTMENT.FD} element={<FDCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.INVESTMENT.RD} element={<RDCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST} element={<SimpleInterest />} />
-                    <Route path={ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST} element={<CompoundInterest />} />
+                    <Route path={ROUTES.CALCULATORS.INVESTMENT.SIP} element={<RouteWrapper Component={SIPCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE} element={<RouteWrapper Component={SIP1CrCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.INVESTMENT.FD} element={<RouteWrapper Component={FDCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.INVESTMENT.RD} element={<RouteWrapper Component={RDCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST} element={<RouteWrapper Component={SimpleInterest} />} />
+                    <Route path={ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST} element={<RouteWrapper Component={CompoundInterest} />} />
 
                     {/* Gold */}
-                    <Route path={ROUTES.CALCULATORS.GOLD.JEWELLERY} element={<GoldJewellery />} />
-                    <Route path={ROUTES.CALCULATORS.GOLD.OLD_GOLD} element={<OldGold />} />
+                    <Route path={ROUTES.CALCULATORS.GOLD.JEWELLERY} element={<RouteWrapper Component={GoldJewellery} />} />
+                    <Route path={ROUTES.CALCULATORS.GOLD.OLD_GOLD} element={<RouteWrapper Component={OldGold} />} />
 
                     {/* Construction */}
-                    <Route path={ROUTES.CALCULATORS.CONSTRUCTION.COST} element={<ConstructionCost />} />
-                    <Route path={ROUTES.CALCULATORS.CONSTRUCTION.BRICK} element={<BrickCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.CONSTRUCTION.LAND_AREA} element={<LandArea />} />
+                    <Route path={ROUTES.CALCULATORS.CONSTRUCTION.COST} element={<RouteWrapper Component={ConstructionCost} />} />
+                    <Route path={ROUTES.CALCULATORS.CONSTRUCTION.BRICK} element={<RouteWrapper Component={BrickCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.CONSTRUCTION.LAND_AREA} element={<RouteWrapper Component={LandArea} />} />
 
                     {/* Utility */}
-                    <Route path={ROUTES.CALCULATORS.UTILITY.PERCENTAGE} element={<PercentageCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.UTILITY.DATE_DIFF} element={<DateDifferenceCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.UTILITY.AGE} element={<AgeCalculator />} />
-                    <Route path={ROUTES.CALCULATORS.UTILITY.EXAM} element={<ExamEligibility />} />
+                    <Route path={ROUTES.CALCULATORS.UTILITY.PERCENTAGE} element={<RouteWrapper Component={PercentageCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.UTILITY.DATE_DIFF} element={<RouteWrapper Component={DateDifferenceCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.UTILITY.AGE} element={<RouteWrapper Component={AgeCalculator} />} />
+                    <Route path={ROUTES.CALCULATORS.UTILITY.EXAM} element={<RouteWrapper Component={ExamEligibility} />} />
 
                     {/* Legal */}
-                    <Route path={ROUTES.LEGAL.PRIVACY} element={<PrivacyPolicy />} />
-                    <Route path={ROUTES.LEGAL.TERMS} element={<TermsOfService />} />
-                    <Route path={ROUTES.LEGAL.FEEDBACK} element={<Feedback />} />
+                    <Route path={ROUTES.LEGAL.PRIVACY} element={<RouteWrapper Component={PrivacyPolicy} />} />
+                    <Route path={ROUTES.LEGAL.TERMS} element={<RouteWrapper Component={TermsOfService} />} />
+                    <Route path={ROUTES.LEGAL.FEEDBACK} element={<RouteWrapper Component={Feedback} />} />
 
                     {/* SEO Landing Pages */}
-                    <Route path={ROUTES.SEO.SIP_5000} element={<Suspense fallback={<PageLoader />}><SIP5000 /></Suspense>} />
-                    <Route path={ROUTES.SEO.SIP_1CR_LANDING} element={<Suspense fallback={<PageLoader />}><SIP1CrLanding /></Suspense>} />
-                    <Route path={ROUTES.SEO.FD_VS_SIP} element={<Suspense fallback={<PageLoader />}><FDvsSIP /></Suspense>} />
-                    <Route path={ROUTES.SEO.EMI_HOME} element={<Suspense fallback={<PageLoader />}><EMILanding /></Suspense>} />
-                    <Route path={ROUTES.SEO.LAND_UP} element={<Suspense fallback={<PageLoader />}><LandConverterLanding /></Suspense>} />
+                    <Route path={ROUTES.SEO.SIP_5000} element={<RouteWrapper Component={SIP5000} />} />
+                    <Route path={ROUTES.SEO.SIP_1CR_LANDING} element={<RouteWrapper Component={SIP1CrLanding} />} />
+                    <Route path={ROUTES.SEO.FD_VS_SIP} element={<RouteWrapper Component={FDvsSIP} />} />
+                    <Route path={ROUTES.SEO.EMI_HOME} element={<RouteWrapper Component={EMILanding} />} />
+                    <Route path={ROUTES.SEO.LAND_UP} element={<RouteWrapper Component={LandConverterLanding} />} />
 
                     {/* Learn / Articles */}
-                    <Route path={ROUTES.LEARN.HOME} element={<Suspense fallback={<PageLoader />}><LearnHome /></Suspense>} />
-                    <Route path={ROUTES.LEARN.SIP_RETURNS_CALCULATION} element={<Suspense fallback={<PageLoader />}><HowSIPReturnsCalculated /></Suspense>} />
-                    <Route path={ROUTES.LEARN.SIP_VS_FD} element={<Suspense fallback={<PageLoader />}><WhySIPBeatsFD /></Suspense>} />
-                    <Route path={ROUTES.LEARN.VILLAGE_INT_EXPL} element={<Suspense fallback={<PageLoader />}><VillageInterestExplainer /></Suspense>} />
-
-                    {/* Legacy Redirects (Optional: handling old paths if needed or just 404) */}
-                    {/* We are prioritizing clean slate, so new paths only. Old paths will 404 naturally unless we redirect. */}
+                    <Route path={ROUTES.LEARN.HOME} element={<RouteWrapper Component={LearnHome} />} />
+                    <Route path={ROUTES.LEARN.SIP_RETURNS_CALCULATION} element={<RouteWrapper Component={HowSIPReturnsCalculated} />} />
+                    <Route path={ROUTES.LEARN.SIP_VS_FD} element={<RouteWrapper Component={WhySIPBeatsFD} />} />
+                    <Route path={ROUTES.LEARN.VILLAGE_INT_EXPL} element={<RouteWrapper Component={VillageInterestExplainer} />} />
 
                     {/* 404 */}
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="*" element={<RouteWrapper Component={NotFound} />} />
                 </Route>
             </Routes>
         </Suspense>
