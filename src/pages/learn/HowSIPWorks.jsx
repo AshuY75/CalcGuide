@@ -94,7 +94,7 @@ export default function HowSIPReturnsCalculated() {
 
                     {/* SVG Visualization: Averaging */}
                     <div className="my-10 bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center">
-                        <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Visual: Rupee Cost Averaging</h4>
+                        <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Conceptually, rupee cost averaging works like this:</h4>
                         <svg viewBox="0 0 400 150" className="w-full h-auto max-w-md mx-auto overflow-visible">
                             {/* Market Line (Wavy) */}
                             <path d="M0,100 Q50,20 100,100 T200,80 T300,110 T400,60" fill="none" stroke="#94a3b8" strokeWidth="2" strokeDasharray="5,5" />
@@ -131,7 +131,7 @@ export default function HowSIPReturnsCalculated() {
                     </p>
 
                     <h2>3. Real World Examples</h2>
-                    <p>Let's look at how small consistency creates massive wealth.</p>
+                    <p>Let's look at how small consistency leads to long-term wealth creation.</p>
 
                     <h3 className="text-xl font-bold mt-8 mb-4 text-blue-800">Case A: ₹5,000 Monthly</h3>
                     <div className="grid sm:grid-cols-2 gap-4 not-prose mb-8">
@@ -159,7 +159,7 @@ export default function HowSIPReturnsCalculated() {
                         </div>
                     </div>
                     <p>
-                        Notice that by doubling the time (10 to 20 years) and doubling the amount, the result didn't just quadruple—it grew almost <strong>9 times</strong>! That is the power of compounding.
+                        Notice that by doubling the time (10 to 20 years) and doubling the amount, the result didn't just quadruple—it grew almost <strong>9 times</strong>! That is the effect of compounding over time.
                     </p>
 
                     <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 my-8 text-center">
