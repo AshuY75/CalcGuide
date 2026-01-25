@@ -2,6 +2,9 @@
 **"Sahi Hisab, Sahi Faisla" (Right Calculation, Right Decision)**
 
 ## 1. Project Overview
+**Status**: 🟢 In Progress (Phase 2: Content Expansion)
+**Current Focus**: Authority Content Layer & SEO Siloing
+
 CalcGuide is a high-performance, SEO-optimized Progressive Web App (PWA) built for the Indian market. It provides a suite of financial, construction, and utility calculators designed to rank high on Google and offer immediate value to users without signups or paywalls.
 
 *   **Live URL**: `https://calcguide.com` (Production-ready config)
