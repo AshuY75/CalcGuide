@@ -5,6 +5,19 @@ import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
+const features = [
+    { title: "Power of Compounding", desc: "See how money multiplies faster over time (Interest on Interest).", icon: "🚀" },
+    { title: "Flexible Frequency", desc: "Supports Yearly, Half-Yearly, Quarterly, and Monthly compounding.", icon: "🔄" },
+    { title: "Compare Returns", desc: "Check why FDs (High Compounding) are better than Simple Interest.", icon: "📈" },
+]
+
+const faqData = [
+    { question: "What is Compound Interest?", answer: "Compound Interest is when you earn interest on both the money you've saved and the interest you earn. It is often called 'Interest on Interest'." },
+    { question: "How often do banks compound interest?", answer: "In India, most banks compound interest Quarterly (every 3 months) for Fixed Deposits. Savings accounts usually calculate interest Daily but credit it Quarterly." },
+    { question: "What is the formula for Compound Interest?", answer: "A = P(1 + r/n)^(nt). Here A is Amount, P is Principal, r is rate, n is compounding frequency per year, and t is time in years." },
+    { question: "Why is CI better than SI for investors?", answer: "Because your money grows exponentially. In SI, your ₹100 interest sits idle. In CI, that ₹100 starts earning its own interest next year." }
+]
+
 export default function CompoundInterestCalculator() {
     const [principal, setPrincipal] = useState('10000')
     const [rate, setRate] = useState('8')
@@ -35,19 +48,6 @@ export default function CompoundInterestCalculator() {
             resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
         }, 100)
     }
-
-    const features = [
-        { title: "Power of Compounding", desc: "See how money multiplies faster over time (Interest on Interest).", icon: "🚀" },
-        { title: "Flexible Frequency", desc: "Supports Yearly, Half-Yearly, Quarterly, and Monthly compounding.", icon: "🔄" },
-        { title: "Compare Returns", desc: "Check why FDs (High Compounding) are better than Simple Interest.", icon: "📈" },
-    ]
-
-    const faqData = [
-        { question: "What is Compound Interest?", answer: "Compound Interest is when you earn interest on both the money you've saved and the interest you earn. It is often called 'Interest on Interest'." },
-        { question: "How often do banks compound interest?", answer: "In India, most banks compound interest Quarterly (every 3 months) for Fixed Deposits. Savings accounts usually calculate interest Daily but credit it Quarterly." },
-        { question: "What is the formula for Compound Interest?", answer: "A = P(1 + r/n)^(nt). Here A is Amount, P is Principal, r is rate, n is compounding frequency per year, and t is time in years." },
-        { question: "Why is CI better than SI for investors?", answer: "Because your money grows exponentially. In SI, your ₹100 interest sits idle. In CI, that ₹100 starts earning its own interest next year." }
-    ]
 
     return (
         <div className="min-h-screen bg-slate-50">

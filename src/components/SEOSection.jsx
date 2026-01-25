@@ -27,7 +27,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
     )
 }
 
-export default function SEOSection({ title, faq, features, children }) {
+function SEOSection({ title, faq, features, children }) {
     const [openIndex, setOpenIndex] = useState(0)
 
     return (
@@ -101,3 +101,5 @@ export default function SEOSection({ title, faq, features, children }) {
         </div>
     )
 }
+
+export default React.memo(SEOSection)

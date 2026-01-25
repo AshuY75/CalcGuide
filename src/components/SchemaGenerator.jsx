@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo, memo } from 'react';
 
-const InjectSchema = ({ id, schema }) => {
+const InjectSchema = memo(({ id, schema }) => {
     useEffect(() => {
         let script = document.getElementById(id);
         if (!script) {
@@ -18,9 +18,13 @@ const InjectSchema = ({ id, schema }) => {
     }, [id, schema]);
 
     return null;
-};
+}, (prevProps, nextProps) => {
+    // Custom comparison to ensure deep equality of schema avoids re-render
+    // Although useMemo in parent handles reference stability, this is a safety net
+    return prevProps.id === nextProps.id && JSON.stringify(prevProps.schema) === JSON.stringify(nextProps.schema);
+});
 
-export const SchemaGenerator = ({
+export const SchemaGenerator = memo(({
     type = "WebPage",
     name,
     description,
@@ -28,12 +32,12 @@ export const SchemaGenerator = ({
     image,
     data = {}
 }) => {
-    const baseSchema = {
+    const baseSchema = useMemo(() => ({
         "@context": "https://schema.org",
         "@type": type,
         "name": name,
         "description": description,
-        "url": url || window.location.href,
+        "url": url || (typeof window !== 'undefined' ? window.location.href : ''),
         "inLanguage": "en-IN",
         "publisher": {
             "@type": "Organization",
@@ -44,10 +48,10 @@ export const SchemaGenerator = ({
             }
         },
         ...data
-    };
+    }), [type, name, description, url, JSON.stringify(data)]);
 
     return <InjectSchema id={`schema-${type}-${name.replace(/\s+/g, '-')}`} schema={baseSchema} />;
-};
+});
 
 export const BreadcrumbSchema = ({ items }) => {
     const schema = {

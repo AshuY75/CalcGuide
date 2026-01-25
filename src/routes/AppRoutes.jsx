@@ -47,9 +47,13 @@ const FDvsSIP = lazy(() => import('../pages/seo/FDvsSIP'));
 const EMILanding = lazy(() => import('../pages/seo/EMILanding'));
 const LandConverterLanding = lazy(() => import('../pages/seo/LandConverterLanding'));
 
-// Learn
+// Learn / Articles
+const LearnHome = lazy(() => import('../pages/learn/LearnHome'));
+const HowSIPReturnsCalculated = lazy(() => import('../pages/learn/HowSIPWorks'));
 const WhySIPBeatsFD = lazy(() => import('../pages/learn/WhySIPBeatsFD'));
 const VillageInterestExplainer = lazy(() => import('../pages/learn/VillageInterestExplainer'));
+
+
 
 // Loading Fallback
 const PageLoader = () => (
@@ -106,6 +110,8 @@ export default function AppRoutes() {
                     <Route path={ROUTES.SEO.LAND_UP} element={<Suspense fallback={<PageLoader />}><LandConverterLanding /></Suspense>} />
 
                     {/* Learn / Articles */}
+                    <Route path={ROUTES.LEARN.HOME} element={<Suspense fallback={<PageLoader />}><LearnHome /></Suspense>} />
+                    <Route path={ROUTES.LEARN.SIP_RETURNS_CALCULATION} element={<Suspense fallback={<PageLoader />}><HowSIPReturnsCalculated /></Suspense>} />
                     <Route path={ROUTES.LEARN.SIP_VS_FD} element={<Suspense fallback={<PageLoader />}><WhySIPBeatsFD /></Suspense>} />
                     <Route path={ROUTES.LEARN.VILLAGE_INT_EXPL} element={<Suspense fallback={<PageLoader />}><VillageInterestExplainer /></Suspense>} />
 

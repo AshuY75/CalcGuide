@@ -2,12 +2,27 @@ import { useState } from 'react'
 const Helmet = () => null;
 import SEOSection from '../components/SEOSection'
 
+const RATES = { basic: 1500, standard: 1800, premium: 2400 }
+
+const faqData = [
+    {
+        question: "Does this include the price of land?",
+        answer: "No, this is purely the construction cost (Material + Labour). The cost of buying the plot is not included."
+    },
+    {
+        question: "Why is the rate per sq. ft. varying?",
+        answer: "Rates depend on the quality of materials (e.g., Marble vs Tiles, Teak wood vs Ply, Branded fittings vs Local). Labour charges also vary by city (Tier 1 cities have higher labour costs)."
+    },
+    {
+        question: "How accurate is this estimate?",
+        answer: "This is a thumb-rule estimate (+/- 10%). Actual costs will depend on architectural complexity, soil conditions (affecting foundation cost), and daily fluctuations in steel/cement prices."
+    }
+]
+
 export default function ConstructionCostCalculator() {
     const [area, setArea] = useState('1000')
     const [quality, setQuality] = useState('standard')
     const [result, setResult] = useState(null)
-
-    const RATES = { basic: 1500, standard: 1800, premium: 2400 }
 
     const calculateCost = () => {
         const a = parseFloat(area)
@@ -21,21 +36,6 @@ export default function ConstructionCostCalculator() {
             breakdown: { cement: totalCost * 0.16, steel: totalCost * 0.14, bricks: totalCost * 0.12, sandAlpha: totalCost * 0.08, finish: totalCost * 0.20 }
         })
     }
-
-    const faqData = [
-        {
-            question: "Does this include the price of land?",
-            answer: "No, this is purely the construction cost (Material + Labour). The cost of buying the plot is not included."
-        },
-        {
-            question: "Why is the rate per sq. ft. varying?",
-            answer: "Rates depend on the quality of materials (e.g., Marble vs Tiles, Teak wood vs Ply, Branded fittings vs Local). Labour charges also vary by city (Tier 1 cities have higher labour costs)."
-        },
-        {
-            question: "How accurate is this estimate?",
-            answer: "This is a thumb-rule estimate (+/- 10%). Actual costs will depend on architectural complexity, soil conditions (affecting foundation cost), and daily fluctuations in steel/cement prices."
-        }
-    ]
 
     return (
         <div className="min-h-screen bg-slate-50">

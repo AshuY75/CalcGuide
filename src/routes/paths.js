@@ -43,6 +43,8 @@ export const ROUTES = {
         LAND_UP: "/bigha-to-acre-uttar-pradesh"
     },
     LEARN: {
+        HOME: "/learn",
+        SIP_RETURNS_CALCULATION: "/learn/how-sip-returns-are-calculated",
         SIP_VS_FD: "/learn/why-sip-beats-fd-long-term",
         VILLAGE_INT_EXPL: "/learn/how-village-interest-sood-vaddi-works"
     }

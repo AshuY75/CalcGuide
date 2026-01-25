@@ -6,12 +6,13 @@ export default function MetaManager({
     description,
     keywords,
     image = '/logo.png',
-    type = 'website'
+    type = 'website',
+    canonical // Optional override
 }) {
     const location = useLocation();
     const siteName = 'CalcGuide';
     // Ensure domain matches current production (calcguide.in)
-    const canonicalUrl = `https://calcguide.in${location.pathname}`;
+    const canonicalUrl = canonical || `https://calcguide.in${location.pathname}`;
 
     const fullTitle = title.includes('CalcGuide') ? title : `${title} | ${siteName}`;
 
