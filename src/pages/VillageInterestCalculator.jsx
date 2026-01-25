@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
@@ -73,34 +74,43 @@ export default function VillageInterestCalculator() {
     }
 
     const features = [
-        { title: "Local Logic", desc: "Uses 'Rupees per 100' logic used in villages.", icon: "🌾" },
-        { title: "Day Rounding", desc: "Auto-rounds partial months to full months.", icon: "📅" },
-        { title: "Compounding", desc: "Supports Yearly Compounding (Diwali-to-Diwali).", icon: "↺" },
+        { title: "Rupee System", desc: "Supports '2 Rupay Sekda' (2% Monthly) calculations.", icon: "₹" },
+        { title: "Day Logic", desc: "Calculates approximate months from days (e.g., 40 days = 2 months).", icon: "📅" },
+        { title: "Compound Mode", desc: "Also supports yearly compounding (Diwali-to-Diwali logic).", icon: "🌾" },
     ]
 
     const faqData = [
-        { question: "What is 'Sood' or 'Vaddi' in village terms?", answer: "Sood (Hindi) or Vaddi (Telugu/Tamil) refers to interest charged on informal loans. Unlike banks, village interest is calculated monthly, often at rates like '2 rupees per 100' (2% monthly or 24% annually)." },
-        { question: "How does '2 Rupay Sekda' calculation work?", answer: "'2 Rupay Sekda' means ₹2 interest for every ₹100 principal per month. Formula: (Principal / 100) * 2 * Months. For ₹1 Lakh loan, it is ₹2000 interest per month." },
-        { question: "What is the difference between Simple and Compound Interest in villages?", answer: "Most village loans use Simple Interest for short terms. However, if unpaid for over a year, the interest is often added to the principal (Mishradhan) and new interest is calculated on this total from the next year (Yearly Compounding)." },
-        { question: "Does this calculator handle days correctly?", answer: "Yes. In the village system, a partial month (e.g., 5 days) is often treated as a full month. This calculator uses standard Sahukar logic: Days / 30 rounded up to the nearest month." }
+        { question: "What is '2 Rupay Sekda' interest?", answer: "It refers to an interest rate of ₹2 per ₹100 per month. This means 2% per month, or 24% per year, which is significantly higher than bank rates." },
+        { question: "How is village interest calculated?", answer: "In villages, interest is usually calculated per month (not per year). Lenders also often round up days to the next month (e.g. 1 month 5 days = 2 months)." },
+        { question: "Is this legal?", answer: "Informal money lending is regulated by varying state money lending acts. Extremely high interest rates (usury) are generally discouraged or illegal, but still common in unorganized sectors." }
     ]
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Village Interest Calculator - Sood / Vaddi 2% Interest | CalcGuide</title>
-                <meta name="description" content="Calculate informal loan interest (Sood/Vaddi) with our Village Interest Calculator. Supports 'Rupees per 100' monthly rate and traditional date logic used by Sahukars." />
-                <link rel="canonical" href="https://calcguide.com/village-interest" />
-            </Helmet>
+            <SeoHead
+                title="Village Interest Calculator - Sood / Vaddi 2% Interest | CalcGuide"
+                description="Calculate informal loan interest (Sood/Vaddi) with our Village Interest Calculator. Supports 'Rupees per 100' monthly rate and traditional date logic used by Sahukars."
+                keywords="village interest calculator, sood calculator, vaddi interest calculator, 2 rupay sekda calculator"
+                canonicalPath={ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST}
+            />
             <SchemaGenerator
                 type="Calculator"
                 name="Village Interest Calculator (Sood)"
                 description="Calculate village loan interest (Sood/Vaddi) instantly. Supports 'Rupees per 100' rate."
-                url="https://calcguide.com/village-interest"
+                url="https://calcguide.in/calculators/loan/village-interest-calculator"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.LOAN} className="hover:text-blue-600">Loan Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Village Interest</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Village Interest Calculator (Sood)</h1>
                     <p className="text-slate-600">Calculate loan interest exactly like village Sahukars</p>
                 </div>
@@ -153,7 +163,20 @@ export default function VillageInterestCalculator() {
                             </div>
                         </div>
 
-                        <SEOSection title="About Village Interest Calculator (Sood)" faq={faqData} features={features} />
+                        <CalculatorContent
+                            title="Village Interest Calculator (Sood / Vaddi)"
+                            whatIs="This calculator computes interest based on the traditional Indian village system, often called 'Sood', 'Vaddi', or 'Biyaj'. Unlike banks which use yearly percentages (e.g., 10% p.a.), village loans calculate interest 'per month' (e.g., 2 Rupees per 100 per month). It also handles the unique 'Diwali-to-Diwali' yearly compounding often used by Sahukars."
+                            whoShouldUse="Anyone dealing with informal loans from money lenders, relatives, or Sahukars. If you have borrowed money at '2 Rupye Sekda' or '1.5 Rupye', use this tool to check the exact interest payable before you plan your repayment."
+                            example="If you borrow ₹1 Lakh at '2 Rupay Sekda' (2% monthly) for 1 year: The interest is ₹2,000 per month. For 12 months, total interest is ₹24,000. Total repayment: ₹1.24 Lakhs. Note that 2% monthly equals 24% annually—much higher than banks!"
+                            commonMistake="Confusing Monthly Rate with Yearly Rate. '2% interest' in a village usually means 24% per year. Also, overlooking partial months—lenders often charge a full month's interest even for just 5 extra days."
+                        />
+
+                        <SEOSection title="Understanding Village Loans" faq={faqData} features={features}>
+                            <h3>Why use this calculator?</h3>
+                            <p>
+                                Village loans work differently from bank loans. A slight difference in rate (e.g., 1.5 vs 2.0) can lead to lakhs in difference over time. Use this tool to stay informed.
+                            </p>
+                        </SEOSection>
                     </div>
 
                     {/* Related Tools Sidebar */}

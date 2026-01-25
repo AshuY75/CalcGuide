@@ -1,9 +1,23 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
+
+const features = [
+    { title: "Universal", desc: "Solves all 3 types of percentage problems: Find %, Find Value, and % Change.", icon: "🧮" },
+    { title: "Instant", desc: "No complex steps. Just enter values and get the answer immediately.", icon: "⚡" },
+    { title: "Mobile Friendly", desc: "Big inputs and simple layout for easy use on phones.", icon: "📱" },
+]
+
+const faqData = [
+    { question: "How to calculate percentage of a number?", answer: "To find X% of Y, simply multiply Y by X and divide by 100. Example: 20% of 500 = (500 × 20) / 100 = 100." },
+    { question: "How to find percentage increase?", answer: "Subtract original value from new value, divide by original value, then multiply by 100. Formula: ((New - Old) / Old) × 100." },
+    { question: "How to calculate marks percentage?", answer: "Divide your Total Marks Obtained by Maximum Possible Marks and multiply by 100. Example: 450/500 × 100 = 90%." },
+    { question: "Is there a simple trick for percentages?", answer: "Yes! X% of Y is the same as Y% of X. So, 8% of 25 is hard, but 25% of 8 is easily 2." }
+]
 
 export default function PercentageCalculator() {
     const [calcType, setCalcType] = useState('percentOf') // percentOf, whatPercent, changedBy
@@ -58,34 +72,31 @@ export default function PercentageCalculator() {
         }, 100)
     }
 
-    const features = [
-        { title: "Universal", desc: "Solves all 3 types of percentage problems: Find %, Find Value, and % Change.", icon: "🧮" },
-        { title: "Instant", desc: "No complex steps. Just enter values and get the answer immediately.", icon: "⚡" },
-        { title: "Mobile Friendly", desc: "Big inputs and simple layout for easy use on phones.", icon: "📱" },
-    ]
-
-    const faqData = [
-        { question: "How to calculate percentage of a number?", answer: "To find X% of Y, simply multiply Y by X and divide by 100. Example: 20% of 500 = (500 × 20) / 100 = 100." },
-        { question: "How to find percentage increase?", answer: "Subtract original value from new value, divide by original value, then multiply by 100. Formula: ((New - Old) / Old) × 100." },
-        { question: "How to calculate marks percentage?", answer: "Divide your Total Marks Obtained by Maximum Possible Marks and multiply by 100. Example: 450/500 × 100 = 90%." },
-        { question: "Is there a simple trick for percentages?", answer: "Yes! X% of Y is the same as Y% of X. So, 8% of 25 is hard, but 25% of 8 is easily 2." }
-    ]
-
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Percentage Calculator - Calculate % Increase, Decrease & Difference</title>
-                <meta name="description" content="Use our free Percentage Calculator to find Percentage of a number, Percentage Increase/Decrease, and Marks Percentage. Quick, accurate, and easy." />
-                <link rel="canonical" href="https://calcguide.com/percentage" />
-            </Helmet>
+            <SeoHead
+                title="Percentage Calculator - Calculate % Increase, Decrease & Difference"
+                description="Use our free Percentage Calculator to find Percentage of a number, Percentage Increase/Decrease, and Marks Percentage. Quick, accurate, and easy."
+                keywords="percentage calculator, percent change calculator, percentage increase calculator, calculate percent off"
+                canonicalPath={ROUTES.CALCULATORS.UTILITY.PERCENTAGE}
+            />
             <SchemaGenerator
                 name="Percentage Calculator"
                 description="Solve percentage problems: Find %, % Change, and what % is X of Y."
-                url="https://calcguide.com/percentage"
+                url="https://calcguide.in/calculators/utility/percentage-calculator"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.UTILITY} className="hover:text-blue-600">Utility Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Percentage Calculator</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Percentage Calculator</h1>
                     <p className="text-slate-600">Solve common percentage problems instantly</p>
                 </div>
@@ -144,6 +155,14 @@ export default function PercentageCalculator() {
                                 )}
                             </div>
                         </div>
+
+                        <CalculatorContent
+                            title="Percentage Calculator"
+                            whatIs="This tool handles three common percentage tasks: 1) What is X% of Y? (Calculating Discount), 2) X is what % of Y? (Calculating Marks), and 3) Percentage Increase/Decrease (Calculating Growth)."
+                            whoShouldUse="Shoppers checking sales discounts, Students calculating exam percentages, and Business owners tracking profit/loss growth month-over-month."
+                            example="Percentage Change: If a price goes from ₹100 to ₹150, the increase is 50%. | Percent of Value: 18% GST on ₹1000 is ₹180."
+                            commonMistake="Confusing 'Percentage Change' with 'Percentage Of'. To find the new price after a raise, calculate the % amount first, then add it to the original."
+                        />
 
                         <SEOSection title="About Percentage Calculator" faq={faqData} features={features}>
                             <h3>Real Industry Uses</h3>

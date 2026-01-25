@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
-import SEOSection from '../components/SEOSection'
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
@@ -45,34 +45,31 @@ export default function LoanEligibility() {
         }, 100)
     }
 
-    const features = [
-        { title: "Bank Standard Logic", desc: "Uses 50% FOIR logic used by SBI, HDFC, and ICICI.", icon: "🏦" },
-        { title: "Debt Consideration", desc: "Deducts your existing car/personal loan EMIs.", icon: "💳" },
-        { title: "Safe Limit Check", desc: "Ensures you don't over-borrow beyond repayment capacity.", icon: "🛡️" },
-    ]
-
-    const faqData = [
-        { question: "What is Loan Eligibility?", answer: "Loan eligibility is the maximum amount a bank is willing to lend you. It depends on your Net Monthly Salary, current EMI obligations, age, and credit score (CIBIL)." },
-        { question: "How do banks calculate maximum loan amount?", answer: "Banks use the Fixed Obligation to Income Ratio (FOIR). Generally, your total EMIs (including the new loan) should not exceed 50% of your net monthly income." },
-        { question: "Does CIBIL score affect loan eligibility?", answer: "Yes, heavily. A score above 750 allows you to get the maximum loan amount at the lowest interest rates. A low score might reduce your eligibility or increase the interest rate." },
-        { question: "How can I increase my loan eligibility?", answer: "You can increase eligibility by adding a co-applicant (spouse/parent) with an income, clearing existing loans, or opting for a longer tenure." }
-    ]
-
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Home Loan Eligibility Calculator - Check How Much Loan You Can Get</title>
-                <meta name="description" content="Check your Home Loan Eligibility instantly. Calculate maximum loan amount based on your salary and existing EMIs using standard Indian bank formulas." />
-                <link rel="canonical" href="https://calcguide.com/loan-eligibility" />
-            </Helmet>
+            <SeoHead
+                title="Home Loan Eligibility Calculator - Check How Much Loan You Can Get"
+                description="Check your Home Loan Eligibility instantly. Calculate maximum loan amount based on your salary and existing EMIs using standard Indian bank formulas."
+                keywords="home loan eligibility calculator, loan eligibility check, how much home loan can i get, foir calculator"
+                canonicalPath={ROUTES.CALCULATORS.LOAN.ELIGIBILITY}
+            />
             <SchemaGenerator
                 name="Loan Eligibility Calculator"
                 description="Calculate maximum home loan limit based on salary."
-                url="https://calcguide.com/loan-eligibility"
+                url="https://calcguide.in/calculators/loan/eligibility"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.LOAN} className="hover:text-blue-600">Loan Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Eligibility Check</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Loan Eligibility Calculator</h1>
                     <p className="text-slate-600">Check maximum home loan amount based on your salary</p>
                 </div>
@@ -119,7 +116,13 @@ export default function LoanEligibility() {
                             </div>
                         </div>
 
-                        <SEOSection title="About Loan Eligibility" faq={faqData} features={features} />
+                        <CalculatorContent
+                            title="Loan Eligibility Calculator"
+                            whatIs="A Loan Eligibility Calculator helps specificy the maximum loan amount a bank is likely to lend you. Banks typically do not want your total monthly EMI outgo (including the new loan) to exceed 50% of your net monthly income. This is called the Fixed Obligation to Income Ratio (FOIR)."
+                            whoShouldUse="Anyone planning to apply for a home loan or personal loan should use this. It helps you understand your borrowing power so you can search for properties within your budget, rather than facing rejection later."
+                            example="If you earn ₹50,000 per month, banks assume 50% (₹25,000) is for living expenses. If you have no other loans, you can pay an EMI of ₹25,000. For a 20-year loan at 8.5%, this EMI amount qualifies you for a loan of approximately ₹26 Lakhs."
+                            commonMistake="Ignoring existing EMIs. If you already have a car loan EMI of ₹10,000, your available capacity drops to ₹15,000, significantly reducing your home loan eligibility. Always clear smaller debts before applying for a big loan."
+                        />
                     </div>
 
                     <div className="space-y-6">

@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
@@ -50,19 +51,29 @@ export default function RDCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>RD Calculator - Recurring Deposit Maturity Calculator</title>
-                <meta name="description" content="Calculate the maturity value of your monthly Recurring Deposit (RD). Plan your savings with our free RD Calculator for SBI, HDFC, and Post Office RDs." />
-                <link rel="canonical" href="https://calcguide.com/rd" />
-            </Helmet>
+            <SeoHead
+                title="RD Calculator - Recurring Deposit Maturity Calculator"
+                description="Calculate the maturity value of your monthly Recurring Deposit (RD). Plan your savings with our free RD Calculator for SBI, HDFC, and Post Office RDs."
+                keywords="rd calculator, recurring deposit calculator, rd interest rate calculator, post office rd"
+                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.RD}
+            />
             <SchemaGenerator
                 name="RD Calculator"
                 description="Calculate Recurring Deposit (RD) interest and maturity amount."
-                url="https://calcguide.com/rd"
+                url="https://calcguide.in/calculators/investment/rd-calculator"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.INVESTMENT} className="hover:text-blue-600">Investment Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">RD Calculator</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">RD Calculator</h1>
                     <p className="text-slate-600">Calculate Recurring Deposit maturity amount</p>
                 </div>
@@ -102,11 +113,15 @@ export default function RDCalculator() {
                             </div>
                         </div>
 
+                        <CalculatorContent
+                            title="RD Calculator"
+                            whatIs="A Recurring Deposit (RD) Calculator estimates how much your monthly savings will grow over time. RD is a popular investment option in India where you deposit a fixed amount every month for a fixed tenure (e.g., 6 months to 10 years) and earn interest rates similar to Fixed Deposits."
+                            whoShouldUse="RDs are perfect for people who do not have a lump sum to invest in an FD but can save a small amount (like ₹2000 or ₹5000) every month from their salary. It is a disciplined way to save for goals like a vacation, wedding, or paying insurance premiums."
+                            example="If you start an RD of ₹5000 per month for 3 years at 7% interest: You will invest a total of ₹1,80,000. The bank will pay you interest roughly around ₹21,000. So, your maturity amount will be approx ₹2,01,000."
+                            commonMistake="Thinking RD interest is tax-free. Interest earned on Recurring Deposits is fully taxable. Also, missing a monthly installment often attracts a penalty."
+                        />
+
                         <SEOSection title="About Recurring Deposits (RD)" faq={faqData} features={features}>
-                            <h3>What is an RD Calculator?</h3>
-                            <p>
-                                An <strong>RD Calculator</strong> helps you estimate how much your small monthly savings will grow into over time. It is perfect for disciplined savers who want to build a corpus without the risk of the stock market.
-                            </p>
                             <h3>Why choose RD over SIP?</h3>
                             <ul>
                                 <li><strong>Safety:</strong> RD returns are guaranteed by the bank. SIP returns depend on the market.</li>

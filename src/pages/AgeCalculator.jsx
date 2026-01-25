@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
@@ -56,19 +57,29 @@ export default function AgeCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Age Calculator - Calculate Exact Age from Date of Birth</title>
-                <meta name="description" content="Calculate your exact age in Years, Months, and Days. Perfect for Govt Exam eligibility checks and form filling. Free online Age Calculator India." />
-                <link rel="canonical" href="https://calcguide.com/age" />
-            </Helmet>
+            <SeoHead
+                title="Age Calculator - Calculate Exact Age from Date of Birth"
+                description="Calculate your exact age in Years, Months, and Days. Perfect for Govt Exam eligibility checks and form filling. Free online Age Calculator India."
+                keywords="age calculator, exact age calculator, age from dob, age calculator for exams"
+                canonicalPath={ROUTES.CALCULATORS.UTILITY.AGE}
+            />
             <SchemaGenerator
                 name="Age Calculator"
                 description="Calculate age from Date of Birth (DOB) in Years, Months, Days."
-                url="https://calcguide.com/age"
+                url="https://calcguide.in/calculators/utility/age-calculator"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.UTILITY} className="hover:text-blue-600">Utility Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Age Calculator</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Age Calculator</h1>
                     <p className="text-slate-600">Calculate exact age in years, months, and days</p>
                 </div>
@@ -101,6 +112,14 @@ export default function AgeCalculator() {
                                 )}
                             </div>
                         </div>
+
+                        <CalculatorContent
+                            title="Age Calculator"
+                            whatIs="The Age Calculator determines an individual's exact age in years, months, and days based on their Date of Birth (DOB). Unlike simple subtraction of years which can be off by one, this tool accounts for leap years and months with 30/31 days."
+                            whoShouldUse="Job aspirants filling government forms (SSC, UPSC, Banking), HR professionals calculating service duration, or parents checking school admission eligibility (often strict age criteria exist for KG/Class 1)."
+                            example="If born on 15 Aug 1999 and checking age on 1 Jan 2025: Manual math is hard because of month differences. The calculator instantly tells you: 25 Years, 4 Months, 17 Days."
+                            commonMistake="Only subtracting the year (e.g., 2025 - 2000 = 25). This is wrong if your birthday hasn't passed yet in the current year. Always calculate age down to the exact day."
+                        />
 
                         <SEOSection title="About Age Calculator" faq={faqData} features={features}>
                             <h3>Why is it hard to calculate age manually?</h3>

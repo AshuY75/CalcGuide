@@ -1,9 +1,26 @@
 import { useState } from 'react'
-const Helmet = () => null;
+import { Link } from 'react-router-dom'
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
+import { ROUTES } from '../routes/paths'
+
+const faqData = [
+    {
+        question: "How many bricks are in 1 sq ft?",
+        answer: "For a 4.5 inch (single brick) wall, you need approx 4.5 to 5 bricks per sq ft. For a 9 inch (double brick) wall, you need approx 9 to 10 bricks per sq ft."
+    },
+    {
+        question: "What is the standard size of a brick?",
+        answer: "In India, the standard modular brick size is 190 × 90 × 90 mm. With mortar, it becomes 200 × 100 × 100 mm."
+    },
+    {
+        question: "How much cement do I need?",
+        answer: "The amount of cement depends on the mortar ratio. For a standard 1:6 ratio (1 part cement, 6 parts sand), you typically need around 1.5 bags of cement for every 1000 bricks in a 9-inch wall."
+    }
+]
 
 export default function BrickCalculator() {
-    // ... [Logic] ...
     const [length, setLength] = useState('10')
     const [height, setHeight] = useState('10')
     const [thickness, setThickness] = useState('9')
@@ -32,31 +49,26 @@ export default function BrickCalculator() {
         setResult({ totalBricks, cementBags, sandCft: Math.ceil(sandVolume), wallVolume: wallVolumeCft.toFixed(2) })
     }
 
-    const faqData = [
-        {
-            question: "How many bricks are in 1 sq ft?",
-            answer: "For a 4.5 inch (single brick) wall, you need approx 4.5 to 5 bricks per sq ft. For a 9 inch (double brick) wall, you need approx 9 to 10 bricks per sq ft."
-        },
-        {
-            question: "What is the standard size of a brick?",
-            answer: "In India, the standard modular brick size is 190 × 90 × 90 mm. With mortar, it becomes 200 × 100 × 100 mm."
-        },
-        {
-            question: "How much cement do I need?",
-            answer: "The amount of cement depends on the mortar ratio. For a standard 1:6 ratio (1 part cement, 6 parts sand), you typically need around 1.5 bags of cement for every 1000 bricks in a 9-inch wall."
-        }
-    ]
-
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Brick Calculator - Estimate Bricks, Cement & Sand | CalcGuide</title>
-                <meta name="description" content="Calculate the number of bricks required for your wall. Get an instant estimate of Cement bags and Sand (cft) needed for 4 inch and 9 inch walls." />
-                <link rel="canonical" href="https://calcguide.com/brick" />
-            </Helmet>
+            <SeoHead
+                title="Brick Calculator - Estimate Bricks, Cement & Sand | CalcGuide"
+                description="Calculate the number of bricks required for your wall. Get an instant estimate of Cement bags and Sand (cft) needed for 4 inch and 9 inch walls."
+                keywords="brick calculator, brick wall calculation, red bricks needed, cement sand calculator for wall"
+                canonicalPath={ROUTES.CALCULATORS.CONSTRUCTION.BRICK}
+            />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.CONSTRUCTION} className="hover:text-blue-600">Construction Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Brick Calculator</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Brick Calculator</h1>
                     <p className="text-slate-600">Calculate bricks, cement and sand required for a wall</p>
                 </div>

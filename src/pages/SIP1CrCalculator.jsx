@@ -1,5 +1,6 @@
 import SeoHead from '../components/SeoHead'
 import CalculatorContent from '../components/CalculatorContent'
+import SEOSection from '../components/SEOSection'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import SIP1CrCalculatorUI from '../components/calculators/SIP1CrCalculatorUI'
@@ -14,6 +15,19 @@ export default function SIP1CrCalculator() {
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any"
     }
+
+    const features = [
+        { title: "Goal Reverse Calc", desc: "Tells you the SIP amount needed for a specific target.", icon: "🎯" },
+        { title: "Inflation Ready", desc: "Helps you realize that ₹1 Cr today != ₹1 Cr in 20 years.", icon: "💸" },
+        { title: "Retirement Plan", desc: "Perfect for planning retirement corpus requirements.", icon: "👴" },
+    ]
+
+    const faqData = [
+        { question: "How much SIP for 1 Crore in 10 years?", answer: "At 12% expected return, you need to invest approx ₹43,041 per month to reach ₹1 Crore in 10 years." },
+        { question: "How much SIP for 1 Crore in 15 years?", answer: "At 12% expected return, you need to invest approx ₹20,017 per month. Time is money—starting 5 years earlier halves your burden." },
+        { question: "Can I reach 1 Crore with 5000 SIP?", answer: "Yes, but it will take time. At 12% return, a ₹5,000 monthly SIP will take about 26 years to reach ₹1 Crore." },
+        { question: "Is 12% return guaranteed?", answer: "No. Mutual funds are subject to market risks. However, Nifty 50 has historically delivered 12-14% CAGR over 15+ year periods." }
+    ]
 
     return (
         <div className="min-h-screen bg-slate-50">
@@ -53,6 +67,13 @@ export default function SIP1CrCalculator() {
                             example="To save ₹1 Crore in 15 years (assuming 12% returns), you don't need to save ₹1 Crore/15 years. You only need to start a monthly SIP of roughly ₹20,017. The power of compounding covers the rest."
                             commonMistake="Not accounting for inflation. ₹1 Crore today will not have the same value 20 years from now. Always aim for a higher corpus than you think you need."
                         />
+
+                        <SEOSection title="Planning Your First Crore" faq={faqData} features={features}>
+                            <h3>The 15-15-15 Rule</h3>
+                            <p>
+                                In the world of mutual funds, the <strong>15-15-15 rule</strong> says that if you invest <strong>₹15,000 per month</strong> for <strong>15 years</strong> at <strong>15% return</strong>, you will become a Crorepati (approx ₹1 Crore).
+                            </p>
+                        </SEOSection>
                     </div>
 
                     <div className="space-y-6">

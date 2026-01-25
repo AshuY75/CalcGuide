@@ -1,6 +1,24 @@
 import { useState } from 'react'
-const Helmet = () => null;
+import { Link } from 'react-router-dom'
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
+import { ROUTES } from '../routes/paths'
+
+const faqData = [
+    {
+        question: "What is Melting Loss?",
+        answer: "When old jewellery is melted to verify purity, impurities like dust, wax, or other metals burn away. Jewellers deduct 3-5% weight to account for this loss."
+    },
+    {
+        question: "Should I exchange or sell for cash?",
+        answer: "Exchange (buying new jewellery from the same shop) usually gets you a better rate as some jewellers waive off the deduction or give a loyalty bonus. Selling for cash often incurs higher deductions."
+    },
+    {
+        question: "Do I get paid for stones?",
+        answer: "No. Jewellers will deduct the weight of gemstones (like rubies, emeralds) and pay only for the net gold weight. If you have diamond jewellery, the diamond value is calculated separately."
+    }
+]
 
 export default function OldGoldCalculator() {
     const [weight, setWeight] = useState('')
@@ -20,31 +38,26 @@ export default function OldGoldCalculator() {
         setResult({ grossValue: w * ratePerGram, deductionAmount: (w * ratePerGram) - totalValue, netValue: totalValue, netWeight: netWeight.toFixed(3) })
     }
 
-    const faqData = [
-        {
-            question: "What is Melting Loss?",
-            answer: "When old jewellery is melted to verify purity, impurities like dust, wax, or other metals burn away. Jewellers deduct 3-5% weight to account for this loss."
-        },
-        {
-            question: "Should I exchange or sell for cash?",
-            answer: "Exchange (buying new jewellery from the same shop) usually gets you a better rate as some jewellers waive off the deduction or give a loyalty bonus. Selling for cash often incurs higher deductions."
-        },
-        {
-            question: "Do I get paid for stones?",
-            answer: "No. Jewellers will deduct the weight of gemstones (like rubies, emeralds) and pay only for the net gold weight. If you have diamond jewellery, the diamond value is calculated separately."
-        }
-    ]
-
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Old Gold Exchange Value Calculator | Sell Gold Cash Value</title>
-                <meta name="description" content="Calculate the resale value of your old gold jewellery. Estimate deductions, melting loss, and final cash in hand before visiting a jeweller." />
-                <link rel="canonical" href="https://calcguide.com/old-gold" />
-            </Helmet>
+            <SeoHead
+                title="Old Gold Exchange Value Calculator | Sell Gold Cash Value"
+                description="Calculate the resale value of your old gold jewellery. Estimate deductions, melting loss, and final cash in hand before visiting a jeweller."
+                keywords="old gold calculator, sell gold calculator, gold resale value, exchange gold jewellery"
+                canonicalPath={ROUTES.CALCULATORS.GOLD.OLD_GOLD}
+            />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.GOLD} className="hover:text-blue-600">Gold Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Old Gold Exchange</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Old Gold Exchange Calculator</h1>
                     <p className="text-slate-600">Estimate the cash value or exchange value of your old jewellery</p>
                 </div>
@@ -68,6 +81,14 @@ export default function OldGoldCalculator() {
                         </div>
                     )}
                 </div>
+
+                <CalculatorContent
+                    title="Old Gold Exchange Calculator"
+                    whatIs="The Old Gold Exchange Calculator is designed for people who want to sell or exchange their used jewellery. It calculates the 'Net Value' of your gold after deducting 'Melting Loss' or 'Wastage percentage'. This gives you the real cash-in-hand value."
+                    whoShouldUse="Anyone planning to visit a jeweller to exchange old ornaments for new ones. It prevents you from being duped by excessive deductions."
+                    example="If you have 20g of old 22K gold, and the market rate is ₹60,000/10g: The Gross Value is ₹1,20,000. If the jeweller deducts 5% for melting loss, your Net Value comes down to ₹1,14,000. Always negotiate this percentage."
+                    commonMistake="Assuming you will get the full market rate. You won't. Jewellers always deduct for impurities (stones, copper, zinc) and melting loss. This calculator helps you check if the deduction is fair (standard is 3-6%)."
+                />
 
                 <SEOSection title="Selling Old Gold? Read This" faq={faqData}>
                     <h3>How do Jewellers value old gold?</h3>

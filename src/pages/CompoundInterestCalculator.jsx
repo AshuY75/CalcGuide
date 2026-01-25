@@ -1,22 +1,10 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
-
-const features = [
-    { title: "Power of Compounding", desc: "See how money multiplies faster over time (Interest on Interest).", icon: "🚀" },
-    { title: "Flexible Frequency", desc: "Supports Yearly, Half-Yearly, Quarterly, and Monthly compounding.", icon: "🔄" },
-    { title: "Compare Returns", desc: "Check why FDs (High Compounding) are better than Simple Interest.", icon: "📈" },
-]
-
-const faqData = [
-    { question: "What is Compound Interest?", answer: "Compound Interest is when you earn interest on both the money you've saved and the interest you earn. It is often called 'Interest on Interest'." },
-    { question: "How often do banks compound interest?", answer: "In India, most banks compound interest Quarterly (every 3 months) for Fixed Deposits. Savings accounts usually calculate interest Daily but credit it Quarterly." },
-    { question: "What is the formula for Compound Interest?", answer: "A = P(1 + r/n)^(nt). Here A is Amount, P is Principal, r is rate, n is compounding frequency per year, and t is time in years." },
-    { question: "Why is CI better than SI for investors?", answer: "Because your money grows exponentially. In SI, your ₹100 interest sits idle. In CI, that ₹100 starts earning its own interest next year." }
-]
 
 export default function CompoundInterestCalculator() {
     const [principal, setPrincipal] = useState('10000')
@@ -49,21 +37,44 @@ export default function CompoundInterestCalculator() {
         }, 100)
     }
 
+    const features = [
+        { title: "Power of Compounding", desc: "See how money multiplies faster over time (Interest on Interest).", icon: "🚀" },
+        { title: "Flexible Frequency", desc: "Supports Yearly, Half-Yearly, Quarterly, and Monthly compounding.", icon: "🔄" },
+        { title: "Compare Returns", desc: "Check why FDs (High Compounding) are better than Simple Interest.", icon: "📈" },
+    ]
+
+    const faqData = [
+        { question: "What is Compound Interest?", answer: "Compound Interest is when you earn interest on both the money you've saved and the interest you earn. It is often called 'Interest on Interest'." },
+        { question: "How often do banks compound interest?", answer: "In India, most banks compound interest Quarterly (every 3 months) for Fixed Deposits. Savings accounts usually calculate interest Daily but credit it Quarterly." },
+        { question: "What is the formula for Compound Interest?", answer: "A = P(1 + r/n)^(nt). Here A is Amount, P is Principal, r is rate, n is compounding frequency per year, and t is time in years." },
+        { question: "Why is CI better than SI for investors?", answer: "Because your money grows exponentially. In SI, your ₹100 interest sits idle. In CI, that ₹100 starts earning its own interest next year." }
+    ]
+
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Compound Interest Calculator - Calculate CI Returns Online</title>
-                <meta name="description" content="Calculate Compound Interest (CI) with Yearly, Half-Yearly, Quarterly, or Monthly compounding. See the power of compounding for your investments." />
-                <link rel="canonical" href="https://calcguide.com/calculators/investment/compound-interest-calculator" />
-            </Helmet>
+            <SeoHead
+                title="Compound Interest Calculator - Calculate CI Returns Online"
+                description="Calculate Compound Interest (CI) with Yearly, Half-Yearly, Quarterly, or Monthly compounding. See the power of compounding for your investments."
+                keywords="compound interest calculator, ci calculator, compound interest formula, interest on interest"
+                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST}
+            />
             <SchemaGenerator
                 name="Compound Interest Calculator"
                 description="Calculate compound interest with flexible compounding frequencies."
-                url="https://calcguide.com/calculators/investment/compound-interest-calculator"
+                url="https://calcguide.in/calculators/investment/compound-interest-calculator"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.INVESTMENT} className="hover:text-blue-600">Investment Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Compound Interest</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Compound Interest Calculator</h1>
                     <p className="text-slate-600">Calculate how your investments grow with the power of compounding</p>
                 </div>
@@ -119,6 +130,13 @@ export default function CompoundInterestCalculator() {
                             </div>
                         </div>
 
+                        <CalculatorContent
+                            title="Compound Interest Calculator"
+                            whatIs="Compound Interest (CI) is the concept of earning 'Interest on Interest'. Unlike Simple Interest where your principal remains static, in CI, the interest earned is added back to the principal, and future interest is calculated on this new, larger amount. This is the secret behind wealth creation."
+                            whoShouldUse="Investors comparing Fixed Deposits (FDs), Mutual Funds, or any long-term savings scheme. Anyone who wants to understand why starting investments early yields massive returns over 10-20 years."
+                            example="If you invest ₹1 Lakh at 10% for 20 years: With Simple Interest, you get ₹3 Lakhs total. With Compound Interest, you get roughly ₹6.72 Lakhs! That massive difference of ₹3.72 Lakhs comes entirely from the power of compounding."
+                            commonMistake="Applying Yearly Compounding to all comparisons. Most Bank FDs compound Quarterly (4 times a year), while Mutual Funds effectively compound daily/NAV-based. Always check the frequency—more frequent compounding means higher returns."
+                        />
                         <SEOSection title="About Compound Interest" faq={faqData} features={features}>
                             <h3>The Magic of Compounding Example</h3>
                             <p>

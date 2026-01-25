@@ -1,9 +1,11 @@
 import { useState } from 'react'
-const Helmet = () => null;
+import { Link } from 'react-router-dom'
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
+import { ROUTES } from '../routes/paths'
 
 export default function GoldJewelleryCalculator() {
-    // ... [Original Logic] ...
     const [goldRate, setGoldRate] = useState('')
     const [weight, setWeight] = useState('')
     const [purity, setPurity] = useState('22K')
@@ -36,31 +38,37 @@ export default function GoldJewelleryCalculator() {
         setResult({ baseGoldValue: w * ratePerGram, wastageValue: wastageWeight * ratePerGram, makingCost, gstAmount, total })
     }
 
+    const features = [
+        { title: "Wastage Check", desc: "Includes VA (Value Addition) calculations often hidden by jewellers.", icon: "⚖️" },
+        { title: "Bill Breakdown", desc: "Detailed breakup of GST, Making Charges, and Gold Value.", icon: "🧾" },
+        { title: "Live Math", desc: "Instant calculation as you type rate and weight.", icon: "⚡" },
+    ]
+
     const faqData = [
-        {
-            question: "What is Making Charge?",
-            answer: "Making charges are the fees paid to the goldsmith for designing and creating the jewellery. It can be a percentage of the gold value (usually 8% to 25%) or a flat rate per gram."
-        },
-        {
-            question: "What is Wastage or VA?",
-            answer: "VA stands for Value Addition or Wastage. When making jewellery, some gold is lost or wasted during cutting and melting. Jewellers charge this as a percentage, usually adding it to the weight or value."
-        },
-        {
-            question: "Is GST applicable on old gold exchange?",
-            answer: "No, GST is applicable only on the value addition (Making Charges) and the new gold you buy. It is not applicable on the value of the old gold you are exchanging."
-        }
+        { question: "How to calculate gold jewellery price?", answer: "Final Price = (Price of Gold × Weight) + Making Charges + GST. Often, Wastage (VA) is also added to the weight before calculating the price." },
+        { question: "What is Wastage or VA in Gold?", answer: "Wastage or Value Addition (VA) is a charge for gold wasted during the making of ornaments. It ranges from 3% to 25% depending on the design intricacy." },
+        { question: "How much is GST on gold jewellery?", answer: "Currently, GST on gold jewellery in India is 3% of the total bill value (including making charges)." },
+        { question: "Is making charge calculated on gold rate?", answer: "Making charges are calculated either as a percentage of the gold value or as a flat rate per gram. This calculator supports both methods." }
     ]
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Gold Jewellery Price Calculator - GST, Making Charges & Wastage | CalcGuide</title>
-                <meta name="description" content="Calculate the final price of gold jewellery including Wastage (VA), Making Charges, and 3% GST. Verify your jeweller's bill breakup instantly." />
-                <link rel="canonical" href="https://calcguide.com/gold-jewellery" />
-            </Helmet>
+            <SeoHead
+                title="Gold Jewellery Price Calculator - GST, Making Charges & Wastage"
+                description="Calculate the final price of gold jewellery including Wastage (VA), Making Charges, and 3% GST. Verify your jeweller's bill breakup instantly."
+                keywords="gold jewellery calculator, gold price calculator, wastage calculator, making charges gold, va calculator"
+                canonicalPath={ROUTES.CALCULATORS.GOLD.JEWELLERY}
+            />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Gold Jewellery Price</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Jewellery Price Calculator</h1>
                     <p className="text-slate-600">Check the real price breakup before buying gold</p>
                 </div>
@@ -99,20 +107,18 @@ export default function GoldJewelleryCalculator() {
                     )}
                 </div>
 
-                <SEOSection title="Understanding Gold Pricing" faq={faqData}>
-                    <h3>How is Gold Jewellery Price Calculated?</h3>
+                <CalculatorContent
+                    title="Gold Jewellery Price Calculator"
+                    whatIs="A Gold Jewellery Price Calculator helps you find the actual cost of a gold ornament before you buy it. Jewellers often confuse customers with multiple charges like Making Charges, Wastage (VA - Value Addition), and GST. This tool breaks down the cost so you know exactly what you are paying for."
+                    whoShouldUse="Anyone planning to buy gold jewellery (chains, rings, bangles) should use this. It helps you verify the bill provided by the jeweller and ensures you are not being overcharged on wastage or making charges."
+                    example="If you buy a 10g Gold Chain when the rate is ₹60,000/10g: The base gold price is ₹60,000. But if the jeweller charges 15% Wastage and 3% GST, the final price jumps to over ₹70,000. Use this tool to verify the math."
+                    commonMistake="Ignoring Wastage (VA). Jewellers might offer a discount on 'Making Charges' but increase the 'Wastage' percentage to recover the cost. Always ask for the final price including all taxes and charges."
+                />
+
+                <SEOSection title="Guide to Buying Gold Jewellery" faq={faqData} features={features}>
+                    <h3>Understanding the Bill Breakup</h3>
                     <p>
-                        The final price of any gold ornament is not just the Gold Rate × Weight. Jewellers add several other components:
-                    </p>
-                    <ul>
-                        <li><strong>Base Gold Rate:</strong> The rate of 22K or 18K gold per gram.</li>
-                        <li><strong>Wastage (VA):</strong> Charges for gold lost during manufacturing. Typically 10% to 20%.</li>
-                        <li><strong>Making Charges:</strong> Labor cost for the artisan.</li>
-                        <li><strong>GST:</strong> A mandatory 3% tax is applied on the final total (including making charges and wastage).</li>
-                    </ul>
-                    <h3>Why should you calculate this yourself?</h3>
-                    <p>
-                        Jewellers often club these charges together or give "discounts" on Making Charges while increasing the Wastage percentage. Using a transparent calculator helps you see exactly what you are paying for and negotiate better.
+                        When you look at a refined gold bill, you will see the <strong>Gold Value</strong> (Weight × Rate), followed by <strong>VA/Wastage</strong>, then <strong>Making Charges</strong>, and finally <strong>GST</strong>. This calculator simulates exactly that structure.
                     </p>
                 </SEOSection>
             </div>

@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import SeoHead from '../components/SeoHead'
 import CalculatorContent from '../components/CalculatorContent'
+import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
@@ -130,6 +131,17 @@ export default function FDCalculator() {
                             example="If you invest ₹1 Lakh for 5 years at 7% interest (compounded quarterly), you won't just get flat interest. Due to compounding, your maturity amount will be approximately ₹1,41,478, earning you ₹41,478 in interest."
                             commonMistake="Ignoring the tax liability (TDS). FD interest is fully taxable as per your income tax slab. Another mistake is breaking an FD before maturity, which attracts a penalty (usually 1%) and lowers your effective interest rate."
                         />
+
+                        <SEOSection title="About Fixed Deposits" faq={faqData} features={features}>
+                            <h3>Key Benefits of FD</h3>
+                            <p>
+                                <strong>Guaranteed Returns:</strong> Unlike the stock market, your returns are fixed when you book the FD.
+                                <br />
+                                <strong>Safety:</strong> Bank FDs are insured by DICGC up to ₹5 Lakhs.
+                                <br />
+                                <strong>Loan Facility:</strong> You can take a loan against your FD (usually up to 90% of value) at a low interest rate.
+                            </p>
+                        </SEOSection>
                     </div>
 
                     <div className="space-y-6">

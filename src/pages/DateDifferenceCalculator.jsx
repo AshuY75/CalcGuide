@@ -1,9 +1,23 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
+
+const features = [
+    { title: "Include End Date", desc: "Choose whether to count the last day (useful for leave applications).", icon: "➕" },
+    { title: "Exact Duration", desc: "Shows Years, Months, Days AND Total Days count.", icon: "📅" },
+    { title: "Week Breakdown", desc: "Also shows duration in Weeks + Days format.", icon: "🗓️" },
+]
+
+const faqData = [
+    { question: "How to calculate days between two dates?", answer: "The simplest formula is End Date - Start Date. Our calculator handles leap years and variable month lengths automatically." },
+    { question: "Does this include the start and end dates?", answer: "By default, calculators usually exclude the last day (span). However, we provide a checkbox 'Include End Date' to count it, which is standard for Leave/Notice Period calculations." },
+    { question: "How many working days in a year?", answer: "Typically, there are about 250-260 working days in a year (excluding weekends). This calculator shows total calendar days." },
+    { question: "Can I use this for Age calculation?", answer: "Yes, but for Age, it is better to use our dedicated 'Age Calculator' which formats the result specifically for birthdays." }
+]
 
 export default function DateDifferenceCalculator() {
     const [startDate, setStartDate] = useState('')
@@ -77,34 +91,31 @@ export default function DateDifferenceCalculator() {
         }, 100)
     }
 
-    const features = [
-        { title: "Include End Date", desc: "Choose whether to count the last day (useful for leave applications).", icon: "➕" },
-        { title: "Exact Duration", desc: "Shows Years, Months, Days AND Total Days count.", icon: "📅" },
-        { title: "Week Breakdown", desc: "Also shows duration in Weeks + Days format.", icon: "🗓️" },
-    ]
-
-    const faqData = [
-        { question: "How to calculate days between two dates?", answer: "The simplest formula is End Date - Start Date. Our calculator handles leap years and variable month lengths automatically." },
-        { question: "Does this include the start and end dates?", answer: "By default, calculators usually exclude the last day (span). However, we provide a checkbox 'Include End Date' to count it, which is standard for Leave/Notice Period calculations." },
-        { question: "How many working days in a year?", answer: "Typically, there are about 250-260 working days in a year (excluding weekends). This calculator shows total calendar days." },
-        { question: "Can I use this for Age calculation?", answer: "Yes, but for Age, it is better to use our dedicated 'Age Calculator' which formats the result specifically for birthdays." }
-    ]
-
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Date Difference Calculator - Days Between Two Dates</title>
-                <meta name="description" content="Calculate the number of days, weeks, months, and years between two dates. Perfect for planning travel, work notice periods, or age differences." />
-                <link rel="canonical" href="https://calcguide.com/date-diff" />
-            </Helmet>
+            <SeoHead
+                title="Date Difference Calculator - Days Between Two Dates"
+                description="Calculate the number of days, weeks, months, and years between two dates. Perfect for planning travel, work notice periods, or age differences."
+                keywords="date difference calculator, days between dates, calculate duration, weeks between dates"
+                canonicalPath={ROUTES.CALCULATORS.UTILITY.DATE_DIFF}
+            />
             <SchemaGenerator
                 name="Date Difference Calculator"
                 description="Calculate duration between two dates in Days, Weeks, Months, Years."
-                url="https://calcguide.com/date-diff"
+                url="https://calcguide.in/calculators/utility/date-difference-calculator"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.UTILITY} className="hover:text-blue-600">Utility Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Date Difference</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Date Difference Calculator</h1>
                     <p className="text-slate-600">Calculate days, months and years between two dates</p>
                 </div>

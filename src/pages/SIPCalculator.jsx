@@ -4,6 +4,13 @@ import SIPCalculatorUI from '../components/calculators/SIPCalculatorUI'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import SeoHead from '../components/SeoHead'
 import CalculatorContent from '../components/CalculatorContent'
+import SEOSection from '../components/SEOSection'
+
+const features = [
+    { title: "Inflation Adjust", desc: "See the real value of your maturity amount.", icon: "📉" },
+    { title: "Growth Chart", desc: "Visual graph to see how wealth compounds over time.", icon: "📊" },
+    { title: "Instant Report", desc: "Get total invested vs total wealth gain breakdown.", icon: "⚡" },
+]
 
 const faqData = [
     {
@@ -73,6 +80,13 @@ export default function SIPCalculator() {
                             example="If you invest ₹10,000 monthly for 20 years at an expected return of 12%, your total investment will be ₹24 Lakhs. However, your estimated maturity amount could be over ₹99 Lakhs! The wealth gained (approx ₹75 Lakhs) is purely from the power of compound interest."
                             commonMistake="Reviewing returns too frequently and stopping SIPs when the market is down. In reality, market dips are the best time to continue your SIP because you buy more units at a lower price. Another mistake is not increasing your SIP amount as your income grows (Top-up SIP)."
                         />
+
+                        <SEOSection title="Smart Investing with SIP" faq={faqData} features={features}>
+                            <h3>Why SIP creates wealth?</h3>
+                            <p>
+                                The two biggest friends of an investor are <strong>Time</strong> and <strong>Discipline</strong>. SIP ensures both. By investing small amounts regularly, you don't need to time the market. You buy more when the market is low and less when it is high, automatically averaging your purchase price.
+                            </p>
+                        </SEOSection>
                     </div>
 
                     {/* Related Tools Sidebar */}

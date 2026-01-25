@@ -1,6 +1,9 @@
 import { useState } from 'react'
-const Helmet = () => null;
+import { Link } from 'react-router-dom'
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
+import { ROUTES } from '../routes/paths'
 
 const RATES = { basic: 1500, standard: 1800, premium: 2400 }
 
@@ -39,14 +42,24 @@ export default function ConstructionCostCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>House Construction Cost Calculator India (2025) | CalcGuide</title>
-                <meta name="description" content="Estimate the cost of constructing a house in India. Get breakdown of Material vs Labour cost, Cement, Steel, and Bricks required for 1000 sq ft, 1200 sq ft homes." />
-                <link rel="canonical" href="https://calcguide.com/construction-cost" />
-            </Helmet>
+            <SeoHead
+                title="House Construction Cost Calculator India (2025) | CalcGuide"
+                description="Estimate the cost of constructing a house in India. Get breakdown of Material vs Labour cost, Cement, Steel, and Bricks required for 1000 sq ft, 1200 sq ft homes."
+                keywords="construction cost calculator, house construction cost india, building cost estimator, civil construction cost"
+                canonicalPath={ROUTES.CALCULATORS.CONSTRUCTION.COST}
+            />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.CONSTRUCTION} className="hover:text-blue-600">Construction Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Construction Cost</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">House Construction Cost</h1>
                     <p className="text-slate-600">Estimate the cost of building your dream home</p>
                 </div>
@@ -80,6 +93,14 @@ export default function ConstructionCostCalculator() {
                                 </div>
                             </div>
                         )}
+
+                        <CalculatorContent
+                            title="Construction Cost Calculator"
+                            whatIs="This calculator provides an estimated cost for building a residential house in India. It breaks down the total expense into Material cost (Cement, Steel, Bricks) and Labour cost, helping you plan your budget effectively before starting construction."
+                            whoShouldUse="Homeowners planning to build a house on their plot, contractors looking for quick estimates, or civil engineering students wishing to understand rough cost estimation thumb rules."
+                            example="For a 1000 sq. ft. house with 'Standard' quality (₹1800/sq. ft.), the total cost is approx ₹18 Lakhs. Out of this, roughly ₹12.6 Lakhs goes to materials and ₹5.4 Lakhs to labour."
+                            commonMistake="Ignoring the cost of simple things like Compound Walls, Gates, and Borewells which are usually NOT included in the per sq. ft. rate. Also, prices fluctuate daily; valid for 2024-25 estimates only."
+                        />
                     </div>
                     <div className="md:col-span-1">
                         {/* Result Panel - Reserved Height */}

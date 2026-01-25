@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-const Helmet = () => null;
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
@@ -49,19 +50,29 @@ export default function SimpleInterestCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Helmet>
-                <title>Simple Interest Calculator - Calculate SI & Total Amount Online</title>
-                <meta name="description" content="Free Simple Interest Calculator (SI). Calculate interest on loans or savings instantly using the P x R x T / 100 formula. Accurate and easy to use." />
-                <link rel="canonical" href="https://calcguide.com/calculators/investment/simple-interest-calculator" />
-            </Helmet>
+            <SeoHead
+                title="Simple Interest Calculator - Calculate SI & Total Amount Online"
+                description="Free Simple Interest Calculator (SI). Calculate interest on loans or savings instantly using the P x R x T / 100 formula. Accurate and easy to use."
+                keywords="simple interest calculator, si calculator, interest calculator, simple interest formula"
+                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST}
+            />
             <SchemaGenerator
                 name="Simple Interest Calculator"
                 description="Calculate simple interest (SI) and total amount using principal, rate, and time."
-                url="https://calcguide.com/calculators/investment/simple-interest-calculator"
+                url="https://calcguide.in/calculators/investment/simple-interest-calculator"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.INVESTMENT} className="hover:text-blue-600">Investment Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">Simple Interest</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Simple Interest Calculator</h1>
                     <p className="text-slate-600">Calculate interest on loans instantly with the SI formula</p>
                 </div>
@@ -100,6 +111,14 @@ export default function SimpleInterestCalculator() {
                                 )}
                             </div>
                         </div>
+
+                        <CalculatorContent
+                            title="Simple Interest Calculator"
+                            whatIs="Simple Interest (SI) is the easiest method of calculating interest on a loan or investment. Unlike Compound Interest, where interest earns interest, SI assumes interest is paid only on the original principal amount. This formula is standard for short-term personal loans."
+                            whoShouldUse="Students learning finance, individuals lending money to friends/family, or borrowers checking interest on loans that don't compound (like some car loans or flat-rate personal loans)."
+                            example="If you lend ₹10,000 to a friend at 10% annual interest for 3 years: Year 1 Interest = ₹1,000. Year 2 Interest = ₹1,000. Year 3 Interest = ₹1,000. Total Interest = ₹3,000. Total Repayment = ₹13,000."
+                            commonMistake="Confusing SI with CI. Most banks use Compound Interest (CI) for savings and loans. Using this SI calculator for a Bank FD or Home Loan will give incorrect (lower) results because it ignores the 'interest on interest' effect."
+                        />
 
                         <SEOSection title="About Simple Interest" faq={faqData} features={features}>
                             <h3>Real-world Example</h3>
