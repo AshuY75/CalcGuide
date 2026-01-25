@@ -82,8 +82,20 @@ export default function ConstructionCostCalculator() {
                         )}
                     </div>
                     <div className="md:col-span-1">
-                        <div className={`p-6 rounded-xl border-2 text-center sticky top-6 ${result ? 'bg-blue-600 border-blue-600 text-white' : 'bg-slate-100 border-slate-200'}`}>
-                            {result ? (<><p className="text-blue-100 uppercase tracking-wide text-sm font-medium">Estimated Cost</p><p className="text-3xl font-extrabold mt-2">₹{Math.round(result.totalCost).toLocaleString('en-IN')}</p><p className="text-xs text-blue-200 mt-4 opacity-80">*Approximation based on {quality} rates.</p></>) : (<p className="text-slate-400 font-medium">Result will appear here</p>)}
+                        {/* Result Panel - Reserved Height */}
+                        <div className={`p-6 rounded-xl border-2 text-center sticky top-6 min-h-[220px] flex flex-col justify-center transition-colors duration-300 ${result ? 'bg-blue-600 border-blue-600 text-white' : 'bg-slate-100 border-slate-200'}`}>
+                            {result ? (
+                                <div className="animate-in fade-in zoom-in duration-300">
+                                    <p className="text-blue-100 uppercase tracking-wide text-sm font-medium">Estimated Cost</p>
+                                    <p className="text-3xl font-extrabold mt-2">₹{Math.round(result.totalCost).toLocaleString('en-IN')}</p>
+                                    <p className="text-xs text-blue-200 mt-4 opacity-80">*Approximation based on {quality} rates.</p>
+                                </div>
+                            ) : (
+                                <div className="flex flex-col items-center">
+                                    <span className="text-3xl mb-2 opacity-30">🏠</span>
+                                    <p className="text-slate-400 font-medium">Enter area & click Calculate</p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

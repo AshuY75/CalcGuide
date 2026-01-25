@@ -58,18 +58,26 @@ export default function SIPCalculatorUI({
                 <button onClick={calculateSIP} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Calculate SIP</button>
 
                 {/* Inline Result */}
-                {result && (
-                    <div ref={resultRef} className="mt-8 pt-8 border-t border-slate-100 animate-in fade-in slide-in-from-top-4 duration-500">
-                        <div className="text-center mb-8">
-                            <p className="text-sm uppercase tracking-wide text-slate-500 font-medium mb-1">Maturity Amount</p>
-                            <p className="text-4xl sm:text-5xl font-extrabold text-blue-900">₹{result.maturityAmount.toLocaleString('en-IN')}</p>
+                {/* Inline Result - Reserved Space to prevent CLS */}
+                <div role="region" aria-live="polite" className="mt-8 border-t border-slate-100 min-h-[260px]">
+                    {result ? (
+                        <div ref={resultRef} className="pt-8 animate-in fade-in slide-in-from-top-4 duration-500">
+                            <div className="text-center mb-8">
+                                <p className="text-sm uppercase tracking-wide text-slate-500 font-medium mb-1">Maturity Amount</p>
+                                <p className="text-4xl sm:text-5xl font-extrabold text-blue-900">₹{result.maturityAmount.toLocaleString('en-IN')}</p>
+                            </div>
+                            <div className="grid gap-4">
+                                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 flex justify-between items-center"><p className="text-sm text-slate-500 font-semibold">Invested Amount</p><p className="text-xl font-bold text-slate-700">₹{result.investedAmount.toLocaleString('en-IN')}</p></div>
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex justify-between items-center"><p className="text-sm text-green-700 font-semibold">Wealth Gain</p><p className="text-xl font-bold text-green-700">+ ₹{result.totalReturns.toLocaleString('en-IN')}</p></div>
+                            </div>
                         </div>
-                        <div className="grid gap-4">
-                            <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 flex justify-between items-center"><p className="text-sm text-slate-500 font-semibold">Invested Amount</p><p className="text-xl font-bold text-slate-700">₹{result.investedAmount.toLocaleString('en-IN')}</p></div>
-                            <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex justify-between items-center"><p className="text-sm text-green-700 font-semibold">Wealth Gain</p><p className="text-xl font-bold text-green-700">+ ₹{result.totalReturns.toLocaleString('en-IN')}</p></div>
+                    ) : (
+                        <div className="h-full flex flex-col items-center justify-center text-slate-400 pt-16 pb-8">
+                            <span className="text-4xl mb-2 opacity-50">📊</span>
+                            <p className="text-sm font-medium">Enter details & click "Calculate SIP" to view results</p>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
 
             {showSEOContent && (

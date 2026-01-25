@@ -90,25 +90,32 @@ export default function CompoundInterestCalculator() {
                                 </div>
                                 <button onClick={calculate} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Calculate Returns</button>
 
-                                {/* Inline Result */}
-                                {result && (
-                                    <div ref={resultRef} className="mt-8 pt-8 border-t border-slate-100 animate-in fade-in slide-in-from-top-4 duration-500">
-                                        <div className="bg-blue-50 rounded-xl p-6 mb-6 text-center border border-blue-100">
-                                            <p className="text-blue-600 text-sm font-bold uppercase tracking-wide mb-1">Maturity Amount</p>
-                                            <p className="text-4xl sm:text-5xl font-extrabold text-blue-900">₹{result.amount.toLocaleString('en-IN')}</p>
-                                        </div>
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
-                                                <p className="text-xs text-slate-500 font-semibold uppercase">Principal</p>
-                                                <p className="text-lg font-bold text-slate-800">₹{parseFloat(principal).toLocaleString('en-IN')}</p>
+                                {/* Inline Result - Reserved Space */}
+                                <div role="region" aria-live="polite" className="mt-8 border-t border-slate-100 min-h-[260px]">
+                                    {result ? (
+                                        <div ref={resultRef} className="pt-8 animate-in fade-in slide-in-from-top-4 duration-500">
+                                            <div className="bg-blue-50 rounded-xl p-6 mb-6 text-center border border-blue-100">
+                                                <p className="text-blue-600 text-sm font-bold uppercase tracking-wide mb-1">Maturity Amount</p>
+                                                <p className="text-4xl sm:text-5xl font-extrabold text-blue-900">₹{result.amount.toLocaleString('en-IN')}</p>
                                             </div>
-                                            <div className="bg-green-50 p-4 rounded-lg text-center border border-green-200">
-                                                <p className="text-xs text-green-700 font-semibold uppercase">Compound Interest</p>
-                                                <p className="text-lg font-bold text-green-700">+ ₹{result.interest.toLocaleString('en-IN')}</p>
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
+                                                    <p className="text-xs text-slate-500 font-semibold uppercase">Principal</p>
+                                                    <p className="text-lg font-bold text-slate-800">₹{parseFloat(principal).toLocaleString('en-IN')}</p>
+                                                </div>
+                                                <div className="bg-green-50 p-4 rounded-lg text-center border border-green-200">
+                                                    <p className="text-xs text-green-700 font-semibold uppercase">Compound Interest</p>
+                                                    <p className="text-lg font-bold text-green-700">+ ₹{result.interest.toLocaleString('en-IN')}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                )}
+                                    ) : (
+                                        <div className="h-full flex flex-col items-center justify-center text-slate-400 pt-16 pb-8">
+                                            <span className="text-4xl mb-2 opacity-50">💰</span>
+                                            <p className="text-sm font-medium">Enter details & click "Calculate Returns"</p>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
 

@@ -64,7 +64,7 @@ function SEOSection({ title, faq, features, children }) {
 
             {/* FAQ Accordion */}
             {faq && faq.length > 0 && (
-                <section className="bg-white rounded-2xl shadow-sm border border-slate-200">
+                <section className="bg-white rounded-2xl shadow-sm border border-slate-200" style={{ contain: 'content' }}>
                     <div className="p-6 md:p-8 border-b border-slate-100 bg-slate-50/50 rounded-t-2xl">
                         <h2 className="text-2xl font-bold text-slate-900 text-center">Frequently Asked Questions</h2>
                         <p className="text-slate-500 mt-2 text-sm text-center">Common queries answered for you</p>
