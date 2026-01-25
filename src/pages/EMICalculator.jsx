@@ -1,4 +1,5 @@
-import MetaManager from '../components/MetaManager'
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import EMICalculatorUI from '../components/calculators/EMICalculatorUI'
@@ -16,15 +17,25 @@ export default function EMICalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
+            <SeoHead
                 title="EMI Calculator - Calculate Home, Car & Personal Loan EMI | CalcGuide"
                 description="Use this free EMI Calculator to check your Home Loan, Car Loan, or Personal Loan EMI. Features salary-based affordability check to help you decide safely."
                 keywords="emi calculator, home loan calculator, car loan emi, personal loan emi"
+                canonicalPath={ROUTES.CALCULATORS.LOAN.EMI}
             />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.LOAN} className="hover:text-blue-600">Loan Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">EMI Calculator</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">EMI Calculator</h1>
                     <p className="text-slate-600">Calculate loan EMI and check affordability against your salary</p>
                 </div>
@@ -34,6 +45,14 @@ export default function EMICalculator() {
                 <div className="grid md:grid-cols-3 gap-8">
                     <div className="md:col-span-2">
                         <EMICalculatorUI />
+
+                        <CalculatorContent
+                            title="EMI Calculator"
+                            whatIs="An EMI (Equated Monthly Installment) Calculator helps you estimate your monthly loan repayment amount. Whether you are taking a home loan, car loan, or personal loan, knowing your EMI in advance helps you budget better and choose a tenure that fits your pocket. This tool accounts for principal, interest rate, and loan duration."
+                            whoShouldUse="Anyone planning to apply for a loan should use this tool. It is essential for home buyers to check affordability, car buyers to decide budget, and anyone taking a personal loan to ensure they don't over-leverage their monthly income."
+                            example="If you take a Home Loan of ₹50 Lakhs for 20 years at 8.5% interest, your monthly EMI will be approximately ₹43,391. Over the 20 years, you will pay a total interest of roughly ₹54 Lakhs, meaning you pay back a total of ₹1.04 Crores."
+                            commonMistake="Choosing the longest tenure (e.g., 30 years) just to get a lower EMI. While this reduces monthly pressure, it drastically increases the total interest you pay. It's often better to pay a slightly higher EMI for a shorter tenure to save lakhs in interest."
+                        />
                     </div>
 
                     {/* Sidebar with Related Tools */}

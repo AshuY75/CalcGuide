@@ -13,6 +13,11 @@ const EMICalculator = lazy(() => import('../pages/EMICalculator'));
 const LoanEligibility = lazy(() => import('../pages/LoanEligibility'));
 const VillageInterest = lazy(() => import('../pages/VillageInterestCalculator'));
 
+// Hubs
+const LoanHub = lazy(() => import('../pages/hubs/LoanHub'));
+const InvestmentHub = lazy(() => import('../pages/hubs/InvestmentHub'));
+const SIPHub = lazy(() => import('../pages/hubs/SIPHub'));
+
 // Investment
 const SIPCalculator = lazy(() => import('../pages/SIPCalculator'));
 const SIP1CrCalculator = lazy(() => import('../pages/SIP1CrCalculator'));
@@ -77,6 +82,11 @@ export default function AppRoutes() {
             <Routes>
                 <Route path={ROUTES.HOME} element={<MainLayout />}>
                     <Route index element={<RouteWrapper Component={Home} />} />
+
+                    {/* Hubs */}
+                    <Route path={ROUTES.HUBS.LOAN} element={<RouteWrapper Component={LoanHub} />} />
+                    <Route path={ROUTES.HUBS.INVESTMENT} element={<RouteWrapper Component={InvestmentHub} />} />
+                    <Route path={ROUTES.HUBS.SIP} element={<RouteWrapper Component={SIPHub} />} />
 
                     {/* Loans */}
                     <Route path={ROUTES.CALCULATORS.LOAN.EMI} element={<RouteWrapper Component={EMICalculator} />} />

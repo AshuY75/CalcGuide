@@ -53,16 +53,18 @@ export default function Header() {
         {
             category: 'Loans & EMI',
             slug: 'loans',
+            hubPath: ROUTES.HUBS.LOAN,
             items: [
                 { name: 'EMI Calculator', path: ROUTES.CALCULATORS.LOAN.EMI, icon: '💰' },
                 { name: 'Loan Eligibility', path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY, icon: '✅' },
                 { name: 'Village Interest', path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST, icon: '🌾' },
-                { name: 'Simple Interest', path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST, icon: '📉' }, // Kept here for logical grouping in menu, url is investment
+                { name: 'Simple Interest', path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST, icon: '📉' },
             ]
         },
         {
             category: 'Investments',
             slug: 'investments',
+            hubPath: ROUTES.HUBS.INVESTMENT,
             items: [
                 { name: 'SIP Calculator', path: ROUTES.CALCULATORS.INVESTMENT.SIP, icon: '📈' },
                 { name: 'Target SIP (1 Cr)', path: ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE, icon: '🎯' },
@@ -83,6 +85,7 @@ export default function Header() {
         {
             category: 'Utility',
             slug: 'utility',
+            // No main utility hub requested, but good to have if needed. Skipping for now as user didn't request Utility Hub.
             items: [
                 { name: 'Age Calculator', path: ROUTES.CALCULATORS.UTILITY.AGE, icon: '🎂' },
                 { name: 'Date Difference', path: ROUTES.CALCULATORS.UTILITY.DATE_DIFF, icon: '📆' },

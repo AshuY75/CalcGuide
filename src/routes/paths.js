@@ -1,5 +1,10 @@
 export const ROUTES = {
     HOME: "/",
+    HUBS: {
+        LOAN: "/loan-calculators",
+        INVESTMENT: "/investment-calculators",
+        SIP: "/sip-calculators"
+    },
     CALCULATORS: {
         LOAN: {
             EMI: "/calculators/loan/emi-calculator",

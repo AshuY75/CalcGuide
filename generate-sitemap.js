@@ -12,6 +12,10 @@ const BASE_URL = 'https://calcguide.in';
 
 const pages = [
   '/',
+  // Hubs
+  '/loan-calculators',
+  '/investment-calculators',
+  '/sip-calculators',
   // Loan
   '/calculators/loan/emi-calculator',
   '/calculators/loan/loan-eligibility',
@@ -47,7 +51,9 @@ const pages = [
   '/bigha-to-acre-uttar-pradesh',
   // Learn
   '/learn/why-sip-beats-fd-long-term',
-  '/learn/how-village-interest-sood-vaddi-works'
+  '/learn/how-village-interest-sood-vaddi-works',
+  '/learn',
+  '/learn/how-sip-returns-are-calculated'
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

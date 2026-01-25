@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import MetaManager from '../components/MetaManager'
-import SEOSection from '../components/SEOSection'
+import SeoHead from '../components/SeoHead'
+import CalculatorContent from '../components/CalculatorContent'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
@@ -51,10 +51,11 @@ export default function FDCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
+            <SeoHead
                 title="FD Calculator - Fixed Deposit Interest Rate Calculator India"
                 description="Calculate FD Returns instantly with quarterly compounding support. Check Maturity Amount and Total Interest for SBI, HDFC, ICICI, and Post Office FDs."
                 keywords="fd calculator, fixed deposit calculator, fd interest calculator, bank fd rates"
+                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.FD}
             />
             <SchemaGenerator
                 name="FD Calculator"
@@ -64,6 +65,15 @@ export default function FDCalculator() {
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Breadcrumb */}
+                    <nav className="text-sm text-slate-500 mb-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span className="mx-2">›</span>
+                        <Link to={ROUTES.HUBS.INVESTMENT} className="hover:text-blue-600">Investment Calculators</Link>
+                        <span className="mx-2">›</span>
+                        <span className="text-slate-900">FD Calculator</span>
+                    </nav>
+
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">FD Calculator</h1>
                     <p className="text-slate-600">Calculate Fixed Deposit returns with quarterly compounding</p>
                 </div>
@@ -113,24 +123,13 @@ export default function FDCalculator() {
                             </div>
                         </div>
 
-                        <SEOSection title="About Fixed Deposits (FD)" faq={faqData} features={features}>
-                            <h3>What is a Fixed Deposit?</h3>
-                            <p>
-                                A Fixed Deposit (FD) is a financial instrument provided by banks and NBFCs which provides investors a higher rate of interest than a regular savings account, until the given maturity date. It is considered one of the safest investment options.
-                            </p>
-                            <h3>How FD interest works</h3>
-                            <p>
-                                In India, FD interest is typically compounded <strong>quarterly</strong>. This means if you invest ₹1 Lakh at 6% p.a., the interest is calculated every 3 months and added to the principal. The next interest is calculated on this increased principal. This "interest on interest" effect yields slightly higher returns than simple interest.
-                            </p>
-                            <h3>When is FD better than SIP?</h3>
-                            <p>
-                                FDs are ideal when you cannot afford to take any risk with your principal (e.g., saving for a wedding in 1 year, or parking emergency funds). SIPs in equity mutual funds are better for long-term wealth creation (5+ years) where you can tolerate market fluctuations for higher returns.
-                            </p>
-                            <h3>Taxation on FD</h3>
-                            <p className="text-sm bg-yellow-50 p-3 rounded-lg border border-yellow-100 text-yellow-800">
-                                <strong>Note:</strong> Interest from FDs is fully taxable. It is added to your annual income and taxed as per your slab. Banks deduct 10% TDS if interest exceeds ₹40,000 (₹50,000 for senior citizens) in a financial year.
-                            </p>
-                        </SEOSection>
+                        <CalculatorContent
+                            title="FD Calculator"
+                            whatIs="A Fixed Deposit (FD) Calculator estimates the maturity amount and interest earned on your deposit. In India, most bank FDs compound interest quarterly (every 3 months), meaning your interest starts earning interest. This calculator handles that formula accurately, unlike simple interest calculators."
+                            whoShouldUse="This tool is perfect for risk-averse investors, senior citizens seeking guaranteed income, or anyone saving for a short-term goal (1-3 years) who cannot risk stock market volatility. If you want safety and predictable returns, FD is the right choice."
+                            example="If you invest ₹1 Lakh for 5 years at 7% interest (compounded quarterly), you won't just get flat interest. Due to compounding, your maturity amount will be approximately ₹1,41,478, earning you ₹41,478 in interest."
+                            commonMistake="Ignoring the tax liability (TDS). FD interest is fully taxable as per your income tax slab. Another mistake is breaking an FD before maturity, which attracts a penalty (usually 1%) and lowers your effective interest rate."
+                        />
                     </div>
 
                     <div className="space-y-6">
