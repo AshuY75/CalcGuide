@@ -10,42 +10,48 @@ export default function Home() {
             desc: 'Sood / Vaddi calculator for village loans',
             icon: '🌾',
             tag: 'New',
-            path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST
+            path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST,
+            preload: () => import('../pages/VillageInterestCalculator')
         },
         {
             title: 'Land Area Converter',
             desc: 'Bigha, Guntha, Katha conversion by State',
             icon: '🏞️',
             tag: 'New',
-            path: ROUTES.CALCULATORS.CONSTRUCTION.LAND_AREA
+            path: ROUTES.CALCULATORS.CONSTRUCTION.LAND_AREA,
+            preload: () => import('../pages/LandAreaConverter')
         },
         {
             title: 'Gold Jewellery Price',
             desc: 'Calculate real price with Making & GST',
             icon: '💍',
             tag: 'New',
-            path: ROUTES.CALCULATORS.GOLD.JEWELLERY
+            path: ROUTES.CALCULATORS.GOLD.JEWELLERY,
+            preload: () => import('../pages/GoldJewelleryCalculator')
         },
         {
             title: 'Old Gold Exchange',
             desc: 'Value of old gold with melting loss',
             icon: '⚖️',
             tag: null,
-            path: ROUTES.CALCULATORS.GOLD.OLD_GOLD
+            path: ROUTES.CALCULATORS.GOLD.OLD_GOLD,
+            preload: () => import('../pages/OldGoldCalculator')
         },
         {
             title: 'Construction Cost',
             desc: 'House construction cost estimator',
             icon: '🏗️',
             tag: 'Popular',
-            path: ROUTES.CALCULATORS.CONSTRUCTION.COST
+            path: ROUTES.CALCULATORS.CONSTRUCTION.COST,
+            preload: () => import('../pages/ConstructionCostCalculator')
         },
         {
             title: 'Brick Calculator',
             desc: 'Estimate bricks, cement & sand',
             icon: '🧱',
             tag: null,
-            path: ROUTES.CALCULATORS.CONSTRUCTION.BRICK
+            path: ROUTES.CALCULATORS.CONSTRUCTION.BRICK,
+            preload: () => import('../pages/BrickCalculator')
         },
 
         // Phase 1
@@ -54,84 +60,96 @@ export default function Home() {
             desc: 'Loan EMI with salary risk analysis',
             icon: '💰',
             tag: 'Popular',
-            path: ROUTES.CALCULATORS.LOAN.EMI
+            path: ROUTES.CALCULATORS.LOAN.EMI,
+            preload: () => import('../pages/EMICalculator')
         },
         {
             title: 'SIP Calculator',
             desc: 'Plan mutual fund investments',
             icon: '📈',
             tag: 'Trending',
-            path: ROUTES.CALCULATORS.INVESTMENT.SIP
+            path: ROUTES.CALCULATORS.INVESTMENT.SIP,
+            preload: () => import('../pages/SIPCalculator')
         },
         {
             title: 'Loan Eligibility',
             desc: 'Check maximum loan amount',
             icon: '✅',
             tag: null,
-            path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY
+            path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY,
+            preload: () => import('../pages/LoanEligibility')
         },
         {
             title: 'FD Calculator',
             desc: 'Fixed deposit returns',
             icon: '🏛️',
             tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.FD
+            path: ROUTES.CALCULATORS.INVESTMENT.FD,
+            preload: () => import('../pages/FDCalculator')
         },
         {
             title: 'RD Calculator',
             desc: 'Recurring deposit returns',
             icon: '📊',
             tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.RD
+            path: ROUTES.CALCULATORS.INVESTMENT.RD,
+            preload: () => import('../pages/RDCalculator')
         },
         {
             title: 'Age Calculator',
             desc: 'Exact age for govt exams',
             icon: '📅',
             tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.AGE
+            path: ROUTES.CALCULATORS.UTILITY.AGE,
+            preload: () => import('../pages/AgeCalculator')
         },
         {
             title: 'SIP ₹1 Crore',
             desc: 'Monthly SIP for target',
             icon: '🎯',
             tag: 'Goal',
-            path: ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE
+            path: ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE,
+            preload: () => import('../pages/SIP1CrCalculator')
         },
         {
             title: 'Percentage',
             desc: 'All percentage calculations',
             icon: '➗',
             tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.PERCENTAGE
+            path: ROUTES.CALCULATORS.UTILITY.PERCENTAGE,
+            preload: () => import('../pages/PercentageCalculator')
         },
         {
             title: 'Date Difference',
             desc: 'Calculate days between dates',
             icon: '📆',
             tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.DATE_DIFF
+            path: ROUTES.CALCULATORS.UTILITY.DATE_DIFF,
+            preload: () => import('../pages/DateDifferenceCalculator')
         },
         {
             title: 'Exam Eligibility',
             desc: 'Age for govt exams',
             icon: '📝',
             tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.EXAM
+            path: ROUTES.CALCULATORS.UTILITY.EXAM,
+            preload: () => import('../pages/ExamEligibility')
         },
         {
             title: 'Simple Interest',
             desc: 'Calculate simple interest',
             icon: '📉',
             tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST
+            path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST,
+            preload: () => import('../pages/SimpleInterestCalculator')
         },
         {
             title: 'Compound Interest',
             desc: 'Power of compounding',
             icon: '🚀',
             tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST
+            path: ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST,
+            preload: () => import('../pages/CompoundInterestCalculator')
         },
     ]
 
