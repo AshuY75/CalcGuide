@@ -2,6 +2,16 @@ import MetaManager from '../../components/MetaManager'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 
+export const metadata = {
+    title: "Village Interest (Sood) Calculation Explained",
+    slug: ROUTES.LEARN.VILLAGE_INT_EXPL,
+    description: "What does '₹2 interest' actually mean? Learn how to calculate daily and monthly village interest rates correctly.",
+    category: "Loan",
+    icon: "🌾",
+    colorClass: "bg-orange-50",
+    date: "2023-12-10"
+}
+
 export default function VillageInterestExplainer() {
     const schema = {
         "@context": "https://schema.org",

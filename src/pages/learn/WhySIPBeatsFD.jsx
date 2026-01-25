@@ -1,7 +1,15 @@
-import React from 'react';
-import MetaManager from '../../components/MetaManager';
-import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+
+export const metadata = {
+    title: "Why SIP Beats FD for Long-Term Wealth",
+    slug: ROUTES.LEARN.SIP_VS_FD,
+    description: "Inflation is eating your Fixed Deposit returns. Detailed math comparing SIP vs FD outcomes over 10+ years with tax analysis.",
+    category: "Investment",
+    icon: "📈",
+    colorClass: "bg-green-50",
+    date: "2025-01-26",
+    isNew: true
+}
 
 export default function WhySIPBeatsFD() {
     const lastUpdated = "2025-01-26";

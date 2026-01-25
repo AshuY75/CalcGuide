@@ -23,6 +23,16 @@ const faqData = [
     }
 ]
 
+export const metadata = {
+    title: "How SIP Returns Are Calculated in India",
+    slug: ROUTES.LEARN.SIP_RETURNS_CALCULATION,
+    description: "Understand the math behind your mutual fund investments. Learn about XIRR, compounding, and see real examples of ₹5000/month SIPs.",
+    category: "Investment",
+    icon: "📊",
+    colorClass: "bg-blue-50",
+    date: "2024-01-15"
+}
+
 export default function HowSIPReturnsCalculated() {
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900">

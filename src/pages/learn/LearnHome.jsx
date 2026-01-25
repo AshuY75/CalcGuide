@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
-import { articles } from '../../data/articles'
+import { getAllArticles } from '../../utils/articleLoader'
 import MetaManager from '../../components/MetaManager'
 import { BreadcrumbSchema } from '../../components/SchemaGenerator'
 
 export default function LearnHome() {
+    const articles = getAllArticles();
+
     return (
         <div className="min-h-screen bg-slate-50">
             <MetaManager
