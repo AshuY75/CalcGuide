@@ -80,6 +80,14 @@ export default function HowSIPReturnsCalculated() {
                         So, how exactly do you know if your SIP is doing well? And how does the calculator predict your future wealth? Let's dive in.
                     </p>
 
+                    {/* Why Trust Block */}
+                    <div className="bg-green-50 rounded-xl p-5 mb-8 text-sm text-green-900 border border-green-100">
+                        <p className="font-semibold mb-1">Why trust this guide?</p>
+                        <p className="opacity-90">
+                            This guide is tailored for <strong>Indian investors</strong>. We use standard mutual fund growth formulas used by major AMCs (like SBI, HDFC Mutual Fund) and exclude complex jargon. All calculations correlate with our <Link to={ROUTES.CALCULATORS.INVESTMENT.SIP} className="underline hover:text-green-700">SIP Calculator</Link>.
+                        </p>
+                    </div>
+
                     <h2>1. The Concept: Buying Units, Not Value</h2>
                     <p>
                         When you do a SIP, you are not directly "saving" money. You are buying units of a Mutual Fund.
@@ -130,8 +138,27 @@ export default function HowSIPReturnsCalculated() {
                         n = Total number of months
                     </p>
 
-                    <h2>3. Real World Examples</h2>
-                    <p>Let's look at how small consistency leads to long-term wealth creation.</p>
+                    {/* Originality Signal: CalcGuide Logic */}
+                    <div className="my-10">
+                        <h2 className="text-2xl font-bold text-slate-800 mb-4">How CalcGuide Calculates SIP Returns</h2>
+                        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+                            <p className="mb-4">
+                                At <strong>CalcGuide</strong>, we believe in transparency. While many tools just show a final number, our calculator uses the monthly compounding logic to be as precise as possible.
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2 text-slate-700 mb-4">
+                                <li>We treat every monthly installment as a separate investment.</li>
+                                <li>We apply the <strong>Compound Annual Growth Rate (CAGR)</strong> formula daily/monthly depending on the tool settings.</li>
+                                <li>We assume "End of Period" payments for safer estimation (meaning interest is calculated after the money lands in the fund).</li>
+                            </ul>
+                            <div className="flex flex-wrap gap-2 text-sm">
+                                <span className="bg-slate-100 px-3 py-1 rounded-full text-slate-600">Simulates standard Equity Funds</span>
+                                <span className="bg-slate-100 px-3 py-1 rounded-full text-slate-600">Verified formula</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>3. Real World Examples (10 vs 20 Years)</h2>
+                    <p>Let's look at how small consistency leads to long-term wealth creation in the Indian market.</p>
 
                     <h3 className="text-xl font-bold mt-8 mb-4 text-blue-800">Case A: ₹5,000 Monthly</h3>
                     <div className="grid sm:grid-cols-2 gap-4 not-prose mb-8">
@@ -173,9 +200,14 @@ export default function HowSIPReturnsCalculated() {
                     <h2>4. Common SIP Mistakes to Avoid</h2>
                     <ul>
                         <li><strong>Stopping simply because the market is red:</strong> This is the worst mistake. When the market is down, you get more units cheap. If you stop, you lose this advantage.</li>
-                        <li><strong>Not Increasing SIP with Salary:</strong> A flat SIP of ₹5,000 for 20 years is good, but increasing it by 10% every year (Step-up SIP) can create double the wealth.</li>
+                        <li><strong>Not Increasing SIP with Salary:</strong> A flat SIP of ₹5,000 for 20 years is good, but increasing it by 10% every year (<Link to={ROUTES.CALCULATORS.INVESTMENT.SIP} className="text-blue-600 hover:underline">Step-up SIP</Link>) can create double the wealth.</li>
                         <li><strong>Ideally, combine SIP with FD:</strong> Don't put emergency funds in SIP. Use our <Link to={ROUTES.CALCULATORS.INVESTMENT.FD}>FD Calculator</Link> to plan for safe, short-term goals.</li>
                     </ul>
+
+                    {/* Author/Purpose Note */}
+                    <p className="text-sm text-slate-500 mt-6 pt-6 border-t border-slate-100">
+                        <em>This guide is written for educational purposes by <strong>CalcGuide</strong> to help Indian investors understand SIP calculations without sales pressure.</em>
+                    </p>
 
                     {/* Trust/Authority Block */}
                     <div className="bg-slate-50 border-l-4 border-slate-400 p-4 mt-8 text-sm text-slate-600 italic">
