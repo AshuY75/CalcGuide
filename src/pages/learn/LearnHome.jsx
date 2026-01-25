@@ -51,8 +51,9 @@ export default function LearnHome() {
                             <span className="text-6xl group-hover:scale-110 transition-transform duration-500">📈</span>
                         </div>
                         <div className="p-6">
-                            <h2 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                            <h2 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors flex items-center gap-2">
                                 Why SIP Beats FD for Long-Term Wealth
+                                <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full border border-blue-200 uppercase tracking-wide">New</span>
                             </h2>
                             <p className="text-slate-600 text-sm mb-4 line-clamp-3">
                                 Inflation is eating your Fixed Deposit returns. Detailed math comparing SIP vs FD outcomes over 10+ years with tax analysis.
