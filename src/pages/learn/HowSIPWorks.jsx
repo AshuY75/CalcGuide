@@ -7,19 +7,19 @@ import SEOSection from '../../components/SEOSection'
 const faqData = [
     {
         question: "Is SIP interest simple or compound?",
-        answer: "SIP works on the principle of compound interest. The returns you generate are reinvested (compounded), which helps your money grow exponentially over 10-15 years."
+        answer: "SIP returns in mutual funds work on the principle of compound interest. Unlike simple interest where your initial investment earns a fixed return, SIP returns are reinvested. This means you earn returns on your returns, helping your money grow exponentially over long periods (10-15 years)."
     },
     {
         question: "What is the best date for SIP?",
-        answer: "There is no 'best' date. However, investing early in the month (e.g., 5th or 10th) ensures your salary is invested before you spend it. Market volatility makes timing irrelevant for long-term SIPs."
+        answer: "There is no 'best' date for market performance, as markets fluctuate daily. However, for financial discipline, it is best to set your SIP date 1-2 days after your salary date (e.g., 5th or 7th of the month). This ensures your investment happens automatically before you start spending."
     },
     {
         question: "Does SIP deduct money automatically?",
-        answer: "Yes, once you set up a mandate with your bank, the SIP amount is automatically deducted on the chosen date every month."
+        answer: "Yes. When you start a SIP, you sign a bank mandate (NACH/OTE) that authorizes the mutual fund company to deduct the fixed amount from your bank account on the chosen date every month."
     },
     {
         question: "Can I increase my SIP amount later?",
-        answer: "Yes, this is called a 'Step-up SIP'. Increasing your SIP by just 10% every year can double your final wealth compared to a fixed SIP."
+        answer: "Yes, this is called a 'Step-up SIP' or 'Top-up SIP'. Most platforms allow you to increase your SIP amount annually or as needed. Increasing your investment by even 10% each year can nearly double your final corpus compared to a fixed monthly amount."
     }
 ]
 
@@ -63,7 +63,7 @@ export default function HowSIPReturnsCalculated() {
                         How SIP Returns Are Calculated in India (With Examples)
                     </h1>
                     <p className="text-lg text-slate-600 leading-relaxed">
-                        Confused about how your small monthly investments turn into crores? We break down the math, the magic of compounding, and the logic behind SIP returns.
+                        Confused about how your small monthly investments turn into crores? We break down the math, the power of compound interest, and the logic behind SIP returns.
                     </p>
                 </div>
             </header>
@@ -176,6 +176,13 @@ export default function HowSIPReturnsCalculated() {
                         <li><strong>Not Increasing SIP with Salary:</strong> A flat SIP of ₹5,000 for 20 years is good, but increasing it by 10% every year (Step-up SIP) can create double the wealth.</li>
                         <li><strong>Ideally, combine SIP with FD:</strong> Don't put emergency funds in SIP. Use our <Link to={ROUTES.CALCULATORS.INVESTMENT.FD}>FD Calculator</Link> to plan for safe, short-term goals.</li>
                     </ul>
+
+                    {/* Trust/Authority Block */}
+                    <div className="bg-slate-50 border-l-4 border-slate-400 p-4 mt-8 text-sm text-slate-600 italic">
+                        <p>
+                            <strong>Note:</strong> CalcGuide simplifies Indian investment calculations using standard financial formulas and publicly accepted assumptions. Actual returns depend on market performance, expense ratios, and fund selection. This guide is for educational purposes only.
+                        </p>
+                    </div>
 
                 </div>
 
