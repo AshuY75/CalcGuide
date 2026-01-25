@@ -45,7 +45,23 @@ export default function LearnHome() {
                         </div>
                     </Link>
 
-                    {/* Placeholder for future articles */}
+                    {/* Article 2 */}
+                    <Link to={ROUTES.LEARN.SIP_VS_FD} className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
+                        <div className="h-48 bg-green-50 flex items-center justify-center p-6">
+                            <span className="text-6xl group-hover:scale-110 transition-transform duration-500">📈</span>
+                        </div>
+                        <div className="p-6">
+                            <h2 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                Why SIP Beats FD for Long-Term Wealth
+                            </h2>
+                            <p className="text-slate-600 text-sm mb-4 line-clamp-3">
+                                Inflation is eating your Fixed Deposit returns. Detailed math comparing SIP vs FD outcomes over 10+ years with tax analysis.
+                            </p>
+                            <span className="text-blue-600 text-sm font-semibold flex items-center">
+                                Read Guide <span className="ml-1">→</span>
+                            </span>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
