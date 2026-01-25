@@ -131,6 +131,11 @@ export default function Header() {
                                 </div>
                             </div>
                         ))}
+
+                        {/* Learn Link - Desktop */}
+                        <Link to={ROUTES.LEARN.HOME} className="flex items-center px-3 py-2 text-sm font-semibold text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg transition-all">
+                            Learn
+                        </Link>
                     </nav>
 
                     <button
@@ -166,6 +171,19 @@ export default function Header() {
                                 </div>
                             </div>
                         ))}
+
+                        {/* Learn Link - Mobile */}
+                        <div className="space-y-3 pt-2 border-t border-slate-100">
+                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider px-2">Knowledge</h3>
+                            <Link
+                                to={ROUTES.LEARN.HOME}
+                                className="flex items-center px-3 py-3 text-base font-medium text-slate-700 bg-slate-50 rounded-xl hover:bg-blue-50 hover:text-blue-700 active:scale-[0.98] transition-all"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                <span className="mr-3 text-xl">📚</span>
+                                Learn
+                            </Link>
+                        </div>
                     </div>
                 </div>
             )}
