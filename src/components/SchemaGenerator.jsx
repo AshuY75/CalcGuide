@@ -1,17 +1,11 @@
 import { useMemo, memo } from 'react';
-import { Helmet } from 'react-helmet-async';
 
 const InjectSchema = memo(({ id, schema }) => {
     return (
-        <Helmet>
-            <script type="application/ld+json" id={id}>
-                {JSON.stringify(schema)}
-            </script>
-        </Helmet>
+        <script type="application/ld+json" id={id} dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     );
 }, (prevProps, nextProps) => {
     // Custom comparison to ensure deep equality of schema avoids re-render
-    // Although useMemo in parent handles reference stability, this is a safety net
     return prevProps.id === nextProps.id && JSON.stringify(prevProps.schema) === JSON.stringify(nextProps.schema);
 });
 
