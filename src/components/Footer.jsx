@@ -39,6 +39,7 @@ export default function Footer() {
                             <Link to={ROUTES.LEGAL.PRIVACY} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">Privacy Policy</Link>
                             <Link to={ROUTES.LEGAL.TERMS} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">Terms of Service</Link>
                             <Link to={ROUTES.LEGAL.FEEDBACK} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">Feedback / Contact</Link>
+                            <Link to={ROUTES.LEGAL.ABOUT} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">About Us</Link>
                         </nav>
                     </div>
 

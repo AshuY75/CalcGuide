@@ -102,6 +102,10 @@ export const SEO_CONFIG = {
         title: "Feedback - Help Us Improve | CalcGuide",
         description: "Share your suggestions, report errors, or request new calculators to help us serve you better.",
     },
+    "/about": {
+        title: "About Us - CalcGuide Mission & Story",
+        description: "Learn about CalcGuide's mission to provide free, accurate, and privacy-focused financial calculators for India.",
+    },
     "/sip-calculator-5000-per-month": {
         title: "SIP Calculator for ₹5,000 Per Month - Wealth Projection",
         description: "See how much ₹5,000 monthly SIP can grow in 5, 10, or 20 years at different return rates.",

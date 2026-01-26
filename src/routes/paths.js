@@ -38,7 +38,8 @@ export const ROUTES = {
     LEGAL: {
         PRIVACY: "/privacy-policy",
         TERMS: "/terms-of-service",
-        FEEDBACK: "/feedback"
+        FEEDBACK: "/feedback",
+        ABOUT: "/about"
     },
     SEO: {
         SIP_5000: "/sip-calculator-5000-per-month",

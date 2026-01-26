@@ -44,6 +44,7 @@ import ExamEligibility from '../pages/ExamEligibility';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import TermsOfService from '../pages/TermsOfService';
 import Feedback from '../pages/Feedback';
+import About from '../pages/About';
 
 // SEO Landing Pages
 import SIP5000 from '../pages/seo/SIP5000';
@@ -102,6 +103,7 @@ export const routes = [
             { path: ROUTES.LEGAL.PRIVACY, element: <RouteWrapper Component={PrivacyPolicy} /> },
             { path: ROUTES.LEGAL.TERMS, element: <RouteWrapper Component={TermsOfService} /> },
             { path: ROUTES.LEGAL.FEEDBACK, element: <RouteWrapper Component={Feedback} /> },
+            { path: ROUTES.LEGAL.ABOUT, element: <RouteWrapper Component={About} /> },
 
             /* SEO Landing Pages */
             { path: ROUTES.SEO.SIP_5000, element: <RouteWrapper Component={SIP5000} /> },
