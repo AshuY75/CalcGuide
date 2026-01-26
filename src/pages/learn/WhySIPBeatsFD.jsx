@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
-import MetaManager from '../../components/MetaManager'
+
 import { SchemaGenerator, BreadcrumbSchema } from '../../components/SchemaGenerator'
 import SEOSection from '../../components/SEOSection'
 
@@ -35,11 +35,7 @@ export default function WhySIPBeatsFD() {
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-            <MetaManager
-                title="SIP vs FD: Why SIP Wins for Long Term - 2025 Analysis"
-                description="Think FD is safe? Think again. See how inflation eats your FD returns and why SIP is the only path to real wealth (₹1 Crore+) in India."
-                keywords="sip vs fd, sip vs fixed deposit, inflation impact on fd, best investment for long term india, mutual fund vs bank deposit"
-            />
+            
 
             <BreadcrumbSchema items={[
                 { name: 'Home', url: 'https://calcguide.in' },

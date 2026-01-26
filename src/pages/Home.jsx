@@ -1,6 +1,7 @@
 import CalculatorCard from '../components/CalculatorCard'
 import { ROUTES } from '../routes/paths'
 
+
 export default function Home() {
     // Map of old paths keys to new ROUTES constants
     const calculators = [
@@ -155,6 +156,7 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-slate-50">
+            
             <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16 sm:py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">

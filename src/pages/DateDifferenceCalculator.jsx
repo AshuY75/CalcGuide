@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -93,12 +93,7 @@ export default function DateDifferenceCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Date Difference Calculator - Days Between Two Dates"
-                description="Calculate the number of days, weeks, months, and years between two dates. Perfect for planning travel, work notice periods, or age differences."
-                keywords="date difference calculator, days between dates, calculate duration, weeks between dates"
-                canonicalPath={ROUTES.CALCULATORS.UTILITY.DATE_DIFF}
-            />
+            
             <SchemaGenerator
                 name="Date Difference Calculator"
                 description="Calculate duration between two dates in Days, Weeks, Months, Years."

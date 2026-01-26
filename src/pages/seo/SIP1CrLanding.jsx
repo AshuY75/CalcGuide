@@ -1,4 +1,4 @@
-import MetaManager from '../../components/MetaManager'
+
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 import SIP1CrCalculatorUI from '../../components/calculators/SIP1CrCalculatorUI'
@@ -30,11 +30,7 @@ export default function SIP1CrLanding() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
-                title="SIP 1 Crore Calculator - Plan Your Journey to 1 Crore"
-                description="Find out exactly how much SIP is needed to build a corpus of ₹1 Crore. Start your journey to becoming a Crorepati today."
-                keywords="sip 1 crore calculator, how to get 1 crore in 10 years, 15 15 15 rule sip"
-            />
+            
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">

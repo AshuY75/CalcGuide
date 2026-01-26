@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import SIPCalculatorUI from '../components/calculators/SIPCalculatorUI'
 import { SchemaGenerator } from '../components/SchemaGenerator'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 
@@ -38,12 +38,7 @@ const faqData = [
 export default function SIPCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="SIP Calculator - Calculate Mutual Fund Returns Online"
-                description="Calculate how much your monthly SIP investments can grow. Check wealth gain and maturity amount with our free Mutual Fund SIP Calculator."
-                keywords="sip calculator, mutual fund calculator, sip returns, investment calculator india, systematic investment plan"
-                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.SIP}
-            />
+            
 
             <SchemaGenerator
                 type="FinancialProduct"

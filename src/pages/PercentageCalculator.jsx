@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -74,12 +74,7 @@ export default function PercentageCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Percentage Calculator - Calculate % Increase, Decrease & Difference"
-                description="Use our free Percentage Calculator to find Percentage of a number, Percentage Increase/Decrease, and Marks Percentage. Quick, accurate, and easy."
-                keywords="percentage calculator, percent change calculator, percentage increase calculator, calculate percent off"
-                canonicalPath={ROUTES.CALCULATORS.UTILITY.PERCENTAGE}
-            />
+            
             <SchemaGenerator
                 name="Percentage Calculator"
                 description="Solve percentage problems: Find %, % Change, and what % is X of Y."

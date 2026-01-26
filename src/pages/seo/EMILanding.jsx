@@ -1,8 +1,9 @@
-import MetaManager from '../../components/MetaManager'
+
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 import EMICalculatorUI from '../../components/calculators/EMICalculatorUI'
 import SEOSection from '../../components/SEOSection'
+import { SchemaGenerator } from '../../components/SchemaGenerator'
 
 export default function EMILanding() {
     const faqData = [
@@ -20,7 +21,7 @@ export default function EMILanding() {
         }
     ]
 
-    const schema = {
+    const schemaData = {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "EMI Calculator for Home Loan India",
@@ -30,12 +31,13 @@ export default function EMILanding() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
-                title="EMI Calculator for Home Loan India (2025)"
-                description="Calculate your House Loan EMI accurately. Check affordability, total interest payable, and amortization schedule for Indian Banks."
-                keywords="home loan emi calculator, housing loan interest, sbi home loan emi, hdfc home loan calculator"
+            
+            <SchemaGenerator
+                type="WebApplication"
+                name="EMI Calculator for Home Loan India"
+                description="Calculate Home Loan EMI with updated interest rates for SBI, HDFC, ICICI."
+                data={schemaData}
             />
-            <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

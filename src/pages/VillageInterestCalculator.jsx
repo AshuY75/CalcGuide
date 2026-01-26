@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -87,12 +87,7 @@ export default function VillageInterestCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Village Interest Calculator - Sood / Vaddi 2% Interest | CalcGuide"
-                description="Calculate informal loan interest (Sood/Vaddi) with our Village Interest Calculator. Supports 'Rupees per 100' monthly rate and traditional date logic used by Sahukars."
-                keywords="village interest calculator, sood calculator, vaddi interest calculator, 2 rupay sekda calculator"
-                canonicalPath={ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST}
-            />
+            
             <SchemaGenerator
                 type="Calculator"
                 name="Village Interest Calculator (Sood)"

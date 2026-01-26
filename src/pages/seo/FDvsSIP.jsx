@@ -1,4 +1,4 @@
-import MetaManager from '../../components/MetaManager'
+
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 import SEOSection from '../../components/SEOSection'
@@ -34,11 +34,7 @@ export default function FDvsSIP() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
-                title="FD vs SIP India - Difference, Returns & Taxation Comparison (2025)"
-                description="Fixed Deposit vs SIP: Which is better? Detailed comparison of returns, risk, and taxation. See why SIP beats FD for long-term wealth creation."
-                keywords="fd vs sip, sip vs fixed deposit, mutual fund vs fd, investment comparison india"
-            />
+            
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">

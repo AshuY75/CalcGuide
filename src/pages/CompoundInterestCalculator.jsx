@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -52,12 +52,7 @@ export default function CompoundInterestCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Compound Interest Calculator - Calculate CI Returns Online"
-                description="Calculate Compound Interest (CI) with Yearly, Half-Yearly, Quarterly, or Monthly compounding. See the power of compounding for your investments."
-                keywords="compound interest calculator, ci calculator, compound interest formula, interest on interest"
-                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST}
-            />
+            
             <SchemaGenerator
                 name="Compound Interest Calculator"
                 description="Calculate compound interest with flexible compounding frequencies."

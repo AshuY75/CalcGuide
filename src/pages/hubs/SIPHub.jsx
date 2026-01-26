@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import SeoHead from '../../components/SeoHead';
+
 
 const SIPHub = () => {
     const calculators = [
@@ -31,11 +31,7 @@ const SIPHub = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
-            <SeoHead
-                title="SIP Calculators - Plan Your Mutual Fund Investments"
-                description="Comprehensive SIP calculators to plan your wealth creation. Calculate returns, goal amounts, and compare with FD."
-                canonicalPath={ROUTES.HUBS.SIP}
-            />
+            
 
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">SIP Calculators</h1>
             <p className="text-xl text-gray-600 mb-12">

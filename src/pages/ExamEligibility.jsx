@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -66,12 +66,7 @@ export default function ExamEligibility() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Exam Eligibility Calculator - Check Age Limit for Govt Exams (UPSC, SSC)"
-                description="Check your eligibility for Govt Exams like UPSC, SSC, IBPS, and Railways. Calculate your exact age as on the official cut-off date instantly."
-                keywords="exam eligibility calculator, age limit checker, upsc age calculator, ssc age eligibility"
-                canonicalPath={ROUTES.CALCULATORS.UTILITY.EXAM_ELIGIBILITY}
-            />
+            
             <SchemaGenerator
                 name="Exam Eligibility Calculator"
                 description="Check age eligibility for government exams based on cut-off dates."

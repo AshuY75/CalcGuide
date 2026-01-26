@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
-import MetaManager from '../../components/MetaManager'
+
 import { SchemaGenerator, BreadcrumbSchema } from '../../components/SchemaGenerator'
 import SEOSection from '../../components/SEOSection'
 
@@ -36,12 +36,7 @@ export const metadata = {
 export default function HowSIPReturnsCalculated() {
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-            <MetaManager
-                title="How SIP Returns Are Calculated in India (With Examples)"
-                description="Understand how Mutual Fund SIP returns are calculated. Learn about XIRR, Rupee Cost Averaging, and see ₹5000 vs ₹10000 SIP examples."
-                canonical="https://calcguide.in/learn/how-sip-returns-are-calculated"
-                type="article"
-            />
+            
 
             <BreadcrumbSchema items={[
                 { name: 'Home', url: 'https://calcguide.in' },

@@ -5,10 +5,7 @@ import { ROUTES } from '../routes/paths'
 export default function NotFound() {
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
-            <Helmet>
-                <title>Page Not Found - 404 | CalcGuide</title>
-                <meta name="robots" content="noindex, follow" />
-            </Helmet>
+            
 
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center max-w-md w-full">
                 <div className="text-6xl mb-4">🧭</div>

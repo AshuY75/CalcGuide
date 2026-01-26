@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { ROUTES } from '../routes/paths'
@@ -51,12 +51,7 @@ export default function BrickCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Brick Calculator - Estimate Bricks, Cement & Sand | CalcGuide"
-                description="Calculate the number of bricks required for your wall. Get an instant estimate of Cement bags and Sand (cft) needed for 4 inch and 9 inch walls."
-                keywords="brick calculator, brick wall calculation, red bricks needed, cement sand calculator for wall"
-                canonicalPath={ROUTES.CALCULATORS.CONSTRUCTION.BRICK}
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

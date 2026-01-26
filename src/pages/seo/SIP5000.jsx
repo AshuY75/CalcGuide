@@ -1,4 +1,4 @@
-import MetaManager from '../../components/MetaManager'
+
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 import SIPCalculatorUI from '../../components/calculators/SIPCalculatorUI'
@@ -30,11 +30,7 @@ export default function SIP5000() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
-                title="SIP Calculator for ₹5000 Per Month Invested"
-                description="See how much ₹5000 per month grows in 5, 10, or 20 years. Calculate SIP returns instantly with our specialized 5k SIP calculator."
-                keywords="sip calculator 5000 per month, 5000 sip return, mutual fund sip 5000"
-            />
+            
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">

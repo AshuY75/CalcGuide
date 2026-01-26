@@ -1,13 +1,9 @@
-const Helmet = () => null;
+
 
 export default function PrivacyPolicy() {
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
-            <Helmet>
-                <title>Privacy Policy - CalcGuide</title>
-                <meta name="description" content="Privacy Policy for CalcGuide. Understand how we handle your data." />
-                <link rel="canonical" href="https://calcguide.com/privacy" />
-            </Helmet>
+            
             <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-sm border border-slate-200 p-8 sm:p-12">
                 <h1 className="text-3xl font-bold text-slate-900 mb-8">Privacy Policy</h1>
 

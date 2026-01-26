@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -51,12 +51,7 @@ export default function RDCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="RD Calculator - Recurring Deposit Maturity Calculator"
-                description="Calculate the maturity value of your monthly Recurring Deposit (RD). Plan your savings with our free RD Calculator for SBI, HDFC, and Post Office RDs."
-                keywords="rd calculator, recurring deposit calculator, rd interest rate calculator, post office rd"
-                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.RD}
-            />
+            
             <SchemaGenerator
                 name="RD Calculator"
                 description="Calculate Recurring Deposit (RD) interest and maturity amount."

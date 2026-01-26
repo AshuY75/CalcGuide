@@ -1,4 +1,4 @@
-import MetaManager from '../../components/MetaManager'
+
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 
@@ -28,11 +28,7 @@ export default function VillageInterestExplainer() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
-                title="How Village Interest Works? Explained - Sood / Vaddi Calculation"
-                description="Understand the traditional monthly interest system used in Indian villages. How '2 Rupaye Senkda' translates to 24% annual interest."
-                keywords="village interest calculator, 2 rupaye sekda interest, sood interest calculation, vaddi calculator"
-            />
+            
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

@@ -1,23 +1,14 @@
-import { useEffect, useMemo, memo } from 'react';
+import { useMemo, memo } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const InjectSchema = memo(({ id, schema }) => {
-    useEffect(() => {
-        let script = document.getElementById(id);
-        if (!script) {
-            script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.id = id;
-            document.head.appendChild(script);
-        }
-        script.text = JSON.stringify(schema);
-
-        return () => {
-            // Optional: cleanup
-            // document.head.removeChild(script);
-        };
-    }, [id, schema]);
-
-    return null;
+    return (
+        <Helmet>
+            <script type="application/ld+json" id={id}>
+                {JSON.stringify(schema)}
+            </script>
+        </Helmet>
+    );
 }, (prevProps, nextProps) => {
     // Custom comparison to ensure deep equality of schema avoids re-render
     // Although useMemo in parent handles reference stability, this is a safety net

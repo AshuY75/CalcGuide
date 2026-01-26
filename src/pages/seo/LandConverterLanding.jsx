@@ -1,4 +1,4 @@
-import MetaManager from '../../components/MetaManager'
+
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 import LandAreaConverterUI from '../../components/calculators/LandAreaConverterUI'
@@ -30,11 +30,7 @@ export default function LandConverterLanding() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <MetaManager
-                title="Bigha to Acre Uttar Pradesh - Land Converter UP"
-                description="Convert UP Bigha (Pucca/Kaccha) to Acre, Hectare and Sq Feet. Accurate land measurement calculator for Lucknow, Kanpur, Noida & Rural UP."
-                keywords="bigha to acre up, uttar pradesh land record, biswa to acre calculator, 1 bigha in sq ft up"
-            />
+            
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">

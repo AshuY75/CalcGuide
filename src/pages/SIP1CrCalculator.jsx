@@ -1,4 +1,4 @@
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { Link } from 'react-router-dom'
@@ -31,12 +31,7 @@ export default function SIP1CrCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="SIP to 1 Crore Calculator - How to become a Crorepati"
-                description="Calculate monthly SIP needed to reach ₹1 Crore, ₹5 Crore, or any financial goal. Plan your journey to become a Crorepati with our Target SIP Calculator."
-                keywords="sip calculator 1 crore, sip goal calculator, how much sip to get 1 crore"
-                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE}
-            />
+            
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">

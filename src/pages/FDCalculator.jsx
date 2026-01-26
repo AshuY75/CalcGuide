@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -52,12 +52,7 @@ export default function FDCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="FD Calculator - Fixed Deposit Interest Rate Calculator India"
-                description="Calculate FD Returns instantly with quarterly compounding support. Check Maturity Amount and Total Interest for SBI, HDFC, ICICI, and Post Office FDs."
-                keywords="fd calculator, fixed deposit calculator, fd interest calculator, bank fd rates"
-                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.FD}
-            />
+            
             <SchemaGenerator
                 name="FD Calculator"
                 description="Calculate Fixed Deposit Maturity Amount with Quarterly Compounding."

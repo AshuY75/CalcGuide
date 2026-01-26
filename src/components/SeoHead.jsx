@@ -1,24 +1,25 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import MetaManager from './MetaManager';
 
 export default function SeoHead({
     title,
     description,
-    canonicalPath,
+    canonicalPath, // REQUIRED - must be explicit path like "/calculators/emi"
     keywordString
 }) {
-    const location = useLocation();
     const domain = 'https://www.calcguide.in';
 
-    // Construct canonical URL
-    // If canonicalPath is provided, use it. Otherwise use current path.
-    // Ensure we handle leading slash correctly.
-    let cleanPath = canonicalPath || location.pathname;
+    // canonicalPath is required for SSR
+    if (!canonicalPath) {
+        console.error('SeoHead: canonicalPath is required');
+        return null;
+    }
+
+    // Ensure canonical path starts with /
+    let cleanPath = canonicalPath;
     if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
 
-    // Remove trailing slash if present (except for root), or enforce logic. 
-    // User asked for consistency. Let's REMOVE trailing slash for consistency (unless it's root).
+    // Remove trailing slash (except for root)
     if (cleanPath !== '/' && cleanPath.endsWith('/')) {
         cleanPath = cleanPath.slice(0, -1);
     }

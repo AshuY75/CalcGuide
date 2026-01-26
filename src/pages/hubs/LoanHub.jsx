@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import SeoHead from '../../components/SeoHead';
+
 
 const LoanHub = () => {
     const calculators = [
@@ -24,11 +24,7 @@ const LoanHub = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
-            <SeoHead
-                title="Loan & EMI Calculators - Check Eligibility & Repayment"
-                description="Free loan calculators to check Home Loan EMI, Personal Loan eligibility, and informal village interest rates."
-                canonicalPath={ROUTES.HUBS.LOAN}
-            />
+            
 
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Loan Calculators</h1>
             <p className="text-xl text-gray-600 mb-12">

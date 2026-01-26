@@ -1,13 +1,9 @@
-import { BrowserRouter } from 'react-router-dom'
-import AppRoutes from './routes/AppRoutes'
-import './index.css'
+import { useRoutes } from 'react-router-dom'
+import { routes } from './routes/routesConfig'
 
 function App() {
-  return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
-  )
+  const element = useRoutes(routes)
+  return element
 }
 
 export default App

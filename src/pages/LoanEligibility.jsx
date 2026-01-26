@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
@@ -47,12 +47,7 @@ export default function LoanEligibility() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Home Loan Eligibility Calculator - Check How Much Loan You Can Get"
-                description="Check your Home Loan Eligibility instantly. Calculate maximum loan amount based on your salary and existing EMIs using standard Indian bank formulas."
-                keywords="home loan eligibility calculator, loan eligibility check, how much home loan can i get, foir calculator"
-                canonicalPath={ROUTES.CALCULATORS.LOAN.ELIGIBILITY}
-            />
+            
             <SchemaGenerator
                 name="Loan Eligibility Calculator"
                 description="Calculate maximum home loan limit based on salary."

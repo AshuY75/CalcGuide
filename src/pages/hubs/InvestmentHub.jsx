@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import SeoHead from '../../components/SeoHead';
+
 
 const InvestmentHub = () => {
     const calculators = [
@@ -39,11 +39,7 @@ const InvestmentHub = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
-            <SeoHead
-                title="Investment Calculators - SIP, FD, RD & More"
-                description="Free online investment calculators for India. Calculate SIP returns, FD interest, Recurring Deposit maturity, and more."
-                canonicalPath={ROUTES.HUBS.INVESTMENT}
-            />
+            
 
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Investment Calculators</h1>
             <p className="text-xl text-gray-600 mb-12">

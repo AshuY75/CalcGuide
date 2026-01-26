@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { ROUTES } from '../routes/paths'
@@ -42,12 +42,7 @@ export default function ConstructionCostCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="House Construction Cost Calculator India (2025) | CalcGuide"
-                description="Estimate the cost of constructing a house in India. Get breakdown of Material vs Labour cost, Cement, Steel, and Bricks required for 1000 sq ft, 1200 sq ft homes."
-                keywords="construction cost calculator, house construction cost india, building cost estimator, civil construction cost"
-                canonicalPath={ROUTES.CALCULATORS.CONSTRUCTION.COST}
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -50,12 +50,7 @@ export default function SimpleInterestCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Simple Interest Calculator - Calculate SI & Total Amount Online"
-                description="Free Simple Interest Calculator (SI). Calculate interest on loans or savings instantly using the P x R x T / 100 formula. Accurate and easy to use."
-                keywords="simple interest calculator, si calculator, interest calculator, simple interest formula"
-                canonicalPath={ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST}
-            />
+            
             <SchemaGenerator
                 name="Simple Interest Calculator"
                 description="Calculate simple interest (SI) and total amount using principal, rate, and time."

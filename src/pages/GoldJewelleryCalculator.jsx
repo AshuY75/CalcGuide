@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { ROUTES } from '../routes/paths'
@@ -53,12 +53,7 @@ export default function GoldJewelleryCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Gold Jewellery Price Calculator - GST, Making Charges & Wastage"
-                description="Calculate the final price of gold jewellery including Wastage (VA), Making Charges, and 3% GST. Verify your jeweller's bill breakup instantly."
-                keywords="gold jewellery calculator, gold price calculator, wastage calculator, making charges gold, va calculator"
-                canonicalPath={ROUTES.CALCULATORS.GOLD.JEWELLERY}
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

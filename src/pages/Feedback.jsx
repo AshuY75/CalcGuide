@@ -15,9 +15,7 @@ export default function Feedback() {
     if (submitted) {
         return (
             <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
-                <Helmet>
-                    <title>Feedback - CalcGuide</title>
-                </Helmet>
+                
                 <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center max-w-md w-full">
                     <div className="text-5xl mb-4">🙏</div>
                     <h2 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h2>
@@ -37,10 +35,7 @@ export default function Feedback() {
 
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
-            <Helmet>
-                <title>Feedback - CalcGuide</title>
-                <meta name="description" content="Send us your feedback, suggestions, or report issues." />
-            </Helmet>
+            
             <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-slate-200 p-8">
                 <div className="text-center mb-10">
                     <h1 className="text-3xl font-bold text-slate-900 mb-4">We Value Your Feedback</h1>

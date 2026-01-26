@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { ROUTES } from '../routes/paths'
@@ -40,12 +40,7 @@ export default function OldGoldCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Old Gold Exchange Value Calculator | Sell Gold Cash Value"
-                description="Calculate the resale value of your old gold jewellery. Estimate deductions, melting loss, and final cash in hand before visiting a jeweller."
-                keywords="old gold calculator, sell gold calculator, gold resale value, exchange gold jewellery"
-                canonicalPath={ROUTES.CALCULATORS.GOLD.OLD_GOLD}
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

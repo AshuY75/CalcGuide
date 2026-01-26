@@ -1,4 +1,4 @@
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
@@ -17,12 +17,7 @@ export default function EMICalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="EMI Calculator - Calculate Home, Car & Personal Loan EMI | CalcGuide"
-                description="Use this free EMI Calculator to check your Home Loan, Car Loan, or Personal Loan EMI. Features salary-based affordability check to help you decide safely."
-                keywords="emi calculator, home loan calculator, car loan emi, personal loan emi"
-                canonicalPath={ROUTES.CALCULATORS.LOAN.EMI}
-            />
+            
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">

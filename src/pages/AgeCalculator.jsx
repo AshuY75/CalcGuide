@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import SeoHead from '../components/SeoHead'
+
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
 import { SchemaGenerator } from '../components/SchemaGenerator'
@@ -57,12 +57,7 @@ export default function AgeCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SeoHead
-                title="Age Calculator - Calculate Exact Age from Date of Birth"
-                description="Calculate your exact age in Years, Months, and Days. Perfect for Govt Exam eligibility checks and form filling. Free online Age Calculator India."
-                keywords="age calculator, exact age calculator, age from dob, age calculator for exams"
-                canonicalPath={ROUTES.CALCULATORS.UTILITY.AGE}
-            />
+            
             <SchemaGenerator
                 name="Age Calculator"
                 description="Calculate age from Date of Birth (DOB) in Years, Months, Days."
