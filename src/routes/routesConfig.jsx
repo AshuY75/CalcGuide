@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+
 import { ROUTES } from './paths';
 import MainLayout from '../layouts/MainLayout';
 import NotFound from '../pages/NotFound';
