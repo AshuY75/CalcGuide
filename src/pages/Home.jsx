@@ -12,7 +12,7 @@ export default function Home() {
             icon: '🌾',
             tag: 'New',
             path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST,
-            preload: () => import('../pages/VillageInterestCalculator')
+
         },
         {
             title: 'Land Area Converter',
@@ -20,7 +20,7 @@ export default function Home() {
             icon: '🏞️',
             tag: 'New',
             path: ROUTES.CALCULATORS.CONSTRUCTION.LAND_AREA,
-            preload: () => import('../pages/LandAreaConverter')
+
         },
         {
             title: 'Gold Jewellery Price',
@@ -28,7 +28,7 @@ export default function Home() {
             icon: '💍',
             tag: 'New',
             path: ROUTES.CALCULATORS.GOLD.JEWELLERY,
-            preload: () => import('../pages/GoldJewelleryCalculator')
+
         },
         {
             title: 'Old Gold Exchange',
@@ -36,7 +36,7 @@ export default function Home() {
             icon: '⚖️',
             tag: null,
             path: ROUTES.CALCULATORS.GOLD.OLD_GOLD,
-            preload: () => import('../pages/OldGoldCalculator')
+
         },
         {
             title: 'Construction Cost',
