@@ -1,8 +1,10 @@
+# HTML Caching (Strong Policy)
 /
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /*.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
+# Long-lived Assets (Immutable)
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

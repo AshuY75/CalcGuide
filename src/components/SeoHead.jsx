@@ -19,9 +19,9 @@ export default function SeoHead({
     let cleanPath = canonicalPath;
     if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
 
-    // Remove trailing slash (except for root)
-    if (cleanPath !== '/' && cleanPath.endsWith('/')) {
-        cleanPath = cleanPath.slice(0, -1);
+    // Enforce trailing slash
+    if (cleanPath !== '/' && !cleanPath.endsWith('/')) {
+        cleanPath = cleanPath + '/';
     }
 
     const canonicalUrl = `${domain}${cleanPath}`;

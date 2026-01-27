@@ -22,7 +22,12 @@ function getPaths(routes, parentPath = '') {
         let currentPath = route.path
         if (currentPath) {
             if (!currentPath.startsWith('/')) {
-                currentPath = parentPath === '/' ? `/${currentPath}` : `${parentPath}/${currentPath}`
+                const parent = parentPath === '/' ? '' : parentPath;
+                currentPath = parent.endsWith('/') && currentPath.startsWith('/')
+                    ? `${parent}${currentPath.slice(1)}`
+                    : !parent.endsWith('/') && !currentPath.startsWith('/')
+                        ? `${parent}/${currentPath}`
+                        : `${parent}${currentPath}`;
             }
             if (currentPath && !currentPath.includes('*') && !currentPath.includes(':')) {
                 paths.push(currentPath)
@@ -87,9 +92,10 @@ for (const url of routesToPrerender) {
         .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
 
     // Phase D: Write to Disk
+    // Phase D: Write to Disk
     const filePath = url === '/404'
         ? 'dist/static/404.html'
-        : `dist/static${url === '/' ? '/index.html' : `${url}/index.html`}`
+        : `dist/static${url === '/' ? '/index.html' : url.endsWith('/') ? `${url}index.html` : `${url}/index.html`}`
 
     const dir = path.dirname(filePath)
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
@@ -110,7 +116,7 @@ console.log('\n\n--- Phase 3: Post-Generation Verification ---')
 routesToPrerender.forEach(url => {
     const filePath = url === '/404'
         ? 'dist/static/404.html'
-        : `dist/static${url === '/' ? '/index.html' : `${url}/index.html`}`
+        : `dist/static${url === '/' ? '/index.html' : url.endsWith('/') ? `${url}index.html` : `${url}/index.html`}`
 
     if (!fs.existsSync(filePath)) {
         errors.push(`SSG ERROR: Missing expected file for route ${url} at ${filePath}`)

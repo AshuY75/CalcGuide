@@ -1,0 +1,823 @@
+Starting Header Inspection...
+Target Base URL: https://calcguide.in
+
+---------------------------------------------------------------
+URL: /
+Status: 200 OK
+CF-Cache-Status: HIT
+All Headers:
+  access-control-allow-origin: *
+  age: 1701
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: HIT
+  cf-ray: 9c4ad49f5e9a6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:26 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=cgU5MwnZaU82mSnjAT7N%2BmzZcvrbnAEdTU02YeaKTGD4XiUTNEdwhNyM21Kw6eCKeL4rUP%2BxQscQtshzvrj6H73r6eRo0i%2Fh5HZSn0DJjUrI3X42vKw%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /loan-calculators
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4a428f96dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:27 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qIgSuHKcbZ0rPk5IELaDgP2dk3p6Mum4JypPBOPhSXqvtrjigQ8821Id9hKsnHVYCH%2F20EKepiLK74kMcTLep3AROpgW40U7e3%2Fi4JTuDrA1ywny%2F%2B1YQw%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /investment-calculators
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4a6deac6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:27 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=sv1p0I556kdezgLp%2BzPI6Rw%2BoYLxKDP51A43tkZULkbmxvhpA6wCBV4PtnmdzpZ27rdslaThe8Os443QDjM9SZHD%2B9tLoNoqShRb31sNb5GWn3qg73A%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /sip-calculators
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4a9bcce6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:28 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=flRUtj%2BX%2FgCVc%2BE51BH5NW3OTthbl4F1gFDHGvg8yHF%2BNhvipVH65%2FaNBRnQt90OdbmvurJw%2FoRNaTHUeCluDa4jqUjwJMVtO%2FYUSlXMv7ymZlPI%2FLg%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/loan/emi-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4ad3bde6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:28 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=f%2FpxMHB4%2BT1dLoLt62ZYhFbOe3cfLXuaiTRcf%2F7WKKGVofRrz%2FnaMXfWttclorBX%2F%2BnmxhWHSrc7l%2BlgMYcna1ciJ6HOrZoN%2F5MCQ%2B18s7o60JrbpbS%2Fdg%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/loan/loan-eligibility
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4b06b8d6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:29 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=2b0fsPzgQGmbiBkPJ1Q1Fmn8R%2FmkzUrPQjklLTosF%2FutklYDll8W7rlZqXW4FuJ%2BelXS9oelwfvjF9fMU0O6EW2%2FGiSIPmjryhqjSFvx8VOQmHkJN6yvIQ%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/loan/village-interest-calculator
+Status: 200 OK
+CF-Cache-Status: HIT
+All Headers:
+  access-control-allow-origin: *
+  age: 1437
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: HIT
+  cf-ray: 9c4ad4b39a1d6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:29 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=fGtlUrOFSpp4tDOwpSI%2Bes5GxFb8QtTgNJDMzm2ZzEVzUanmvvYHeuAnsWo6%2FCAqBcR4YOrUIupj%2Bemfr0oqIwANezVqfuunIKYtFigqivAUepP%2FxJc6%2Fg%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/investment/sip-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4b69ff96dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:30 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=X%2BrChZ8iLnjxaR6TS44EwtYqvvP%2FlNCe2EgdrIh4tSTQxmhlsOMEJSiDoajc5HDuEWGhg%2FgRa%2FS7HDK8kpAZ8iO7fA8kY0avHDBg%2Fpv3h1Op%2FqMQspSm7Q%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/investment/sip-1-crore-calculator
+Status: 200 OK
+CF-Cache-Status: REVALIDATED
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: REVALIDATED
+  cf-ray: 9c4ad4ba68626dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:30 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=MhAiEef800QgNrmS268enALEz8azxzGXigQnqKk%2BBXvir0ck3RCCwwNYpkCUbkB2PrXUx5iCrvMtTxKxRCXImpiCtwAnmKwjqCE1Map6NhLLKeGCZHqEfA%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/investment/fd-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4bcbdc06dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:31 GMT
+  last-modified: Tue, 27 Jan 2026 19:59:31 GMT
+  nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=9kfKw4p6DTHv84E4rrHZVPP07OxVcj4q%2F8oqqhkh%2BYnkBlHGK79XTIi4pmQiwVUPhlFg8X9JCyQuYOYOMZjz4dKqOUvw6joY6XXKx9r4paoCHUf0WXfJIasNBUHvPuCq%2FuGrkKODR7unnEw%3D"}],"group":"cf-nel","max_age":604800}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: Accept-Encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/investment/rd-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4bf4abc6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:31 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=keWOgihpQpZtotYS9QbQc4dkxmz4wNo4jFFTCri0NOfAuXPvBNEVwws%2FY73hfaUNM6MYgAlSgOYv9wvy7FV2Y%2FBB8H4FhKfrOBq3x6M%2Bf%2BnTiXdL6MrNKg%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/investment/simple-interest-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4c1e8576dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:32 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=SKO96spM2Aq4nAM5Oxj8u9DJpkHclByqstUmBNFZFQ%2FwMPB2kLPipqqv1bHnQ76oMdCgaIdhzPVGZf3EevdnWmzIfl44clxYxV7W%2F5XkTIaAbVxPxRH8Ng%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/investment/compound-interest-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4c4ee2c6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:32 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=IcC0bIbsS%2FKXAPMzkx%2BjXXqJkrMBk4jedo1lcCox1GnZ3MXByNbHn7T15E%2BjXXmK7WJiZ61LYd2c4vpIAlebC0xVceo4nrRPI1rOXpkXKe0ilghqzAI%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/gold/jewellery-price-calculator
+Status: 200 OK
+CF-Cache-Status: HIT
+All Headers:
+  access-control-allow-origin: *
+  age: 1170
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: HIT
+  cf-ray: 9c4ad4c78ba66dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:33 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=6%2F69UmPRIWZ0GTmGDG8KDdxzcYUFznpjjd4g%2BUYSqHZhbSHMp4R1NB8D4PiKqfOPoHQxSCB0FlTvDWMv8Aqlspuf3yn%2F%2BM6GK%2BjOtoo8CUGywUay9O7jtw%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/gold/old-gold-exchange-calculator
+Status: 200 OK
+CF-Cache-Status: HIT
+All Headers:
+  access-control-allow-origin: *
+  age: 1055
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: HIT
+  cf-ray: 9c4ad4ca08ab6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:33 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=bicP5j1dDmUlbuJ9APg8yG5aYxK7gXh7L7ummicXbtjKUjH98tVghsCHEvp5bvxIzf4u16wqWd%2Fth22WmjX5KCBO1ktaSTmqbTPOFBa30URM%2FhJJHaXaHA%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/construction/construction-cost-calculator
+Status: 200 OK
+CF-Cache-Status: REVALIDATED
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: REVALIDATED
+  cf-ray: 9c4ad4cc9dc96dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:33 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=XUwhlNcOx%2FoiVqWFdtZc5IoKKqRYQlmDZVdX%2FxTd1RiXg4X8fU%2B9g2iKtnYV%2Bk6D3eIuNMHn0gqBIQCE8PqRB4aWfFXVMEEJnHtf2y7R%2BQjwKlJQdKAvIg%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/construction/brick-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4cf2a576dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:34 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=WmmgzeU2WGNBpQjV38xW0t%2BV5%2FG%2BU%2BuHszrdwmHvzEpmw6e1U%2FziqFgzPxllKToCi%2Fq5UaWKljL1HotMZV2dKMaIvt15U%2FUmUeZ4DUjfIghHiC0AcDuAPw%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/construction/land-area-converter
+Status: 200 OK
+CF-Cache-Status: HIT
+All Headers:
+  access-control-allow-origin: *
+  age: 1221
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: HIT
+  cf-ray: 9c4ad4d258f76dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:34 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=MgtfL1KKNxHp25DhWJ1kBC50A%2BWr8Jwj8iAHYGkVg3N9Ix02yiruAjVrSkNMXDr0moZ4Q1Mpise9v7TgwAejEQrlWu2ju1n41Y8%2FNCpBeo3vbt8MsfM%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/utility/percentage-calculator
+Status: 200 OK
+CF-Cache-Status: REVALIDATED
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: REVALIDATED
+  cf-ray: 9c4ad4d4ff296dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:35 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=xBIt0c9Ww3W25EfS8zcp%2B1qD9Up2P6U44C8XRwY93p9ZwqS3k6FqS07H5slGnCYV7Ai%2BJSAMeKtetzXh8VU5lRwcw1Nj69UurVRHGkekbLhSBN3poJbW6A%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/utility/date-difference-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4d77ca06dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:35 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=wwqUaXNpVh3pWMhODXqi6sdStiHAcFK0UHm7VF%2FD%2B%2FBNhloVY3N2SoFiIgUaCebtUMUymlunl84Vt%2FIHPA%2FhfREQAC3dKOwR9nggPFZrKe%2BabqXGlLZwZA%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/utility/age-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4da3a826dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:36 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=OqvB01RabFckLPDngRzCK%2BTot7Eo24lx7Di5lVSo4VsoBmSk%2FOGrg5A5HDkRUQ5TR8hY9X%2B%2BZi5%2B1A48%2FgDpGhIY1Ss8T1vdbzXoCAGHapLyzLmT0x2G7g%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /calculators/utility/exam-eligibility-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4ddca746dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:36 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=46%2FbLr17E7JOoJ6dacmtDGecDbkg6iDmUJHC8e5X4W0xa%2FGHinK2HzN5lCaMh8pC1BUhqOYskvCDEEjHypFF6oFtvmyzqgJYgx%2Fpxr7KQhIY2CBACWzX5Q%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /sip-calculator-5000-per-month
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4e0781f6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:37 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qwjsg2sGFCiNzOUoTC%2F9QcG1JkyO%2B3ZBxQIcPAaPCuNSkmZjTB3Qm6w6nBP%2FHKYdlqQfjs7%2Fi32gBAUGJ%2BHj9qECngK0W2%2FWnEiTlTwzZn%2Bo1jLuPEmb5A%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /sip-1-crore-calculator
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4e33dc06dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:37 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=P8GLh9hZB4BOeQc0g7VWPwclsLHMFAgQ8uxoSf39twwmEEHJw2inLw9BjTDzzqaE3AaEZvBdUMUH7V344rbWQVoVO22a4yQvsTzfGTTMXL06U6JPUsMB4A%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /fd-vs-sip-india
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4e5eb7e6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:38 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=K3lssEK9f4AwU9z0hxNtqskHHI%2BYbkVsumIQoEUMXlsrtVzSDJ2yZc4VQTvRl3yZnoAWDDDZBTKyKgAoa%2FqJjDYdhhAjBsoP0C9ll%2Fzeaxwkm6xi0Rk%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /emi-calculator-home-loan-india
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4e899336dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:38 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=NfkEqc%2FvLMdDgZLvU2HrklcTodZixfnX50e7xkYsrsGDKuhs%2BgmsEkTU7zByNziAj%2Br6opJc9wjEdcs65vc5EhiK40bwFI2PbYo8Xn8Vtjg4%2FivAV3Ojdw%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /bigha-to-acre-uttar-pradesh
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4ebf96a6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:38 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=f%2BK%2BclCygex9iuIMtQWFNPPSCK6LfpgcNVpwE64TkZB5%2FC8%2FeSUH1KVOe5fgwn9aCDGohxSFFwdzCgXHcdd32ZQNsQxiUyomAv6r9xZzNXCVCeRzdjI03Q%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /learn
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4ef19206dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:39 GMT
+  last-modified: Tue, 27 Jan 2026 19:59:39 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1CLKzsPyPJGt3cJr2CCWuOzKvRgHALaPuSnKe47dvlm5sPxdLjZU5ijs%2B2%2B6xO7s%2FDrMZZX2SchE1%2BxSaPDIxuWndi1hn13GjSNGNlRFVnvSJX8IVfnVdA%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /learn/how-sip-returns-are-calculated
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4f2588f6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:39 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=s3rcnvbQWvA5BzbzpbcFawO9vSgOdiM3n7x7Q2ywiuYt3cwHuH%2BbdgtLA7XQXblwG3THW3wCuM61X4syVmZ5ovVCR5uAuhFlPKHTk651XgY0lZUeryoZnQ%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /learn/why-sip-beats-fd-long-term
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4f58fa96dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:40 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ezh68jWvXGUERE2erM3gFHpvi%2FWAzVL3Xj4CaCWWPCfMg6b%2FEp40bzbzFbu%2BvQvbCufVFcJnP%2BQ2FXoKIrpXF1VNoDY0VsEBBKAoE4uETGLjiZtyu%2Bu16Q%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /learn/how-village-interest-sood-vaddi-works
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4f87ddb6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:40 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=uKpoTgI7zmm%2B%2Bt5YgtidyWNP51W%2FfjGioAnAaSFmHOFyyNo%2B9Ji7PVHqCBZ%2FCDeeSUK8L%2BOVZjJKMkkh33UuRu%2B64pv1STEmrEmlaXrXnF6uoAUd9Bk%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /privacy-policy
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4fb3b986dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:41 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=urrWvLQ3YtYcvHUcbhQakof2dYhF%2FSTn%2BJoOQCgU811UmDId6FGWvRgKqXdmdlTMIecOqxoeB4%2BbKS7Sg1RwZdnm87yt5J62r5kcioMl3nF3MZQike%2BFMA%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /terms-of-service
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad4fd98d96dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:41 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=faVSWnx7Ks7v3lOJOyv9YYek9LKc%2F1O9B3NrUZRPewSAoT3GmgnTdrqYv%2FghNvtWomi1wNfjA52IGSMNJSot%2Fmlim6y2QJJyZ6ymz%2FBzaah4DM4YEaQ%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /feedback
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad500589c6dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:42 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=zwxHqH2hXVN6iz9p%2Bs45%2BIDCD%2B3epljfQgBq6UrSuOztyBDDOyOdtu1OpsXt3QDTcCwJx5i%2F67HlJtD3kDYoFcElw180mR7S%2F9Zhl3Czn%2FzMyiQV1U5Ubw%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+URL: /about
+Status: 200 OK
+CF-Cache-Status: MISS
+All Headers:
+  access-control-allow-origin: *
+  alt-svc: h3=":443"; ma=86400
+  cache-control: public, max-age=1800, must-revalidate
+  cf-cache-status: MISS
+  cf-ray: 9c4ad503a8096dcc-MRS
+  connection: keep-alive
+  content-encoding: br
+  content-type: text/html; charset=utf-8
+  date: Tue, 27 Jan 2026 19:59:42 GMT
+  nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  referrer-policy: strict-origin-when-cross-origin
+  report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=mCwoqdziND9T9xj1Ev36fd8QhTROl%2FoYbesGa0zMMLckEBp8XEl14rh06eLQ0g%2B1kYJYPlobUhjpyrKK1HGepQQlQO22WY%2B3wnGRjbQbeGSuwSBojggh6A%3D%3D"}]}
+  server: cloudflare
+  transfer-encoding: chunked
+  vary: accept-encoding
+  x-content-type-options: nosniff
+
+
+---------------------------------------------------------------
+Cache Status Summary:
+HIT: 5
+MISS: 27
+BYPASS: 0
+DYNAMIC: 0
+OTHER/N/A: 3
+---------------------------------------------------------------
+Inspection Complete.
