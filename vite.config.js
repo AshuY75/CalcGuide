@@ -11,7 +11,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     sourcemap: false,
     rollupOptions: {
       output: {
-        // manualChunks removed for SSR compatibility
+        manualChunks: undefined,
       },
     },
   },
