@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom'
 
-export default function CalculatorCard({ title, desc, icon, tag, path, preload }) {
+export default function CalculatorCard({ title, desc, icon, tag, path }) {
     return (
         <Link
             to={path}
             onClick={() => window.scrollTo(0, 0)}
-            onMouseEnter={() => preload && preload()}
-            /* Also preload on focus for accessibility */
-            onFocus={() => preload && preload()}
             className="group relative bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-200 hover:border-blue-200 transition-all duration-200 flex flex-col text-left"
         >
             {tag && (

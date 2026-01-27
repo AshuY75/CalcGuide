@@ -44,7 +44,6 @@ export default function Home() {
             icon: '🏗️',
             tag: 'Popular',
             path: ROUTES.CALCULATORS.CONSTRUCTION.COST,
-            preload: () => import('../pages/ConstructionCostCalculator')
         },
         {
             title: 'Brick Calculator',
@@ -52,7 +51,6 @@ export default function Home() {
             icon: '🧱',
             tag: null,
             path: ROUTES.CALCULATORS.CONSTRUCTION.BRICK,
-            preload: () => import('../pages/BrickCalculator')
         },
 
         // Phase 1
@@ -62,7 +60,6 @@ export default function Home() {
             icon: '💰',
             tag: 'Popular',
             path: ROUTES.CALCULATORS.LOAN.EMI,
-            preload: () => import('../pages/EMICalculator')
         },
         {
             title: 'SIP Calculator',
@@ -70,7 +67,6 @@ export default function Home() {
             icon: '📈',
             tag: 'Trending',
             path: ROUTES.CALCULATORS.INVESTMENT.SIP,
-            preload: () => import('../pages/SIPCalculator')
         },
         {
             title: 'Loan Eligibility',
@@ -78,7 +74,6 @@ export default function Home() {
             icon: '✅',
             tag: null,
             path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY,
-            preload: () => import('../pages/LoanEligibility')
         },
         {
             title: 'FD Calculator',
@@ -86,7 +81,7 @@ export default function Home() {
             icon: '🏛️',
             tag: null,
             path: ROUTES.CALCULATORS.INVESTMENT.FD,
-            preload: () => import('../pages/FDCalculator')
+
         },
         {
             title: 'RD Calculator',
@@ -94,7 +89,7 @@ export default function Home() {
             icon: '📊',
             tag: null,
             path: ROUTES.CALCULATORS.INVESTMENT.RD,
-            preload: () => import('../pages/RDCalculator')
+
         },
         {
             title: 'Age Calculator',
@@ -102,7 +97,7 @@ export default function Home() {
             icon: '📅',
             tag: null,
             path: ROUTES.CALCULATORS.UTILITY.AGE,
-            preload: () => import('../pages/AgeCalculator')
+
         },
         {
             title: 'SIP ₹1 Crore',
@@ -110,7 +105,7 @@ export default function Home() {
             icon: '🎯',
             tag: 'Goal',
             path: ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE,
-            preload: () => import('../pages/SIP1CrCalculator')
+
         },
         {
             title: 'Percentage',
@@ -118,7 +113,7 @@ export default function Home() {
             icon: '➗',
             tag: null,
             path: ROUTES.CALCULATORS.UTILITY.PERCENTAGE,
-            preload: () => import('../pages/PercentageCalculator')
+
         },
         {
             title: 'Date Difference',
@@ -126,7 +121,7 @@ export default function Home() {
             icon: '📆',
             tag: null,
             path: ROUTES.CALCULATORS.UTILITY.DATE_DIFF,
-            preload: () => import('../pages/DateDifferenceCalculator')
+
         },
         {
             title: 'Exam Eligibility',
@@ -134,7 +129,7 @@ export default function Home() {
             icon: '📝',
             tag: null,
             path: ROUTES.CALCULATORS.UTILITY.EXAM,
-            preload: () => import('../pages/ExamEligibility')
+
         },
         {
             title: 'Simple Interest',
@@ -142,7 +137,7 @@ export default function Home() {
             icon: '📉',
             tag: null,
             path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST,
-            preload: () => import('../pages/SimpleInterestCalculator')
+
         },
         {
             title: 'Compound Interest',
@@ -150,13 +145,13 @@ export default function Home() {
             icon: '🚀',
             tag: null,
             path: ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST,
-            preload: () => import('../pages/CompoundInterestCalculator')
+
         },
     ]
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16 sm:py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
