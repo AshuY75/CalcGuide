@@ -181,7 +181,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
     };
 
     return (
-        <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden">
             {/* Header */}
             <div className="bg-slate-900 text-white p-6 sm:p-8 flex items-center justify-between">
                 <div>
@@ -214,7 +214,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                             type="number"
                                             value={loanAmount}
                                             onChange={(e) => setLoanAmount(e.target.value)}
-                                            className="block w-full pl-8 pr-3 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow font-semibold text-slate-900"
+                                            className="block w-full pl-8 pr-3 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow font-semibold text-slate-900 outline-none"
                                             placeholder="50,00,000"
                                         />
                                     </div>
@@ -226,7 +226,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                             type="number"
                                             value={interestRate}
                                             onChange={(e) => setInterestRate(e.target.value)}
-                                            className="block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold"
+                                            className="block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold outline-none"
                                         />
                                     </div>
                                     <div>
@@ -235,7 +235,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                             type="number"
                                             value={tenureYears}
                                             onChange={(e) => setTenureYears(e.target.value)}
-                                            className="block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold"
+                                            className="block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold outline-none"
                                         />
                                     </div>
                                 </div>
@@ -262,14 +262,14 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                                 type="number"
                                                 value={prepaymentAmount}
                                                 onChange={(e) => setPrepaymentAmount(e.target.value)}
-                                                className="w-full bg-transparent border-none focus:ring-0 py-3 pl-2 pr-3 font-bold text-slate-900 placeholder:text-slate-300"
+                                                className="w-full bg-transparent border-none focus:ring-0 py-3 pl-2 pr-3 font-bold text-slate-900 placeholder:text-slate-300 outline-none"
                                                 placeholder="1,00,000"
                                             />
                                         </div>
                                         <select
                                             value={prepaymentFrequency}
                                             onChange={(e) => setPrepaymentFrequency(e.target.value)}
-                                            className="bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium"
+                                            className="bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-medium outline-none"
                                         >
                                             <option value="yearly">Every Year</option>
                                             <option value="monthly">Every Month</option>
@@ -288,7 +288,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                                 min="1" max={tenureYears}
                                                 value={startYear}
                                                 onChange={(e) => setStartYear(Math.min(Math.max(1, e.target.value), tenureYears))}
-                                                className="block w-full pl-12 px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold"
+                                                className="block w-full pl-12 px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold outline-none"
                                             />
                                         </div>
                                         <div className="relative w-28">
@@ -298,7 +298,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                                 min="1" max="12"
                                                 value={startMonth}
                                                 onChange={(e) => setStartMonth(Math.min(Math.max(1, e.target.value), 12))}
-                                                className="block w-full pl-14 px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold"
+                                                className="block w-full pl-14 px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 font-semibold outline-none"
                                             />
                                         </div>
                                     </div>
@@ -326,7 +326,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                         <select
                                             value={taxData.bracket}
                                             onChange={(e) => setTaxData({ ...taxData, bracket: e.target.value })}
-                                            className="w-full rounded-lg border-slate-300 text-sm"
+                                            className="w-full rounded-lg border-slate-300 text-sm outline-none"
                                         >
                                             <option value="30">30% (High Income)</option>
                                             <option value="20">20% (Mid Income)</option>
@@ -341,7 +341,7 @@ export default function HomeLoanPrepaymentCalculatorUI() {
                                                 type="number"
                                                 value={investmentReturn}
                                                 onChange={(e) => setInvestmentReturn(e.target.value)}
-                                                className="w-full rounded-lg border-slate-300 pl-3 pr-8 text-sm"
+                                                className="w-full rounded-lg border-slate-300 pl-3 pr-8 text-sm outline-none"
                                             />
                                             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 font-bold text-xs">%</span>
                                         </div>
