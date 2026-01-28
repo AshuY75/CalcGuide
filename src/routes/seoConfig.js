@@ -22,6 +22,10 @@ export const SEO_CONFIG = {
         title: "EMI Calculator - Calculate Home, Car & Personal Loan EMI | CalcGuide",
         description: "Use our free EMI Calculator with salary risk analysis to plan your loans safely and accurately.",
     },
+    "/calculators/loan/home-loan-prepayment-calculator/": {
+        title: "Home Loan EMI & Prepayment Calculator – Save Interest | CalcGuide",
+        description: "Calculate interest saved and tenure reduced by making prepayments on your home loan. Compare EMI vs Tenure reduction options.",
+    },
     "/calculators/loan/loan-eligibility/": {
         title: "Loan Eligibility Calculator - Check Your Max Loan Amount",
         description: "Instant check of how much loan you can get based on your salary, age, and existing EMIs.",

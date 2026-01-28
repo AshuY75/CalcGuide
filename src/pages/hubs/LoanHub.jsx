@@ -11,6 +11,11 @@ const LoanHub = () => {
             description: 'Calculate your Home, Car, or Personal Loan EMI.'
         },
         {
+            title: 'Home Loan Prepayment Calculator',
+            path: ROUTES.CALCULATORS.LOAN.HOME_LOAN_PREPAYMENT,
+            description: 'See how much interest you can save by making extra payments towards your home loan.'
+        },
+        {
             title: 'Loan Eligibility',
             path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY,
             description: 'Check how much loan you can borrow based on your income.'
@@ -24,7 +29,7 @@ const LoanHub = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
-            
+
 
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Loan Calculators</h1>
             <p className="text-xl text-gray-600 mb-12">

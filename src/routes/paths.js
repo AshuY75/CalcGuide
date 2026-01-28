@@ -9,6 +9,7 @@ export const ROUTES = {
         LOAN: {
             EMI: "/calculators/loan/emi-calculator/",
             ELIGIBILITY: "/calculators/loan/loan-eligibility/",
+            HOME_LOAN_PREPAYMENT: "/calculators/loan/home-loan-prepayment-calculator/",
             VILLAGE_INTEREST: "/calculators/loan/village-interest-calculator/"
         },
         INVESTMENT: {

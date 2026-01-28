@@ -9,6 +9,7 @@ import Home from '../pages/Home';
 
 // Loan
 import EMICalculator from '../pages/EMICalculator';
+import HomeLoanPrepaymentCalculator from '../pages/HomeLoanPrepaymentCalculator';
 import LoanEligibility from '../pages/LoanEligibility';
 import VillageInterest from '../pages/VillageInterestCalculator';
 
@@ -73,6 +74,7 @@ export const routes = [
 
             /* Loans */
             { path: ROUTES.CALCULATORS.LOAN.EMI, element: <RouteWrapper Component={EMICalculator} /> },
+            { path: ROUTES.CALCULATORS.LOAN.HOME_LOAN_PREPAYMENT, element: <RouteWrapper Component={HomeLoanPrepaymentCalculator} /> },
             { path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY, element: <RouteWrapper Component={LoanEligibility} /> },
             { path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST, element: <RouteWrapper Component={VillageInterest} /> },
 

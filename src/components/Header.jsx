@@ -56,6 +56,7 @@ export default function Header() {
             hubPath: ROUTES.HUBS.LOAN,
             items: [
                 { name: 'EMI Calculator', path: ROUTES.CALCULATORS.LOAN.EMI, icon: '💰' },
+                { name: 'Prepayment Calc', path: ROUTES.CALCULATORS.LOAN.HOME_LOAN_PREPAYMENT, icon: '🏠' },
                 { name: 'Loan Eligibility', path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY, icon: '✅' },
                 { name: 'Village Interest', path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST, icon: '🌾' },
                 { name: 'Simple Interest', path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST, icon: '📉' },

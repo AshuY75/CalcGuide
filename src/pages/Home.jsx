@@ -62,6 +62,13 @@ export default function Home() {
             path: ROUTES.CALCULATORS.LOAN.EMI,
         },
         {
+            title: 'Home Loan Prepayment',
+            desc: 'Save interest & reduce tenure',
+            icon: '📉',
+            tag: 'New',
+            path: ROUTES.CALCULATORS.LOAN.HOME_LOAN_PREPAYMENT,
+        },
+        {
             title: 'SIP Calculator',
             desc: 'Plan mutual fund investments',
             icon: '📈',
