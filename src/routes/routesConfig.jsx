@@ -58,7 +58,9 @@ import LandConverterLanding from '../pages/seo/LandConverterLanding';
 import LearnHome from '../pages/learn/LearnHome';
 import HowSIPReturnsCalculated from '../pages/learn/HowSIPWorks';
 import WhySIPBeatsFD from '../pages/learn/WhySIPBeatsFD';
+import WhySIPBeatsFD from '../pages/learn/WhySIPBeatsFD';
 import VillageInterestExplainer from '../pages/learn/VillageInterestExplainer';
+import PrepaymentVsSIP from '../pages/learn/PrepaymentVsSIP';
 
 export const routes = [
     {
@@ -118,7 +120,9 @@ export const routes = [
             { path: ROUTES.LEARN.HOME, element: <RouteWrapper Component={LearnHome} /> },
             { path: ROUTES.LEARN.SIP_RETURNS_CALCULATION, element: <RouteWrapper Component={HowSIPReturnsCalculated} /> },
             { path: ROUTES.LEARN.SIP_VS_FD, element: <RouteWrapper Component={WhySIPBeatsFD} /> },
+            { path: ROUTES.LEARN.SIP_VS_FD, element: <RouteWrapper Component={WhySIPBeatsFD} /> },
             { path: ROUTES.LEARN.VILLAGE_INT_EXPL, element: <RouteWrapper Component={VillageInterestExplainer} /> },
+            { path: ROUTES.LEARN.PREPAYMENT_VS_SIP, element: <RouteWrapper Component={PrepaymentVsSIP} /> },
 
             /* 404 */
             { path: '*', element: <RouteWrapper Component={NotFound} /> }
