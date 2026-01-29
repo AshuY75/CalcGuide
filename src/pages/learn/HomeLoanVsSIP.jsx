@@ -8,6 +8,17 @@ import diffChart from '../../assets/prepayment-vs-sip-chart.png';
 import familyImg from '../../assets/indian-family-home.png';
 import compoundGraph from '../../assets/compounding-graph.png';
 
+export const metadata = {
+    title: "Home Loan Prepayment vs SIP – The 11% Rule Explained",
+    slug: ROUTES.LEARN.PREPAYMENT_VS_SIP,
+    description: "Should you prepay your home loan or invest in SIP? We explain the 11% Rule with mathematical proof, Indian tax context, and real mathematical analysis.",
+    category: "Loan Strategy",
+    icon: "🆚",
+    colorClass: "bg-blue-50",
+    date: "2024-01-29",
+    isNew: true
+}
+
 export default function HomeLoanVsSIP() {
     return (
         <div className="bg-slate-50 min-h-screen font-sans text-slate-900">
