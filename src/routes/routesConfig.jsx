@@ -53,6 +53,7 @@ import TermsOfService from '../pages/TermsOfService';
 // 9. Learn / Blog Pages (Alphabetical)
 import HomeLoanVsSIP from '../pages/learn/HomeLoanVsSIP';
 import HowSIPReturnsCalculated from '../pages/learn/HowSIPWorks';
+<<<<<<< HEAD
 import LearnHome from '../pages/learn/LearnHome';
 import VillageInterestExplainer from '../pages/learn/VillageInterestExplainer';
 import WhySIPBeatsFD from '../pages/learn/WhySIPBeatsFD';
@@ -65,6 +66,12 @@ import SIP1CrLanding from '../pages/seo/SIP1CrLanding';
 import SIP5000 from '../pages/seo/SIP5000';
 
 // --- ROUTE DEFINITIONS ---
+=======
+import WhySIPBeatsFD from '../pages/learn/WhySIPBeatsFD';
+import WhySIPBeatsFD from '../pages/learn/WhySIPBeatsFD';
+import VillageInterestExplainer from '../pages/learn/VillageInterestExplainer';
+import PrepaymentVsSIP from '../pages/learn/PrepaymentVsSIP';
+>>>>>>> 772a9c276abff3001c50fb707f62329eb4361308
 
 export const routes = [
     {
@@ -125,8 +132,13 @@ export const routes = [
             { path: ROUTES.LEARN.HOME, element: <RouteWrapper Component={LearnHome} /> },
             { path: ROUTES.LEARN.SIP_RETURNS_CALCULATION, element: <RouteWrapper Component={HowSIPReturnsCalculated} /> },
             { path: ROUTES.LEARN.SIP_VS_FD, element: <RouteWrapper Component={WhySIPBeatsFD} /> },
+            { path: ROUTES.LEARN.SIP_VS_FD, element: <RouteWrapper Component={WhySIPBeatsFD} /> },
             { path: ROUTES.LEARN.VILLAGE_INT_EXPL, element: <RouteWrapper Component={VillageInterestExplainer} /> },
+<<<<<<< HEAD
             { path: ROUTES.LEARN.PREPAYMENT_VS_SIP, element: <RouteWrapper Component={HomeLoanVsSIP} /> },
+=======
+            { path: ROUTES.LEARN.PREPAYMENT_VS_SIP, element: <RouteWrapper Component={PrepaymentVsSIP} /> },
+>>>>>>> 772a9c276abff3001c50fb707f62329eb4361308
 
             // 404
             { path: '*', element: <RouteWrapper Component={NotFound} /> }
