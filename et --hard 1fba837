@@ -1,0 +1,44 @@
+[33m772a9c2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Content: Added 'Home Loan Prepayment vs SIP' ranking-ready blog with assets
+[33m1fba837[m Style Polish: No Input Outlines & Wider Desktop Layout
+[33m3d70162[m Decision Engine Overhaul: Complete UI Redesign & SEO Upgrade
+[33mc18f098[m feat: enforce trailing slashes and strict HTML cache policy
+[33m410edb1[m fix(build): enforce Safe Mode - disable all code splitting and harden cache headers
+[33m02f117c[m chore: add empty functions/.gitkeep to fix Cloudflare deployment error
+[33mee88187[m fix: remove remaining dynamic imports in Home.jsx
+[33mfb69d57[m fix(prod): resolve import collisions, stale caching, and error handling
+[33ma5e93b0[m fix: remove react-helmet-async (react 19 incompatibility)
+[33m98b8158[m chore: adsense readiness content & compliance cleanup
+[33m00e0162[m Refactor: cleanup unused dependencies, remove logs, and stabilize SSG architecture
+[33mc6ea12d[m Fix: stabilize SSG rendering, hydration, and caching architecture
+[33m64b2659[m docs: add authoritative SSG & SEO architecture guardrails
+[33m7a15e01[m fix(build): Resolve syntax error in WhySIPBeatsFD.jsx
+[33m46ad25d[m fix(learn): Normalize blog metadata & remove runtime SEO side effects (inline scripts)
+[33me9004fa[m fix(build): Remove incompatible react-helmet-async and migrate to native SEO management
+[33m02fb57f[m feat(learn): Implement auto-discovery for blogs (Single Source of Truth) + 4-col grid
+[33m3f7ea62[m refactor: Modernize Learn page with centralized data source and 4-column grid
+[33m177bb6a[m fix: Force update Learn page with 'New' badge on SIP article (trigger deployment)
+[33m637cc5e[m feat: Add Village Interest guide to Learn Home page
+[33m30d0e67[m feat(content): Publish 'SIP vs FD' authority guide with charts and YMYL compliance
+[33m907e6bb[m docs: Add extensive Authority Content Layer Strategy (Phase 2)
+[33m9e00113[m Optimize caching and bundle splitting: add _headers for Cloudflare and vendor manualChunks in Vite config
+[33m2f7584d[m SEO Hardening: Enhanced all calculators with unique content, fixed code duplications, and standardized meta tags.
+[33m938476d[m Implement comprehensive SEO fixes: Hub pages, Canonical structure, Content updates, and Sitemap regeneration
+[33mafd1b39[m fix(router): guarantee non-empty calculator route rendering
+[33m9fab9fd[m fix(spa): prevent blank calculator render on cold load
+[33m16d12a4[m fix(cls): stabilize results and accordion layout
+[33m82b91f1[m Improve Learn article trust, originality, and internal linking
+[33m8b40bc2[m Polish Learn article wording, visuals, and trust signals
+[33mdb203e9[m Improve Learn article trust, FAQs, and content completeness
+[33m8c8ab9a[m feat(nav): add Learn link to header
+[33m52e2424[m feat(learn): add Learn section and SIP calculation guide
+[33mc0f04f6[m feat: complete SEO improvements with landing pages, schema and articles
+[33m37dfa46[m feat: complete SIP and FD calculator pages with content and SEO
+[33m77400d3[m style: update logo icon and restore brand text
+[33m82221b2[m chore: add production logo, favicon, and meta branding
+[33mfe81f1a[m fix(spa): correct Cloudflare Pages redirect rule
+[33m08f7dc9[m error fixed
+[33mcbdcdb1[m Trigger redeploy: Ensure fresh build pick-up
+[33mf13c98e[m Fix build: Remove react-helmet-async (incompatible with React 19)
+[33m3da8c2d[m Production-ready: routing + sitemap fixes
+[33m2474c03[m Update project details and calculator functionality
+[33m26fef6d[m first commit

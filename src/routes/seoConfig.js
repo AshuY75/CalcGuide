@@ -145,5 +145,9 @@ export const SEO_CONFIG = {
     "/learn/how-village-interest-sood-vaddi-works/": {
         title: "How Village Interest Works? Explained - Sood / Vaddi System",
         description: "Detailed explanation of traditional monthly interest systems used in rural Indian finance.",
+    },
+    "/learn/home-loan-prepayment-vs-sip-11-percent-rule/": {
+        title: "Home Loan Prepayment vs SIP – The 11% Rule Explained (With Real Numbers) | CalcGuide",
+        description: "Should you prepay your home loan or invest in SIP? We explain the 11% Rule with mathematical proof, Indian tax context, and real 2025 interest rates.",
     }
 };

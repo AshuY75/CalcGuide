@@ -59,6 +59,7 @@ import LearnHome from '../pages/learn/LearnHome';
 import HowSIPReturnsCalculated from '../pages/learn/HowSIPWorks';
 import WhySIPBeatsFD from '../pages/learn/WhySIPBeatsFD';
 import VillageInterestExplainer from '../pages/learn/VillageInterestExplainer';
+import HomeLoanVsSIP from '../pages/learn/HomeLoanVsSIP';
 
 export const routes = [
     {
@@ -119,6 +120,7 @@ export const routes = [
             { path: ROUTES.LEARN.SIP_RETURNS_CALCULATION, element: <RouteWrapper Component={HowSIPReturnsCalculated} /> },
             { path: ROUTES.LEARN.SIP_VS_FD, element: <RouteWrapper Component={WhySIPBeatsFD} /> },
             { path: ROUTES.LEARN.VILLAGE_INT_EXPL, element: <RouteWrapper Component={VillageInterestExplainer} /> },
+            { path: ROUTES.LEARN.PREPAYMENT_VS_SIP, element: <RouteWrapper Component={HomeLoanVsSIP} /> },
 
             /* 404 */
             { path: '*', element: <RouteWrapper Component={NotFound} /> }

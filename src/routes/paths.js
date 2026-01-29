@@ -53,6 +53,7 @@ export const ROUTES = {
         HOME: "/learn/",
         SIP_RETURNS_CALCULATION: "/learn/how-sip-returns-are-calculated/",
         SIP_VS_FD: "/learn/why-sip-beats-fd-long-term/",
-        VILLAGE_INT_EXPL: "/learn/how-village-interest-sood-vaddi-works/"
+        VILLAGE_INT_EXPL: "/learn/how-village-interest-sood-vaddi-works/",
+        PREPAYMENT_VS_SIP: "/learn/home-loan-prepayment-vs-sip-11-percent-rule/"
     }
 };

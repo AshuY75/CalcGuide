@@ -89,7 +89,7 @@ export default function SIPCalculator() {
                         <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm sticky top-6">
                             <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Related Tools</h4>
                             <div className="space-y-3">
-                                <Link to={ROUTES.CALCULATORS.LOAN.HOME_LOAN_PREPAYMENT} className="flex items-center p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors group">
+                                <Link to={ROUTES.LEARN.PREPAYMENT_VS_SIP} className="flex items-center p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors group">
                                     <span className="text-xl mr-3">🤔</span>
                                     <div>
                                         <p className="text-sm font-bold text-blue-800 group-hover:text-blue-900">SIP vs Prepayment</p>

@@ -62,6 +62,13 @@ export default function EMICalculator() {
                                         <p className="text-xs text-blue-600">Save Interest on Home Loan</p>
                                     </div>
                                 </Link>
+                                <Link to={ROUTES.LEARN.PREPAYMENT_VS_SIP} className="flex items-center p-3 rounded-lg bg-red-50 hover:bg-red-100 transition-colors group">
+                                    <span className="text-xl mr-3">🆚</span>
+                                    <div>
+                                        <p className="text-sm font-bold text-red-800 group-hover:text-red-900">Prepayment vs SIP</p>
+                                        <p className="text-xs text-red-600">The 11% Rule Explained</p>
+                                    </div>
+                                </Link>
                                 <Link to={ROUTES.CALCULATORS.LOAN.ELIGIBILITY} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
                                     <span className="text-xl mr-3">✅</span>
                                     <div>

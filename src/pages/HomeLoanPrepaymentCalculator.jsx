@@ -77,7 +77,7 @@ export default function HomeLoanPrepaymentCalculator() {
                             </p>
                             <ul className="list-disc pl-5 space-y-2 text-slate-700">
                                 <li><strong>Floating Rate Loans:</strong> ZERO Penalty. Banks cannot charge you for prepaying any amount.</li>
-                                <li><strong>Fixed Rate Loans:</strong> Banks <em>can</em> charge 2% - 4% penalty. Calculate if interest savings > penalty cost.</li>
+                                <li><strong>Fixed Rate Loans:</strong> Banks <em>can</em> charge 2% - 4% penalty. Calculate if interest savings &gt; penalty cost.</li>
                             </ul>
 
                             <h3 className="text-xl font-bold text-slate-800 mt-8">The "Tax Trap" of Prepayment</h3>
