@@ -105,31 +105,62 @@ Check if your component is already imported. Double imports in this file will **
 3.  **Registration**: Follow Steps 3, 4, and 5 above (Paths, SEO Config, Routes Config).
 4.  **Links**: Use `<Link to={ROUTES.CALCULATORS...}>`. Never hardcode strings.
 
----
-
-## 5. Strict Workflow Constraints
-
-1.  **No Dynamic Imports in Routes**:
-    -   We use static imports (`import Page from...`) because our SSG script needs to traverse the tree.
-    -   Do not use `React.lazy()` for pages unless you rewrite `prerender.js`.
-
-2.  **Tailwind Config**:
-    -   There is no `tailwind.config.js`.
-    -   Theme variables are default v4.
-    -   Do not try to "fix" this by adding a config file unless you know exactly how Vite CSS handling works.
-
-3.  **Client-Side Navigation**:
-    -   Remember: `<title>` will not update when clicking links. This is "By Design" for now.
-    -   Do not waste time debugging unique page titles in `npm run dev` browser view; view `View Page Source` of the build output if you need verification.
 
 ---
 
-## 6. Pre-Commit Verification
+## 7. CRITICAL: Cloudflare & Routing Safety
 
-Before you push, ask:
-1.  [ ] Did I add my path to `paths.js`?
-2.  [ ] Did I add my metadata to `seoConfig.js`?
-3.  [ ] Did I check `routesConfig.jsx` for duplicate imports?
-4.  [ ] Does `npm run dev` start without errors?
+**The Error:** `The symbol "X" has already been declared`
+**The Cause:** Duplicate imports in `routesConfig.jsx`.
 
-**If you broke it, you fix it.**
+**Why It Happens:**
+Local dev uses a forgiving bundler. Cloudflare Production uses `esbuild`, which crashes instantly on duplicate imports.
+
+**THE RULES:**
+1.  **Alphabetical Ordering:** All imports in `routesConfig.jsx` MUST be alphabetical. This makes duplicates impossible to miss.
+2.  **Strict Grouping:** Use the defined comments (`// 1. Core`, `// 2. Hubs`, etc.).
+3.  **One Commit Isolation:** Any change to `routesConfig.jsx` must be in its own commit. DO NOT mix it with feature work.
+4.  **Verification:** If you touch routing, you MUST run `npm run build` locally before pushing.
+
+---
+
+## 8. Git & Workflow Rules
+
+1.  **Commit Granularity:**
+    -   **One logical change = One Commit.**
+    -   Don't bundle "Fixing CSS" with "Adding new Router".
+    -   *Why?* If we need to revert (like we did today), we want to lose only the bad code, not the good code.
+
+2.  **Before You Commit (The "Pulse Check"):**
+    -   Run `npm run dev`.
+    -   Does it start?
+    -   Check the console for "Duplicate declaration" errors.
+    -   Check terminal for "Unresolved import" errors.
+
+3.  **The "Revert" Protocol:**
+    -   If `npm run dev` fails after a pull/merge and you can't fix it in 5 minutes:
+    -   **RESET.** (`git reset --hard`)
+    -   Don't pile hacks on top of broken code.
+
+---
+
+## 9. Pre-Commit Checklist (MANDATORY)
+
+Copy this into your brain before typing `git commit`:
+
+- [ ] **Build Check:** `npm run dev` starts without red text?
+- [ ] **Import Check:** Did I double-check `routesConfig.jsx` for duplicate imports?
+- [ ] **Dependency Check:** Did I add a new package? If yes, is it in `package.json`?
+- [ ] **Cleanliness:** Did I remove unused `console.log`?
+- [ ] **Scope:** Is this commit focused on ONE task?
+
+---
+
+## 10. Final Warning
+
+**Speed is nothing without Stability.**
+
+It takes 10 seconds to double-check an import.
+It takes 2 hours to debug a failed production build caused by a careless copy-paste.
+
+**Follow the guide.**
