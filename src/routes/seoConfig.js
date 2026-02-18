@@ -106,6 +106,10 @@ export const SEO_CONFIG = {
         title: "Feedback - Help Us Improve | CalcGuide",
         description: "Share your suggestions, report errors, or request new calculators to help us serve you better.",
     },
+    "/contact/": {
+        title: "Contact Us - CalcGuide",
+        description: "Get in touch with the CalcGuide team. We value your feedback and suggestions.",
+    },
     "/about/": {
         title: "About Us - CalcGuide Mission & Story",
         description: "Learn about CalcGuide's mission to provide free, accurate, and privacy-focused financial calculators for India.",
