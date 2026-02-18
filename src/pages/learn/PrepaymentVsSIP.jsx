@@ -252,7 +252,7 @@ export default function PrepaymentVsSIP() {
                     <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Final Checklist: Decide Now</h2>
                     <ul className="space-y-3 font-medium text-slate-800 border-l-2 border-slate-300 pl-6">
                         <li className="flex items-center gap-2">
-                             Interest Rate > 9.5%? <span className="text-blue-600 font-bold">→ Prepay.</span>
+                            Interest Rate &gt; 9.5%? <span className="text-blue-600 font-bold">→ Prepay.</span>
                         </li>
                         <li className="flex items-center gap-2">
                             Are you in the first 3 years of loan? <span className="text-blue-600 font-bold">→ Prepay aggressively.</span>
