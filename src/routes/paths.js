@@ -81,6 +81,7 @@ export const ROUTES = {
         PRIVACY: "/privacy-policy/",
         TERMS: "/terms-of-service/",
         FEEDBACK: "/feedback/",
+        CONTACT: "/contact/",
         ABOUT: "/about/"
     },
     SEO: {

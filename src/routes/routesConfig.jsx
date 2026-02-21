@@ -80,6 +80,7 @@ import WeddingPlanner from '../pages/WeddingPlanner';
 
 // 9. Legal & Static
 import About from '../pages/About';
+import Contact from '../pages/Contact';
 import Feedback from '../pages/Feedback';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import TermsOfService from '../pages/TermsOfService';
@@ -217,6 +218,7 @@ export const routes = [
             { path: ROUTES.LEGAL.PRIVACY, element: <RouteWrapper Component={PrivacyPolicy} /> },
             { path: ROUTES.LEGAL.TERMS, element: <RouteWrapper Component={TermsOfService} /> },
             { path: ROUTES.LEGAL.FEEDBACK, element: <RouteWrapper Component={Feedback} /> },
+            { path: ROUTES.LEGAL.CONTACT, element: <RouteWrapper Component={Contact} /> },
             { path: ROUTES.LEGAL.ABOUT, element: <RouteWrapper Component={About} /> },
 
             // SEO Landing
