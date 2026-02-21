@@ -12,18 +12,38 @@ export default function SIPCalculatorUI({
     const [monthlyInvestment, setMonthlyInvestment] = useState(defaultMonthlyInvestment)
     const [interestRate, setInterestRate] = useState(defaultInterestRate)
     const [timePeriod, setTimePeriod] = useState(defaultTimePeriod)
+    const [stepUp, setStepUp] = useState('0')
     const [result, setResult] = useState(null)
 
     const resultRef = useRef(null)
 
     const calculateSIP = () => {
-        const P = parseFloat(monthlyInvestment)
-        const i = parseFloat(interestRate) / 12 / 100
-        const n = parseFloat(timePeriod) * 12
-        const M = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i)
-        const investedAmount = P * n
-        const totalReturns = M - investedAmount
-        setResult({ investedAmount: Math.round(investedAmount), totalReturns: Math.round(totalReturns), maturityAmount: Math.round(M) })
+        const initialP = parseFloat(monthlyInvestment)
+        const annualRate = parseFloat(interestRate)
+        const r = annualRate / 12 / 100
+        const years = parseFloat(timePeriod)
+        const totalMonths = years * 12
+        const s = parseFloat(stepUp) / 100
+
+        let maturityAmount = 0
+        let investedAmount = 0
+        let currentP = initialP
+
+        for (let month = 1; month <= totalMonths; month++) {
+            // Apply annual step-up
+            if (month > 1 && (month - 1) % 12 === 0) {
+                currentP = currentP * (1 + s)
+            }
+            investedAmount += currentP
+            maturityAmount = (maturityAmount + currentP) * (1 + r)
+        }
+
+        const totalReturns = maturityAmount - investedAmount
+        setResult({
+            investedAmount: Math.round(investedAmount),
+            totalReturns: Math.round(totalReturns),
+            maturityAmount: Math.round(maturityAmount)
+        })
 
         setTimeout(() => {
             resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -53,8 +73,11 @@ export default function SIPCalculatorUI({
         <div className="bg-white border-b border-slate-200 rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
             <div className="space-y-6">
                 <div><label className="block text-sm font-semibold text-slate-700 mb-2">Monthly Investment</label><div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">₹</span><input type="number" value={monthlyInvestment} onChange={(e) => setMonthlyInvestment(e.target.value)} className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="e.g. 5000" /></div></div>
-                <div><label className="block text-sm font-semibold text-slate-700 mb-2">Expected Return Rate (% p.a)</label><input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="e.g. 12" /></div>
-                <div><label className="block text-sm font-semibold text-slate-700 mb-2">Time Period (Years)</label><input type="number" value={timePeriod} onChange={(e) => setTimePeriod(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="e.g. 10" /></div>
+                <div className="grid grid-cols-3 gap-4">
+                    <div className="col-span-1"><label className="block text-sm font-semibold text-slate-700 mb-2">Step-Up (%)</label><input type="number" value={stepUp} onChange={(e) => setStepUp(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="0" /></div>
+                    <div className="col-span-1"><label className="block text-sm font-semibold text-slate-700 mb-2">Return Rate (%)</label><input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="12" /></div>
+                    <div className="col-span-1"><label className="block text-sm font-semibold text-slate-700 mb-2">Time (Years)</label><input type="number" value={timePeriod} onChange={(e) => setTimePeriod(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="10" /></div>
+                </div>
                 <button onClick={calculateSIP} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Calculate SIP</button>
 
                 {/* Inline Result */}

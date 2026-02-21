@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
 
@@ -8,14 +7,20 @@ import diffChart from '../../assets/prepayment-vs-sip-chart.png';
 import familyImg from '../../assets/indian-family-home.png';
 import compoundGraph from '../../assets/compounding-graph.png';
 
+export const metadata = {
+    title: "Home Loan Prepayment vs SIP – The 11% Rule",
+    description: "Should you prepay your home loan or invest in SIP? We explain the 11% Rule with mathematical proof.",
+    category: "LOANS",
+    slug: ROUTES.LEARN.PREPAYMENT_VS_SIP,
+    date: "2025-01-20",
+    icon: "🏠",
+    colorClass: "bg-blue-100",
+    isNew: true
+};
+
 export default function PrepaymentVsSIP() {
     return (
         <div className="bg-slate-50 min-h-screen font-sans text-slate-900">
-            <Helmet>
-                <title>Home Loan Prepayment vs SIP – The 11% Rule Explained (With Real Numbers) | CalcGuide</title>
-                <meta name="description" content="Should you prepay your home loan or invest in SIP? We explain the 11% Rule with mathematical proof, Indian tax context, and real 2025 interest rates. Decide now." />
-                <meta name="keywords" content="home loan prepayment vs sip, 11% rule home loan, home loan prepayment or sip, prepay home loan or invest, sip vs home loan interest, should I prepay home loan or invest in sip, India personal finance" />
-            </Helmet>
 
             {/* --- HERO SECTION --- */}
             <div className="bg-white border-b border-slate-200">
@@ -252,7 +257,7 @@ export default function PrepaymentVsSIP() {
                     <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Final Checklist: Decide Now</h2>
                     <ul className="space-y-3 font-medium text-slate-800 border-l-2 border-slate-300 pl-6">
                         <li className="flex items-center gap-2">
-                             Interest Rate > 9.5%? <span className="text-blue-600 font-bold">→ Prepay.</span>
+                            Interest Rate &gt; 9.5%? <span className="text-blue-600 font-bold">→ Prepay.</span>
                         </li>
                         <li className="flex items-center gap-2">
                             Are you in the first 3 years of loan? <span className="text-blue-600 font-bold">→ Prepay aggressively.</span>

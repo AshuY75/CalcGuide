@@ -1,165 +1,30 @@
+import React, { useState, useEffect } from 'react'
 import CalculatorCard from '../components/CalculatorCard'
 import { ROUTES } from '../routes/paths'
-
+import { CALCULATORS } from '../data/calculators'
 
 export default function Home() {
-    // Map of old paths keys to new ROUTES constants
-    const calculators = [
-        // Phase 2 - High Priority
-        {
-            title: 'Village Interest',
-            desc: 'Sood / Vaddi calculator for village loans',
-            icon: '🌾',
-            tag: 'New',
-            path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST,
-
-        },
-        {
-            title: 'Land Area Converter',
-            desc: 'Bigha, Guntha, Katha conversion by State',
-            icon: '🏞️',
-            tag: 'New',
-            path: ROUTES.CALCULATORS.CONSTRUCTION.LAND_AREA,
-
-        },
-        {
-            title: 'Gold Jewellery Price',
-            desc: 'Calculate real price with Making & GST',
-            icon: '💍',
-            tag: 'New',
-            path: ROUTES.CALCULATORS.GOLD.JEWELLERY,
-
-        },
-        {
-            title: 'Old Gold Exchange',
-            desc: 'Value of old gold with melting loss',
-            icon: '⚖️',
-            tag: null,
-            path: ROUTES.CALCULATORS.GOLD.OLD_GOLD,
-
-        },
-        {
-            title: 'Construction Cost',
-            desc: 'House construction cost estimator',
-            icon: '🏗️',
-            tag: 'Popular',
-            path: ROUTES.CALCULATORS.CONSTRUCTION.COST,
-        },
-        {
-            title: 'Brick Calculator',
-            desc: 'Estimate bricks, cement & sand',
-            icon: '🧱',
-            tag: null,
-            path: ROUTES.CALCULATORS.CONSTRUCTION.BRICK,
-        },
-
-        // Phase 1
-        {
-            title: 'EMI Calculator',
-            desc: 'Loan EMI with salary risk analysis',
-            icon: '💰',
-            tag: 'Popular',
-            path: ROUTES.CALCULATORS.LOAN.EMI,
-        },
-        {
-            title: 'Home Loan Prepayment',
-            desc: 'Save interest & reduce tenure',
-            icon: '📉',
-            tag: 'New',
-            path: ROUTES.CALCULATORS.LOAN.HOME_LOAN_PREPAYMENT,
-        },
-        {
-            title: 'SIP Calculator',
-            desc: 'Plan mutual fund investments',
-            icon: '📈',
-            tag: 'Trending',
-            path: ROUTES.CALCULATORS.INVESTMENT.SIP,
-        },
-        {
-            title: 'Loan Eligibility',
-            desc: 'Check maximum loan amount',
-            icon: '✅',
-            tag: null,
-            path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY,
-        },
-        {
-            title: 'FD Calculator',
-            desc: 'Fixed deposit returns',
-            icon: '🏛️',
-            tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.FD,
-
-        },
-        {
-            title: 'RD Calculator',
-            desc: 'Recurring deposit returns',
-            icon: '📊',
-            tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.RD,
-
-        },
-        {
-            title: 'Age Calculator',
-            desc: 'Exact age for govt exams',
-            icon: '📅',
-            tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.AGE,
-
-        },
-        {
-            title: 'SIP ₹1 Crore',
-            desc: 'Monthly SIP for target',
-            icon: '🎯',
-            tag: 'Goal',
-            path: ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE,
-
-        },
-        {
-            title: 'Percentage',
-            desc: 'All percentage calculations',
-            icon: '➗',
-            tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.PERCENTAGE,
-
-        },
-        {
-            title: 'Date Difference',
-            desc: 'Calculate days between dates',
-            icon: '📆',
-            tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.DATE_DIFF,
-
-        },
-        {
-            title: 'Exam Eligibility',
-            desc: 'Age for govt exams',
-            icon: '📝',
-            tag: null,
-            path: ROUTES.CALCULATORS.UTILITY.EXAM,
-
-        },
-        {
-            title: 'Simple Interest',
-            desc: 'Calculate simple interest',
-            icon: '📉',
-            tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST,
-
-        },
-        {
-            title: 'Compound Interest',
-            desc: 'Power of compounding',
-            icon: '🚀',
-            tag: null,
-            path: ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST,
-
-        },
+    const categories = [
+        { id: 'all', name: 'All Tools', icon: '💎' },
+        { id: 'STUDENT', name: 'Student', icon: '🎓' },
+        { id: 'INVESTMENT', name: 'Investment', icon: '📈' },
+        { id: 'LOAN', name: 'Loans & EMI', icon: '�' },
+        { id: 'TAX', name: 'Tax & GST', icon: '🏛️' },
+        { id: 'CONSTRUCTION', name: 'Land & Build', icon: '🏗️' },
+        { id: 'UTILITY', name: 'Life & Utility', icon: '🛠️' },
+        { id: 'CREATOR', name: 'Creator & Jobs', icon: '�' },
     ]
+
+    const [activeCategory, setActiveCategory] = useState('all')
+
+    const filteredCalculators = activeCategory === 'all'
+        ? CALCULATORS
+        : CALCULATORS.filter(calc => calc.category === activeCategory)
 
     return (
         <div className="min-h-screen bg-slate-50">
 
-            <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16 sm:py-20">
+            <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16 sm:py-20 pt-28 sm:pt-32">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
                         Sahi Hisab, <span className="text-yellow-300">Sahi Faisla</span>
@@ -167,17 +32,25 @@ export default function Home() {
                     <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
                         Practical finance, land, and gold calculators for smart decisions.
                     </p>
-                    <a
-                        href="#calculators"
-                        className="inline-block px-8 py-3 bg-white text-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg"
-                    >
-                        Explore Calculators
-                    </a>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <a
+                            href="#calculators"
+                            className="px-8 py-3 bg-white text-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-lg"
+                        >
+                            Explore 50+ Tools
+                        </a>
+                        <Link
+                            to={ROUTES.LEARN.HOME}
+                            className="px-8 py-3 bg-blue-600/30 text-white border border-white/20 font-semibold rounded-lg hover:bg-blue-600/50 transition-colors backdrop-blur-sm"
+                        >
+                            Read Guides
+                        </Link>
+                    </div>
                 </div>
             </section>
 
-            <section id="calculators" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+            <section id="calculators" className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
                     <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
                         Our Calculators
                     </h2>
@@ -186,11 +59,34 @@ export default function Home() {
                     </p>
                 </div>
 
+                {/* Category Filter */}
+                <div className="flex flex-wrap justify-center gap-2 mb-10 sticky top-16 sm:top-20 z-10 py-4 bg-slate-50/90 backdrop-blur-sm border-b border-slate-200">
+                    {categories.map((cat) => (
+                        <button
+                            key={cat.id}
+                            onClick={() => setActiveCategory(cat.id)}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all shadow-sm ${activeCategory === cat.id
+                                ? 'bg-blue-600 text-white shadow-blue-200 scale-105'
+                                : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                                }`}
+                        >
+                            <span>{cat.icon}</span>
+                            {cat.name}
+                        </button>
+                    ))}
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                    {calculators.map((calc) => (
+                    {filteredCalculators.map((calc) => (
                         <CalculatorCard key={calc.path} {...calc} />
                     ))}
                 </div>
+
+                {filteredCalculators.length === 0 && (
+                    <div className="text-center py-20 text-slate-500">
+                        No calculators found in this category.
+                    </div>
+                )}
             </section>
 
             <section className="py-16 bg-white">
@@ -234,3 +130,4 @@ export default function Home() {
         </div>
     )
 }
+import { Link } from 'react-router-dom'

@@ -3,6 +3,7 @@ User-agent: *
 Content-Signal: search=yes,ai-train=no
 Allow: /
 Allow: /calculators/
+Allow: /learn/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
