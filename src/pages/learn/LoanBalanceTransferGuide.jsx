@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Loan Balance Transfer: When to Switch Banks to Save Lakhs",
     description: "Are you paying too much interest on your home loan? Learn how a Home Loan Balance Transfer can reduce your EMI and save you lakhs in interest costs.",
     category: "LOAN",
-    slug: ROUTES.LEARN.LOAN_TRANSFER_GUIDE,
+    slug: ROUTES.LEARN.LOAN_BALANCE_TRANSFER,
     date: "2025-02-22",
     icon: "🔃",
     colorClass: "bg-blue-100",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function LoanBalanceTransferGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Loan Balance Transfer: When to Switch Banks to Save Lakhs"
+                description="Are you paying too much interest on your home loan? Learn how a Home Loan Balance Transfer can reduce your EMI and save you lakhs in interest costs."
+                type="Article"
+                url="https://calcguide.in/learn/loan-balance-transfer-save-lakhs-formula/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

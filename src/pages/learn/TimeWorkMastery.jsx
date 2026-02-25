@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Time & Work Mastery: Solving Competitive Exam Math Faster",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function TimeWorkMastery() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Time & Work Mastery: Solving Competitive Exam Math Faster"
+                description="Struggling with 'Man-Days' and 'Efficiency' problems? Learn the Work-Rate-Time formula and shortcut tricks for JEE, SSC, and Banking exams."
+                type="Article"
+                url="https://calcguide.in/learn/time-work-math-mastery-shortcuts/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

@@ -53,7 +53,7 @@ export default function NoticeBuyoutCalculator() {
             <SchemaGenerator
                 name="Notice Period Buyout Calculator"
                 description="Calculate the cost of early exit from your job by buying out your notice period days."
-                url="https://calcguide.in/calculators/loan/notice-period-buyout-calculator"
+                url="https://calcguide.in/calculators/loan/notice-period-buyout-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

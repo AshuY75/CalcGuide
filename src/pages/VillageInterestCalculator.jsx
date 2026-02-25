@@ -87,12 +87,12 @@ export default function VillageInterestCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 type="Calculator"
                 name="Village Interest Calculator (Sood)"
                 description="Calculate village loan interest (Sood/Vaddi) instantly. Supports 'Rupees per 100' rate."
-                url="https://calcguide.in/calculators/loan/village-interest-calculator"
+                url="https://calcguide.in/calculators/loan/village-interest-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

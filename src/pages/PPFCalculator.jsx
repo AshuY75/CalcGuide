@@ -65,7 +65,7 @@ export default function PPFCalculator() {
             <SchemaGenerator
                 name="PPF Calculator (Public Provident Fund)"
                 description="Maximize your tax-free savings with our PPF Maturity Amount Calculator for 2025."
-                url="https://calcguide.in/calculators/investment/ppf-calculator"
+                url="https://calcguide.in/calculators/investment/ppf-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

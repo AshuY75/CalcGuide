@@ -1,8 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import SEOSection from '../../components/SEOSection'
-import { SchemaGenerator } from '../../components/SchemaGenerator'
-import { ROUTES } from '../../routes/paths'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+import { ROUTES } from '../../routes/paths';
+
+export const metadata = {
+    title: "How to Save for Child Education? SIP vs SSY vs PPF",
+    description: "Comparing investment options for your child's future education. Learn whether to choose SSY for your daughter or multi-cap mutual funds for long-term growth.",
+    category: "INVESTMENT",
+    slug: ROUTES.LEARN.CHILD_EDUCATION_SAVINGS,
+    date: "2025-02-22",
+    icon: "🎓",
+    colorClass: "bg-blue-100",
+    isNew: true
+};
 
 export default function ChildEducationSavings() {
     return (

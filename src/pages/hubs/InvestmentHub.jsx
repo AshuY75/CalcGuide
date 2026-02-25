@@ -12,7 +12,7 @@ const InvestmentHub = () => {
         },
         {
             title: 'SIP ₹1 Crore Goal',
-            path: ROUTES.CALCULATORS.INVESTMENT.SIP_1CR,
+            path: ROUTES.CALCULATORS.INVESTMENT.SIP_CRORE,
             description: 'Find out how much to invest monthly to reach ₹1 Crore.'
         },
         {
@@ -22,7 +22,7 @@ const InvestmentHub = () => {
         },
         {
             title: 'LTCG Tax Calculator',
-            path: ROUTES.CALCULATORS.INVESTMENT.LTCG,
+            path: ROUTES.CALCULATORS.INVESTMENT.LTCG_TAX,
             description: 'Calculate tax on Mutual Funds and Stocks (Budget 2024).'
         },
         {

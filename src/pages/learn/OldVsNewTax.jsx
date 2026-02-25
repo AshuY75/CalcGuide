@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Old vs New Tax Regime 2025 – Which is Better?",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function OldVsNewTax() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Old vs New Tax Regime 2025 – Which is Better?"
+                description="Detailed comparison of Indian tax regimes for FY 2025-26. Understand standard deduction, slab rates, and the breakeven point."
+                type="Article"
+                url="https://calcguide.in/learn/old-vs-new-tax-regime-2025-comparison/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Tax Strategy</span>

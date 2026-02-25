@@ -6,6 +6,11 @@ import LTCGTaxCalculatorUI from '../components/calculators/LTCGTaxCalculatorUI'
 export default function LTCGTaxCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="LTCG Tax Calculator (Budget 2024)"
+                description="Calculate tax on your stocks and mutual fund gains based on the latest ₹1.25 Lakh exemption rules."
+                url="https://calcguide.in/calculators/investment/ltcg-tax-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

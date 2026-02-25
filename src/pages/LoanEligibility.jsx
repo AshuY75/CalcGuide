@@ -47,11 +47,11 @@ export default function LoanEligibility() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="Loan Eligibility Calculator"
                 description="Calculate maximum home loan limit based on salary."
-                url="https://calcguide.in/calculators/loan/eligibility"
+                url="https://calcguide.in/calculators/loan/eligibility/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

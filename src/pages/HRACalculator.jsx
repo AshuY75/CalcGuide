@@ -6,6 +6,11 @@ import HRACalculatorUI from '../components/calculators/HRACalculatorUI'
 export default function HRACalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="HRA Exemption Calculator"
+                description="Calculate tax savings on your house rent under Section 10(13A) of the Income Tax Act."
+                url="https://calcguide.in/calculators/tax/hra-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

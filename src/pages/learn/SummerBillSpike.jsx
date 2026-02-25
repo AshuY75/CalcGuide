@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Beat the Summer Bill Spike – 5 AC Energy Saving Tips",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function SummerBillSpike() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Beat the Summer Bill Spike – 5 AC Energy Saving Tips"
+                description="Learn how to reduce your electricity bill during hearting Indian summers. Practical tips for AC usage and slab management."
+                type="Article"
+                url="https://calcguide.in/learn/beat-summer-electricity-bill-spike-ac-tips/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4 ">
                     <span className="text-yellow-600 font-bold uppercase tracking-widest text-sm">Saving Guide</span>

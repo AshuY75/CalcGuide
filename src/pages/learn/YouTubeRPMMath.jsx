@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "YouTube RPM India vs US: Why the 10x Difference?",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function YouTubeRPMMath() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="YouTube RPM India vs US: Why the 10x Difference?"
+                description="Deep dive into YouTube monetization. Understand why US traffic pays significantly more than Indian traffic and how to optimize your channel."
+                type="Article"
+                url="https://calcguide.in/learn/youtube-rpm-india-vs-usa-math/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4 ">
                     <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Monetization Guide</span>

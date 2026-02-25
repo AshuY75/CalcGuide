@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Professional Invoicing: Legal & GST Requirements for Freelancers",
     description: "Sending your first invoice? Learn the 7 essential elements of a professional invoice, how to handle IGST vs SGST, and what to do when a client misses a payment deadline.",
     category: "CREATOR",
-    slug: ROUTES.LEARN.FREELANCE_INVOICE_GUIDE,
+    slug: ROUTES.LEARN.PROFESSIONAL_INVOICING,
     date: "2025-02-22",
     icon: "📜",
     colorClass: "bg-slate-100",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function FreelanceInvoicingGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Professional Invoicing: Legal & GST Requirements for Freelancers"
+                description="Learn the 7 essential elements of a professional invoice and legal requirements."
+                type="Article"
+                url="https://calcguide.in/learn/professional-freelance-invoicing-legal-requirements/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

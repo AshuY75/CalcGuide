@@ -6,6 +6,11 @@ import CreditCardRewardsUI from '../components/calculators/CreditCardRewardsUI'
 export default function CreditCardRewards() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="Credit Card Rewards Value Calculator"
+                description="Calculate the real monetary value of your reward points and miles to avoid devaluation."
+                url="https://calcguide.in/calculators/finance/credit-card-rewards-value-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

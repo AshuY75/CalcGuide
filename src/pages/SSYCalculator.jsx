@@ -69,7 +69,7 @@ export default function SSYCalculator() {
             <SchemaGenerator
                 name="SSY Calculator (Sukanya Samriddhi Yojana)"
                 description="Determine the maturity amount for your girl child's future with our accurate SSY Calculator."
-                url="https://calcguide.in/calculators/investment/ssy-calculator"
+                url="https://calcguide.in/calculators/investment/ssy-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

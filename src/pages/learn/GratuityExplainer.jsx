@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Gratuity Rules Explained – Why You Don't Need 5 Years",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function GratuityExplainer() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Gratuity Rules Explained – Why You Don't Need 5 Years"
+                description="Understand the recent changes in gratuity rules, the 4-year 240-day criteria, and how tax-free limits work in 2024-25."
+                type="Article"
+                url="https://calcguide.in/learn/gratuity-rules-explained/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4">

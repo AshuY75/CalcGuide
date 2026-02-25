@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 // Images
 import diffChart from '../../assets/prepayment-vs-sip-chart.png';
@@ -22,6 +24,13 @@ export const metadata = {
 export default function HomeLoanVsSIP() {
     return (
         <div className="bg-slate-50 min-h-screen font-sans text-slate-900">
+            <SchemaGenerator
+                name="Home Loan Prepayment vs SIP – The 11% Rule Explained"
+                description="Should you prepay your home loan or invest in SIP? We explain the 11% Rule with mathematical proof, Indian tax context, and real mathematical analysis."
+                type="Article"
+                url="https://calcguide.in/learn/home-loan-prepayment-vs-sip-11-percent-rule/"
+            />
+
 
             {/* --- HERO SECTION --- */}
             <div className="bg-white border-b border-slate-200">

@@ -57,11 +57,11 @@ export default function AgeCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="Age Calculator"
                 description="Calculate age from Date of Birth (DOB) in Years, Months, Days."
-                url="https://calcguide.in/calculators/utility/age-calculator"
+                url="https://calcguide.in/calculators/utility/age-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

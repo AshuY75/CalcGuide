@@ -1,10 +1,7 @@
-# HTML Caching (Strong Policy)
-/
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
-
-/*.html
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
-
-# Long-lived Assets (Immutable)
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.co.in; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://pagead2.googlesyndication.com https://www.google-analytics.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net;

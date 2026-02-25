@@ -6,6 +6,11 @@ import ElectricityBillCalculatorUI from '../components/calculators/ElectricityBi
 export default function ElectricityBillCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="Electricity Bill Calculator (Slab-wise)"
+                description="Estimate your monthly electricity charges based on your state's latest unit rates and slab systems."
+                url="https://calcguide.in/calculators/utility/electricity-bill-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

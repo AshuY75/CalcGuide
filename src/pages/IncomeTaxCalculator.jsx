@@ -2,10 +2,16 @@ import CalculatorContent from '../components/CalculatorContent'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import IncomeTaxCalculatorUI from '../components/calculators/IncomeTaxCalculatorUI'
+import RelatedContent from '../components/RelatedContent'
 
 export default function IncomeTaxCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="Income Tax Calculator (Old vs New)"
+                description="Compare your tax liability between Old and New Tax Regimes for FY 2025-26 with latest budget changes."
+                url="https://calcguide.in/calculators/tax/income-tax-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">
@@ -31,6 +37,7 @@ export default function IncomeTaxCalculator() {
                             example="If your salary is ₹12 Lakhs and you have ₹2 Lakhs in deductions, you'll pay ~₹85,000 in the New Regime vs ~₹1.1 Lakhs in the Old Regime. The New Regime is the clear winner here."
                             commonMistake="Forgetting that the New Regime now has a standard deduction of ₹75,000. Many online calculators still use the old ₹50,000 limit, leading to incorrect comparisons. Always use updated tools like CalcGuide."
                         />
+                        <RelatedContent category="TAX" currentPath={ROUTES.CALCULATORS.TAX.INCOME_TAX} />
                     </div>
                     <div className="md:col-span-1 space-y-6">
                         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">

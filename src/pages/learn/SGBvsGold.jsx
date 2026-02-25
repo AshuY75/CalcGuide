@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "SGB vs Physical Gold: Which is Better in 2025?",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function SGBvsGold() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="SGB vs Physical Gold: Which is Better in 2025?"
+                description="Thinking of buying gold? Compare Sovereign Gold Bonds (SGB) with Physical Gold on safety, tax benefits, and yearly interest. Make the smarter investment choice."
+                type="Article"
+                url="https://calcguide.in/learn/sgb-vs-physical-gold-better-investment-2025/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">
@@ -96,7 +105,7 @@ export default function SGBvsGold() {
                     </div>
 
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.GOLD.GOLD_JEWELLERY} className="inline-block p-4 bg-amber-600 text-white rounded-xl font-bold hover:bg-amber-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.GOLD.JEWELLERY} className="inline-block p-4 bg-amber-600 text-white rounded-xl font-bold hover:bg-amber-700 transition shadow-lg">
                             Check Gold Jewelry Cost vs Value
                         </Link>
                     </div>

@@ -6,6 +6,11 @@ import ImportDutyCalculatorUI from '../components/calculators/ImportDutyCalculat
 export default function ImportDutyCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="Indian Import Duty Calculator 2025"
+                description="Estimate customs duty, SWS, and IGST for items imported to India with latest rates."
+                url="https://calcguide.in/calculators/utility/import-duty-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

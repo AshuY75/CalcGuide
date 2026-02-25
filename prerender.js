@@ -70,13 +70,20 @@ for (const url of routesToPrerender) {
     try {
         const result = render(url, {})
         appHtml = result.html
+
+        // Strict Content Guardrail (Post-Render)
+        if (!appHtml || appHtml.trim().length < 100) {
+            errors.push(`CONTENT ERROR: Rendered HTML for "${url}" is too small or empty (${appHtml?.length || 0} bytes). Check for broken components or missing data.`)
+            continue
+        }
     } catch (e) {
         errors.push(`RENDER ERROR for ${url}: ${e.message}`)
         continue
     }
 
     // Phase C: Manual Template Injection (Deterministic)
-    const canonical = `https://www.calcguide.in${url === '/' ? '' : url}`
+    const domain = 'https://calcguide.in';
+    const canonical = `${domain}${url === '/' ? '' : url.endsWith('/') ? url : `${url}/`}`
     const seoTags = `
     <title data-rh="true">${title}</title>
     <meta data-rh="true" name="description" content="${description}" />

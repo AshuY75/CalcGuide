@@ -74,11 +74,11 @@ export default function PercentageCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="Percentage Calculator"
                 description="Solve percentage problems: Find %, % Change, and what % is X of Y."
-                url="https://calcguide.in/calculators/utility/percentage-calculator"
+                url="https://calcguide.in/calculators/utility/percentage-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "The Emergency Fund Blueprint: 2025 India Edition",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function EmergencyFundBlueprint() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="The Emergency Fund Blueprint: 2025 India Edition"
+                description="How much emergency fund do you really need? Learn the 6-month rule."
+                type="Article"
+                url="https://calcguide.in/learn/emergency-fund-blueprint-12-months-salary/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

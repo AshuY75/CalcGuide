@@ -35,18 +35,20 @@ export default function WhySIPBeatsFD() {
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-            
+
 
             <BreadcrumbSchema items={[
                 { name: 'Home', url: 'https://calcguide.in' },
                 { name: 'Learn', url: 'https://calcguide.in/learn' },
-                { name: 'Investment Guide', url: 'https://calcguide.in/learn/why-sip-beats-fd-long-term' }
+                { name: 'Investment Guide', url: 'https://calcguide.in/learn/why-sip-beats-fd-long-term/' }
             ]} />
+
 
             <SchemaGenerator
                 type="Article"
                 name="Why SIP Beats Fixed Deposits (FD) for Long-Term Wealth Creation"
                 description="Discover why Systematic Investment Plans (SIP) outperform Fixed Deposits (FD) for wealth creation over 10+ years. Historical data, tax analysis, and inflation impact explained."
+                url="https://calcguide.in/learn/why-sip-beats-fd-long-term/"
                 image="https://calcguide.in/images/learn/sip-vs-fd-growth-chart.png"
                 data={{
                     "author": { "@type": "Organization", "name": "CalcGuide Team" },
@@ -55,6 +57,7 @@ export default function WhySIPBeatsFD() {
                     "headline": "Why SIP Beats Fixed Deposits (FD) for Long-Term Wealth Creation"
                 }}
             />
+
 
             <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 

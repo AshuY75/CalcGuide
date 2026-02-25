@@ -14,6 +14,7 @@ import InvestmentHub from '../pages/hubs/InvestmentHub';
 import LoanHub from '../pages/hubs/LoanHub';
 import SIPHub from '../pages/hubs/SIPHub';
 import TaxHub from '../pages/hubs/TaxHub';
+import StudentHub from '../pages/hubs/StudentHub';
 
 // 3. Calculators: Construction
 import BrickCalculator from '../pages/BrickCalculator';
@@ -56,6 +57,7 @@ import HRACalculator from '../pages/HRACalculator';
 import IncomeTaxCalculator from '../pages/IncomeTaxCalculator';
 import GSTCalculator from '../pages/GSTCalculator';
 import TDSCalculator from '../pages/TDSCalculator';
+import ProfessionalTaxCalculator from '../pages/ProfessionalTaxCalculator';
 
 // 8. Calculators: Utility
 import AgeCalculator from '../pages/AgeCalculator';
@@ -150,6 +152,7 @@ export const routes = [
             { path: ROUTES.HUBS.INVESTMENT, element: <RouteWrapper Component={InvestmentHub} /> },
             { path: ROUTES.HUBS.SIP, element: <RouteWrapper Component={SIPHub} /> },
             { path: ROUTES.HUBS.TAX, element: <RouteWrapper Component={TaxHub} /> },
+            { path: ROUTES.HUBS.STUDENT, element: <RouteWrapper Component={StudentHub} /> },
 
             // Loan
             { path: ROUTES.CALCULATORS.LOAN.EMI, element: <RouteWrapper Component={EMICalculator} /> },
@@ -157,7 +160,7 @@ export const routes = [
             { path: ROUTES.CALCULATORS.LOAN.ELIGIBILITY, element: <RouteWrapper Component={LoanEligibility} /> },
             { path: ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST, element: <RouteWrapper Component={VillageInterest} /> },
             { path: ROUTES.CALCULATORS.LOAN.AMORTISATION_SCHEDULE, element: <RouteWrapper Component={AmortisationScheduleCalculator} /> },
-            { path: ROUTES.CALCULATORS.LOAN.NOTICE_PERIOD_BUYOUT, element: <RouteWrapper Component={NoticeBuyoutCalculator} /> },
+            { path: ROUTES.CALCULATORS.LOAN.NOTICE_BUYOUT, element: <RouteWrapper Component={NoticeBuyoutCalculator} /> },
 
             // Investment
             { path: ROUTES.CALCULATORS.INVESTMENT.SIP, element: <RouteWrapper Component={SIPCalculator} /> },
@@ -170,7 +173,7 @@ export const routes = [
             { path: ROUTES.CALCULATORS.INVESTMENT.SIMPLE_INTEREST, element: <RouteWrapper Component={SimpleInterest} /> },
             { path: ROUTES.CALCULATORS.INVESTMENT.COMPOUND_INTEREST, element: <RouteWrapper Component={CompoundInterest} /> },
             { path: ROUTES.CALCULATORS.INVESTMENT.LUMPSUM, element: <RouteWrapper Component={LumpsumCalculator} /> },
-            { path: ROUTES.CALCULATORS.INVESTMENT.SIP_GOAL_PLANNER, element: <RouteWrapper Component={SIPGoalPlanner} /> },
+            { path: ROUTES.CALCULATORS.INVESTMENT.SIP_GOAL, element: <RouteWrapper Component={SIPGoalPlanner} /> },
             { path: ROUTES.CALCULATORS.INVESTMENT.MF_OVERLAP, element: <RouteWrapper Component={MFOverlapCalculator} /> },
             { path: ROUTES.CALCULATORS.INVESTMENT.PPF, element: <RouteWrapper Component={PPFCalculator} /> },
             { path: ROUTES.CALCULATORS.INVESTMENT.SSY, element: <RouteWrapper Component={SSYCalculator} /> },
@@ -183,6 +186,7 @@ export const routes = [
             { path: ROUTES.CALCULATORS.TAX.EPF, element: <RouteWrapper Component={EPFCalculator} /> },
             { path: ROUTES.CALCULATORS.TAX.GST, element: <RouteWrapper Component={GSTCalculator} /> },
             { path: ROUTES.CALCULATORS.TAX.TDS, element: <RouteWrapper Component={TDSCalculator} /> },
+            { path: ROUTES.CALCULATORS.TAX.PROFESSIONAL_TAX, element: <RouteWrapper Component={ProfessionalTaxCalculator} /> },
 
             // Gold
             { path: ROUTES.CALCULATORS.GOLD.JEWELLERY, element: <RouteWrapper Component={GoldJewellery} /> },
@@ -255,17 +259,17 @@ export const routes = [
             { path: ROUTES.LEARN.IMPORT_DUTY_GUIDE, element: <RouteWrapper Component={ImportDutyGuide} /> },
             { path: ROUTES.LEARN.SGPA_VS_CGPA, element: <RouteWrapper Component={SGPACGPAGuide} /> },
             { path: ROUTES.LEARN.SGPA_TO_PERCENTAGE, element: <RouteWrapper Component={SGPAToPercentageGuide} /> },
-            { path: ROUTES.LEARN.TIME_WORK_MASTERY, element: <RouteWrapper Component={TimeWorkMastery} /> },
-            { path: ROUTES.LEARN.RANK_PERCENTILE_ANALYSIS, element: <RouteWrapper Component={RankPercentileAnalysis} /> },
+            { path: ROUTES.LEARN.TIME_AND_WORK_MASTERY, element: <RouteWrapper Component={TimeWorkMastery} /> },
+            { path: ROUTES.LEARN.JEE_NEET_RANK_ANALYSIS, element: <RouteWrapper Component={RankPercentileAnalysis} /> },
             { path: ROUTES.LEARN.SGB_VS_GOLD, element: <RouteWrapper Component={SGBvsGold} /> },
-            { path: ROUTES.LEARN.INDEXATION_IMPACT, element: <RouteWrapper Component={IndexationImpact} /> },
+            { path: ROUTES.LEARN.INDEXATION_REMOVAL, element: <RouteWrapper Component={IndexationImpact} /> },
             { path: ROUTES.LEARN.SECTION_80C_DYING, element: <RouteWrapper Component={Section80CDying} /> },
             { path: ROUTES.LEARN.DIGITAL_RUPEE, element: <RouteWrapper Component={DigitalRupeeGuide} /> },
             { path: ROUTES.LEARN.SIDE_HUSTLE_TAX, element: <RouteWrapper Component={SideHustleTax} /> },
-            { path: ROUTES.LEARN.WEDDING_BUDGET_TIPS, element: <RouteWrapper Component={WeddingBudgetTips} /> },
+            { path: ROUTES.LEARN.WEDDING_BUDGET, element: <RouteWrapper Component={WeddingBudgetTips} /> },
             { path: ROUTES.LEARN.MF_OVERLAP_TRUTH, element: <RouteWrapper Component={MFOverlapTruth} /> },
-            { path: ROUTES.LEARN.NOTICE_RIGHTS, element: <RouteWrapper Component={NoticePeriodRights} /> },
-            { path: ROUTES.LEARN.FREELANCE_INVOICING, element: <RouteWrapper Component={FreelanceInvoicingGuide} /> },
+            { path: ROUTES.LEARN.NOTICE_PERIOD_RIGHTS, element: <RouteWrapper Component={NoticePeriodRights} /> },
+            { path: ROUTES.LEARN.PROFESSIONAL_INVOICING, element: <RouteWrapper Component={FreelanceInvoicingGuide} /> },
             { path: ROUTES.LEARN.EMERGENCY_FUND, element: <RouteWrapper Component={EmergencyFundBlueprint} /> },
             { path: ROUTES.LEARN.LOAN_BALANCE_TRANSFER, element: <RouteWrapper Component={LoanBalanceTransferGuide} /> },
             { path: ROUTES.LEARN.CHILD_EDUCATION_SAVINGS, element: <RouteWrapper Component={ChildEducationSavings} /> },

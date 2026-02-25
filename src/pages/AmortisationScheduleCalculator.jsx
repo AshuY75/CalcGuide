@@ -10,7 +10,7 @@ export default function AmortisationScheduleCalculator() {
         "@type": "Calculator",
         "name": "Loan Amortisation Schedule Calculator",
         "description": "Calculate your monthly loan repayment schedule with principal and interest breakdown.",
-        "url": "https://calcguide.in/calculators/loan/amortisation-schedule-calculator",
+        "url": "https://calcguide.in/calculators/loan/amortisation-schedule-calculator/",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any"
     }

@@ -51,7 +51,7 @@ export default function LumpsumCalculator() {
             <SchemaGenerator
                 name="Lumpsum Calculator India"
                 description="Estimate the future value of your one-time mutual fund or fixed deposits."
-                url="https://calcguide.in/calculators/investment/lumpsum-calculator"
+                url="https://calcguide.in/calculators/investment/lumpsum-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

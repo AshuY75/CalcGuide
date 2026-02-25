@@ -58,7 +58,7 @@ export default function FreelanceInvoiceGenerator() {
             <SchemaGenerator
                 name="Freelance Invoice Generator India"
                 description="Create professional GST and TDS compliant invoice estimates for your freelance projects."
-                url="https://calcguide.in/calculators/creator/freelance-invoice-generator"
+                url="https://calcguide.in/calculators/creator/freelance-invoice-generator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

@@ -44,7 +44,7 @@ export default function SIPCalculator() {
                 type="FinancialProduct"
                 name="SIP Calculator"
                 description="Calculate Mutual Fund SIP returns instantly. See how small monthly investments grow into crores with the power of compounding."
-                url="https://calcguide.in/calculators/investment/sip-calculator"
+                url="https://calcguide.in/calculators/investment/sip-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

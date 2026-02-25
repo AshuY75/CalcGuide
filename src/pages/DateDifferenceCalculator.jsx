@@ -93,11 +93,11 @@ export default function DateDifferenceCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="Date Difference Calculator"
                 description="Calculate duration between two dates in Days, Weeks, Months, Years."
-                url="https://calcguide.in/calculators/utility/date-difference-calculator"
+                url="https://calcguide.in/calculators/utility/date-difference-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

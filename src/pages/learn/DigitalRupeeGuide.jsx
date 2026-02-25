@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Digital Rupee (CBDC): Everything You Need to Know",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function DigitalRupeeGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Digital Rupee (CBDC): Everything You Need to Know"
+                description="What is e₹ (Digital Rupee)? How is it different from UPI or Bitcoin? Learn about India's new digital currency."
+                type="Article"
+                url="https://calcguide.in/learn/digital-rupee-cbdc-india-full-guide/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">
@@ -77,7 +86,7 @@ export default function DigitalRupeeGuide() {
                     </p>
 
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.UTILITY.CURRENCY} className="inline-block p-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.TAX.INCOME_TAX} className="inline-block p-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg">
                             Try the Currency Converter
                         </Link>
                     </div>

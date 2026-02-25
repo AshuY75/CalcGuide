@@ -7,7 +7,7 @@ export default function SeoHead({
     canonicalPath, // REQUIRED - must be explicit path like "/calculators/emi"
     keywordString
 }) {
-    const domain = 'https://www.calcguide.in';
+    const domain = 'https://calcguide.in';
 
     // canonicalPath is required for SSR
     if (!canonicalPath) {

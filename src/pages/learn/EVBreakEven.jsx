@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "EV vs Petrol: The True Cost – When Do You Break Even?",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function EVBreakEven() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="EV vs Petrol: The True Cost – When Do You Break Even?"
+                description="Compare the total cost of ownership for EVs vs Petrol cars in India."
+                type="Article"
+                url="https://calcguide.in/learn/ev-vs-petrol-true-cost-comparison/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4 ">
                     <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Automotive Math</span>

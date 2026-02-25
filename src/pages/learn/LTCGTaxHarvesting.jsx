@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "LTCG Tax Harvesting 2025 – Save ₹15,000 every year",
     description: "Learn how to use the annual ₹1.25 Lakh exemption to legally avoid paying LTCG tax on your mutual fund profits.",
     category: "INVESTMENT",
-    slug: ROUTES.LEARN.LTCG_TAX_HARVESTING,
+    slug: ROUTES.LEARN.LTCG_HARVESTING,
     date: "2025-02-21",
     icon: "✂️",
     colorClass: "bg-green-100",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function LTCGTaxHarvesting() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="LTCG Tax Harvesting 2025 – Save ₹15,000 every year"
+                description="Learn how to use the annual ₹1.25 Lakh exemption to legally avoid paying LTCG tax on your mutual fund profits."
+                type="Article"
+                url="https://calcguide.in/learn/ltcg-tax-harvesting-guide-2025/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4">
@@ -76,7 +85,7 @@ export default function LTCGTaxHarvesting() {
 
                     <h3>Plan Your Harvest</h3>
                     <div className="mt-6">
-                        <Link to={ROUTES.CALCULATORS.INVESTMENT.LTCG} className="inline-flex items-center gap-2 p-4 border-2 border-slate-200 rounded-xl hover:border-green-500 transition-colors bg-slate-50 font-bold text-green-700">
+                        <Link to={ROUTES.CALCULATORS.INVESTMENT.LTCG_TAX} className="inline-flex items-center gap-2 p-4 border-2 border-slate-200 rounded-xl hover:border-green-500 transition-colors bg-slate-50 font-bold text-green-700">
                             👉 Open LTCG Tax Calculator
                         </Link>
                     </div>

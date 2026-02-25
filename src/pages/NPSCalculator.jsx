@@ -66,7 +66,7 @@ export default function NPSCalculator() {
             <SchemaGenerator
                 name="NPS Calculator (National Pension System)"
                 description="Project your pension and retirement corpus with our detailed NPS Calculator for India."
-                url="https://calcguide.in/calculators/investment/nps-calculator"
+                url="https://calcguide.in/calculators/investment/nps-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

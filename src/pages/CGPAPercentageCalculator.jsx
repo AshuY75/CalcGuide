@@ -60,7 +60,7 @@ export default function CGPAPercentageCalculator() {
             <SchemaGenerator
                 name="CGPA to Percentage Calculator India"
                 description="Convert CGPA to Percentage for CBSE, VTU, Mumbai University, and more."
-                url="https://calcguide.in/calculators/student/cgpa-to-percentage-calculator"
+                url="https://calcguide.in/calculators/student/cgpa-to-percentage-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

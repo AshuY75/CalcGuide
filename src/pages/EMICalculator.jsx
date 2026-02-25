@@ -10,7 +10,7 @@ export default function EMICalculator() {
         "@type": "Calculator",
         "name": "EMI Calculator",
         "description": "Calculate your Home Loan, Car Loan or Personal Loan EMI with our free calculator. Get instant salary-based affordability analysis.",
-        "url": "https://calcguide.in/calculators/loan/emi-calculator",
+        "url": "https://calcguide.in/calculators/loan/emi-calculator/",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any"
     }

@@ -55,7 +55,7 @@ export default function MFOverlapCalculator() {
             <SchemaGenerator
                 name="Mutual Fund Overlap Calculator India"
                 description="Analyze duplicate stocks in your mutual fund portfolio to improve diversification."
-                url="https://calcguide.in/calculators/investment/mutual-fund-overlap-calculator"
+                url="https://calcguide.in/calculators/investment/mutual-fund-overlap-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

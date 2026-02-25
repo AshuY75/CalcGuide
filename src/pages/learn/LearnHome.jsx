@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { getAllArticles } from '../../utils/articleLoader'
 
-import { BreadcrumbSchema } from '../../components/SchemaGenerator'
+import { BreadcrumbSchema, SchemaGenerator } from '../../components/SchemaGenerator'
+
 
 
 export default function LearnHome() {
@@ -9,8 +10,15 @@ export default function LearnHome() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <BreadcrumbSchema items={[{ name: 'Home', url: 'https://calcguide.in' }, { name: 'Learn', url: 'https://calcguide.in/learn' }]} />
+            <SchemaGenerator
+                name="Financial Guidance & Tutorials – Learn How Money Works"
+                description="Understanding how your money grows shouldn't be complicated. Read our simple, step-by-step guides designed for Indian investors."
+                type="WebPage"
+                url="https://calcguide.in/learn/"
+            />
+
 
             {/* Header */}
             <div className="bg-white border-b border-slate-200 py-12">

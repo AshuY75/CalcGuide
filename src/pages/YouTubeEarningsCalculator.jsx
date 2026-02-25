@@ -6,6 +6,11 @@ import YouTubeEarningsCalculatorUI from '../components/calculators/YouTubeEarnin
 export default function YouTubeEarningsCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="YouTube Earnings Calculator"
+                description="Estimate your AdSense revenue based on views, niche, and audience location."
+                url="https://calcguide.in/calculators/creator/youtube-earnings-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

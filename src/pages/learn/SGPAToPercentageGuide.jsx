@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "University SGPA/CGPA to Percentage: VTU, MU, CBSE Formulas",
     description: "Looking for your university's specific percentage formula? We've compiled the latest 2025 calculation rules for VTU, Mumbai University, Savitribai Phule (SPPU), and CBSE.",
     category: "STUDENT",
-    slug: ROUTES.LEARN.SGPA_PERCENTAGE_GUIDE,
+    slug: ROUTES.LEARN.SGPA_TO_PERCENTAGE,
     date: "2025-02-22",
     icon: "📜",
     colorClass: "bg-cyan-100",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function SGPAToPercentageGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="University SGPA/CGPA to Percentage: VTU, MU, CBSE Formulas"
+                description="Looking for your university's specific percentage formula? We've compiled the latest 2025 calculation rules for VTU, Mumbai University, Savitribai Phule (SPPU), and CBSE."
+                type="Article"
+                url="https://calcguide.in/learn/sgpa-to-percentage-university-formulas/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

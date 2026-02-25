@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Hidden Platform Fees: Why You Lose 15% to PayPal & Upwork",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function HiddenPlatformFees() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Hidden Platform Fees: Why You Lose 15% to PayPal & Upwork"
+                description="Breakdown of fees for PayPal, Upwork, and Stripe. Learn how to optimize your international payments and save on conversion spreads."
+                type="Article"
+                url="https://calcguide.in/learn/hidden-platform-fees-paypal-upwork/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <span className="text-orange-600 font-bold uppercase tracking-widest text-sm">Profit Optimization</span>

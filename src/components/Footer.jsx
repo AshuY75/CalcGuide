@@ -28,7 +28,7 @@ export default function Footer() {
                             <Link to={ROUTES.CALCULATORS.INVESTMENT.FD} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">FD Calculator</Link>
                             <Link to={ROUTES.CALCULATORS.INVESTMENT.RD} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">RD Calculator</Link>
                             <Link to={ROUTES.CALCULATORS.GOLD.JEWELLERY} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">Gold Calculator</Link>
-                            <Link to={ROUTES.CALCULATORS.UTILITY.AGE} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">Age Calculator</Link>
+                            <Link to={ROUTES.HUBS.STUDENT} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1 font-bold">Student Hub</Link>
                         </nav>
                     </div>
 

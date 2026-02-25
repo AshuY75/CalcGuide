@@ -57,7 +57,7 @@ export default function SIPGoalPlanner() {
             <SchemaGenerator
                 name="SIP Goal Planner"
                 description="Find out the exact monthly SIP required to reach your financial goals (1Cr, 5Cr, etc)."
-                url="https://calcguide.in/calculators/investment/sip-goal-planner"
+                url="https://calcguide.in/calculators/investment/sip-goal-planner/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

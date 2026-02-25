@@ -11,7 +11,7 @@ export default function SIP1CrCalculator() {
         "@type": "Calculator",
         "name": "SIP Goal Calculator",
         "description": "Calculate monthly investment required to reach a target amount like 1 Crore.",
-        "url": "https://calcguide.in/calculators/investment/sip-1-crore-calculator",
+        "url": "https://calcguide.in/calculators/investment/sip-1-crore-calculator/",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any"
     }
@@ -31,7 +31,7 @@ export default function SIP1CrCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
 
             <div className="bg-white border-b border-slate-200 py-6">

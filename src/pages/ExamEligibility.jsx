@@ -66,11 +66,11 @@ export default function ExamEligibility() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="Exam Eligibility Calculator"
                 description="Check age eligibility for government exams based on cut-off dates."
-                url="https://calcguide.in/calculators/utility/exam-eligibility-calculator"
+                url="https://calcguide.in/calculators/utility/exam-eligibility-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

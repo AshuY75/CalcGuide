@@ -51,11 +51,11 @@ export default function RDCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="RD Calculator"
                 description="Calculate Recurring Deposit (RD) interest and maturity amount."
-                url="https://calcguide.in/calculators/investment/rd-calculator"
+                url="https://calcguide.in/calculators/investment/rd-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

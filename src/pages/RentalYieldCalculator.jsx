@@ -52,7 +52,7 @@ export default function RentalYieldCalculator() {
             <SchemaGenerator
                 name="Rental Yield Calculator"
                 description="Determine the gross and net rental yield of your property investments in India."
-                url="https://calcguide.in/calculators/real-estate/rental-yield-calculator"
+                url="https://calcguide.in/calculators/real-estate/rental-yield-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

@@ -60,7 +60,7 @@ export default function TimeWorkCalculator() {
             <SchemaGenerator
                 name="Time and Work Calculator"
                 description="Solve aptitude problems for the time taken when people work together."
-                url="https://calcguide.in/calculators/student/time-and-work-calculator"
+                url="https://calcguide.in/calculators/student/time-and-work-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

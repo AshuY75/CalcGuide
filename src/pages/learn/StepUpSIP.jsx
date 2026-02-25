@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Step-Up SIP vs Inflation – Why Fixed SIP Fails",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function StepUpSIP() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Step-Up SIP vs Inflation – Why Fixed SIP Fails"
+                description="Learn how increasing your SIP by just 5-10% every year can exponentially grow your wealth and beat inflation."
+                type="Article"
+                url="https://calcguide.in/learn/why-fixed-sip-fails-inflation-step-up-guide/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <span className="text-orange-600 font-bold uppercase tracking-widest text-sm">Wealth Optimization</span>

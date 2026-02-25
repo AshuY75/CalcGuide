@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "10 Tips to Budget for an Indian Wedding in 2025",
     description: "Planning a wedding? Don't let the 'Big Fat Indian Wedding' drain your life savings. Learn how to allocate your budget, save on catering, and prioritize your spending.",
     category: "UTILITY",
-    slug: ROUTES.LEARN.WEDDING_BUDGET_TIPS,
+    slug: ROUTES.LEARN.WEDDING_BUDGET,
     date: "2025-02-22",
     icon: "💍",
     colorClass: "bg-rose-100",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function WeddingBudgetTips() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="10 Tips to Budget for an Indian Wedding in 2025"
+                description="Planning a wedding? Don't let the 'Big Fat Indian Wedding' drain your life savings. Learn how to allocate your budget, save on catering, and prioritize your spending."
+                type="Article"
+                url="https://calcguide.in/learn/indian-wedding-budgeting-tips-2025/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

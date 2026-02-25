@@ -1,6 +1,8 @@
 
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
+import { SchemaGenerator } from '../../components/SchemaGenerator'
+
 
 export const metadata = {
     title: "Village Interest (Sood) Calculation Explained",
@@ -13,23 +15,16 @@ export const metadata = {
 }
 
 export default function VillageInterestExplainer() {
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "How Village Interest (Sood/Vaddi) Works in India",
-        "image": "https://calcguide.in/og-image.jpg",
-        "author": "CalcGuide Team",
-        "publisher": {
-            "@type": "Organization",
-            "name": "CalcGuide",
-            "logo": { "@type": "ImageObject", "url": "https://calcguide.in/logo.png" }
-        }
-    }
-
     return (
         <div className="min-h-screen bg-slate-50">
-            
-            <script type="application/ld+json">{JSON.stringify(schema)}</script>
+
+            <SchemaGenerator
+                name="How Village Interest (Sood/Vaddi) Works in India"
+                description="What does '₹2 interest' actually mean? Learn how to calculate daily and monthly village interest rates correctly."
+                type="Article"
+                url="https://calcguide.in/learn/how-village-interest-sood-logic-works/"
+            />
+
 
             <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <header className="mb-8 border-b pb-8">

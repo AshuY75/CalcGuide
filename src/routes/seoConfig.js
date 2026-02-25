@@ -82,6 +82,10 @@ export const SEO_CONFIG = {
         title: "Tax & Compliance Calculators - Income Tax, HRA, Gratuity | CalcGuide",
         description: "Calculate Income Tax (Old vs New), HRA exemptions, Gratuity, and EPF with latest 2024-25 budget rules.",
     },
+    "/student-calculators/": {
+        title: "Student Calculators - SGPA, CGPA, Rank Predictor | CalcGuide",
+        description: "Free tools for Indian students. Calculate SGPA, convert CGPA to percentage, and predict JEE/NEET ranks.",
+    },
     "/sip-calculators/": {
         title: "SIP Calculators - Plan Your Mutual Fund Investments | CalcGuide",
         description: "Comprehensive list of SIP tools including Target 1 Crore, ₹5000/month, and FD vs SIP comparison.",
@@ -425,5 +429,9 @@ export const SEO_CONFIG = {
     "/learn/how-to-save-for-child-education-sip-ssy/": {
         title: "How to Save for Child Education? SIP vs SSY vs PPF | CalcGuide",
         description: "Comparing student savings options. How to build a corpus for university education using safe instruments.",
+    },
+    "/calculators/tax/professional-tax-calculator/": {
+        title: "Professional Tax Calculator 2025-26 - State-wise PT Slabs | CalcGuide",
+        description: "Calculate state-wise Professional Tax (PT) for salaried employees in India. Covers Maharashtra, Karnataka, West Bengal, and more.",
     }
 };

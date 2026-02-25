@@ -75,7 +75,7 @@ export default function SGPACalculator() {
             <SchemaGenerator
                 name="SGPA Calculator India"
                 description="Calculate Semester Grade Point Average (SGPA) for Indian Universities like VTU, MU, and AKTU."
-                url="https://calcguide.in/calculators/student/sgpa-calculator"
+                url="https://calcguide.in/calculators/student/sgpa-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

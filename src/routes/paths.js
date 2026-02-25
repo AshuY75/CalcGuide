@@ -4,7 +4,8 @@ export const ROUTES = {
         LOAN: "/loan-calculators/",
         INVESTMENT: "/investment-calculators/",
         SIP: "/sip-calculators/",
-        TAX: "/tax-calculators/"
+        TAX: "/tax-calculators/",
+        STUDENT: "/student-calculators/"
     },
     CALCULATORS: {
         LOAN: {
@@ -74,7 +75,8 @@ export const ROUTES = {
             GRATUITY: "/calculators/tax/gratuity-calculator/",
             EPF: "/calculators/tax/epf-calculator/",
             GST: "/calculators/tax/gst-calculator/",
-            TDS: "/calculators/tax/tds-calculator/"
+            TDS: "/calculators/tax/tds-calculator/",
+            PROFESSIONAL_TAX: "/calculators/tax/professional-tax-calculator/"
         }
     },
     LEGAL: {

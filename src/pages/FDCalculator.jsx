@@ -52,11 +52,11 @@ export default function FDCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="FD Calculator"
                 description="Calculate Fixed Deposit Maturity Amount with Quarterly Compounding."
-                url="https://calcguide.in/calculators/investment/fd-calculator"
+                url="https://calcguide.in/calculators/investment/fd-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

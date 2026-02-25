@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "PM Surya Ghar Muft Bijli Yojana – ROI & Subsidy Guide",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function PMSuryaGharROI() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="PM Surya Ghar Muft Bijli Yojana – ROI & Subsidy Guide"
+                description="Detailed analysis of the PM Surya Ghar scheme. Learn about subsidies up to ₹78,000 and how to get your electricity bill to zero."
+                type="Article"
+                url="https://calcguide.in/learn/pm-surya-ghar-yojana-roi-subsidy-guide/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <span className="text-green-600 font-bold uppercase tracking-widest text-sm">Solar Revolution</span>

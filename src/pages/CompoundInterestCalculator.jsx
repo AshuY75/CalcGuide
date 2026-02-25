@@ -52,11 +52,11 @@ export default function CompoundInterestCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 name="Compound Interest Calculator"
                 description="Calculate compound interest with flexible compounding frequencies."
-                url="https://calcguide.in/calculators/investment/compound-interest-calculator"
+                url="https://calcguide.in/calculators/investment/compound-interest-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

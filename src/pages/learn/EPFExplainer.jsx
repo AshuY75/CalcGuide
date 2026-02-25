@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "EPF Power – Building ₹2 Crores with 12% Deduction",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function EPFExplainer() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="EPF Power – Building ₹2 Crores with 12% Deduction"
+                description="Learn how the Employee Provident Fund (EPF) can make you a crorepati through the power of compounding."
+                type="Article"
+                url="https://calcguide.in/learn/epf-calculator-guide-math/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4">

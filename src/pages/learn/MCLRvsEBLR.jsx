@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "MCLR vs EBLR Switch – Payback Maths",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function MCLRvsEBLR() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="MCLR vs EBLR Switch – Payback Maths"
+                description="Comparison between MCLR and EBLR linked home loans. Calculate your savings and payback period when switching."
+                type="Article"
+                url="https://calcguide.in/learn/mclr-vs-eblr-switch-payback-maths/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4">

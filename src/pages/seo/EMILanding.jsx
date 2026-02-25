@@ -25,13 +25,13 @@ export default function EMILanding() {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "EMI Calculator for Home Loan India",
-        "url": "https://calcguide.in/emi-calculator-home-loan-india",
+        "url": "https://calcguide.in/emi-calculator-home-loan-india/",
         "description": "Calculate Home Loan EMI with updated interest rates for SBI, HDFC, ICICI."
     }
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+
             <SchemaGenerator
                 type="WebApplication"
                 name="EMI Calculator for Home Loan India"

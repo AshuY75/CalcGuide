@@ -6,6 +6,11 @@ import SolarROICalculatorUI from '../components/calculators/SolarROICalculatorUI
 export default function SolarROICalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="Solar ROI & Subsidy Calculator"
+                description="Calculate payback period and savings under PM Surya Ghar Muft Bijli Yojana for rooftop solar."
+                url="https://calcguide.in/calculators/utility/solar-roi-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

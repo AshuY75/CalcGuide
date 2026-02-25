@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Side Hustle Tax Guide: Managing Freelance Income for Salaried Pros",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function SideHustleTax() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Side Hustle Tax Guide: Managing Freelance Income for Salaried Pros"
+                description="Are you a salaried employee earning extra from a side hustle? Learn about Section 44ADA, business expenses, and how to avoid double taxation on your freelance income."
+                type="Article"
+                url="https://calcguide.in/learn/side-hustle-freelance-tax-guide-india/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

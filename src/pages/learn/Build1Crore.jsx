@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "How to Build ₹1 Crore – The Realistic Roadmap",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function Build1Crore() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="How to Build ₹1 Crore – The Realistic Roadmap"
+                description="A step-by-step guide to reaching your first ₹1 Crore through disciplined investing, patience, and the 15-15-15 rule."
+                type="Article"
+                url="https://calcguide.in/learn/how-to-build-1-crore-mutual-funds/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4">

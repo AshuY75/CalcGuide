@@ -87,9 +87,19 @@ export default function Header() {
             ]
         },
         {
+            category: 'Students',
+            slug: 'students',
+            hubPath: ROUTES.HUBS.STUDENT,
+            items: [
+                { name: 'JEE/NEET Rank', path: ROUTES.CALCULATORS.STUDENT.RANK_PERCENTILE, icon: '🎯' },
+                { name: 'SGPA Calculator', path: ROUTES.CALCULATORS.STUDENT.SGPA, icon: '🎓' },
+                { name: 'CGPA to %', path: ROUTES.CALCULATORS.STUDENT.CGPA_PERCENTAGE, icon: '📊' },
+                { name: 'Time & Work', path: ROUTES.CALCULATORS.STUDENT.TIME_WORK, icon: '⏱️' },
+            ]
+        },
+        {
             category: 'Utility',
             slug: 'utility',
-            // No main utility hub requested, but good to have if needed. Skipping for now as user didn't request Utility Hub.
             items: [
                 { name: 'Age Calculator', path: ROUTES.CALCULATORS.UTILITY.AGE, icon: '🎂' },
                 { name: 'Date Difference', path: ROUTES.CALCULATORS.UTILITY.DATE_DIFF, icon: '📆' },

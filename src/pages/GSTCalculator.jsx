@@ -63,7 +63,7 @@ export default function GSTCalculator() {
             <SchemaGenerator
                 name="Indian GST Calculator"
                 description="Easily calculate GST (Inclusive/Exclusive) with CGST and SGST breakdown for 2025."
-                url="https://calcguide.in/calculators/tax/gst-calculator"
+                url="https://calcguide.in/calculators/tax/gst-calculator/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

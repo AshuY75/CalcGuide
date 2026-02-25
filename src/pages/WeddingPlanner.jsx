@@ -50,7 +50,7 @@ export default function WeddingPlanner() {
             <SchemaGenerator
                 name="Indian Wedding Budget Planner"
                 description="Plan your wedding expenses with our detailed budget breakdown for 2025."
-                url="https://calcguide.in/calculators/utility/wedding-expense-planner"
+                url="https://calcguide.in/calculators/utility/wedding-expense-planner/"
             />
 
             <div className="bg-white border-b border-slate-200 py-6">

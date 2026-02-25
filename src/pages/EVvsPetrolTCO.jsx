@@ -6,6 +6,11 @@ import EVvsPetrolTCOUI from '../components/calculators/EVvsPetrolTCOUI'
 export default function EVvsPetrolTCO() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="EV vs Petrol TCO Calculator"
+                description="Compare the Total Cost of Ownership (TCO) between electric and petrol cars over 10 years."
+                url="https://calcguide.in/calculators/utility/ev-vs-petrol-calculator/"
+            />
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

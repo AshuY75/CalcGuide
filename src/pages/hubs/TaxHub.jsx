@@ -26,8 +26,13 @@ const TaxHub = () => {
         },
         {
             title: 'LTCG Tax Calculator',
-            path: ROUTES.CALCULATORS.INVESTMENT.LTCG,
+            path: ROUTES.CALCULATORS.INVESTMENT.LTCG_TAX,
             description: 'Calculate tax on Mutual Funds and Stocks (Budget 2024).'
+        },
+        {
+            title: 'Professional Tax Calculator',
+            path: ROUTES.CALCULATORS.TAX.PROFESSIONAL_TAX,
+            description: 'Determine your monthly PT deduction based on state-wise slabs.'
         }
     ];
 

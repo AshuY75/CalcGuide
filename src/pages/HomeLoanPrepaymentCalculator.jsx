@@ -7,6 +7,11 @@ import { ROUTES } from '../routes/paths';
 export default function HomeLoanPrepaymentCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
+            <SchemaGenerator
+                name="Home Loan EMI & Prepayment Calculator"
+                description="Calculate your home loan EMI and see the massive impact of prepayments on your interest savings."
+                url="https://calcguide.in/calculators/loan/home-loan-prepayment-calculator/"
+            />
             {/* Header Section */}
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

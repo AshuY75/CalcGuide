@@ -42,7 +42,11 @@ export default function ConstructionCostCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+            <SchemaGenerator
+                name="House Construction Cost Calculator"
+                description="Estimate the total cost of building your dream home in India, including material and labour breakdowns."
+                url="https://calcguide.in/calculators/construction/construction-cost-calculator/"
+            />
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

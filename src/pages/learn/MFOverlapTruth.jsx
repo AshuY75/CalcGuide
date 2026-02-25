@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "Mutual Fund Overlap: Why More Funds Doesn't Mean Better Returns",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function MFOverlapTruth() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="Mutual Fund Overlap: Why More Funds Doesn't Mean Better Returns"
+                description="Do you have 10 mutual funds? You might be owning the same stocks 10 times. Learn what Mutual Fund Overlap is and how to truly diversify your portfolio."
+                type="Article"
+                url="https://calcguide.in/learn/mutual-fund-overlap-why-more-isnt-better/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">

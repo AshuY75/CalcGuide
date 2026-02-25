@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
+import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 
 export const metadata = {
     title: "HRA Exemption Math – Save Tax on ₹30,000 Rent",
@@ -16,6 +18,13 @@ export const metadata = {
 export default function HRAExemptionMath() {
     return (
         <div className="bg-slate-50 min-h-screen">
+            <SchemaGenerator
+                name="HRA Exemption Math – Save Tax on ₹30,000 Rent"
+                description="Learn the three-condition formula for HRA exemption and how to optimize your rent for maximum tax savings."
+                type="Article"
+                url="https://calcguide.in/learn/how-to-calculate-hra-exemption/"
+            />
+
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-4">

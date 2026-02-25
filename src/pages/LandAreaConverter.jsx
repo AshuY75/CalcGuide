@@ -21,7 +21,12 @@ export default function LandAreaConverter() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            
+            <SchemaGenerator
+                name="Land Area Converter India"
+                description="Convert Indian land measurements accurately by state, including Bigha, Guntha, Katha, and Biswa."
+                url="https://calcguide.in/calculators/utility/land-area-converter/"
+            />
+
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
