@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
 import { SchemaGenerator } from '../../components/SchemaGenerator';
+import AuthorBio from '../../components/AuthorBio';
 
 
 // Images
@@ -43,7 +44,7 @@ export default function HomeLoanVsSIP() {
                         You have an extra ₹20,000 this month. Should you kill your 9% home loan or feed a 12% SIP? Most people guess. Here is the mathematical proof.
                     </p>
                     <div className="flex items-center gap-4 mt-8 text-sm text-slate-500 font-medium">
-                        <span>By CalcGuide Editor</span>
+                        <span>By Ashu Yadav</span>
                         <span>•</span>
                         <span>8 Minute Read</span>
                         <span>•</span>
@@ -295,7 +296,7 @@ export default function HomeLoanVsSIP() {
                             </Link>
                         </div>
                     </div>
-
+                    <AuthorBio />
                 </article>
             </div>
         </div>

@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
 import { SchemaGenerator } from '../../components/SchemaGenerator';
-
+import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
-    title: "10 Tips to Budget for an Indian Wedding in 2025",
-    description: "Planning a wedding? Don't let the 'Big Fat Indian Wedding' drain your life savings. Learn how to allocate your budget, save on catering, and prioritize your spending.",
-    category: "UTILITY",
-    slug: ROUTES.LEARN.WEDDING_BUDGET,
-    date: "2025-02-22",
+    title: "The Big Fat Indian Wedding Budget – Reality vs FOMO",
+    description: "Don't start your married life in debt. Learn how to plan a beautiful Indian wedding without breaking the bank, and where to invest the savings.",
+    category: "INVESTMENT",
+    slug: ROUTES.LEARN.WEDDING_BUDGET_TIPS,
+    date: "2025-02-21",
     icon: "💍",
-    colorClass: "bg-rose-100",
+    colorClass: "bg-pink-100",
     isNew: true
 };
 
@@ -19,10 +19,10 @@ export default function WeddingBudgetTips() {
     return (
         <div className="bg-slate-50 min-h-screen">
             <SchemaGenerator
-                name="10 Tips to Budget for an Indian Wedding in 2025"
-                description="Planning a wedding? Don't let the 'Big Fat Indian Wedding' drain your life savings. Learn how to allocate your budget, save on catering, and prioritize your spending."
+                name="The Big Fat Indian Wedding Budget – Reality vs FOMO"
+                description="Don't start your married life in debt. Learn how to plan a beautiful Indian wedding without breaking the bank, and where to invest the savings."
                 type="Article"
-                url="https://calcguide.in/learn/indian-wedding-budgeting-tips-2025/"
+                url="https://calcguide.in/learn/indian-wedding-budget-tips-fomo-reality-check/"
             />
 
             <div className="bg-white border-b border-slate-200 py-12">
@@ -32,62 +32,62 @@ export default function WeddingBudgetTips() {
                         <span>›</span>
                         <Link to={ROUTES.LEARN.HOME} className="hover:text-blue-600">Learn</Link>
                         <span>›</span>
-                        <span className="text-slate-900">Wedding Tips</span>
+                        <span className="text-slate-900">Wedding Budget</span>
                     </nav>
                     <h1 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                        Wedding Planning:<br /> Celebrate Without the Debt
+                        Wedding Budgeting:<br /> The FOMO Survival Guide
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                        An Indian wedding is a beautiful milestone, but it shouldn't be a financial catastrophe.
+                        In India, a wedding is a community event. But the bill is personal. Here is the math of a manageable celebration.
                     </p>
                 </div>
             </div>
 
             <div className="max-w-4xl mx-auto px-4 py-12">
                 <article className="prose prose-slate prose-lg max-w-none bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h2>The Reality of Wedding Costs</h2>
+                    <h2>The Opportunity Cost of One Day</h2>
                     <p>
-                        In 2025, a mid-range Indian wedding costs anywhere between <strong>₹15 Lakhs to ₹40 Lakhs</strong>. With rising inflation in catering and venue rentals, many families end up taking high-interest personal loans that take years to pay back.
+                        The average middle-class Indian wedding now costs between <strong>₹15 Lakhs and ₹40 Lakhs</strong>. While social pressure is real, it's important to look at the "Opportunity Cost".
                     </p>
+                    <p>If you spend ₹10 Lakhs extra on a single night of celebration, you're giving up a potential <strong>₹1 Crore corpus</strong> (at 12% returns) in 20 years. That's the price of a few hours of social validation.</p>
 
-                    <h2>1. The Guest List is Everything</h2>
-                    <p>
-                        Every guest you add is a direct multiplier on your catering and venue cost. The most effective way to save ₹5 Lakhs is to reduce your guest list from 500 to 200. Focus on people who truly matter to you.
-                    </p>
+                    <h3>The 50/30/20 Wedding Split</h3>
+                    <p>Try to allocate your budget based on value, not tradition:</p>
+                    <ul>
+                        <li><strong>50% Experience:</strong> Venue and Food. This is what guests actually remember.</li>
+                        <li><strong>30% Heritage:</strong> Jewelry and Outfits. These are long-term assets, not just expenses.</li>
+                        <li><strong>20% Documentation & Decor:</strong> Photos, Video, and Flowers. These are the memories, but they don't need to be extravagant.</li>
+                    </ul>
 
-                    <h2>2. The "Venue-Catering" Combo</h2>
-                    <p>
-                        Booking a venue that allows outside catering is usually cheaper, but venue-owned catering is less stressful.
-                    </p>
-                    <div className="bg-rose-50 p-6 rounded-xl my-8 border-l-4 border-rose-600">
-                        <h4 className="text-rose-900 mt-0">Budget Allocation (The 40-20-40 Rule):</h4>
-                        <ul className="list-disc pl-5 mt-2 space-y-1 text-slate-700">
-                            <li><strong>40%</strong>: Venue, Food, and Hospitality.</li>
-                            <li><strong>20%</strong>: Jewelry and Wedding Outfits.</li>
-                            <li><strong>40%</strong>: Decor, Photography, Gifts, and Buffer.</li>
+                    <div className="bg-pink-50 p-8 rounded-2xl my-8 border-l-4 border-pink-600 shadow-inner">
+                        <h4 className="text-pink-900 mt-0 font-bold">The 'Loan' Danger Zone:</h4>
+                        <ul className="text-sm text-slate-700 leading-relaxed space-y-2 mt-4 list-none p-0">
+                            <li>❌ <strong>Never</strong> take a personal loan for a wedding. These are high-interest (14-20%) debts.</li>
+                            <li>❌ <strong>Never</strong> exhaust your entire emergency fund for a function.</li>
+                            <li>✅ <strong>Always</strong> involve both families in a clear, upfront budget meeting to avoid last-minute "honor" expenses.</li>
                         </ul>
                     </div>
 
-                    <h3>3. Digital Invitations</h3>
-                    <p>
-                        A physical wedding card with a box of sweets can cost ₹500 to ₹1000 per family. Switching to a high-quality <strong>Video Invite or a Wedding Website</strong> can save you ₹50,000+ instantly.
-                    </p>
+                    <h3>Smart Saving Tips</h3>
+                    <ol>
+                        <li><strong>Off-Season Weddings:</strong> Booking in May/June or early September can save you 20-30% on venue costs compared to the busy November-Feb season.</li>
+                        <li><strong>The Guest List Cull:</strong> Every guest costs approximately ₹1,500 - ₹3,000 in catering. Reducing the list by just 50 people can save you ₹1 Lakh instantly.</li>
+                        <li><strong>Digital Invites:</strong> Save on printing and postage. It's eco-friendly and more efficient for RSVP tracking.</li>
+                    </ol>
 
-                    <h3>4. Off-Season & Weekdays</h3>
-                    <p>
-                        "Saya" dates (auspicious days) see venue prices triple. If your family is flexible, choosing a weekday or a date just outside the peak wedding season (May/June or Nov/Dec) can give you massive bargaining power.
-                    </p>
-
-                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white">
-                        <h4 className="text-rose-400 font-bold mb-2">The Golden Rule</h4>
-                        <p className="mb-0 text-slate-300">"Don't spend for the 'Log Kya Kahenge' (What will people say) factor." Most guests won't remember the 50th item on the menu, but you will definitely feel the ₹20 Lakh loan for the next 5 years.</p>
+                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white shadow-xl">
+                        <h4 className="text-pink-400 font-bold mb-2 italic">Pro Tip: Invest the Difference</h4>
+                        <p className="mb-0 text-slate-300">"The Marriage Fund." Decide on a maximum budget, and whatever you save from that via negotiation or better planning, put it into a Joint Index Fund for your first home or your child's education. Starting a marriage with an 'Investment' instead of a 'Debt' is the ultimate romantic gesture!</p>
                     </div>
 
+                    <h3>Plan Your Celebration</h3>
+                    <p>Don't let the expenses spiral. Use our planner to track your costs and see the long-term impact on your wealth.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.UTILITY.WEDDING_PLANNER} className="inline-block p-4 bg-rose-600 text-white rounded-xl font-bold hover:bg-rose-700 transition shadow-lg">
-                            Use the Wedding Budget Tracker
+                        <Link to={ROUTES.CALCULATORS.UTILITY.TIPPING} className="inline-block p-4 bg-pink-600 text-white rounded-xl font-bold hover:bg-pink-700 transition shadow-lg">
+                            💍 Wedding Budget Tracker →
                         </Link>
                     </div>
+                    <AuthorBio />
                 </article>
             </div>
         </div>

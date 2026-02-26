@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
 import { SchemaGenerator } from '../../components/SchemaGenerator';
-
+import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "Section 80C is Dying: Navigating the New Tax Regime (115BAC)",
@@ -38,54 +38,52 @@ export default function Section80CDying() {
                         Section 80C is Dying:<br /> The End of Mandatory Investing?
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                        For decades, 80C was the 'holy grail' of tax saving. In 2025, it's becoming a choice, not a necessity.
+                        For decades, 80C was the 'holy grail' of tax saving for the Indian middle class. In 2025, it's becoming a relic of the past.
                     </p>
                 </div>
             </div>
 
             <div className="max-w-4xl mx-auto px-4 py-12">
                 <article className="prose prose-slate prose-lg max-w-none bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h2>The Shift to the New Tax Regime</h2>
+                    <h2>The Shift to the New Tax Regime (115BAC)</h2>
                     <p>
-                        With the Union Budgets of 2023 and 2024, the Government of India has made the <strong>New Tax Regime (Section 115BAC)</strong> the default option. In this regime, you get lower tax rates but you lose all deductions—including the beloved ₹1.5 Lakh Section 80C.
+                        With the Union Budgets of 2023 and 2024, the Government of India has made the <strong>New Tax Regime</strong> the default option. In this regime, the tax rates are lower, the slabs are wider (up to ₹7 Lakh zero tax), but there's a catch: <strong>You lose almost all deductions.</strong> No HRA, no 80D (Health Insurance), and importantly, no ₹1.5 Lakh Section 80C.
                     </p>
 
-                    <h2>Is 80C Still Worth It?</h2>
+                    <h2>The "Tax-Neutral" Point</h2>
                     <p>
-                        If you have recently switched to the New Tax Regime, your investments in LIC, PPF, and ELSS will <strong>not</strong> save you a single rupee in income tax.
+                        Should you still care about 80C? The answer depends on your total deductions.
                     </p>
-                    <div className="bg-red-50 p-6 rounded-xl my-8 border-l-4 border-red-600">
-                        <h4 className="text-red-900 mt-0">The Mathematics of Choice</h4>
-                        <p className="text-sm text-slate-700">
-                            Unless your total deductions (80C + HRA + 80D + Home Loan Interest) exceed <strong>₹3.75 Lakhs to ₹4.25 Lakhs</strong>, the New Tax Regime will almost always result in a lower tax bill than the Old Regime.
+                    <div className="bg-red-50 p-8 rounded-xl my-8 border-l-4 border-red-600 shadow-inner">
+                        <h4 className="text-red-900 mt-0 font-bold">The Break-Even Logic:</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                            For a salaried professional earning ₹15 Lakhs, if your total deductions (80C + Home Loan + HRA) are **less than ₹3.75 Lakhs**, the New Tax Regime will result in a lower tax bill. If you are in the New Regime, your ELSS or LIC investments do NOT save you even 1 Rupee in tax.
                         </p>
                     </div>
 
                     <h3>What happens to my PPF and LIC?</h3>
                     <p>
-                        Many Indian parents have been "guilt-tripped" into buying insurance as tax-saving. In 2025, you should view these purely as financial instruments:
+                        Millions of Indians were sold Insurance and PPF as "Tax Saving Tools" first, and investment tools second. In 2025, you should flip the script:
                     </p>
                     <ul>
-                        <li><strong>PPF</strong>: Still great for tax-free maturity, but don't invest 'only' for 80C.</li>
-                        <li><strong>ELSS</strong>: It's a mutual fund. If it's performing well, keep it. If you only bought it for tax, reconsider.</li>
-                        <li><strong>Life Insurance</strong>: Buy a <strong>Term Plan</strong> for protection. Skip the 'investment-cum-insurance' plans if you are in the New Regime.</li>
+                        <li><strong>PPF:</strong> Still great for 100% tax-free maturity and safety, but only if you have a 15-year goal. Don't invest just to 'fill the 80C' if you aren't saving any tax.</li>
+                        <li><strong>ELSS:</strong> This is an Equity Mutual Fund. If it's giving you good returns, keep it. But if you have better non-ELSS funds, there's no reason to lock your money for 3 years anymore.</li>
+                        <li><strong>Life Insurance:</strong> Switch to a pure <strong>Term Plan</strong>. It's cheaper and offers higher coverage. Forget the 'Endowment' or 'Moneyback' plans that were bought solely for tax.</li>
                     </ul>
 
-                    <h3>The Silver Lining</h3>
-                    <p>
-                        The "Death of 80C" actually gives you <strong>Financial Freedom</strong>. You no longer have to lock your money away in 5-year FDs or 15-year PPFs just to save tax in March. You can now invest that cash in Liquid Funds, Bluechip Stocks, or even keep it for your emergency fund without a tax penalty.
-                    </p>
-
-                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white">
-                        <h4 className="text-red-400 font-bold mb-2">The Golden Rule for 2025</h4>
-                        <p className="mb-0 text-slate-300">"Invest for your goals, not for your tax collector." If an investment is good, buy it. If it's bad, don't buy it just for a 20% tax break.</p>
+                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white shadow-xl">
+                        <h4 className="text-red-400 font-bold mb-2 italic">The New Financial Freedom</h4>
+                        <p className="mb-0 text-slate-300">"Liquidity is King." The end of mandatory 80C investing means you no longer have to lock your money in low-yield 5-year FDs or 15-year PPFs in March. You can now keep that cash for your emergency fund, or invest it in 'Liquid' assets that you can access whenever you actually need them!</p>
                     </div>
 
-                    <div className="mt-8 flex gap-4">
-                        <Link to={ROUTES.CALCULATORS.TAX.INCOME_TAX} className="flex-1 text-center p-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition">
-                            Compare Old vs New Tax Regime
+                    <h3>Compare Your Savings</h3>
+                    <p>Don't guess which regime is better for you. Use our calculator to see exactly how much you save under the Old vs New system with and without 80C.</p>
+                    <div className="mt-8">
+                        <Link to={ROUTES.CALCULATORS.TAX.INCOME_TAX} className="inline-block p-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg">
+                            📉 Old vs New Tax Comparison →
                         </Link>
                     </div>
+                    <AuthorBio />
                 </article>
             </div>
         </div>

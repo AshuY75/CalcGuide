@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
 import { SchemaGenerator } from '../../components/SchemaGenerator';
-
+import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "JEE & NEET Rank Analysis: How Percentile vs Rank Works in 2025",
@@ -38,7 +38,7 @@ export default function RankPercentileAnalysis() {
                         Rank vs Percentile:<br /> Decoding the NTA Score
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                        A 99 percentile sounds great. But with 12 lakh students, it means 12,000 people are ahead of you. Here is the math.
+                        A 99 percentile sounds great. But with 12 lakh students, it means 12,000 people are ahead of you. Here is the math behind the competition.
                     </p>
                 </div>
             </div>
@@ -47,38 +47,53 @@ export default function RankPercentileAnalysis() {
                 <article className="prose prose-slate prose-lg max-w-none bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
                     <h2>What is NTA Percentile?</h2>
                     <p>
-                        A <strong>Percentile score</strong> is not a percentage. It tells you what percentage of candidates scored equal to or less than you in that session. If you got a 90 percentile, it means 90% of the students scored less than you, and you are in the top 10%.
+                        A <strong>Percentile score</strong> is not a percentage. It tells you what percentage of candidates scored equal to or less than you in that specific session. If you got a 90 percentile, it means 90% of the students scored less than you, and you are in the top 10% of that session.
                     </p>
+                    <p>The NTA uses a <strong>Normalisation Process</strong> to ensure that students in a "hard" session aren't disadvantaged compared to students in an "easy" session. This is why you can't compare raw marks directly across different dates.</p>
 
                     <h2>How to Calculate Estimated Rank</h2>
                     <p>
-                        To find your All India Rank (AIR), you need to know the total number of unique candidates who appeared for the exam across all sessions.
+                        To find your All India Rank (AIR), you need to know the total number of unique candidates who appeared for the exam across <em>all</em> sessions (January and April for JEE).
                     </p>
-                    <div className="bg-red-50 p-6 rounded-xl my-8 border-l-4 border-red-600">
-                        <h4 className="text-red-900 mt-0">The AIR Formula:</h4>
-                        <p className="text-xl font-mono text-center my-4 font-bold">Rank = (100 - Percentile) × (Total Students / 100) + 1</p>
+                    <div className="bg-red-50 p-8 rounded-2xl my-8 border-l-4 border-red-600 shadow-inner">
+                        <h4 className="text-red-900 mt-0 font-bold">The AIR Formula:</h4>
+                        <p className="text-xl font-mono text-center my-4 font-black p-4 bg-white rounded-xl border border-red-100">
+                            Rank = (100 - Percentile) × (Total Students / 100) + 1
+                        </p>
+                        <p className="text-sm text-slate-600">Where <em>Total Students</em> is the number of unique candidates who took at least one session.</p>
                     </div>
 
-                    <h3>The Competition Gap (2024 vs 2025)</h3>
+                    <h3>The Competition Gap (2024 Trends)</h3>
                     <p>
-                        In 2024, the number of JEE Main applicants reached a record 12.3 Lakhs. This meant that the "rank inflation" was severe. A 99 percentile which usually fetched a 10,000 rank in previous years, resulted in a ~13,500 rank. For 2025, if the applicant count touches 13-14 Lakhs, the cutoff for NITs will likely rise further.
+                        In 2024, the number of JEE Main applicants reached a record 12.3 Lakhs. This meant that the "rank inflation" was severe.
                     </p>
+                    <ul>
+                        <li><strong>99 Percentile:</strong> Approximately 13,000 - 14,000 Rank. (Usually got you a CS seat in a mid-tier NIT).</li>
+                        <li><strong>95 Percentile:</strong> Approximately 65,000 Rank. (Getting a seat in an NIT in a core branch becomes difficult for the general category).</li>
+                        <li><strong>90 Percentile:</strong> Approximately 1,30,000 Rank. (This is often the cutoff for JEE Advanced qualification).</li>
+                    </ul>
 
-                    <h3>Category vs Open Rank</h3>
-                    <p>
-                        Recruiting and admission for NITs, IIITs, and IITs use both <strong>Common Rank List (CRL)</strong> and <strong>Category Rank</strong>. While your CRL is based on the total pool, your category rank only compares you against students of the same category (EWS, OBC-NCL, SC, ST).
-                    </p>
+                    <h3>Marks vs Percentile (The Volatility)</h3>
+                    <p>Depending on the difficulty of the paper, 200 marks could fetch you a 99.5 percentile in one session and only a 98 percentile in another. This is why coaches focus on <strong>accuracy</strong> rather than just attempting questions.</p>
 
-                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white">
-                        <h4 className="text-red-400 font-bold mb-2">The 'Safe' Zone</h4>
-                        <p className="mb-0 text-slate-300">"99 is the magic number." For a guaranteed seat in Top 5 NITs in a core branch (CS, IT, EC), you generally need a percentile above **99.2**. For IITs, JEE Main is just a qualifier—the real battle is JEE Advanced where only the top 2.5 Lakh students are invited.</p>
+                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white shadow-xl">
+                        <h4 className="text-red-400 font-bold mb-2 italic">Pro Tip for Aspiring Engineers</h4>
+                        <p className="mb-0 text-slate-300">"99 is the starting point, not the finish line." For CS at top-tier NITs (Trichy, Surathkal, Warangal), you need a percentile above **99.6**. If you are scoring between 96-98, focus on improving your Chemistry marks—it's the highest ROI subject in terms of effort vs percentile gain.</p>
                     </div>
 
+                    <h3>Percentile vs Category Rank</h3>
+                    <p>
+                        If you belong to EWS, OBC-NCL, SC, or ST categories, your admission is based on your <strong>Category Rank</strong>. However, the NTA initially only provides your overall percentile. Your category rank is calculated separately based on the number of students within your specific category. Even with an 85 percentile, an ST candidate can often get a top-tier NIT branch that would require a 98 percentile for a General candidate.
+                    </p>
+
+                    <h3>Predict Your Admission Chances</h3>
+                    <p>Don't wait for the official results to start your college research. Use our calculator to convert your current score into an estimated rank.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.STUDENT.RANK_PERCENTILE} className="inline-block p-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg">
-                            Predict My Rank Now
+                        <Link to={ROUTES.CALCULATORS.STUDENT.RANK_PERCENTILE} className="inline-block px-8 py-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg">
+                            📊 Predict My Rank Now →
                         </Link>
                     </div>
+                    <AuthorBio />
                 </article>
             </div>
         </div>

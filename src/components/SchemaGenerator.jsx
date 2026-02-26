@@ -32,6 +32,12 @@ export const SchemaGenerator = memo(({
                 "url": "https://calcguide.in/logo.png"
             }
         },
+        "author": type === "Article" ? {
+            "@type": "Person",
+            "name": "Ashu Yadav",
+            "jobTitle": "Senior Associate Engineer",
+            "url": "https://calcguide.in/about/"
+        } : undefined,
         ...data
     }), [type, name, description, url, JSON.stringify(data)]);
 

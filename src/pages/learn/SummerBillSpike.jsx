@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
 import { SchemaGenerator } from '../../components/SchemaGenerator';
-
+import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
-    title: "Beat the Summer Bill Spike – 5 AC Energy Saving Tips",
-    description: "Learn how to reduce your electricity bill during hearting Indian summers. Practical tips for AC usage and slab management.",
+    title: "Summer Electricity Bill Spike: Why Your Bill Doubles in April",
+    description: "Decoding the high electricity bill during Indian summers. Understanding telescopic tariffs, slabs, and how to optimize your AC usage to save money.",
     category: "UTILITY",
     slug: ROUTES.LEARN.SUMMER_BILL_SPIKE,
     date: "2025-02-21",
@@ -19,64 +19,74 @@ export default function SummerBillSpike() {
     return (
         <div className="bg-slate-50 min-h-screen">
             <SchemaGenerator
-                name="Beat the Summer Bill Spike – 5 AC Energy Saving Tips"
-                description="Learn how to reduce your electricity bill during hearting Indian summers. Practical tips for AC usage and slab management."
+                name="Summer Electricity Bill Spike: Why Your Bill Doubles in April"
+                description="Decoding the high electricity bill during Indian summers. Understanding telescopic tariffs, slabs, and how to optimize your AC usage to save money."
                 type="Article"
-                url="https://calcguide.in/learn/beat-summer-electricity-bill-spike-ac-tips/"
+                url="https://calcguide.in/learn/indian-summer-electricity-bill-spike-guide/"
             />
 
             <div className="bg-white border-b border-slate-200 py-12">
-                <div className="max-w-4xl mx-auto px-4 ">
-                    <span className="text-yellow-600 font-bold uppercase tracking-widest text-sm">Saving Guide</span>
-                    <h1 className="text-3xl md:text-5xl font-black text-slate-900 mt-2 mb-6 leading-tight">
-                        Beat the Summer Bill Spike:<br /> Cool Your Home, Not Your Wallet
+                <div className="max-w-4xl mx-auto px-4">
+                    <nav className="text-sm text-slate-500 mb-4 flex items-center gap-2">
+                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
+                        <span>›</span>
+                        <Link to={ROUTES.LEARN.HOME} className="hover:text-blue-600">Learn</Link>
+                        <span>›</span>
+                        <span className="text-slate-900">Bill Spike</span>
+                    </nav>
+                    <h1 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                        The Summer Shock:<br /> Why Your Bill Triples
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                        When the mercury touches 45°C, your electricity bill can jump from ₹2,000 to ₹10,000. Here is how to fight back.
+                        It's not just the heat; it's the "Slab Trap". Here is how the Indian electricity grid prices your comfort.
                     </p>
                 </div>
             </div>
 
             <div className="max-w-4xl mx-auto px-4 py-12">
                 <article className="prose prose-slate prose-lg max-w-none bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h2>1. The 24°C Rule</h2>
+                    <h2>The "Telescopic" Tariff Trap</h2>
                     <p>
-                        Every degree you lower on your AC remote increases energy consumption by roughly 6%. Setting your AC at 18°C won't cool the room faster; it will just make the compressor run longer. **24°C is the sweet spot** for comfort and efficiency.
+                        In India, electricity is priced using <strong>Slab Rates</strong>. This means the more you consume, the more you pay <em>per unit</em>.
                     </p>
+                    <p>For example, in many states:</p>
+                    <ul>
+                        <li>First 100 units: ₹4 / unit</li>
+                        <li>101 to 300 units: ₹8 / unit</li>
+                        <li>Above 300 units: <strong>₹12 / unit</strong></li>
+                    </ul>
+                    <p>In winter, you might consume 250 units (all under ₹8). In summer, that AC usage pushes you to 450 units. Those extra 150 units are billed at the highest possible rate. Your consumption increased by 80%, but your <strong>bill increased by 150%</strong>. That is the math of the summer shock.</p>
 
-                    <h2>2. Clean Your Filters</h2>
-                    <p>
-                        A clogged filter forces the AC to work 15% harder to circulate air. Cleaning your filters every 15 days during peak summer is the easiest way to save at least ₹500 on your monthly bill.
-                    </p>
-
-                    <div className="bg-yellow-50 p-6 rounded-xl my-8 border-l-4 border-yellow-400">
-                        <h4 className="text-yellow-900 mt-0">The 'Slab' Trap</h4>
-                        <p className="text-sm mb-0">
-                            Most Indian utility companies charge ₹4 for the first 100 units, but ₹12 for anything above 300 units. If you cross into the higher slab, every single extra unit costs 3x more. Monitoring your meter weekly in summer is crucial.
+                    <h3>The AC 'Efficiency' Secret</h3>
+                    <p>The biggest consumer in your house is the Air Conditioner. But how you use it matters more than how old it is.</p>
+                    <div className="bg-yellow-50 p-8 rounded-2xl my-8 border-l-4 border-yellow-600 shadow-inner">
+                        <h4 className="text-yellow-900 mt-0 font-bold">The 24-Degree Rule:</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                            Every degree you lower the AC below 24°C increases your electricity consumption by roughly <strong>6%</strong>. Running your AC at 18°C doesn't cool the room faster—it just makes the compressor work longer. Setting it at 24°C with a ceiling fan on low speed is the most energy-efficient way to survive an Indian summer.
                         </p>
                     </div>
 
-                    <h2>3. Seal the Leaks</h2>
-                    <p>
-                        Even a tiny gap under your door or a poorly sealed window can let out 10% of your cooling. Use door snakes or weather stripping. It costs ₹200 but saves thousands.
-                    </p>
+                    <h3>Fixed Charges & Duty</h3>
+                    <p>Your bill isn't just units. It includes:</p>
+                    <ul>
+                        <li><strong>Fixed/Sanctioned Load Charges:</strong> Based on the 'demand' your house can potentially pull from the grid.</li>
+                        <li><strong>Power Purchase Adjustment (PPAC):</strong> A variable charge that allows companies to pass on the fuel cost (coal/gas) to you. This usually peaks in summer.</li>
+                        <li><strong>Electricity Duty:</strong> A state government tax, often 10-15% of the total bill.</li>
+                    </ul>
 
-                    <h2>4. Use a Ceiling Fan with the AC</h2>
-                    <p>
-                        A ceiling fan creates a 'wind chill effect' that makes the room feel 2-3 degrees cooler. You can set your AC to 26°C and use a fan at low speed to get the same comfort as 23°C without the high bill.
-                    </p>
-
-                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white">
-                        <h4 className="text-yellow-400 font-bold mb-2">Pro Tip</h4>
-                        <p className="text-sm mb-0">Switch to <strong>Inverter ACs</strong> and always look for the <strong>BEE 5-Star rating</strong>. The upfront cost is higher, but they pay for themselves in just two summers of high usage.</p>
+                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white shadow-xl">
+                        <h4 className="text-yellow-400 font-bold mb-2 italic">Energy Optimization Tip</h4>
+                        <p className="mb-0 text-slate-300">"Maintenance over Replacement." A dirty AC outdoor unit can increase power draw by **30-40%** as the heat exchange becomes inefficient. Spending ₹500 on a professional cleaning in March is the highest ROI financial decision you can make for your summer budget.</p>
                     </div>
 
-                    <h3>Estimate Your Bill</h3>
-                    <div className="mt-6">
-                        <Link to={ROUTES.CALCULATORS.UTILITY.ELECTRICITY_BILL} className="inline-flex items-center gap-2 p-4 border-2 border-slate-200 rounded-xl hover:border-yellow-500 transition-colors bg-slate-50 font-bold text-slate-800">
-                            ⚡ Open Electricity Bill Calculator
+                    <h3>Predict Your Next Bill</h3>
+                    <p>Stop being surprised. Use our bill estimator to see which slab you will land in this month.</p>
+                    <div className="mt-8">
+                        <Link to={ROUTES.CALCULATORS.UTILITY.ELECTRICITY_BILL} className="inline-block px-8 py-4 bg-yellow-400 text-slate-900 rounded-xl font-bold hover:bg-yellow-500 transition shadow-lg">
+                            ⚡ Electricity Bill Estimator →
                         </Link>
                     </div>
+                    <AuthorBio />
                 </article>
             </div>
         </div>

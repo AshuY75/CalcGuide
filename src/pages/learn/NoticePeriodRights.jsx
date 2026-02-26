@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
 import { SchemaGenerator } from '../../components/SchemaGenerator';
-
+import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "Notice Period & Exit Tax: Your Rights as an Indian Employee",
@@ -38,7 +38,7 @@ export default function NoticePeriodRights() {
                         The 90-Day Trap:<br /> Notice Period Rights & Buyouts
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                        Leaving a job in the Indian IT sector is rarely simple. Here is the legal and tax reality of your exit.
+                        Leaving a job in the Indian IT sector is rarely simple. Between 90-day contracts and Final Settlements (F&F), here is the legal and tax reality of your exit.
                     </p>
                 </div>
             </div>
@@ -47,48 +47,51 @@ export default function NoticePeriodRights() {
                 <article className="prose prose-slate prose-lg max-w-none bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
                     <h2>Is 90 Days Legal?</h2>
                     <p>
-                        In India, the notice period is governed by your <strong>Appointment Letter</strong>, which is a civil contract. While labor laws in some states suggest 1 month, the courts usually uphold the 90-day contract if you signed it. However, no employer can legally 'force' you to work; they can only claim damages (buyout amount).
+                        In India, the notice period is governed by your <strong>Appointment Letter</strong>, which is a civil contract. While labor laws in some states suggest 1 month for factory workers, the courts usually uphold the 90-day contract for white-collar professionals if you signed it. However, the <em>Enforceability</em> of "Specific Performance" (forcing you to work) is almost impossible. They can, however, sue for damages or withhold your Relieving Letter.
                     </p>
 
-                    <h2>The Buyout Math</h2>
+                    <h2>The Notice Buyout Math</h2>
                     <p>
-                        If you want to leave in 30 days instead of 90, you have to "buy out" 60 days of your notice period.
+                        Most companies offer a "Buyout" option where you pay the company for the days you don't serve.
+                        <strong>The Trap:</strong> Usually, the company calculates buyout on <strong>Gross Salary</strong>, whereas your replacement has to be paid from your net worth.
                     </p>
-                    <div className="bg-orange-50 p-6 rounded-xl my-8 border-l-4 border-orange-600">
-                        <h4 className="text-orange-900 mt-0">The Tax Trap</h4>
-                        <p className="text-sm text-slate-700">
-                            When your company recovers money from you for the notice period, you don't get a tax deduction for it. You pay tax on the <strong>total salary earned</strong>, even if you paid half of it back to the company as a buyout.
+                    <div className="bg-orange-50 p-8 rounded-2xl my-8 border-l-4 border-orange-600 shadow-inner">
+                        <h4 className="text-orange-900 mt-0 font-bold">The Tax Double-Whammy!</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                            This is the most painful part of Indian employment tax. If you pay a buyout to Company A, the <strong>Income Tax department does NOT consider it a deduction</strong>. You pay tax on the full salary shown on your Form 16, even if you paid ₹2 Lakhs back to the company. Make sure to negotiate for a "Notice Period Buyout Reimbursement" from your new employer to cover this tax loss.
                         </p>
                     </div>
 
-                    <h3>What is Exit Tax?</h3>
+                    <h3>Full & Final (F&F) Settlement Checklist</h3>
                     <p>
-                        When you leave a company, your Full and Final (F&F) settlement includes:
+                        Your settlement shouldn't just be about your last month's salary. Ensure these items are included:
                     </p>
                     <ul>
-                        <li><strong>Leave Encashment</strong>: Taxed as salary (exempt up to ₹25 Lakhs for non-govt employees).</li>
-                        <li><strong>Gratuity</strong>: Tax-free if you served 5+ years (up to ₹20 Lakhs).</li>
-                        <li><strong>Notice Pay</strong>: Taxable as salary.</li>
+                        <li><strong>Leave Encashment:</strong> Payment for your unused Privilege Leaves (PL). This is tax-exempt up to ₹25 Lakhs (recently increased from ₹3L) for non-government employees at the time of retirement/resignation.</li>
+                        <li><strong>Gratuity:</strong> If you have completed 4 years and 190 days (effectively 5 years), you are entitled to gratuity. It is tax-free up to ₹20 Lakhs.</li>
+                        <li><strong>Bonus/LTI:</strong> Check if you are eligible for pro-rata performance bonuses.</li>
+                        <li><strong>Deductions:</strong> Ensure they haven't over-deducted for "Asset Damages" or "Training Bonds" which are often legally questionable.</li>
                     </ul>
 
-                    <h3>Can an employer refuse to release you?</h3>
-                    <p>
-                        Legally, an employer cannot hold your original certificates (it's a criminal offense). They also cannot refuse to accept a resignation via email. However, they can refuse to provide a <strong>Relieving Letter</strong> and <strong>Experience Certificate</strong> until the dues are cleared or the notice is served.
-                    </p>
-
-                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white">
-                        <h4 className="text-orange-400 font-bold mb-2">Negotiation Strategy</h4>
-                        <p className="mb-0 text-slate-300">"Never just quit and hope for the best. Negotiate for <strong>'Early Release against Leave Balance'</strong>. Most companies allow you to adjust your accumulated PL (Privilege Leave) against the notice period, shortening your stay without a financial hit."</p>
+                    <div className="my-10 p-6 bg-slate-900 rounded-2xl text-white shadow-xl">
+                        <h4 className="text-orange-400 font-bold mb-2 italic">Strategy: Leverage Your Leaves</h4>
+                        <p className="mb-0 text-slate-300">"The best way to shorten a notice period is not a buyout, but <strong>Leave Adjustment</strong>." Most HR policies allow you to subtract your PL balance from your 90 days. If you have 30 leaves, you only serve 60 days. This saves you from the Tax Trap of a cash buyout!</p>
                     </div>
 
+                    <h3>Can they hold your EPF?</h3>
+                    <p>No. Your Employee Provident Fund (EPF) is your property. An employer cannot legally stop you from withdrawing or transferring your PF balance, regardless of any dispute over the notice period. They also cannot hold your original educational certificates (this is a criminal offense).</p>
+
+                    <h3>Check Your Dues</h3>
+                    <p>Don't let the HR math confuse you. Use our dedicated tools to estimate your final payout and tax impact.</p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
                         <Link to={ROUTES.CALCULATORS.LOAN.NOTICE_BUYOUT} className="flex-1 text-center p-4 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition shadow-lg">
-                            Calculate My Buyout Amount
+                            🚪 Buyout Calculator →
                         </Link>
                         <Link to={ROUTES.CALCULATORS.TAX.GRATUITY} className="flex-1 text-center p-4 border-2 border-orange-600 text-orange-600 rounded-xl font-bold hover:bg-orange-50 transition">
-                            Check My Gratuity Dues
+                            Check My Gratuity →
                         </Link>
                     </div>
+                    <AuthorBio />
                 </article>
             </div>
         </div>

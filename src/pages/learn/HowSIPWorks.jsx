@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
-
 import { SchemaGenerator, BreadcrumbSchema } from '../../components/SchemaGenerator'
 import SEOSection from '../../components/SEOSection'
+import AuthorBio from '../../components/AuthorBio'
 
 const faqData = [
     {
@@ -36,7 +36,7 @@ export const metadata = {
 export default function HowSIPReturnsCalculated() {
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-            
+
 
             <BreadcrumbSchema items={[
                 { name: 'Home', url: 'https://calcguide.in' },
@@ -49,11 +49,6 @@ export default function HowSIPReturnsCalculated() {
                 name="How SIP Returns Are Calculated in India"
                 description="A comprehensive guide on understanding Systematic Investment Plan (SIP) calculations, XIRR, and compounding growth."
                 image="https://calcguide.in/images/learn/sip-growth-chart.png"
-                data={{
-                    "author": { "@type": "Organization", "name": "CalcGuide Team" },
-                    "datePublished": "2024-02-01",
-                    "headline": "How SIP Returns Are Calculated in India (With Examples)"
-                }}
             />
 
             {/* Article Header */}
@@ -70,6 +65,11 @@ export default function HowSIPReturnsCalculated() {
                     <p className="text-lg text-slate-600 leading-relaxed">
                         Confused about how your small monthly investments turn into crores? We break down the math, the power of compound interest, and the logic behind SIP returns.
                     </p>
+                    <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+                        <span>By Ashu Yadav</span>
+                        <span>•</span>
+                        <span>Updated for 2025</span>
+                    </div>
                 </div>
             </header>
 
@@ -97,7 +97,7 @@ export default function HowSIPReturnsCalculated() {
                     <p>
                         When you do a SIP, you are not directly "saving" money. You are buying units of a Mutual Fund.
                     </p>
-                    <ul className="bg-yellow-50 p-6 rounded-xl list-none border-l-4 border-yellow-400 my-8">
+                    <ul className="bg-yellow-50 p-6 rounded-xl list-none border-l-4 border-yellow-400 my-8 shadow-sm">
                         <li className="mb-2"><strong>Market Down?</strong> NAV (price) is low → You buy MORE units.</li>
                         <li><strong>Market Up?</strong> NAV (price) is high → You buy FEWER units.</li>
                     </ul>
@@ -194,7 +194,7 @@ export default function HowSIPReturnsCalculated() {
                         Notice that by doubling the time (10 to 20 years) and doubling the amount, the result didn't just quadruple—it grew almost <strong>9 times</strong>! That is the effect of compounding over time.
                     </p>
 
-                    <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 my-8 text-center">
+                    <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 my-8 text-center shadow-inner">
                         <h3 className="text-lg font-bold text-blue-900 mb-2 mt-0">Ready to calculate your own returns?</h3>
                         <p className="mb-6 text-blue-800">Use our free tool to see how much your savings can grow.</p>
                         <Link to={ROUTES.CALCULATORS.INVESTMENT.SIP} className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-transform transform hover:-translate-y-1">
@@ -209,24 +209,13 @@ export default function HowSIPReturnsCalculated() {
                         <li><strong>Ideally, combine SIP with FD:</strong> Don't put emergency funds in SIP. Use our <Link to={ROUTES.CALCULATORS.INVESTMENT.FD}>FD Calculator</Link> to plan for safe, short-term goals.</li>
                     </ul>
 
-                    {/* Author/Purpose Note */}
-                    <p className="text-sm text-slate-500 mt-6 pt-6 border-t border-slate-100">
-                        <em>This guide is written for educational purposes by <strong>CalcGuide</strong> to help Indian investors understand SIP calculations without sales pressure.</em>
-                    </p>
-
-                    {/* Trust/Authority Block */}
-                    <div className="bg-slate-50 border-l-4 border-slate-400 p-4 mt-8 text-sm text-slate-600 italic">
-                        <p>
-                            <strong>Note:</strong> CalcGuide simplifies Indian investment calculations using standard financial formulas and publicly accepted assumptions. Actual returns depend on market performance, expense ratios, and fund selection. This guide is for educational purposes only.
-                        </p>
-                    </div>
-
                 </div>
 
                 {/* FAQ Section */}
                 <div className="mt-12 pt-8 border-t border-slate-200">
                     <SEOSection title="Frequently Asked Questions" faq={faqData} />
                 </div>
+                <AuthorBio />
             </article>
         </div>
     )
