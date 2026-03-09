@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST_DIR = path.join(__dirname, '..', 'dist', 'static');
+const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 const results = {
     pagesAudited: 0,

@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const toAbsolute = (p) => path.resolve(__dirname, p)
 
 // Load Template and Server Entry
-const template = fs.readFileSync(toAbsolute('dist/static/index.html'), 'utf-8')
+const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8')
 const { render, routes } = await import('./dist/server/entry-server.js')
 const { SEO_CONFIG } = await import('./src/routes/seoConfig.js')
 
@@ -101,8 +101,8 @@ for (const url of routesToPrerender) {
     // Phase D: Write to Disk
     // Phase D: Write to Disk
     const filePath = url === '/404'
-        ? 'dist/static/404.html'
-        : `dist/static${url === '/' ? '/index.html' : url.endsWith('/') ? `${url}index.html` : `${url}/index.html`}`
+        ? 'dist/404.html'
+        : `dist${url === '/' ? '/index.html' : url.endsWith('/') ? `${url}index.html` : `${url}/index.html`}`
 
     const dir = path.dirname(filePath)
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
@@ -122,8 +122,8 @@ console.log('\n\n--- Phase 3: Post-Generation Verification ---')
  */
 routesToPrerender.forEach(url => {
     const filePath = url === '/404'
-        ? 'dist/static/404.html'
-        : `dist/static${url === '/' ? '/index.html' : url.endsWith('/') ? `${url}index.html` : `${url}/index.html`}`
+        ? 'dist/404.html'
+        : `dist${url === '/' ? '/index.html' : url.endsWith('/') ? `${url}index.html` : `${url}/index.html`}`
 
     if (!fs.existsSync(filePath)) {
         errors.push(`SSG ERROR: Missing expected file for route ${url} at ${filePath}`)
@@ -161,7 +161,7 @@ function walk(dir) {
         }
     }
 }
-walk(toAbsolute('dist/static'))
+walk(toAbsolute('dist'))
 
 // Filter out the base index.html template from the count
 const finalGeneratedCount = generatedFiles.length - 1 // Subtracting the root template index.html
