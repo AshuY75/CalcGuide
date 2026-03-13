@@ -11,12 +11,18 @@ export default defineConfig(({ isSsrBuild }) => ({
   build: {
     sourcemap: false,
     rollupOptions: {
-      output: {
-        manualChunks: undefined,
-        entryFileNames: "assets/[name]-[hash].js",
-        chunkFileNames: "assets/[name]-[hash].js",
-        assetFileNames: "assets/[name]-[hash][extname]"
-      },
+      output: isSsrBuild
+        ? {
+          entryFileNames: "entry-server.js",
+          chunkFileNames: "chunks/[name].js",
+          assetFileNames: "assets/[name][extname]"
+        }
+        : {
+          manualChunks: undefined,
+          entryFileNames: "assets/[name]-[hash].js",
+          chunkFileNames: "assets/[name]-[hash].js",
+          assetFileNames: "assets/[name]-[hash][extname]"
+        },
     },
   },
   ssr: {
