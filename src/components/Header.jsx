@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import QuickSearchModal from './QuickSearchModal'
+import logo from '/logo.png'
 
 const TypewriterText = () => {
     const text = "Sahi Hisab, Sahi Faisla"
@@ -126,7 +127,7 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <Link to={ROUTES.HOME} className="flex items-center group">
-                            <img src="/logo.png" alt="CalcGuide Logo" width="40" height="40" className="h-10 w-10 mr-2" loading="eager" />
+                            <img src={logo} alt="CalcGuide Logo" width="40" height="40" className="h-10 w-10 mr-2" loading="eager" />
                             <span className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-blue-700 transition-colors">Calc<span className="text-blue-600">Guide</span></span>
                         </Link>
                         <TypewriterText />
