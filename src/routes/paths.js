@@ -5,8 +5,13 @@ export const ROUTES = {
         INVESTMENT: "/investment-calculators/",
         SIP: "/sip-calculators/",
         TAX: "/tax-calculators/",
-        STUDENT: "/student-calculators/"
+        STUDENT: "/student-calculators/",
+        HEALTH: "/health-calculators/",
+        INSURANCE: "/insurance-calculators/",
+        REAL_ESTATE: "/real-estate-calculators/",
+        UTILITY: "/utility-calculators/"
     },
+    BHARAT: "/bharat-calculators/",
     CALCULATORS: {
         LOAN: {
             EMI: "/calculators/loan/emi-calculator/",
@@ -14,7 +19,16 @@ export const ROUTES = {
             HOME_LOAN_PREPAYMENT: "/calculators/loan/home-loan-prepayment-calculator/",
             VILLAGE_INTEREST: "/calculators/loan/village-interest-calculator/",
             AMORTISATION_SCHEDULE: "/calculators/loan/amortisation-schedule-calculator/",
-            NOTICE_BUYOUT: "/calculators/loan/notice-period-buyout-calculator/"
+            NOTICE_BUYOUT: "/calculators/loan/notice-period-buyout-calculator/",
+            EDUCATION: "/calculators/loan/education-loan-emi-calculator/",
+            CAR: "/calculators/loan/car-loan-emi-calculator/",
+            LAP: "/calculators/loan/loan-against-property-calculator/",
+            PERSONAL: "/calculators/loan/personal-loan-emi-calculator/",
+            BALANCE_TRANSFER: "/calculators/loan/loan-balance-transfer-calculator/",
+            TWO_WHEELER: "/calculators/loan/two-wheeler-loan-calculator/",
+            KCC: "/calculators/loan/kisan-credit-card-calculator/",
+            BUSINESS: "/calculators/loan/business-loan-calculator/",
+            DEBT_CONSOLIDATION: "/calculators/loan/debt-consolidation-calculator/"
         },
         INVESTMENT: {
             SIP: "/calculators/investment/sip-calculator/",
@@ -31,11 +45,22 @@ export const ROUTES = {
             MF_OVERLAP: "/calculators/investment/mutual-fund-overlap-calculator/",
             PPF: "/calculators/investment/ppf-calculator/",
             SSY: "/calculators/investment/ssy-calculator/",
-            NPS: "/calculators/investment/nps-calculator/"
+            NPS: "/calculators/investment/nps-calculator/",
+            STEP_UP_SIP: "/calculators/investment/step-up-sip-calculator/",
+            FD_VS_SIP: "/calculators/investment/fd-vs-sip-calculator/",
+            RETIREMENT: "/calculators/investment/retirement-planner/",
+            INFLATION: "/calculators/investment/inflation-impact-calculator/",
+            CAGR: "/calculators/investment/cagr-calculator/",
+            SGB: "/calculators/investment/sgb-returns-calculator/",
+            ELSS: "/calculators/investment/elss-calculator/",
+            KVP: "/calculators/investment/kvp-calculator/",
+            STOCK_AVG: "/calculators/investment/stock-average-calculator/",
+            ROI: "/calculators/investment/roi-calculator/"
         },
         GOLD: {
             JEWELLERY: "/calculators/gold/jewellery-price-calculator/",
-            OLD_GOLD: "/calculators/gold/old-gold-exchange-calculator/"
+            OLD_GOLD: "/calculators/gold/old-gold-exchange-calculator/",
+            WEDDING_GOLD: "/calculators/gold/wedding-gold-weight-calculator/"
         },
         CONSTRUCTION: {
             COST: "/calculators/construction/construction-cost-calculator/",
@@ -43,13 +68,48 @@ export const ROUTES = {
             LAND_AREA: "/calculators/construction/land-area-converter/"
         },
         REAL_ESTATE: {
-            RENTAL_YIELD: "/calculators/real-estate/rental-yield-calculator/"
+            RENTAL_YIELD: "/calculators/real-estate/rental-yield-calculator/",
+            RENT_VS_BUY: "/calculators/real-estate/rent-vs-buy-calculator/",
+            STAMP_DUTY: "/calculators/real-estate/stamp-duty-registration-calculator/",
+            PROPERTY_REG: "/calculators/real-estate/property-registration-cost-calculator/",
+            APPRECIATION: "/calculators/real-estate/property-appreciation-calculator/",
+            CARPET_AREA: "/calculators/real-estate/carpet-area-calculator/"
         },
-        STUDENT: {
-            SGPA: "/calculators/student/sgpa-calculator/",
-            CGPA_PERCENTAGE: "/calculators/student/cgpa-to-percentage-calculator/",
-            TIME_WORK: "/calculators/student/time-and-work-calculator/",
-            RANK_PERCENTILE: "/calculators/student/rank-vs-percentile-calculator/"
+        HEALTH: {
+            BMI: "/calculators/health/bmi-calculator/",
+            CALORIE: "/calculators/health/calorie-calculator/",
+            IDEAL_WEIGHT: "/calculators/health/ideal-body-weight-calculator/",
+            PREGNANCY: "/calculators/health/pregnancy-due-date-calculator/",
+            HEART_RATE: "/calculators/health/heart-rate-zones-calculator/",
+            BODY_FAT: "/calculators/health/body-fat-calculator/",
+            BLOOD_SUGAR: "/calculators/health/blood-sugar-converter/"
+        },
+        INSURANCE: {
+            TERM: "/calculators/insurance/term-insurance-calculator/",
+            HEALTH: "/calculators/insurance/health-insurance-estimator/",
+            CAR: "/calculators/insurance/car-insurance-calculator/",
+            HLV: "/calculators/insurance/human-life-value-calculator/",
+            CRITICAL_ILLNESS: "/calculators/insurance/critical-illness-cover-calculator/"
+        },
+        TAX: {
+            INCOME_TAX: "/calculators/tax/income-tax-calculator/",
+            PROPERTY_TAX: "/calculators/tax/property-tax-calculator-indexation/",
+            LTCG_EQUITY: "/calculators/tax/long-term-capital-gains-ltcg-calculator/",
+            HRA: "/calculators/tax/hra-calculator/",
+            GRATUITY: "/calculators/tax/gratuity-calculator/",
+            EPF: "/calculators/tax/epf-calculator/",
+            GST: "/calculators/tax/gst-calculator/",
+            TDS: "/calculators/tax/tds-calculator/",
+            PROFESSIONAL_TAX: "/calculators/tax/professional-tax-calculator/",
+            CTC_TO_INHAND: "/calculators/tax/ctc-to-inhand-calculator/",
+            HIKE: "/calculators/tax/salary-hike-calculator/",
+            RENT_RECEIPT: "/calculators/tax/rent-receipt-generator/",
+            FORM16: "/calculators/tax/form-16-tax-calculator/",
+            ADVANCE_TAX: "/calculators/tax/advance-tax-calculator/",
+            GIFT: "/calculators/tax/gift-tax-calculator/",
+            STCG: "/calculators/tax/stcg-tax-calculator/",
+            LTCG_HARVESTING: "/calculators/tax/long-term-capital-gains-harvesting/",
+            NSC: "/calculators/tax/nsc-calculator/"
         },
         UTILITY: {
             PERCENTAGE: "/calculators/utility/percentage-calculator/",
@@ -60,23 +120,29 @@ export const ROUTES = {
             SOLAR_ROI: "/calculators/utility/solar-roi-calculator/",
             EV_VS_PETROL: "/calculators/utility/ev-vs-petrol-calculator/",
             CREDIT_CARD_REWARDS: "/calculators/utility/credit-card-rewards-value-calculator/",
-            WEDDING_PLANNER: "/calculators/utility/wedding-expense-planner/"
+            WEDDING_PLANNER: "/calculators/utility/wedding-expense-planner/",
+            PETROL: "/calculators/utility/petrol-cost-calculator/",
+            WATER_BILL: "/calculators/utility/water-bill-calculator/",
+            MOBILE_RECHARGE: "/calculators/utility/mobile-recharge-calculator/",
+            CROP_YIELD: "/calculators/utility/crop-yield-msp-calculator/",
+            AC_CONSUMPTION: "/calculators/utility/ac-power-consumption-calculator/",
+            UPSC_AGE: "/calculators/utility/upsc-age-limit-calculator/",
+            TIME_ZONE: "/calculators/utility/time-zone-converter/"
         },
-        CREATOR: {
-            YOUTUBE_EARNINGS: "/calculators/creator/youtube-earnings-calculator/",
-            FREELANCE_RATE: "/calculators/creator/freelancer-hourly-rate-calculator/",
-            PLATFORM_FEE: "/calculators/creator/platform-fee-calculator/",
-            IMPORT_DUTY: "/calculators/creator/import-duty-calculator/",
-            FREELANCE_INVOICE: "/calculators/creator/freelance-invoice-generator/"
+        STUDENT: {
+            SGPA: "/calculators/student/sgpa-calculator/",
+            CGPA_PERCENTAGE: "/calculators/student/cgpa-to-percentage-calculator/",
+            TIME_WORK: "/calculators/student/time-and-work-calculator/",
+            RANK_PERCENTILE: "/calculators/student/rank-vs-percentile-calculator/"
         },
-        TAX: {
-            INCOME_TAX: "/calculators/tax/income-tax-calculator/",
-            HRA: "/calculators/tax/hra-calculator/",
-            GRATUITY: "/calculators/tax/gratuity-calculator/",
-            EPF: "/calculators/tax/epf-calculator/",
-            GST: "/calculators/tax/gst-calculator/",
-            TDS: "/calculators/tax/tds-calculator/",
-            PROFESSIONAL_TAX: "/calculators/tax/professional-tax-calculator/"
+        BUSINESS: {
+            GST_COMPOSITION: "/calculators/business/gst-composition-calculator/",
+            MSME_PMEGP: "/calculators/business/msme-pmegp-subsidy-calculator/",
+            PROFESSIONAL_RATE: "/calculators/business/freelance-hourly-rate-calculator/",
+            YOUTUBE_EARNINGS: "/calculators/business/youtube-earnings-calculator/",
+            PLATFORM_FEE: "/calculators/business/platform-fee-calculator/",
+            IMPORT_DUTY: "/calculators/business/import-duty-calculator/",
+            FREELANCE_INVOICE: "/calculators/business/freelance-invoice-generator/"
         }
     },
     LEGAL: {
@@ -97,10 +163,7 @@ export const ROUTES = {
         HOME: "/learn/",
         SIP_RETURNS_CALCULATION: "/learn/how-sip-returns-are-calculated/",
         SIP_VS_FD: "/learn/why-sip-beats-fd-long-term/",
-        VILLAGE_INT_EXPL: "/learn/how-village-interest-sood-vaddi-works/",
-        PREPAYMENT_VS_SIP: "/learn/home-loan-prepayment-vs-sip-11-percent-rule/",
         WHY_EARLY_PREPAYMENT: "/learn/why-early-prepayment-saves-interest/",
-        MCLR_VS_EBLR: "/learn/mclr-vs-eblr-home-loan-switch/",
         STEP_UP_SIP: "/learn/step-up-sip-vs-inflation/",
         BUILD_1_CRORE: "/learn/how-to-build-1-crore-mutual-funds/",
         CAGR_LIES: "/learn/why-cagr-lies-the-real-deal/",
@@ -133,6 +196,55 @@ export const ROUTES = {
         PROFESSIONAL_INVOICING: "/learn/professional-freelance-invoicing-legal-requirements/",
         EMERGENCY_FUND: "/learn/emergency-fund-blueprint-12-months-salary/",
         LOAN_BALANCE_TRANSFER: "/learn/loan-balance-transfer-save-lakhs-formula/",
-        CHILD_EDUCATION_SAVINGS: "/learn/how-to-save-for-child-education-sip-ssy/"
+        CHILD_EDUCATION_SAVINGS: "/learn/how-to-save-for-child-education-sip-ssy/",
+        BMI_INDIAN_CUTOFF: "/learn/bmi-for-indians-why-25-cutoff-is-wrong/",
+        SIP_5000_MONTH_RETURNS: "/learn/sip-5000-per-month-how-rich-will-you-be/",
+        INDEX_VS_ACTIVE_FUNDS: "/learn/index-vs-active-mutual-funds-2025-comparison/",
+        SALARY_SLIP_GUIDE: "/learn/how-to-read-salary-slip-in-india/",
+        CALORIES_FOR_INDIANS: "/learn/daily-calorie-requirement-indians/",
+        DIABETES_HBA1C_GUIDE: "/learn/diabetes-hba1c-indian-diet-guide/",
+        NUTRITION_DEFICIENCY: "/learn/nutritional-deficiency-indian-vegetarian-diet/",
+        OVERWEIGHT_VS_OBESE: "/learn/overweight-vs-obese-indian-standards/",
+        WALKING_FOR_WEIGHT_LOSS: "/learn/walking-for-weight-loss-10000-steps-truth/",
+        SIP_VS_PPF: "/learn/sip-vs-ppf-where-to-invest-first-5000/",
+        FLEXI_VS_MULTI_CAP: "/learn/flexi-cap-vs-multi-cap-funds-comparison/",
+        MUTUAL_FUND_NAV_GUIDE: "/learn/what-is-nav-in-mutual-funds-meaning-impact/",
+        ELSS_VS_PPF: "/learn/elss-vs-ppf-tax-saving-duel-comparison/",
+        INVEST_WITH_500: "/learn/how-to-start-investing-with-500-rupees-india/",
+        DIVIDEND_VS_GROWTH_MF: "/learn/dividend-vs-growth-mutual-fund-tax-returns/",
+        POST_OFFICE_VS_BANK_FD: "/learn/post-office-saving-schemes-vs-bank-fd-comparison/",
+        SMALLCASE_VS_MUTUAL_FUNDS: "/learn/smallcase-vs-mutual-funds-for-beginners-comparison/",
+        CHILD_EDUCATION_PLAN: "/learn/50-lakh-child-education-plan-calculator-strategy/",
+        TAX_HARVESTING_GUIDE: "/learn/capital-gains-tax-harvesting-india-guide/",
+        FREELANCE_TAX_44ADA: "/learn/section-44ada-presumptive-taxation-freelance-guide/",
+        OLD_VS_NEW_TAX_VERDICT: "/learn/old-vs-new-tax-regime-detailed-comparison-2025/",
+        GIFT_TAX_RULES: "/learn/gift-tax-rules-india-family-money-transfer-guide/",
+        HRA_EXEMPTION_GUIDE: "/learn/hra-exemption-calculation-rules-rent-receipts-guide/",
+        TAX_ON_INTEREST_GUIDE: "/learn/tax-on-interest-income-80tta-80ttb-fd-tds-guide/",
+        SECTION_80D_GUIDE: "/learn/section-80d-health-insurance-tax-benefit-parents-guide/",
+        PROPERTY_CAPITAL_GAINS: "/learn/capital-gains-tax-on-property-indexation-rules-guide/",
+        SHARES_VS_REAL_ESTATE_TAX: "/learn/tax-comparison-shares-vs-real-estate-india-guide/",
+        PREPAYMENT_VS_SIP_BATTLE: "/learn/home-loan-prepayment-vs-sip-million-rupee-math/",
+        RULE_12_20_25_HOME_LOAN: "/learn/home-loan-12-20-25-rule-early-closure-strategy/",
+        PERSONAL_LOAN_DEBT_TRAP: "/learn/personal-loan-debt-trap-high-interest-escape-guide/",
+        RENT_VS_BUY_INDIA_2025: "/learn/rent-vs-buy-india-2025-real-estate-math-guide/",
+        HIDDEN_COSTS_HOME_BUYING: "/learn/hidden-costs-buying-house-india-stamp-duty-gst-guide/",
+        HOME_LOAN_ELIGIBILITY_MATH: "/learn/home-loan-eligibility-formula-salary-multiplier-guide/",
+        CIBIL_SCORE_BLUEPRINT: "/learn/cibil-score-improvement-600-to-800-blueprint/",
+        PROPERTY_APPRECIATION_REALITY: "/learn/real-estate-appreciation-truth-vs-inflation-guide/",
+        VILLAGE_INTEREST_MATH: "/learn/village-interest-rate-math-sood-vaddi-explained/",
+        GOLD_LOAN_VS_PERSONAL_DUEL: "/learn/gold-loan-vs-personal-loan-which-is-better/",
+        EDUCATION_LOAN_MASTERY: "/learn/education-loan-mastery-tax-benefits-80e-guide/",
+        CAR_LOAN_TRAP: "/learn/car-loan-trap-7-year-tenure-depreciation-guide/",
+        CREDIT_CARD_DEBT_SURVIVAL: "/learn/credit-card-debt-survival-minimum-due-trap-guide/",
+        COMMERCIAL_VS_RESIDENTIAL_ROI: "/learn/commercial-vs-residential-real-estate-roi-guide/",
+        FRACTIONAL_RE_101: "/learn/fractional-real-estate-ownership-guide-india/",
+        REITS_VS_PHYSICAL: "/learn/reits-vs-physical-property-comparison-2025/",
+        LAS_GUIDE: "/learn/loan-against-securities-mutual-funds-guide/",
+        TERM_VS_ULIP_DUEL: "/learn/term-insurance-vs-ulip-investment-comparison/",
+        HEALTH_INSURANCE_PARENTS: "/learn/health-insurance-for-senior-citizen-parents-guide/",
+        CRITICAL_ILLNESS_VS_MEDICAL: "/learn/critical-illness-vs-medical-insurance-gap-math/",
+        CAR_INSURANCE_MASTERY: "/learn/car-insurance-idv-zero-dep-ncb-guide/",
+        FI_BLUEPRINT_FINALE: "/learn/financial-independence-blueprint-2025-roadmap/"
     }
 };

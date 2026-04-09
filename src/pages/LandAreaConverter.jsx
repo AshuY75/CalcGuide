@@ -1,33 +1,11 @@
 import { Link } from 'react-router-dom'
-
 import CalculatorContent from '../components/CalculatorContent'
-import SEOSection from '../components/SEOSection'
 import LandAreaConverterUI from '../components/calculators/LandAreaConverterUI'
 import { ROUTES } from '../routes/paths'
 
 export default function LandAreaConverter() {
-    const features = [
-        { title: "All India Units", desc: "Supports Bigha, Guntha, Katha, Biswa, Ground, and more.", icon: "🇮🇳" },
-        { title: "State-Specific", desc: "Adjusts Bigha size automatically for UP, Bihar, Rajasthan, etc.", icon: "📍" },
-        { title: "Instant Conversion", desc: "Convert any local unit to Standard Acres, Hectares, or Sq Feet.", icon: "⚡" },
-    ]
-
-    const faqData = [
-        { question: "How many Sq Sq Ft in 1 Bigha?", answer: "The size of 1 Bigha varies by state. In UP/Bihar, it is roughly 27,225 Sq Ft. In Rajasthan, it can be 17,424 Sq Ft. Always select your state for accurate results." },
-        { question: "What is 1 Acre in Bigha?", answer: "In standard terms often used in North India, 1 Acre is approx 1.6 Bigha. However, this varies significantly across districts." },
-        { question: "Which unit is used in Maharashtra?", answer: "Guntha is widely used in Maharashtra. 40 Gunthas make 1 Acre. 1 Guntha is approx 1,089 Sq Ft." },
-        { question: "How to convert Hectare to Acre?", answer: "1 Hectare is exactly 2.471 Acres. This is a standard international conversion and does not change by state." }
-    ]
-
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="Land Area Converter India"
-                description="Convert Indian land measurements accurately by state, including Bigha, Guntha, Katha, and Biswa."
-                url="https://calcguide.in/calculators/utility/land-area-converter/"
-            />
-
-
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Breadcrumb */}
@@ -56,13 +34,6 @@ export default function LandAreaConverter() {
                             example="If you have 5 Bighas of land in Uttar Pradesh, simply select 'Uttar Pradesh' and enter '5 Bigha'. The calculator will instantly tell you that this equals roughly 1.25 Acres (approx, varies by district). Without this conversion, you might miscalculate the land value."
                             commonMistake="Assuming 1 Bigha is the same everywhere. It is NOT. Always select the correct state before converting. Also, ignoring standard units (Sq Ft) which are necessary for legal documentation."
                         />
-
-                        <SEOSection title="Indian Land Units Guide" faq={faqData} features={features}>
-                            <h3>Why use this converter?</h3>
-                            <p>
-                                Official property documents often use <strong>Hectares</strong> or <strong>Square Meters</strong>. However, local deals are discussed in <strong>Bigha, Biswa, or Guntha</strong>. This gap causes confusion. Our tool bridges this gap by providing accurate state-specific conversions.
-                            </p>
-                        </SEOSection>
                     </div>
 
                     <div className="space-y-6">

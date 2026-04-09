@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function IndexationImpact() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Indexation Changes: How Property Tax is Calculated in 2025"
-                description="Confused by the new real estate tax rules? Learn how the removal of indexation benefits impacts your property sale and how to calculate LTCG tax under the new laws."
-                type="Article"
-                url="https://calcguide.in/learn/indexation-benefit-removal-property-tax-impact/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

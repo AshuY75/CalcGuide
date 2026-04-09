@@ -1,26 +1,13 @@
-
 import CalculatorContent from '../components/CalculatorContent'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import EMICalculatorUI from '../components/calculators/EMICalculatorUI'
+import RelatedContent from '../components/RelatedContent'
 
 export default function EMICalculator() {
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "Calculator",
-        "name": "EMI Calculator",
-        "description": "Calculate your Home Loan, Car Loan or Personal Loan EMI with our free calculator. Get instant salary-based affordability analysis.",
-        "url": "https://calcguide.in/calculators/loan/emi-calculator/",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Any"
-    }
-
     return (
         <div className="min-h-screen bg-slate-50">
-
-            <script type="application/ld+json">{JSON.stringify(schema)}</script>
-
-            <div className="bg-white border-b border-slate-200 py-6">
+            <div className="bg-white border-b border-slate-200 py-6 mb-4 rounded-xl shadow-sm">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Breadcrumb */}
                     <nav className="text-sm text-slate-500 mb-2">
@@ -30,7 +17,6 @@ export default function EMICalculator() {
                         <span className="mx-2">›</span>
                         <span className="text-slate-900">EMI Calculator</span>
                     </nav>
-
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">EMI Calculator</h1>
                     <p className="text-slate-600">Calculate loan EMI and check affordability against your salary</p>
                 </div>
@@ -94,6 +80,7 @@ export default function EMICalculator() {
                         </div>
                     </div>
                 </div>
+                <RelatedContent category="LOAN" currentPath={ROUTES.CALCULATORS.LOAN.EMI} />
             </div>
         </div>
     )

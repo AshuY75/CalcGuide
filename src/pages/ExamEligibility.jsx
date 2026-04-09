@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 const features = [
@@ -67,11 +66,7 @@ export default function ExamEligibility() {
     return (
         <div className="min-h-screen bg-slate-50">
 
-            <SchemaGenerator
-                name="Exam Eligibility Calculator"
-                description="Check age eligibility for government exams based on cut-off dates."
-                url="https://calcguide.in/calculators/utility/exam-eligibility-calculator/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

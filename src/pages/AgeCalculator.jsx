@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 export default function AgeCalculator() {
@@ -58,24 +57,11 @@ export default function AgeCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
 
-            <SchemaGenerator
-                name="Age Calculator"
-                description="Calculate age from Date of Birth (DOB) in Years, Months, Days."
-                url="https://calcguide.in/calculators/utility/age-calculator/"
-            />
+            {/* SEO and Breadcrumbs handled by MainLayout */}
 
-            <div className="bg-white border-b border-slate-200 py-6">
+            <div className="bg-white border-b border-slate-200 py-6 mb-8 rounded-xl shadow-sm">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Breadcrumb */}
-                    <nav className="text-sm text-slate-500 mb-2">
-                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
-                        <span className="mx-2">›</span>
-                        <Link to={ROUTES.HUBS.UTILITY} className="hover:text-blue-600">Utility Calculators</Link>
-                        <span className="mx-2">›</span>
-                        <span className="text-slate-900">Age Calculator</span>
-                    </nav>
-
-                    <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Age Calculator</h1>
+                    {/* H1 rendered by MainLayout */}
                     <p className="text-slate-600">Calculate exact age in years, months, and days</p>
                 </div>
             </div>

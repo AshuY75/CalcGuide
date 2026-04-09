@@ -2,15 +2,12 @@ import CalculatorContent from '../components/CalculatorContent'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import GratuityCalculatorUI from '../components/calculators/GratuityCalculatorUI'
+import RelatedContent from '../components/RelatedContent'
 
 export default function GratuityCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="Gratuity Calculator (2025)"
-                description="Calculate the gratuity amount you are entitled to after years of service under the Payment of Gratuity Act."
-                url="https://calcguide.in/calculators/tax/gratuity-calculator/"
-            />
+            
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">
@@ -38,6 +35,7 @@ export default function GratuityCalculator() {
                         />
                     </div>
                 </div>
+                <RelatedContent category="TAX" currentPath={ROUTES.CALCULATORS.TAX.GRATUITY} />
             </div>
         </div>
     )

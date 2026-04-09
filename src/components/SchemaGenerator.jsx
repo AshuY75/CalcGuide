@@ -41,7 +41,12 @@ export const SchemaGenerator = memo(({
         ...data
     }), [type, name, description, url, JSON.stringify(data)]);
 
-    return <InjectSchema id={`schema-${type}-${name.replace(/\s+/g, '-')}`} schema={baseSchema} />;
+    const schemaId = useMemo(() => {
+        const safeName = (typeof name === 'string' && name.trim()) ? name : 'default';
+        return `schema-${type}-${safeName.replace(/\s+/g, '-')}`;
+    }, [type, name]);
+
+    return <InjectSchema id={schemaId} schema={baseSchema} />;
 });
 
 export const BreadcrumbSchema = ({ items }) => {
@@ -57,4 +62,39 @@ export const BreadcrumbSchema = ({ items }) => {
     };
 
     return <InjectSchema id="schema-breadcrumb" schema={schema} />;
+};
+
+export const FAQSchema = ({ faqs }) => {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
+    return <InjectSchema id="schema-faq" schema={schema} />;
+};
+
+export const HowToSchema = ({ name, description, steps }) => {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": name,
+        "description": description,
+        "step": steps.map((step, index) => ({
+            "@type": "HowToStep",
+            "position": index + 1,
+            "name": step.title,
+            "text": step.content,
+            "url": `${typeof window !== 'undefined' ? window.location.href : ''}#step-${index + 1}`
+        }))
+    };
+
+    return <InjectSchema id="schema-howto" schema={schema} />;
 };

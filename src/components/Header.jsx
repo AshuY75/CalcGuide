@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
-import SearchSlider from './SearchSlider'
+import QuickSearchModal from './QuickSearchModal'
 
 const TypewriterText = () => {
     const text = "Sahi Hisab, Sahi Faisla"
@@ -51,6 +51,17 @@ export default function Header() {
         setActiveDropdown(null)
         setIsSearchOpen(false)
     }, [location])
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                setIsSearchOpen(true);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
 
     const navStructure = [
         {
@@ -115,7 +126,7 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <Link to={ROUTES.HOME} className="flex items-center group">
-                            <img src="/logo.png" alt="CalcGuide Logo" className="h-10 w-10 mr-2" />
+                            <img src="/logo.png" alt="CalcGuide Logo" width="40" height="40" className="h-10 w-10 mr-2" loading="eager" />
                             <span className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-blue-700 transition-colors">Calc<span className="text-blue-600">Guide</span></span>
                         </Link>
                         <TypewriterText />
@@ -158,10 +169,13 @@ export default function Header() {
                         <button
                             onClick={() => setIsSearchOpen(true)}
                             className="ml-2 p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all flex items-center gap-2 group border border-transparent hover:border-blue-100"
-                            title="Search Tools"
+                            title="Search Tools (Ctrl+K)"
                         >
                             <span className="text-lg group-hover:scale-110 transition-transform">🔍</span>
-                            <span className="text-xs font-bold uppercase tracking-wider hidden xl:inline-block">Search</span>
+                            <div className="flex flex-col items-start leading-none">
+                                <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-0.5">Search</span>
+                                <span className="text-[8px] font-black text-slate-400 opacity-50">CMD+K</span>
+                            </div>
                         </button>
                     </nav>
 
@@ -187,7 +201,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <SearchSlider isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+            <QuickSearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
             {mobileMenuOpen && (
                 <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-white z-40 overflow-y-auto border-t border-slate-100">

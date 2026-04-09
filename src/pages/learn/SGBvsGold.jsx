@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function SGBvsGold() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="SGB vs Physical Gold: Which is Better in 2025?"
-                description="Thinking of buying gold? Compare Sovereign Gold Bonds (SGB) with Physical Gold on safety, tax benefits, and yearly interest. Make the smarter investment choice."
-                type="Article"
-                url="https://calcguide.in/learn/sgb-vs-physical-gold-better-investment-2025/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

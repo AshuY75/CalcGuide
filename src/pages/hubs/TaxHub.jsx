@@ -10,6 +10,26 @@ const TaxHub = () => {
             description: 'Compare Old vs New Tax Regimes for FY 2025-26 (AY 2026-27).'
         },
         {
+            title: 'Property LTCG Tax',
+            path: ROUTES.CALCULATORS.TAX.PROPERTY_TAX,
+            description: 'Budget 2024 Special: Calculate 12.5% vs 20% Indexation for Real Estate.'
+        },
+        {
+            title: 'GST Composition Scheme',
+            path: ROUTES.CALCULATORS.BUSINESS.GST_COMPOSITION,
+            description: 'Flat-rate tax calculation for traders, manufacturers, and restaurants.'
+        },
+        {
+            title: 'MSME PMEGP Subsidy',
+            path: ROUTES.CALCULATORS.BUSINESS.MSME_PMEGP,
+            description: 'Calculate govt subsidy (15-35%) and bank loans for new businesses.'
+        },
+        {
+            title: 'Freelance Rate Calc',
+            path: ROUTES.CALCULATORS.BUSINESS.PROFESSIONAL_RATE,
+            description: 'Calculate hourly/daily rates factoring in profit, overheads, and TDS.'
+        },
+        {
             title: 'HRA Calculator',
             path: ROUTES.CALCULATORS.TAX.HRA,
             description: 'Calculate your House Rent Allowance exemption to save income tax.'

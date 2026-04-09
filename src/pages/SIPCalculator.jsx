@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import SIPCalculatorUI from '../components/calculators/SIPCalculatorUI'
-import { SchemaGenerator } from '../components/SchemaGenerator'
-
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
+import RelatedContent from '../components/RelatedContent'
 
 const features = [
     { title: "Inflation Adjust", desc: "See the real value of your maturity amount.", icon: "📉" },
@@ -12,52 +11,19 @@ const features = [
     { title: "Instant Report", desc: "Get total invested vs total wealth gain breakdown.", icon: "⚡" },
 ]
 
-const faqData = [
-    {
-        question: "What is the full form of SIP?",
-        answer: "SIP stands for Systematic Investment Plan. It is a method of investing a fixed sum regularly in a mutual fund scheme."
-    },
-    {
-        question: "Is SIP better than Fixed Deposit (FD)?",
-        answer: "SIPs in equity mutual funds usually offer higher returns (12-15%) compared to FDs (6-7%) over the long term (5+ years). However, FDs are safer and offer guaranteed returns, whereas SIP returns are market-linked."
-    },
-    {
-        question: "Can I lose money in SIP?",
-        answer: "Yes, since SIPs invest in the stock market, the value can fluctuate in the short term. However, over long periods (7-10 years), the risk reduces significantly due to Rupee Cost Averaging."
-    },
-    {
-        question: "What is the minimum amount to start a SIP?",
-        answer: "You can start a SIP with as little as ₹500 per month in most Indian mutual funds."
-    },
-    {
-        question: "How is SIP return calculated?",
-        answer: "SIP returns are calculated using the XIRR (Extended Internal Rate of Return) method, which accounts for multiple cash inflows at different times."
-    }
-]
-
 export default function SIPCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
-
-
-            <SchemaGenerator
-                type="FinancialProduct"
-                name="SIP Calculator"
-                description="Calculate Mutual Fund SIP returns instantly. See how small monthly investments grow into crores with the power of compounding."
-                url="https://calcguide.in/calculators/investment/sip-calculator/"
-            />
-
-            <div className="bg-white border-b border-slate-200 py-6">
+            <div className="bg-white border-b border-slate-200 py-6 mb-4 rounded-xl shadow-sm">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Breadcrumb */}
                     <nav className="text-sm text-slate-500 mb-2">
                         <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
                         <span className="mx-2">›</span>
-                        <Link to={ROUTES.HUBS.SIP} className="hover:text-blue-600">SIP Calculators</Link>
+                        <Link to={ROUTES.HUBS.INVESTMENT} className="hover:text-blue-600">Investment Calculators</Link>
                         <span className="mx-2">›</span>
                         <span className="text-slate-900">SIP Calculator</span>
                     </nav>
-
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">SIP Calculator</h1>
                     <p className="text-slate-600">Calculate how much your monthly investments can grow</p>
                 </div>
@@ -76,7 +42,7 @@ export default function SIPCalculator() {
                             commonMistake="Reviewing returns too frequently and stopping SIPs when the market is down. In reality, market dips are the best time to continue your SIP because you buy more units at a lower price. Another mistake is not increasing your SIP amount as your income grows (Top-up SIP)."
                         />
 
-                        <SEOSection title="Smart Investing with SIP" faq={faqData} features={features}>
+                        <SEOSection title="Smart Investing with SIP" features={features}>
                             <h3>Why SIP creates wealth?</h3>
                             <p>
                                 The two biggest friends of an investor are <strong>Time</strong> and <strong>Discipline</strong>. SIP ensures both. By investing small amounts regularly, you don't need to time the market. You buy more when the market is low and less when it is high, automatically averaging your purchase price.
@@ -124,6 +90,7 @@ export default function SIPCalculator() {
                         </div>
                     </div>
                 </div>
+                <RelatedContent category="INVESTMENT" currentPath={ROUTES.CALCULATORS.INVESTMENT.SIP} />
             </div>
         </div>
     )

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { ROUTES } from './src/routes/paths.js';
+import { SEO_CONFIG } from './src/routes/seoConfig.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://calcguide.in';
@@ -29,6 +30,14 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${allRoutes
     .map((route) => {
+      // Normalize route for config lookup (ensure leading/trailing slash)
+      let cleanPath = route;
+      if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
+      if (cleanPath !== '/' && !cleanPath.endsWith('/')) cleanPath += '/';
+
+      const config = SEO_CONFIG[cleanPath] || {};
+      const lastmod = config.lastUpdated || new Date().toISOString().split('T')[0];
+
       // Priority Logic
       let priority = '0.8';
       if (route === '/') priority = '1.0';
@@ -37,7 +46,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       return `
   <url>
     <loc>${BASE_URL}${route}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>`;

@@ -1,9 +1,29 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import CalculatorCard from '../components/CalculatorCard'
 import { ROUTES } from '../routes/paths'
 import { CALCULATORS } from '../data/calculators'
 
 export default function Home() {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        let startTimestamp = null;
+        const endValue = 250000;
+        const duration = 1500;
+
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            setCount(Math.floor(progress * endValue));
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+
+        window.requestAnimationFrame(step);
+    }, []);
+
     const categories = [
         { id: 'all', name: 'All Tools', icon: '💎' },
         { id: 'STUDENT', name: 'Student', icon: '🎓' },
@@ -12,7 +32,7 @@ export default function Home() {
         { id: 'TAX', name: 'Tax & GST', icon: '🏛️' },
         { id: 'CONSTRUCTION', name: 'Land & Build', icon: '🏗️' },
         { id: 'UTILITY', name: 'Life & Utility', icon: '🛠️' },
-        { id: 'CREATOR', name: 'Creator & Jobs', icon: '�' },
+        { id: 'BUSINESS', name: 'Creator & Jobs', icon: '�' },
     ]
 
     const [activeCategory, setActiveCategory] = useState('all')
@@ -29,9 +49,27 @@ export default function Home() {
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
                         Sahi Hisab, <span className="text-yellow-300">Sahi Faisla</span>
                     </h1>
-                    <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+                    <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-6">
                         Practical finance, land, and gold calculators for smart decisions.
                     </p>
+
+                    {/* Social Proof Bar */}
+                    <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-10 text-xs sm:text-sm font-medium text-blue-100/80">
+                        <div className="flex items-center gap-2">
+                            <span>🧮</span>
+                            <span>{count.toLocaleString('en-IN')}+ Calculations Done</span>
+                        </div>
+                        <div className="hidden sm:block w-px h-3 bg-blue-100/20"></div>
+                        <div className="flex items-center gap-2">
+                            <span>⭐</span>
+                            <span>50+ Free Tools</span>
+                        </div>
+                        <div className="hidden sm:block w-px h-3 bg-blue-100/20"></div>
+                        <div className="flex items-center gap-2">
+                            <span>🇮🇳</span>
+                            <span>Made for India</span>
+                        </div>
+                    </div>
                     <div className="flex flex-wrap justify-center gap-4">
                         <a
                             href="#calculators"
@@ -130,4 +168,3 @@ export default function Home() {
         </div>
     )
 }
-import { Link } from 'react-router-dom'

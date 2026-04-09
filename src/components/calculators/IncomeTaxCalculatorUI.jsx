@@ -1,72 +1,96 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import SEOSection from '../SEOSection'
+import { calculateNewRegimeTax, calculateOldRegimeTax } from '../../utils/taxMath'
+import { setUrlParams, parseInitialState } from '../../utils/urlState'
 
 export default function IncomeTaxCalculatorUI() {
-    const [income, setIncome] = useState('1200000')
-    const [investments80C, setInvestments80C] = useState('150000')
-    const [hraExemption, setHraExemption] = useState('0')
-    const [homeLoanInterest, setHomeLoanInterest] = useState('0')
-    const [otherDeductions, setOtherDeductions] = useState('0')
+    // Initialize from URL or defaults
+    const initialState = parseInitialState({
+        i: '1200000', // income
+        c: '150000',  // 80C
+        h: '0',       // HRA
+        l: '0',       // homeLoan
+        o: '0'        // other
+    });
+
+    const [income, setIncome] = useState(initialState.i)
+    const [investments80C, setInvestments80C] = useState(initialState.c)
+    const [hraExemption, setHraExemption] = useState(initialState.h)
+    const [homeLoanInterest, setHomeLoanInterest] = useState(initialState.l)
+    const [otherDeductions, setOtherDeductions] = useState(initialState.o)
     const [result, setResult] = useState(null)
+    const [isSharing, setIsSharing] = useState(false)
 
     const resultRef = useRef(null)
 
-    const calculateTax = () => {
+    // Sync state with URL params
+    useEffect(() => {
+        setUrlParams({
+            i: income,
+            c: investments80C,
+            h: hraExemption,
+            l: homeLoanInterest,
+            o: otherDeductions
+        });
+    }, [income, investments80C, hraExemption, homeLoanInterest, otherDeductions]);
+
+    // Auto-calculate on initial load if params exist
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('i')) {
+            calculateTax(false);
+        }
+    }, []);
+
+    const calculateTax = (shouldScroll = true) => {
         const grossIncome = parseFloat(income) || 0
-
-        // --- NEW REGIME Calculation (FY 2024-25 / 2025-26) ---
-        const stdDedNew = 75000
-        const taxableNew = Math.max(0, grossIncome - stdDedNew)
-        let taxNew = 0
-
-        // Slabs for New Regime
-        if (taxableNew <= 300000) taxNew = 0
-        else if (taxableNew <= 700000) taxNew = (taxableNew - 300000) * 0.05
-        else if (taxableNew <= 1000000) taxNew = 20000 + (taxableNew - 700000) * 0.10
-        else if (taxableNew <= 1200000) taxNew = 50000 + (taxableNew - 1000000) * 0.15
-        else if (taxableNew <= 1500000) taxNew = 80000 + (taxableNew - 1200000) * 0.20
-        else taxNew = 140000 + (taxableNew - 1500000) * 0.30
-
-        // Rebate u/s 87A for New Regime: No tax for income up to 7L (effectively after std ded)
-        // Note: Marginal relief applies for income slightly above 7L, but for simplicity we use basic rebate
-        if (taxableNew <= 700000) taxNew = 0
-
-        const cessNew = taxNew * 0.04
-        const totalTaxNew = taxNew + cessNew
-
-        // --- OLD REGIME Calculation ---
-        const stdDedOld = 50000
         const ded80C = Math.min(150000, parseFloat(investments80C) || 0)
         const dedInterest = Math.min(200000, parseFloat(homeLoanInterest) || 0)
-        const totalDedOld = stdDedOld + ded80C + dedInterest + (parseFloat(hraExemption) || 0) + (parseFloat(otherDeductions) || 0)
+        const otherDeds = (parseFloat(hraExemption) || 0) + (parseFloat(otherDeductions) || 0)
+        
+        const totalOtherDeds = ded80C + dedInterest + otherDeds;
 
-        const taxableOld = Math.max(0, grossIncome - totalDedOld)
-        let taxOld = 0
-
-        // Slabs for Old Regime
-        if (taxableOld <= 250000) taxOld = 0
-        else if (taxableOld <= 500000) taxOld = (taxableOld - 250000) * 0.05
-        else if (taxableOld <= 1000000) taxOld = 12500 + (taxableOld - 500000) * 0.20
-        else taxOld = 112500 + (taxableOld - 1000000) * 0.30
-
-        // Rebate u/s 87A for Old Regime: No tax for income up to 5L
-        if (taxableOld <= 500000) taxOld = 0
-
-        const cessOld = taxOld * 0.04
-        const totalTaxOld = taxOld + cessOld
+        const resultNew = calculateNewRegimeTax(grossIncome);
+        const resultOld = calculateOldRegimeTax(grossIncome, totalOtherDeds);
 
         setResult({
-            taxNew: Math.round(totalTaxNew),
-            taxOld: Math.round(totalTaxOld),
-            savings: Math.round(Math.abs(totalTaxNew - totalTaxOld)),
-            betterRegime: totalTaxNew < totalTaxOld ? 'NEW' : 'OLD',
-            taxableNew: Math.round(taxableNew),
-            taxableOld: Math.round(taxableOld)
+            taxNew: Math.round(resultNew.totalTax),
+            taxOld: Math.round(resultOld.totalTax),
+            savings: Math.round(Math.abs(resultNew.totalTax - resultOld.totalTax)),
+            betterRegime: resultNew.totalTax < resultOld.totalTax ? 'NEW' : 'OLD',
+            taxableNew: Math.round(resultNew.taxableIncome),
+            taxableOld: Math.round(resultOld.taxableIncome)
         })
 
-        setTimeout(() => {
-            resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }, 100)
+        if (shouldScroll) {
+            setTimeout(() => {
+                resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            }, 100)
+        }
+    }
+
+    const handleShare = (platform) => {
+        const url = window.location.href;
+        
+        let shareText = `📑 *Income Tax Comparison Result*\n`;
+        shareText += `-------------------------\n`;
+        shareText += `💰 *Annual Income:* ₹${parseFloat(income).toLocaleString('en-IN')}\n`;
+        shareText += `✨ *Better Regime:* ${result.betterRegime} Regime\n`;
+        shareText += `💸 *Total Savings:* ₹${result.savings.toLocaleString('en-IN')}\n`;
+        shareText += `-------------------------\n`;
+        shareText += `*Tax Breakdown:*\n`;
+        shareText += `🔹 New Regime: ₹${result.taxNew.toLocaleString('en-IN')}\n`;
+        shareText += `🔸 Old Regime: ₹${result.taxOld.toLocaleString('en-IN')}\n`;
+        shareText += `-------------------------\n`;
+        shareText += `Compare your tax here:\n`;
+
+        if (platform === 'whatsapp') {
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + url)}`, '_blank');
+        } else {
+            navigator.clipboard.writeText(url);
+            setIsSharing(true);
+            setTimeout(() => setIsSharing(false), 2000);
+        }
     }
 
     const faqData = [
@@ -77,6 +101,11 @@ export default function IncomeTaxCalculatorUI() {
 
     return (
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div className="mb-6 flex justify-end">
+                <span className="bg-orange-100 text-orange-700 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-orange-200">
+                    Budget 2024 Ready ⚡
+                </span>
+            </div>
             <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
                     <div>
@@ -100,7 +129,7 @@ export default function IncomeTaxCalculatorUI() {
                         </div>
                     </div>
 
-                    <button onClick={calculateTax} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">
+                    <button onClick={() => calculateTax(true)} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">
                         Compare Regimes
                     </button>
                 </div>
@@ -126,8 +155,23 @@ export default function IncomeTaxCalculatorUI() {
                                 <p className="text-4xl font-black">₹{result.savings.toLocaleString('en-IN')}</p>
                             </div>
 
-                            <div className="space-y-2">
-                                <p className="text-xs text-slate-500 text-center italic">Tax included 4% health & education cess. Calculation based on FY 2025-26 rules.</p>
+                            {/* Share Actions */}
+                            <div className="bg-white rounded-xl p-4 border border-slate-200">
+                                <p className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Share Comparison</p>
+                                <div className="flex gap-2">
+                                    <button 
+                                        onClick={() => handleShare('whatsapp')}
+                                        className="flex-1 bg-[#25D366] text-white py-2 rounded-lg font-bold text-xs flex items-center justify-center gap-2"
+                                    >
+                                        <span>WhatsApp</span>
+                                    </button>
+                                    <button 
+                                        onClick={() => handleShare('copy')}
+                                        className="flex-1 bg-slate-100 text-slate-700 py-2 rounded-lg font-bold text-xs flex items-center justify-center gap-2"
+                                    >
+                                        <span>{isSharing ? 'Copied!' : 'Copy Link'}</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ) : (

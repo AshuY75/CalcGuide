@@ -1,146 +1,52 @@
-import { useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import LoanEligibilityUI from '../components/calculators/LoanEligibilityUI';
+import CalculatorContent from '../components/CalculatorContent';
+import { ROUTES } from '../routes/paths';
+import RelatedContent from '../components/RelatedContent';
 
-import CalculatorContent from '../components/CalculatorContent'
-import { SchemaGenerator } from '../components/SchemaGenerator'
-import { ROUTES } from '../routes/paths'
-
-export default function LoanEligibility() {
-    const [salary, setSalary] = useState('50000')
-    const [interestRate, setInterestRate] = useState('8.5')
-    const [tenure, setTenure] = useState('20')
-    const [otherEmi, setOtherEmi] = useState('0')
-    const [result, setResult] = useState(null)
-
-    const resultRef = useRef(null)
-
-    const calculateEligibility = () => {
-        const netIncome = parseFloat(salary)
-        const r = parseFloat(interestRate) / 12 / 100
-        const n = parseFloat(tenure) * 12
-        const existingEmi = parseFloat(otherEmi)
-
-        const maxAllowableEmi = netIncome * 0.50
-        const availableEmi = maxAllowableEmi - existingEmi
-
-        if (availableEmi <= 0) {
-            setResult({
-                maxLoan: 0,
-                maxEmi: 0,
-                eligible: false,
-                message: "Your current EMI obligations exceed the standard bank limit (50% of salary)."
-            })
-        } else {
-            const maxLoan = availableEmi * ((Math.pow(1 + r, n) - 1) / (r * Math.pow(1 + r, n)))
-            setResult({
-                maxLoan: Math.round(maxLoan),
-                maxEmi: Math.round(availableEmi),
-                eligible: true,
-                message: "You are eligible for this loan amount."
-            })
-        }
-
-        setTimeout(() => {
-            resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }, 100)
-    }
+const LoanEligibility = () => {
+    const calculatorProps = {
+        title: "Home Loan Eligibility Calculator India",
+        description: "Check exactly how much home loan you can get based on your monthly income and existing EMIs. Our calculation uses the same FOIR norms used by top Indian banks like SBI, HDFC, and Axis.",
+        formula: "Loan Eligibility = Max EMI / [ r * (1+r)^n / ((1+r)^n - 1) ] where Max EMI = (Gross Income * FOIR) - Existing EMIs",
+        example: "If your monthly income is ₹1,00,000 and you have no existing EMIs, a bank typically allows a 60% FOIR. Your max EMI can be ₹60,000. At 8.5% for 20 years, your loan eligibility is approx ₹67 Lakh.",
+        mistakes: [
+            "Applying for a loan amount higher than your eligibility (leads to rejection and a drop in CIBIL score).",
+            "Not accounting for processing fees and stamp duty in your down payment planning.",
+            "Failing to disclose all existing loans/EMIs (banks will find them via your credit report).",
+            "Assuming you will get the lowest advertised interest rate (actual rate depends on your credit score)."
+        ],
+        faqs: [
+            {
+                question: "What is FOIR in loan eligibility?",
+                answer: "FOIR stands for Fixed Obligation to Income Ratio. It is the percentage of your monthly income that a bank considers available for paying EMIs after meeting your living expenses. It typically ranges from 40% to 65%."
+            },
+            {
+                question: "How can I increase my loan eligibility?",
+                answer: "You can increase eligibility by adding a co-applicant (like a spouse), clearing existing high-interest debts, showing more income sources, or choosing a longer tenure (up to 30 years)."
+            },
+            {
+                question: "Does a high CIBIL score improve eligibility?",
+                answer: "Yes. While income determines the amount, your credit score determines the interest rate and the bank's willingness to lend. A score above 750 often gets you the best rates."
+            },
+            {
+                question: "What is the maximum tenure for a home loan in India?",
+                answer: "Most Indian banks offer home loans for a maximum period of 30 years or until the retirement age of the applicant, whichever is earlier."
+            }
+        ]
+    };
 
     return (
         <div className="min-h-screen bg-slate-50">
-
-            <SchemaGenerator
-                name="Loan Eligibility Calculator"
-                description="Calculate maximum home loan limit based on salary."
-                url="https://calcguide.in/calculators/loan/eligibility/"
-            />
-
-            <div className="bg-white border-b border-slate-200 py-6">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Breadcrumb */}
-                    <nav className="text-sm text-slate-500 mb-2">
-                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
-                        <span className="mx-2">›</span>
-                        <Link to={ROUTES.HUBS.LOAN} className="hover:text-blue-600">Loan Calculators</Link>
-                        <span className="mx-2">›</span>
-                        <span className="text-slate-900">Eligibility Check</span>
-                    </nav>
-
-                    <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Loan Eligibility Calculator</h1>
-                    <p className="text-slate-600">Check maximum home loan amount based on your salary</p>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <LoanEligibilityUI />
+                <div className="mt-12">
+                    <CalculatorContent {...calculatorProps} />
                 </div>
-            </div>
-
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid md:grid-cols-3 gap-8">
-                    <div className="md:col-span-2 space-y-8">
-                        {/* Calculator Card */}
-                        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
-                            <div className="space-y-6">
-                                <div><label className="block text-sm font-semibold text-slate-700 mb-2">Net Monthly Salary</label><div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">₹</span><input type="number" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="e.g. 50000" /></div></div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div><label className="block text-sm font-semibold text-slate-700 mb-2">Interest Rate (%)</label><input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="8.5" /></div>
-                                    <div><label className="block text-sm font-semibold text-slate-700 mb-2">Tenure (Years)</label><input type="number" value={tenure} onChange={(e) => setTenure(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="20" /></div>
-                                </div>
-                                <div><label className="block text-sm font-semibold text-slate-700 mb-2">Existing EMIs (if any)</label><div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">₹</span><input type="number" value={otherEmi} onChange={(e) => setOtherEmi(e.target.value)} className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="0" /></div></div>
-                                <button onClick={calculateEligibility} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Check Eligibility</button>
-
-                                {/* Inline Results */}
-                                {result && (
-                                    <div ref={resultRef} className="mt-8 pt-8 border-t border-slate-100 animate-in fade-in slide-in-from-top-4 duration-500">
-                                        {result.eligible ? (
-                                            <div className="text-center">
-                                                <div className="bg-green-600 rounded-xl p-6 text-white mb-6 shadow-lg">
-                                                    <p className="text-green-100 text-sm font-medium uppercase tracking-wide mb-1">Maximum Loan Amount</p>
-                                                    <p className="text-4xl sm:text-5xl font-extrabold">₹{result.maxLoan.toLocaleString('en-IN')}</p>
-                                                    <div className="mt-4 pt-4 border-t border-green-500/30">
-                                                        <p className="text-sm opacity-90">Max Affordable EMI: <span className="font-bold text-white">₹{result.maxEmi.toLocaleString('en-IN')}</span></p>
-                                                    </div>
-                                                </div>
-                                                <p className="text-sm text-slate-500">Based on 50% Salary Rule. Actual approval depends on CIBIL.</p>
-                                            </div>
-                                        ) : (
-                                            <div className="bg-red-50 rounded-xl p-6 text-center border border-red-100">
-                                                <div className="text-4xl mb-3">⚠️</div>
-                                                <h3 className="text-xl font-bold text-red-800 mb-2">Not Eligible</h3>
-                                                <p className="text-red-700">{result.message}</p>
-                                                <div className="mt-4 text-sm text-red-600 font-medium">Try increasing tenure or reducing existing EMIs.</div>
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-
-                        <CalculatorContent
-                            title="Loan Eligibility Calculator"
-                            whatIs="A Loan Eligibility Calculator helps specificy the maximum loan amount a bank is likely to lend you. Banks typically do not want your total monthly EMI outgo (including the new loan) to exceed 50% of your net monthly income. This is called the Fixed Obligation to Income Ratio (FOIR)."
-                            whoShouldUse="Anyone planning to apply for a home loan or personal loan should use this. It helps you understand your borrowing power so you can search for properties within your budget, rather than facing rejection later."
-                            example="If you earn ₹50,000 per month, banks assume 50% (₹25,000) is for living expenses. If you have no other loans, you can pay an EMI of ₹25,000. For a 20-year loan at 8.5%, this EMI amount qualifies you for a loan of approximately ₹26 Lakhs."
-                            commonMistake="Ignoring existing EMIs. If you already have a car loan EMI of ₹10,000, your available capacity drops to ₹15,000, significantly reducing your home loan eligibility. Always clear smaller debts before applying for a big loan."
-                        />
-                    </div>
-
-                    <div className="space-y-6">
-                        <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm sticky top-6">
-                            <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Related Tools</h4>
-                            <div className="space-y-3">
-                                <Link to={ROUTES.CALCULATORS.LOAN.EMI} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
-                                    <span className="text-xl mr-3">💰</span>
-                                    <div>
-                                        <p className="text-sm font-semibold text-slate-700 group-hover:text-blue-700">EMI Calculator</p>
-                                    </div>
-                                </Link>
-                                <Link to={ROUTES.CALCULATORS.CONSTRUCTION.COST} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
-                                    <span className="text-xl mr-3">🏗️</span>
-                                    <div>
-                                        <p className="text-sm font-semibold text-slate-700 group-hover:text-blue-700">Construction Cost</p>
-                                    </div>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <RelatedContent category="LOAN" currentPath={ROUTES.CALCULATORS.LOAN.ELIGIBILITY} />
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default LoanEligibility;

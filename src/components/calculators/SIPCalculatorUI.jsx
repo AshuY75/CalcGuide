@@ -1,7 +1,9 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SEOSection from '../SEOSection'
+import AffiliateCTA from '../AffiliateCTA'
 import { ROUTES } from '../../routes/paths'
+import { setUrlParams, parseInitialState } from '../../utils/urlState'
 
 export default function SIPCalculatorUI({
     defaultMonthlyInvestment = '5000',
@@ -9,30 +11,58 @@ export default function SIPCalculatorUI({
     defaultTimePeriod = '10',
     showSEOContent = true
 }) {
-    const [monthlyInvestment, setMonthlyInvestment] = useState(defaultMonthlyInvestment)
-    const [interestRate, setInterestRate] = useState(defaultInterestRate)
-    const [timePeriod, setTimePeriod] = useState(defaultTimePeriod)
-    const [stepUp, setStepUp] = useState('0')
+    // Initialize from URL or defaults
+    const initialState = parseInitialState({
+        m: defaultMonthlyInvestment,
+        r: defaultInterestRate,
+        t: defaultTimePeriod,
+        s: '0'
+    });
+
+    const [monthlyInvestment, setMonthlyInvestment] = useState(initialState.m)
+    const [interestRate, setInterestRate] = useState(initialState.r)
+    const [timePeriod, setTimePeriod] = useState(initialState.t)
+    const [stepUp, setStepUp] = useState(initialState.s)
     const [result, setResult] = useState(null)
+    const [isSharing, setIsSharing] = useState(false)
 
     const resultRef = useRef(null)
 
-    const calculateSIP = () => {
+    // Sync state with URL params
+    useEffect(() => {
+        setUrlParams({
+            m: monthlyInvestment,
+            r: interestRate,
+            t: timePeriod,
+            s: stepUp
+        });
+    }, [monthlyInvestment, interestRate, timePeriod, stepUp]);
+
+    // Auto-calculate on initial load if params exist
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('m') || params.get('r')) {
+            calculateSIP(false); // Don't scroll on initial load
+        }
+    }, []);
+
+    const calculateSIP = (shouldScroll = true) => {
         const initialP = parseFloat(monthlyInvestment)
         const annualRate = parseFloat(interestRate)
         const r = annualRate / 12 / 100
         const years = parseFloat(timePeriod)
         const totalMonths = years * 12
-        const s = parseFloat(stepUp) / 100
+        const step = parseFloat(stepUp) / 100
+
+        if (isNaN(initialP) || isNaN(annualRate) || isNaN(years) || years === 0) return;
 
         let maturityAmount = 0
         let investedAmount = 0
         let currentP = initialP
 
         for (let month = 1; month <= totalMonths; month++) {
-            // Apply annual step-up
             if (month > 1 && (month - 1) % 12 === 0) {
-                currentP = currentP * (1 + s)
+                currentP = currentP * (1 + step)
             }
             investedAmount += currentP
             maturityAmount = (maturityAmount + currentP) * (1 + r)
@@ -45,9 +75,32 @@ export default function SIPCalculatorUI({
             maturityAmount: Math.round(maturityAmount)
         })
 
-        setTimeout(() => {
-            resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }, 100)
+        if (shouldScroll) {
+            setTimeout(() => {
+                resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            }, 100)
+        }
+    }
+
+    const handleShare = (platform) => {
+        const url = window.location.href;
+        
+        let shareText = `📈 *SIP Investment Result*\n`;
+        shareText += `-------------------------\n`;
+        shareText += `💰 *Monthly SIP:* ₹${parseFloat(monthlyInvestment).toLocaleString('en-IN')}\n`;
+        shareText += `🎯 *Maturity Amount:* ₹${result.maturityAmount.toLocaleString('en-IN')}\n`;
+        shareText += `📅 *Tenure:* ${timePeriod} Years\n`;
+        shareText += `💹 *Expected Return:* ${interestRate}%\n`;
+        shareText += `-------------------------\n`;
+        shareText += `Check full projection here:\n`;
+
+        if (platform === 'whatsapp') {
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + url)}`, '_blank');
+        } else {
+            navigator.clipboard.writeText(url);
+            setIsSharing(true);
+            setTimeout(() => setIsSharing(false), 2000);
+        }
     }
 
     const faqData = [
@@ -70,7 +123,7 @@ export default function SIPCalculatorUI({
     ]
 
     return (
-        <div className="bg-white border-b border-slate-200 rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
             <div className="space-y-6">
                 <div><label className="block text-sm font-semibold text-slate-700 mb-2">Monthly Investment</label><div className="relative"><span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">₹</span><input type="number" value={monthlyInvestment} onChange={(e) => setMonthlyInvestment(e.target.value)} className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="e.g. 5000" /></div></div>
                 <div className="grid grid-cols-3 gap-4">
@@ -78,10 +131,9 @@ export default function SIPCalculatorUI({
                     <div className="col-span-1"><label className="block text-sm font-semibold text-slate-700 mb-2">Return Rate (%)</label><input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="12" /></div>
                     <div className="col-span-1"><label className="block text-sm font-semibold text-slate-700 mb-2">Time (Years)</label><input type="number" value={timePeriod} onChange={(e) => setTimePeriod(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-lg" placeholder="10" /></div>
                 </div>
-                <button onClick={calculateSIP} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Calculate SIP</button>
+                <button onClick={() => calculateSIP(true)} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Calculate SIP</button>
 
                 {/* Inline Result */}
-                {/* Inline Result - Reserved Space to prevent CLS */}
                 <div role="region" aria-live="polite" className="mt-8 border-t border-slate-100 min-h-[260px]">
                     {result ? (
                         <div ref={resultRef} className="pt-8 animate-in fade-in slide-in-from-top-4 duration-500">
@@ -89,10 +141,31 @@ export default function SIPCalculatorUI({
                                 <p className="text-sm uppercase tracking-wide text-slate-500 font-medium mb-1">Maturity Amount</p>
                                 <p className="text-4xl sm:text-5xl font-extrabold text-blue-900">₹{result.maturityAmount.toLocaleString('en-IN')}</p>
                             </div>
-                            <div className="grid gap-4">
+                            <div className="grid gap-4 mb-8">
                                 <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 flex justify-between items-center"><p className="text-sm text-slate-500 font-semibold">Invested Amount</p><p className="text-xl font-bold text-slate-700">₹{result.investedAmount.toLocaleString('en-IN')}</p></div>
                                 <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex justify-between items-center"><p className="text-sm text-green-700 font-semibold">Wealth Gain</p><p className="text-xl font-bold text-green-700">+ ₹{result.totalReturns.toLocaleString('en-IN')}</p></div>
                             </div>
+
+                            {/* Share Actions */}
+                            <div className="bg-slate-50 rounded-xl p-4 border border-dashed border-slate-300">
+                                <p className="text-center text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Share this result</p>
+                                <div className="flex gap-3">
+                                    <button 
+                                        onClick={() => handleShare('whatsapp')}
+                                        className="flex-1 bg-[#25D366] hover:bg-[#20ba59] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+                                    >
+                                        <span>WhatsApp</span>
+                                    </button>
+                                    <button 
+                                        onClick={() => handleShare('copy')}
+                                        className="flex-1 bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+                                    >
+                                        <span>{isSharing ? '🚀 Link Copied!' : '🔗 Copy Link'}</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <AffiliateCTA type="investment" />
                         </div>
                     ) : (
                         <div className="h-full flex flex-col items-center justify-center text-slate-400 pt-16 pb-8">

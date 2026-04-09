@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 export default function SIPGoalPlanner() {
@@ -54,11 +53,7 @@ export default function SIPGoalPlanner() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="SIP Goal Planner"
-                description="Find out the exact monthly SIP required to reach your financial goals (1Cr, 5Cr, etc)."
-                url="https://calcguide.in/calculators/investment/sip-goal-planner/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

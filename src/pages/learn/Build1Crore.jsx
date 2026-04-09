@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,30 +18,7 @@ export const metadata = {
 export default function Build1Crore() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="How to Build ₹1 Crore – The Realistic Roadmap"
-                description="A step-by-step guide to reaching your first ₹1 Crore through disciplined investing, patience, and the 15-15-15 rule."
-                type="Article"
-                url="https://calcguide.in/learn/how-to-build-1-crore-mutual-funds/"
-            />
-
-            <div className="bg-white border-b border-slate-200 py-12">
-                <div className="max-w-4xl mx-auto px-4">
-                    <nav className="text-sm text-slate-500 mb-4">
-                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
-                        <span className="mx-2">›</span>
-                        <Link to={ROUTES.LEARN.HOME} className="hover:text-blue-600">Learn</Link>
-                        <span className="mx-2">›</span>
-                        <span className="text-slate-900">Build 1 Crore</span>
-                    </nav>
-                    <h1 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                        How to Build ₹1 Crore:<br /> The Realistic Roadmap
-                    </h1>
-                    <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                        Reaching ₹1 Crore is a psychological milestone that transforms your financial outlook. Here is the math, the science, and the discipline needed to get there.
-                    </p>
-                </div>
-            </div>
+            {/* Article Content Starts Here */}
 
             <div className="max-w-4xl mx-auto px-4 py-12">
                 <article className="prose prose-slate prose-lg max-w-none bg-white p-8 rounded-2xl shadow-sm border border-slate-200">

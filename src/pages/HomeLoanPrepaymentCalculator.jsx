@@ -7,23 +7,8 @@ import { ROUTES } from '../routes/paths';
 export default function HomeLoanPrepaymentCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="Home Loan EMI & Prepayment Calculator"
-                description="Calculate your home loan EMI and see the massive impact of prepayments on your interest savings."
-                url="https://calcguide.in/calculators/loan/home-loan-prepayment-calculator/"
-            />
-            {/* Header Section */}
-            <div className="bg-white border-b border-slate-200 py-6">
+            <div className="bg-white border-b border-slate-200 py-6 mb-4 rounded-xl shadow-sm">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Breadcrumb */}
-                    <nav className="text-sm text-slate-500 mb-2">
-                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
-                        <span className="mx-2">›</span>
-                        <Link to={ROUTES.HUBS.LOAN} className="hover:text-blue-600">Loan Calculators</Link>
-                        <span className="mx-2">›</span>
-                        <span className="text-slate-900">Prepayment Calculator</span>
-                    </nav>
-
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Home Loan EMI & Prepayment Calculator</h1>
                     <p className="text-slate-600">Check annual bonus prepayment, tax impact, and ROI vs SIP</p>
                 </div>
@@ -131,6 +116,7 @@ export default function HomeLoanPrepaymentCalculator() {
                         </div>
                     </div>
                 </div>
+                <RelatedContent category="LOAN" currentPath={ROUTES.CALCULATORS.LOAN.HOME_LOAN_PREPAYMENT} />
             </div>
         </div>
     );

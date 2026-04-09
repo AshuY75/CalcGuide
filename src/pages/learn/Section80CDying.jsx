@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function Section80CDying() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Section 80C is Dying: Navigating the New Tax Regime (115BAC)"
-                description="Is Section 80C still relevant in 2025? Learn why the New Tax Regime is the default choice for millions and how to decide if ELSS, PPF, and Insurance are still worth it."
-                type="Article"
-                url="https://calcguide.in/learn/section-80c-new-tax-regime-impact/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

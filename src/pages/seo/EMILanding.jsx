@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 import EMICalculatorUI from '../../components/calculators/EMICalculatorUI'
 import SEOSection from '../../components/SEOSection'
-import { SchemaGenerator } from '../../components/SchemaGenerator'
-
 export default function EMILanding() {
     const faqData = [
         {
@@ -32,12 +30,7 @@ export default function EMILanding() {
     return (
         <div className="min-h-screen bg-slate-50">
 
-            <SchemaGenerator
-                type="WebApplication"
-                name="EMI Calculator for Home Loan India"
-                description="Calculate Home Loan EMI with updated interest rates for SBI, HDFC, ICICI."
-                data={schemaData}
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

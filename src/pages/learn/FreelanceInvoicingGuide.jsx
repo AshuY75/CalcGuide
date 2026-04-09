@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "The Professional Freelance Invoicing Guide: Getting Paid Faster",
     description: "Writing an invoice is more than just listing a price. Learn the essential components of a legal Indian invoice, GST rules, and how to handle payment delays.",
     category: "UTILITY",
-    slug: ROUTES.LEARN.FREELANCE_INVOICING,
+    slug: ROUTES.LEARN.PROFESSIONAL_INVOICING,
     date: "2025-02-22",
     icon: "🧾",
     colorClass: "bg-orange-100",
@@ -18,12 +18,7 @@ export const metadata = {
 export default function FreelanceInvoicingGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="The Professional Freelance Invoicing Guide: Getting Paid Faster"
-                description="Writing an invoice is more than just listing a price. Learn the essential components of a legal Indian invoice, GST rules, and how to handle payment delays."
-                type="Article"
-                url="https://calcguide.in/learn/freelance-invoicing-guide-india-professional/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
@@ -84,7 +79,7 @@ export default function FreelanceInvoicingGuide() {
                     <h3>Estimate Your Tax Witholdings</h3>
                     <p>Clients often deduct a 10% TDS before paying you. Use our calculator to see how much you will actually receive in your bank account.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.TAX.GST} className="inline-block p-4 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.BUSINESS.FREELANCE_INVOICE} className="inline-block p-4 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition shadow-lg">
                             🧾 Professional Tax Calculator →
                         </Link>
                     </div>

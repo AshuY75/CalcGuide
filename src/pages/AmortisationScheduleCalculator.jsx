@@ -3,6 +3,7 @@ import SEOSection from '../components/SEOSection'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../routes/paths'
 import AmortisationScheduleUI from '../components/calculators/AmortisationScheduleUI'
+import RelatedContent from '../components/RelatedContent'
 
 export default function AmortisationScheduleCalculator() {
     const schema = {
@@ -74,6 +75,7 @@ export default function AmortisationScheduleCalculator() {
                         </div>
                     </div>
                 </div>
+                <RelatedContent category="LOAN" currentPath={ROUTES.CALCULATORS.LOAN.AMORTISATION_SCHEDULE} />
             </div>
         </div>
     )

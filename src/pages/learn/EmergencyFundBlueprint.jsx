@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function EmergencyFundBlueprint() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="The Emergency Fund Blueprint: How to Build Your 'Peace of Mind'"
-                description="Don't let a job loss or medical bill ruin your investments. Learn the 6-month rule, where to park your emergency cash, and exactly how much you need."
-                type="Article"
-                url="https://calcguide.in/learn/emergency-fund-blueprint-india-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

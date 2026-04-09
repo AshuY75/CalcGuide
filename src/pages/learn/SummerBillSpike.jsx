@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function SummerBillSpike() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Summer Electricity Bill Spike: Why Your Bill Doubles in April"
-                description="Decoding the high electricity bill during Indian summers. Understanding telescopic tariffs, slabs, and how to optimize your AC usage to save money."
-                type="Article"
-                url="https://calcguide.in/learn/indian-summer-electricity-bill-spike-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

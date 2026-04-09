@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,26 +18,12 @@ export const metadata = {
 export default function CAGRLies() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Why CAGR Lies – The Truth About Volatility"
-                description="Understand why a 12% CAGR doesn't mean your money grows by 12% every year."
-                type="Article"
-                url="https://calcguide.in/learn/why-cagr-lies-the-real-deal/"
-            />
+            {/* SEO and Breadcrumbs handled by MainLayout */}
 
-            <div className="bg-white border-b border-slate-200 py-12">
+            <div className="bg-white border-b border-slate-200 py-12 mb-8 rounded-2xl shadow-sm">
                 <div className="max-w-4xl mx-auto px-4">
-                    <nav className="text-sm text-slate-500 mb-4">
-                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
-                        <span className="mx-2">›</span>
-                        <Link to={ROUTES.LEARN.HOME} className="hover:text-blue-600">Learn</Link>
-                        <span className="mx-2">›</span>
-                        <span className="text-slate-900">CAGR Truth</span>
-                    </nav>
-                    <h1 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                        Why CAGR Lies:<br /> The Hidden Truth About Returns
-                    </h1>
-                    <p className="text-xl text-slate-600 leading-relaxed">
+                    {/* H1 rendered by MainLayout */}
+                    <p className="text-xl text-slate-600 leading-relaxed font-medium">
                         Your mutual fund app says "15% CAGR". You've invested for 3 years, but your profit isn't 45%. Here is the math behind why CAGR can be misleading for retail investors.
                     </p>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function FreelancePricingGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Freelance Pricing Masterclass: How to Charge What You're Worth"
-                description="Stop undercharging. Learn the math behind Hourly vs Project-based pricing, and how to calculate a rate that covers your taxes, insurance, and equipment."
-                type="Article"
-                url="https://calcguide.in/learn/freelance-pricing-strategies-how-to-charge-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

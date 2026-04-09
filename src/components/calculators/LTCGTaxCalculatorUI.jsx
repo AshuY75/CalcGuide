@@ -39,6 +39,10 @@ export default function LTCGTaxCalculatorUI() {
 
     return (
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div className="flex justify-between items-center mb-6">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Equity LTCG</span>
+                <span className="bg-emerald-100 text-emerald-700 text-[8px] font-black px-2 py-0.5 rounded uppercase border border-emerald-200 shadow-sm">Budget 2024 Ready ⚡</span>
+            </div>
             <div className="space-y-6">
                 <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">Total Selling Price (₹)</label>

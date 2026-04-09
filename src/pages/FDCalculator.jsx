@@ -1,28 +1,55 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
+import RelatedContent from '../components/RelatedContent'
+import { setUrlParams, parseInitialState } from '../utils/urlState'
 
 export default function FDCalculator() {
-    const [principal, setPrincipal] = useState('100000')
-    const [interestRate, setInterestRate] = useState('6.5')
-    const [timePeriod, setTimePeriod] = useState('5')
-    // Standard Indian FD is Quarterly, but UI shows it for completeness as requested
-    const [compoundingFreq, setCompoundingFreq] = useState('4')
+    // Initialize from URL or defaults
+    const initialState = parseInitialState({
+        p: '100000', // principal
+        r: '6.5',    // interestRate
+        t: '5',      // timePeriod
+        n: '4'       // compoundingFreq
+    });
+
+    const [principal, setPrincipal] = useState(initialState.p)
+    const [interestRate, setInterestRate] = useState(initialState.r)
+    const [timePeriod, setTimePeriod] = useState(initialState.t)
+    const [compoundingFreq, setCompoundingFreq] = useState(initialState.n)
     const [result, setResult] = useState(null)
+    const [isSharing, setIsSharing] = useState(false)
 
     const resultRef = useRef(null)
 
-    const calculateFD = () => {
+    // Sync state with URL params
+    useEffect(() => {
+        setUrlParams({
+            p: principal,
+            r: interestRate,
+            t: timePeriod,
+            n: compoundingFreq
+        });
+    }, [principal, interestRate, timePeriod, compoundingFreq]);
+
+    // Auto-calculate on initial load if params exist
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('p') || params.get('r')) {
+            calculateFD(false);
+        }
+    }, []);
+
+    const calculateFD = (shouldScroll = true) => {
         const P = parseFloat(principal)
         const r = parseFloat(interestRate)
         const t = parseFloat(timePeriod)
-        const n = parseFloat(compoundingFreq) // 4 for Quarterly, 1 for Yearly, etc.
+        const n = parseFloat(compoundingFreq)
 
-        // Formula: A = P * (1 + r/n)^(n*t) -> r is rate/100
+        if (isNaN(P) || isNaN(r) || isNaN(t) || t === 0) return;
+
         const A = P * Math.pow((1 + (r / 100) / n), n * t)
         const totalInterest = A - P
 
@@ -32,9 +59,32 @@ export default function FDCalculator() {
             maturityAmount: Math.round(A)
         })
 
-        setTimeout(() => {
-            resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }, 100)
+        if (shouldScroll) {
+            setTimeout(() => {
+                resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            }, 100)
+        }
+    }
+
+    const handleShare = (platform) => {
+        const url = window.location.href;
+        
+        let shareText = `🏛️ *Fixed Deposit (FD) Result*\n`;
+        shareText += `-------------------------\n`;
+        shareText += `💰 *Deposit Amount:* ₹${parseFloat(principal).toLocaleString('en-IN')}\n`;
+        shareText += `🎯 *Maturity Value:* ₹${result.maturityAmount.toLocaleString('en-IN')}\n`;
+        shareText += `📅 *Tenure:* ${timePeriod} Years\n`;
+        shareText += `📉 *Interest Rate:* ${interestRate}%\n`;
+        shareText += `-------------------------\n`;
+        shareText += `Check FD breakdown here:\n`;
+
+        if (platform === 'whatsapp') {
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + url)}`, '_blank');
+        } else {
+            navigator.clipboard.writeText(url);
+            setIsSharing(true);
+            setTimeout(() => setIsSharing(false), 2000);
+        }
     }
 
     const features = [
@@ -43,23 +93,9 @@ export default function FDCalculator() {
         { title: "Inflation Check", desc: "Helps you see if your money is growing fast enough.", icon: "📈" },
     ]
 
-    const faqData = [
-        { question: "Is FD risk-free?", answer: "Yes, Fixed Deposits in RBI-regulated banks are insured up to ₹5 Lakhs by DICGC. They are considered one of the safest investment options in India compared to mutual funds or stocks." },
-        { question: "How is FD Interest calculated in India?", answer: "Most Indian banks comply with RBI guidelines and calculate FD interest using 'Quarterly Compounding'. This means your interest earns interest 4 times a year." },
-        { question: "FD vs RD vs SIP - Which is better?", answer: "FD is best for lump sum investment with guaranteed returns. RD is for monthly savings with guaranteed returns. SIP is for monthly savings with market-linked (higher) returns but involves risk." },
-        { question: "Can I withdraw FD before maturity?", answer: "Yes, but you will be charged a penalty (usually 0.5% to 1%) on the interest rate, and you will receive lower interest for the period the money was kept." }
-    ]
-
     return (
         <div className="min-h-screen bg-slate-50">
-
-            <SchemaGenerator
-                name="FD Calculator"
-                description="Calculate Fixed Deposit Maturity Amount with Quarterly Compounding."
-                url="https://calcguide.in/calculators/investment/fd-calculator/"
-            />
-
-            <div className="bg-white border-b border-slate-200 py-6">
+            <div className="bg-white border-b border-slate-200 py-6 mb-4 rounded-xl shadow-sm">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Breadcrumb */}
                     <nav className="text-sm text-slate-500 mb-2">
@@ -69,7 +105,6 @@ export default function FDCalculator() {
                         <span className="mx-2">›</span>
                         <span className="text-slate-900">FD Calculator</span>
                     </nav>
-
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">FD Calculator</h1>
                     <p className="text-slate-600">Calculate Fixed Deposit returns with quarterly compounding</p>
                 </div>
@@ -95,16 +130,15 @@ export default function FDCalculator() {
                                     </select>
                                 </div>
 
-                                <button onClick={calculateFD} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Calculate Maturity</button>
+                                <button onClick={() => calculateFD(true)} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md text-lg active:scale-[0.98] transition-transform">Calculate Maturity</button>
 
-                                {/* Inline Result Section */}
                                 {result && (
                                     <div ref={resultRef} className="mt-8 pt-8 border-t border-slate-100 animate-in fade-in slide-in-from-top-4 duration-500">
                                         <div className="bg-blue-50 rounded-xl p-6 mb-6 text-center border border-blue-100">
                                             <p className="text-blue-600 text-sm font-bold uppercase tracking-wide mb-1">Maturity Amount</p>
                                             <p className="text-4xl sm:text-5xl font-extrabold text-blue-900">₹{result.maturityAmount.toLocaleString('en-IN')}</p>
                                         </div>
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-2 gap-4 mb-8">
                                             <div className="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
                                                 <p className="text-xs text-slate-500 font-semibold uppercase">Invested</p>
                                                 <p className="text-lg font-bold text-slate-800">₹{result.principalAmount.toLocaleString('en-IN')}</p>
@@ -112,6 +146,25 @@ export default function FDCalculator() {
                                             <div className="bg-green-50 p-4 rounded-lg text-center border border-green-200">
                                                 <p className="text-xs text-green-700 font-semibold uppercase">Interest</p>
                                                 <p className="text-lg font-bold text-green-700">+ ₹{result.totalInterest.toLocaleString('en-IN')}</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Share Actions */}
+                                        <div className="bg-slate-50 rounded-xl p-4 border border-dashed border-slate-300">
+                                            <p className="text-center text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Share this result</p>
+                                            <div className="flex gap-3">
+                                                <button 
+                                                    onClick={() => handleShare('whatsapp')}
+                                                    className="flex-1 bg-[#25D366] hover:bg-[#20ba59] text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+                                                >
+                                                    <span>WhatsApp</span>
+                                                </button>
+                                                <button 
+                                                    onClick={() => handleShare('copy')}
+                                                    className="flex-1 bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+                                                >
+                                                    <span>{isSharing ? '🚀 Link Copied!' : '🔗 Copy Link'}</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -127,7 +180,7 @@ export default function FDCalculator() {
                             commonMistake="Ignoring the tax liability (TDS). FD interest is fully taxable as per your income tax slab. Another mistake is breaking an FD before maturity, which attracts a penalty (usually 1%) and lowers your effective interest rate."
                         />
 
-                        <SEOSection title="About Fixed Deposits" faq={faqData} features={features}>
+                        <SEOSection title="About Fixed Deposits" features={features}>
                             <h3>Key Benefits of FD</h3>
                             <p>
                                 <strong>Guaranteed Returns:</strong> Unlike the stock market, your returns are fixed when you book the FD.
@@ -165,6 +218,7 @@ export default function FDCalculator() {
                         </div>
                     </div>
                 </div>
+                <RelatedContent category="FD_PAGE" currentPath={ROUTES.CALCULATORS.INVESTMENT.FD} />
             </div>
         </div>
     )

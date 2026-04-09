@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "The Big Fat Indian Wedding Budget – Reality vs FOMO",
     description: "Don't start your married life in debt. Learn how to plan a beautiful Indian wedding without breaking the bank, and where to invest the savings.",
     category: "INVESTMENT",
-    slug: ROUTES.LEARN.WEDDING_BUDGET_TIPS,
+    slug: ROUTES.LEARN.WEDDING_BUDGET,
     date: "2025-02-21",
     icon: "💍",
     colorClass: "bg-pink-100",
@@ -18,12 +18,7 @@ export const metadata = {
 export default function WeddingBudgetTips() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="The Big Fat Indian Wedding Budget – Reality vs FOMO"
-                description="Don't start your married life in debt. Learn how to plan a beautiful Indian wedding without breaking the bank, and where to invest the savings."
-                type="Article"
-                url="https://calcguide.in/learn/indian-wedding-budget-tips-fomo-reality-check/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
@@ -83,7 +78,7 @@ export default function WeddingBudgetTips() {
                     <h3>Plan Your Celebration</h3>
                     <p>Don't let the expenses spiral. Use our planner to track your costs and see the long-term impact on your wealth.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.UTILITY.TIPPING} className="inline-block p-4 bg-pink-600 text-white rounded-xl font-bold hover:bg-pink-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.UTILITY.WEDDING_PLANNER} className="inline-block p-4 bg-pink-600 text-white rounded-xl font-bold hover:bg-pink-700 transition shadow-lg">
                             💍 Wedding Budget Tracker →
                         </Link>
                     </div>

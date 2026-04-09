@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 import RelatedContent from '../components/RelatedContent'
 
@@ -47,11 +46,7 @@ export default function RankPercentileCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="JEE Rank vs Percentile Calculator 2025"
-                description="Predict your JEE Main or NEET All India Rank based on your NTA percentile score."
-                url="https://calcguide.in/calculators/student/rank-vs-percentile-calculator/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

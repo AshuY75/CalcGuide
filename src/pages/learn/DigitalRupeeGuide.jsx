@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function DigitalRupeeGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Digital Rupee (e₹): Understanding India's Sovereign Currency"
-                description="What is e₹ (Digital Rupee)? How is it different from UPI or Bitcoin? Learn about CBDC, programmability, and the future of digital cash in India."
-                type="Article"
-                url="https://calcguide.in/learn/digital-rupee-cbdc-india-full-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

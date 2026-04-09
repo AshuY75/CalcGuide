@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
 
-import { SchemaGenerator, BreadcrumbSchema } from '../../components/SchemaGenerator'
 import SEOSection from '../../components/SEOSection'
 
 const faqData = [
@@ -37,55 +36,10 @@ export default function WhySIPBeatsFD() {
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
 
 
-            <BreadcrumbSchema items={[
-                { name: 'Home', url: 'https://calcguide.in' },
-                { name: 'Learn', url: 'https://calcguide.in/learn' },
-                { name: 'Investment Guide', url: 'https://calcguide.in/learn/why-sip-beats-fd-long-term/' }
-            ]} />
-
-
-            <SchemaGenerator
-                type="Article"
-                name="Why SIP Beats Fixed Deposits (FD) for Long-Term Wealth Creation"
-                description="Discover why Systematic Investment Plans (SIP) outperform Fixed Deposits (FD) for wealth creation over 10+ years. Historical data, tax analysis, and inflation impact explained."
-                url="https://calcguide.in/learn/why-sip-beats-fd-long-term/"
-                image="https://calcguide.in/images/learn/sip-vs-fd-growth-chart.png"
-                data={{
-                    "author": { "@type": "Organization", "name": "CalcGuide Team" },
-                    "datePublished": "2024-01-15T08:00:00+05:30",
-                    "dateModified": new Date(lastUpdated).toISOString(),
-                    "headline": "Why SIP Beats Fixed Deposits (FD) for Long-Term Wealth Creation"
-                }}
-            />
+            {/* SEO Automation via SeoHead in Layout */}
 
 
             <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-                {/* Breadcrumb Visual */}
-                <nav className="text-sm text-slate-500 mb-6 flex items-center gap-2">
-                    <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
-                    <span>›</span>
-                    <Link to={ROUTES.LEARN.HOME} className="hover:text-blue-600">Learn</Link>
-                    <span>›</span>
-                    <span className="text-slate-900 font-medium">Investment Guide</span>
-                </nav>
-
-                <header className="mb-10 text-center sm:text-left">
-                    <div className="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-                        Wealth Creation
-                    </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
-                        Why SIP Beats Fixed Deposits (FD) for Long-Term Wealth
-                    </h1>
-                    <p className="text-xl text-slate-600 max-w-2xl">
-                        The mathematics of inflation, taxation, and compounding that banks don't tell you.
-                    </p>
-                    <div className="mt-6 flex items-center text-sm text-slate-500">
-                        <span className="font-medium text-slate-900">Fact-checked by CalcGuide Team</span>
-                        <span className="mx-2">•</span>
-                        <span>Updated: {lastUpdated}</span>
-                    </div>
-                </header>
 
                 {/* THE BLUF (Bottom Line Up Front) */}
                 <div className="bg-white border-l-4 border-blue-600 p-6 sm:p-8 rounded-r-xl shadow-sm mb-12">

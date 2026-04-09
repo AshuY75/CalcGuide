@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function RankPercentileAnalysis() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="JEE & NEET Rank Analysis: How Percentile vs Rank Works in 2025"
-                description="Got your percentile but don't know your rank? Learn how NTA calculates percentiles, the difference between session-wise ranks, and how many marks you need for top NITs and IITs."
-                type="Article"
-                url="https://calcguide.in/learn/jee-neet-rank-vs-percentile-analysis/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

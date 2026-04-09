@@ -20,7 +20,7 @@ class GlobalErrorBoundary extends React.Component {
                 <div className="min-h-[50vh] flex flex-col items-center justify-center p-4 text-center">
                     <div className="bg-red-50 text-red-700 p-6 rounded-xl border border-red-100 max-w-md w-full">
                         <h2 className="text-lg font-bold mb-2">Something went wrong</h2>
-                        <p className="text-sm mb-4">We encountered an unexpected error while loading this calculator.</p>
+                        <p className="text-sm mb-4">We encountered an unexpected error while loading this page.</p>
                         <button
                             onClick={() => {
                                 this.setState({ hasError: false });

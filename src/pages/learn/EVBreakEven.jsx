@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "EV vs Petrol: The Real Break-Even Calculation 2025",
     description: "Thinking of buying an Electric Vehicle (EV)? Calculate the true cost of ownership including battery life, charger costs, and how many km you need to drive to save money.",
     category: "UTILITY",
-    slug: ROUTES.LEARN.EV_BREAK_EVEN,
+    slug: ROUTES.LEARN.EV_VS_PETROL_TRUTH,
     date: "2025-02-22",
     icon: "🚗",
     colorClass: "bg-green-100",
@@ -18,12 +18,7 @@ export const metadata = {
 export default function EVBreakEven() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="EV vs Petrol: The Real Break-Even Calculation 2025"
-                description="Thinking of buying an Electric Vehicle (EV)? Calculate the true cost of ownership including battery life, charger costs, and how many km you need to drive to save money."
-                type="Article"
-                url="https://calcguide.in/learn/ev-vs-petrol-cost-ownership-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
@@ -82,7 +77,7 @@ export default function EVBreakEven() {
                     <h3>Compare Your Costs Now</h3>
                     <p>Don't fall for marketing. Use our dynamic calculator to input your specific state's electricity prices and your daily commute to find your exact break-even month.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.UTILITY.ELECTRICITY_BILL} className="inline-block p-4 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.UTILITY.EV_VS_PETROL} className="inline-block p-4 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition shadow-lg">
                             🚗 EV vs Petrol Calculator →
                         </Link>
                     </div>

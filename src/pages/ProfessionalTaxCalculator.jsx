@@ -7,11 +7,7 @@ import RelatedContent from '../components/RelatedContent'
 export default function ProfessionalTaxCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="Professional Tax Calculator 2025-26"
-                description="Calculate state-wise Professional Tax (PT) for salaried employees in India with latest slab rates."
-                url="https://calcguide.in/calculators/tax/professional-tax-calculator/"
-            />
+            
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4">
                     <nav className="text-sm text-slate-500 mb-2">

@@ -3,66 +3,69 @@ import { ROUTES } from '../routes/paths'
 
 export default function Footer() {
     return (
-        <footer className="bg-white border-t border-slate-200 mt-20 pb-10 min-h-[400px]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-                    {/* SECTION 1: Brand + Purpose */}
-                    <div className="col-span-1 md:col-span-1 space-y-4">
-                        <div>
-                            <h3 className="text-xl font-bold text-blue-900 flex items-center gap-2">
-                                <span>CalcGuide</span>
-                            </h3>
-                            <p className="text-sm font-medium text-blue-700 mt-1">Sahi Hisab, Sahi Faisla</p>
-                        </div>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                            Free finance and utility calculators for India with decision guidance. Helping you make smarter financial moves.
+        <footer className="bg-slate-50 border-t border-slate-200 mt-20 pb-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-12 md:gap-8">
+                    {/* Brand Section */}
+                    <div className="col-span-2 lg:col-span-1 border-b lg:border-none pb-8 lg:pb-0">
+                        <Link to={ROUTES.HOME} className="flex items-center group mb-4">
+                            <span className="text-2xl font-black text-slate-900 tracking-tight">Calc<span className="text-blue-600">Guide</span></span>
+                        </Link>
+                        <p className="text-sm text-slate-500 font-medium leading-relaxed max-w-xs">
+                            India's most accurate calculator suite for loans, tax, and investments. 160+ tools built for 2025 compliance.
                         </p>
                     </div>
 
-                    {/* SECTION 2: Popular Calculators */}
-                    <div className="col-span-1">
-                        <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Popular Tools</h4>
-                        <nav className="flex flex-col space-y-3">
-                            <Link to={ROUTES.CALCULATORS.LOAN.EMI} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">EMI Calculator</Link>
-                            <Link to={ROUTES.CALCULATORS.INVESTMENT.SIP} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">SIP Calculator</Link>
-                            <Link to={ROUTES.CALCULATORS.INVESTMENT.FD} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">FD Calculator</Link>
-                            <Link to={ROUTES.CALCULATORS.INVESTMENT.RD} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">RD Calculator</Link>
-                            <Link to={ROUTES.CALCULATORS.GOLD.JEWELLERY} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1">Gold Calculator</Link>
-                            <Link to={ROUTES.HUBS.STUDENT} onClick={() => window.scrollTo(0, 0)} className="text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors py-1 font-bold">Student Hub</Link>
+                    {/* Columns */}
+                    <div>
+                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Investments</h4>
+                        <nav className="flex flex-col space-y-4">
+                            <Link to={ROUTES.CALCULATORS.INVESTMENT.SIP} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">SIP Calculator</Link>
+                            <Link to={ROUTES.CALCULATORS.INVESTMENT.FD} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">FD Calculator</Link>
+                            <Link to={ROUTES.CALCULATORS.INVESTMENT.NPS} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">NPS Calculator</Link>
+                            <Link to={ROUTES.CALCULATORS.INVESTMENT.PPF} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">PPF Calculator</Link>
                         </nav>
                     </div>
 
-                    {/* SECTION 3: Support & Legal */}
-                    <div className="col-span-1">
-                        <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Legal & Support</h4>
-                        <nav className="flex flex-col space-y-3">
-                            <Link to={ROUTES.LEGAL.PRIVACY} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">Privacy Policy</Link>
-                            <Link to={ROUTES.LEGAL.TERMS} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">Terms of Service</Link>
-                            <Link to={ROUTES.LEGAL.FEEDBACK} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">Feedback / Contact</Link>
-                            <Link to={ROUTES.LEGAL.ABOUT} onClick={() => window.scrollTo(0, 0)} className="text-slate-500 hover:text-slate-900 text-sm transition-colors py-1">About Us</Link>
+                    <div>
+                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Tax & Business</h4>
+                        <nav className="flex flex-col space-y-4">
+                            <Link to={ROUTES.CALCULATORS.TAX.INCOME_TAX} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Income Tax (2025)</Link>
+                            <Link to={ROUTES.CALCULATORS.BUSINESS.GST_COMPOSITION} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">GST Composition</Link>
+                            <Link to={ROUTES.CALCULATORS.BUSINESS.MSME_PMEGP} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">PMEGP Subsidy</Link>
+                            <Link to={ROUTES.CALCULATORS.BUSINESS.PROFESSIONAL_RATE} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Freelance Rate</Link>
                         </nav>
                     </div>
 
-                    {/* SECTION 4: Disclaimer */}
-                    <div className="col-span-1">
-                        <div className="bg-yellow-50 border border-yellow-100 rounded-xl p-5">
-                            <div className="flex items-start gap-3">
-                                <span className="text-xl">⚠️</span>
-                                <div>
-                                    <h5 className="text-xs font-bold text-yellow-800 uppercase tracking-wide mb-1">Disclaimer</h5>
-                                    <p className="text-xs text-yellow-800/80 leading-relaxed">
-                                        CalcGuide provides calculators for informational purposes only. Results are estimates. Please consult a qualified professional before making financial decisions.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Real Estate</h4>
+                        <nav className="flex flex-col space-y-4">
+                            <Link to={ROUTES.CALCULATORS.CONSTRUCTION.COST} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Construction Cost</Link>
+                            <Link to={ROUTES.CALCULATORS.TAX.PROPERTY_TAX} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">LTCG Indexation</Link>
+                            <Link to={ROUTES.CALCULATORS.REAL_ESTATE.STAMP_DUTY} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Stamp Duty</Link>
+                            <Link to={ROUTES.CALCULATORS.REAL_ESTATE.RENT_VS_BUY} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Rent vs Buy</Link>
+                        </nav>
+                    </div>
+
+                    <div>
+                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Utility</h4>
+                        <nav className="flex flex-col space-y-4">
+                            <Link to={ROUTES.CALCULATORS.UTILITY.WEDDING_PLANNER} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Wedding Planner</Link>
+                            <Link to={ROUTES.CALCULATORS.UTILITY.SOLAR_ROI} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Solar Panel ROI</Link>
+                            <Link to={ROUTES.CALCULATORS.HEALTH.BMI} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">BMI Calculator</Link>
+                            <Link to={ROUTES.LEGAL.ABOUT} className="text-sm font-black text-blue-600 hover:text-blue-700 transition-colors">About Us</Link>
+                        </nav>
                     </div>
                 </div>
 
-                {/* BOTTOM BAR */}
-                <div className="mt-12 pt-8 border-t border-slate-100 text-center">
-                    <p className="text-sm text-slate-400 font-medium">
-                        © {new Date().getFullYear()} CalcGuide • Made with ❤️ for India
+                <div className="mt-16 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex gap-6">
+                        <Link to={ROUTES.LEGAL.PRIVACY} className="text-xs font-bold text-slate-400 hover:text-slate-600">Privacy</Link>
+                        <Link to={ROUTES.LEGAL.TERMS} className="text-xs font-bold text-slate-400 hover:text-slate-600">Terms</Link>
+                        <Link to={ROUTES.LEGAL.FEEDBACK} className="text-xs font-bold text-slate-400 hover:text-slate-600">Feedback</Link>
+                    </div>
+                    <p className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">
+                        © {new Date().getFullYear()} CalcGuide • Sahi Hisab, Sahi Faisla
                     </p>
                 </div>
             </div>

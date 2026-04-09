@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../routes/paths'
-import { SchemaGenerator, BreadcrumbSchema } from '../../components/SchemaGenerator'
 import SEOSection from '../../components/SEOSection'
 import AuthorBio from '../../components/AuthorBio'
 
@@ -38,18 +37,9 @@ export default function HowSIPReturnsCalculated() {
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
 
 
-            <BreadcrumbSchema items={[
-                { name: 'Home', url: 'https://calcguide.in' },
-                { name: 'Learn', url: 'https://calcguide.in/learn' },
-                { name: 'How SIP Calculation Works', url: 'https://calcguide.in/learn/how-sip-returns-are-calculated' }
-            ]} />
+            
 
-            <SchemaGenerator
-                type="Article"
-                name="How SIP Returns Are Calculated in India"
-                description="A comprehensive guide on understanding Systematic Investment Plan (SIP) calculations, XIRR, and compounding growth."
-                image="https://calcguide.in/images/learn/sip-growth-chart.png"
-            />
+            
 
             {/* Article Header */}
             <header className="bg-white border-b border-slate-200 pt-10 pb-10">

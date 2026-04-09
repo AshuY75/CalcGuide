@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function LTCGTaxHarvesting() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="LTCG Tax Harvesting 2025 – Save ₹15,000 every year"
-                description="Learn how to use the annual ₹1.25 Lakh exemption to legally avoid paying LTCG tax on your mutual fund profits."
-                type="Article"
-                url="https://calcguide.in/learn/ltcg-tax-harvesting-guide-2025/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

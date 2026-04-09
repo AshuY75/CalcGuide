@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 export default function NoticeBuyoutCalculator() {
@@ -50,11 +49,7 @@ export default function NoticeBuyoutCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="Notice Period Buyout Calculator"
-                description="Calculate the cost of early exit from your job by buying out your notice period days."
-                url="https://calcguide.in/calculators/loan/notice-period-buyout-calculator/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +147,7 @@ export default function NoticeBuyoutCalculator() {
                                     <span className="text-xl mr-3">🧾</span>
                                     <p className="text-sm font-semibold text-slate-700 group-hover:text-blue-700">GST Calculator</p>
                                 </Link>
-                                <Link to={ROUTES.CALCULATORS.CREATOR.FREELANCE_RATE} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
+                                <Link to={ROUTES.CALCULATORS.BUSINESS.FREELANCE_RATE} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
                                     <span className="text-xl mr-3">👨‍💻</span>
                                     <p className="text-sm font-semibold text-slate-700 group-hover:text-blue-700">Freelancer Rate</p>
                                 </Link>

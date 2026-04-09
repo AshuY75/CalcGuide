@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function StepUpSIP() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Step-Up SIP: The Secret to Reaching Your Financial Goals 2x Faster"
-                description="Don't keep your SIP static. Learn how a small annual increase in your SIP can dramatically reduce the time needed to build your dream corpus."
-                type="Article"
-                url="https://calcguide.in/learn/step-up-sip-wealth-accelerator-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function ImportDutyGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="How Import Duty is Calculated in India – 2025 Guide"
-                description="Step-by-step guide to Indian customs duty, SWS, and IGST math. Learn how to calculate the total landing cost of international items."
-                type="Article"
-                url="https://calcguide.in/learn/how-import-duty-is-calculated-india/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
@@ -84,7 +79,7 @@ export default function ImportDutyGuide() {
                     <h3>Calculate Your Landed Cost</h3>
                     <p>Don't get surprised by a massive bill at your doorstep. Use our tool to estimate the total cost of your international purchase including all taxes.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.CREATOR.IMPORT_DUTY} className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all font-bold shadow-lg shadow-blue-100">
+                        <Link to={ROUTES.CALCULATORS.BUSINESS.IMPORT_DUTY} className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all font-bold shadow-lg shadow-blue-100">
                             📦 Import Duty Calculator →
                         </Link>
                     </div>

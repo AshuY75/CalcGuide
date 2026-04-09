@@ -1,21 +1,21 @@
 import { StrictMode } from 'react'
-import { createRoot, hydrateRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App.jsx'
 import './index.css'
 
 const container = document.getElementById('root')
-const app = (
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>
-)
 
-if (container.hasChildNodes()) {
-  hydrateRoot(container, app)
+if (!container) {
+  console.error("FATAL: Root container #root not found in the DOM.")
 } else {
-  createRoot(container).render(app)
+  const root = createRoot(container)
+  root.render(
+    <StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StrictMode>
+  )
 }

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 export default function TimeWorkCalculator() {
@@ -57,11 +56,7 @@ export default function TimeWorkCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="Time and Work Calculator"
-                description="Solve aptitude problems for the time taken when people work together."
-                url="https://calcguide.in/calculators/student/time-and-work-calculator/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

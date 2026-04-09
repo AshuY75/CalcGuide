@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function RewardDevaluation() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Credit Card Survival Guide 2025 – Beating Devaluations"
-                description="Learn how to protect your credit card reward points from frequent devaluations. Tips for HDFC, Axis, and ICICI cardholders."
-                type="Article"
-                url="https://calcguide.in/learn/credit-card-rewards-devaluation-survival-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

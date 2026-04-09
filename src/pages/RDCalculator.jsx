@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
+import RelatedContent from '../components/RelatedContent'
 
 export default function RDCalculator() {
     const [monthlyDeposit, setMonthlyDeposit] = useState('5000')
@@ -51,24 +51,8 @@ export default function RDCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-
-            <SchemaGenerator
-                name="RD Calculator"
-                description="Calculate Recurring Deposit (RD) interest and maturity amount."
-                url="https://calcguide.in/calculators/investment/rd-calculator/"
-            />
-
-            <div className="bg-white border-b border-slate-200 py-6">
+            <div className="bg-white border-b border-slate-200 py-6 mb-4 rounded-xl shadow-sm">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Breadcrumb */}
-                    <nav className="text-sm text-slate-500 mb-2">
-                        <Link to={ROUTES.HOME} className="hover:text-blue-600">Home</Link>
-                        <span className="mx-2">›</span>
-                        <Link to={ROUTES.HUBS.INVESTMENT} className="hover:text-blue-600">Investment Calculators</Link>
-                        <span className="mx-2">›</span>
-                        <span className="text-slate-900">RD Calculator</span>
-                    </nav>
-
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">RD Calculator</h1>
                     <p className="text-slate-600">Calculate Recurring Deposit maturity amount</p>
                 </div>
@@ -145,6 +129,7 @@ export default function RDCalculator() {
                         </div>
                     </div>
                 </div>
+                <RelatedContent category="INVESTMENT" currentPath={ROUTES.CALCULATORS.INVESTMENT.RD} />
             </div>
         </div>
     )

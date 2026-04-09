@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 export default function FreelanceInvoiceGenerator() {
@@ -55,11 +54,7 @@ export default function FreelanceInvoiceGenerator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="Freelance Invoice Generator India"
-                description="Create professional GST and TDS compliant invoice estimates for your freelance projects."
-                url="https://calcguide.in/calculators/creator/freelance-invoice-generator/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -190,11 +185,11 @@ export default function FreelanceInvoiceGenerator() {
                         <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm sticky top-6">
                             <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Creator Hub</h4>
                             <div className="space-y-3">
-                                <Link to={ROUTES.CALCULATORS.CREATOR.FREELANCER_RATE} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
+                                <Link to={ROUTES.CALCULATORS.BUSINESS.FREELANCER_RATE} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
                                     <span className="text-xl mr-3">💰</span>
                                     <p className="text-sm font-semibold text-slate-700 group-hover:text-blue-700">What's My Rate?</p>
                                 </Link>
-                                <Link to={ROUTES.CALCULATORS.CREATOR.YOUTUBE_EARNINGS} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
+                                <Link to={ROUTES.CALCULATORS.BUSINESS.YOUTUBE_EARNINGS} className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors group">
                                     <span className="text-xl mr-3">📺</span>
                                     <p className="text-sm font-semibold text-slate-700 group-hover:text-blue-700">YouTube AdSense</p>
                                 </Link>

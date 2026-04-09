@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "Time Is Money: How to Calculate Your True Hourly Rate",
     description: "Are you actually earning as much as you think? Learn to calculate your work value after accounting for commute, taxes, and preparation time.",
     category: "UTILITY",
-    slug: ROUTES.LEARN.TIME_WORK_MASTERY,
+    slug: ROUTES.LEARN.TIME_AND_WORK_MASTERY,
     date: "2025-02-22",
     icon: "⌛",
     colorClass: "bg-indigo-100",
@@ -18,12 +18,7 @@ export const metadata = {
 export default function TimeWorkMastery() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Time Is Money: How to Calculate Your True Hourly Rate"
-                description="Are you actually earning as much as you think? Learn to calculate your work value after accounting for commute, taxes, and preparation time."
-                type="Article"
-                url="https://calcguide.in/learn/calculate-true-hourly-rate-work-value/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
@@ -76,7 +71,7 @@ export default function TimeWorkMastery() {
                     <h3>Calculate Your Value</h3>
                     <p>Are you underpaid? Or are you over-working? Use our work-value tool to find your exact numbers.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.UTILITY.TIPPING} className="inline-block p-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.BUSINESS.FREELANCE_RATE} className="inline-block p-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg">
                             ⌛ Time Value Calculator →
                         </Link>
                     </div>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "YouTube RPM & CPM Decoding: How Much Do Indian Creators Earn?",
     description: "Learn why your YouTube earnings vary by niche, geography, and watch time. A complete guide to understanding Revenue Per Mille (RPM) for 2025.",
     category: "UTILITY",
-    slug: ROUTES.LEARN.YOUTUBE_RPM_MATH,
+    slug: ROUTES.LEARN.YOUTUBE_RPM,
     date: "2025-02-21",
     icon: "📺",
     colorClass: "bg-red-100",
@@ -18,12 +18,7 @@ export const metadata = {
 export default function YouTubeRPMMath() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="YouTube RPM & CPM Decoding: How Much Do Indian Creators Earn?"
-                description="Learn why your YouTube earnings vary by niche, geography, and watch time. A complete guide to understanding Revenue Per Mille (RPM) for 2025."
-                type="Article"
-                url="https://calcguide.in/learn/youtube-rpm-cpm-math-indian-creators-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
@@ -103,7 +98,7 @@ export default function YouTubeRPMMath() {
                     <h3>Calculate Your Potential Earnings</h3>
                     <p>Thinking of starting a channel? Use our estimator to see how much you could earn based on your chosen niche.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.UTILITY.TIPPING} className="inline-block p-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.BUSINESS.YOUTUBE_EARNINGS} className="inline-block p-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg">
                             📺 Creator Revenue Estimator →
                         </Link>
                     </div>

@@ -1,23 +1,14 @@
 import { Link } from 'react-router-dom'
 import { getAllArticles } from '../../utils/articleLoader'
 
-import { BreadcrumbSchema, SchemaGenerator } from '../../components/SchemaGenerator'
-
-
-
 export default function LearnHome() {
-    const articles = getAllArticles();
+    const articles = getAllArticles().filter(article => !article.hidden);
 
     return (
         <div className="min-h-screen bg-slate-50">
 
-            <BreadcrumbSchema items={[{ name: 'Home', url: 'https://calcguide.in' }, { name: 'Learn', url: 'https://calcguide.in/learn' }]} />
-            <SchemaGenerator
-                name="Financial Guidance & Tutorials – Learn How Money Works"
-                description="Understanding how your money grows shouldn't be complicated. Read our simple, step-by-step guides designed for Indian investors."
-                type="WebPage"
-                url="https://calcguide.in/learn/"
-            />
+            
+            
 
 
             {/* Header */}
@@ -41,11 +32,6 @@ export default function LearnHome() {
                         >
                             <div className={`h-40 ${article.colorClass} flex items-center justify-center p-6 relative`}>
                                 <span className="text-5xl group-hover:scale-110 transition-transform duration-500">{article.icon}</span>
-                                {article.isNew && (
-                                    <span className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                                        New
-                                    </span>
-                                )}
                             </div>
                             <div className="p-5 flex flex-col flex-grow">
                                 <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{article.category}</span>

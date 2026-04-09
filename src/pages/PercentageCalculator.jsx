@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 const features = [
@@ -75,11 +74,7 @@ export default function PercentageCalculator() {
     return (
         <div className="min-h-screen bg-slate-50">
 
-            <SchemaGenerator
-                name="Percentage Calculator"
-                description="Solve percentage problems: Find %, % Change, and what % is X of Y."
-                url="https://calcguide.in/calculators/utility/percentage-calculator/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

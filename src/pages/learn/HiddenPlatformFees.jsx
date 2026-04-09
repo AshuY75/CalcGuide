@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
     title: "Hidden Fees in Investing: The 'Net Yield' Killer",
     description: "From Expense Ratios to STT and Stamp Duty – learn how hidden platform fees eat into your long-term wealth and how to pick the cheapest tools.",
     category: "UTILITY",
-    slug: ROUTES.LEARN.HIDDEN_PLATFORM_FEES,
+    slug: ROUTES.LEARN.HIDDEN_FEES,
     date: "2025-02-21",
     icon: "🕵️",
     colorClass: "bg-red-100",
@@ -18,12 +18,7 @@ export const metadata = {
 export default function HiddenPlatformFees() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="Hidden Fees in Investing: The 'Net Yield' Killer"
-                description="From Expense Ratios to STT and Stamp Duty – learn how hidden platform fees eat into your long-term wealth and how to pick the cheapest tools."
-                type="Article"
-                url="https://calcguide.in/learn/hidden-fees-investing-mutual-funds-stocks/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">
@@ -81,7 +76,7 @@ export default function HiddenPlatformFees() {
                     <h3>Calculate Your Real Returns</h3>
                     <p>What is your portfolio's "Net CAGR" after all these costs? Use our fee-aware calculator to find the truth.</p>
                     <div className="mt-8">
-                        <Link to={ROUTES.CALCULATORS.INVESTMENT.CAGR} className="inline-block p-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg">
+                        <Link to={ROUTES.CALCULATORS.BUSINESS.PLATFORM_FEE} className="inline-block p-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg">
                             🕵️ Real ROI Calculator →
                         </Link>
                     </div>

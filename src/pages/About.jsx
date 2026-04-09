@@ -1,16 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../routes/paths';
-import { SchemaGenerator } from '../components/SchemaGenerator';
+
 
 export default function About() {
     return (
         <div className="min-h-screen bg-white">
-            <SchemaGenerator
-                type="AboutPage"
-                name="About CalcGuide"
-                description="Learn about CalcGuide's mission to simplify financial and utility calculations for Indian users."
-                url="https://calcguide.in/about"
-            />
+            
 
             {/* Header Section */}
             <div className="bg-slate-50 border-b border-slate-200 py-12">

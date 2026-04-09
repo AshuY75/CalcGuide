@@ -84,6 +84,26 @@ for (const url of routesToPrerender) {
     // Phase C: Manual Template Injection (Deterministic)
     const domain = 'https://calcguide.in';
     const canonical = `${domain}${url === '/' ? '' : url.endsWith('/') ? url : `${url}/`}`
+    
+    // Dynamic OG Image Logic
+    let ogImage = `${domain}/social-preview.png`; // Default
+    if (url.includes('/learn/')) {
+        ogImage = `${domain}/og-learn.png`;
+    } else if (url.includes('/loan/')) {
+        ogImage = `${domain}/og-loan.png`;
+    } else if (url.includes('/investment/')) {
+        ogImage = `${domain}/og-investment.png`;
+    } else if (url.includes('/tax/')) {
+        ogImage = `${domain}/og-tax.png`;
+    } else if (url.includes('bharat')) {
+        ogImage = `${domain}/og-bharat.png`;
+    }
+
+    // Override if specified in SEO_CONFIG
+    if (seo?.ogImage) {
+        ogImage = seo.ogImage.startsWith('http') ? seo.ogImage : `${domain}${seo.ogImage.startsWith('/') ? '' : '/'}${seo.ogImage}`;
+    }
+
     const seoTags = `
     <title data-rh="true">${title}</title>
     <meta data-rh="true" name="description" content="${description}" />
@@ -92,6 +112,9 @@ for (const url of routesToPrerender) {
     <meta data-rh="true" property="og:description" content="${description}" />
     <meta data-rh="true" property="og:url" content="${canonical}" />
     <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:image" content="${ogImage}" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:image" content="${ogImage}" />
     `
 
     let htmlContent = template

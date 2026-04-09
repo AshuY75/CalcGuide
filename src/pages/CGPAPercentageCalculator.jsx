@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CalculatorContent from '../components/CalculatorContent'
 import SEOSection from '../components/SEOSection'
-import { SchemaGenerator } from '../components/SchemaGenerator'
 import { ROUTES } from '../routes/paths'
 
 export default function CGPAPercentageCalculator() {
@@ -57,11 +56,7 @@ export default function CGPAPercentageCalculator() {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <SchemaGenerator
-                name="CGPA to Percentage Calculator India"
-                description="Convert CGPA to Percentage for CBSE, VTU, Mumbai University, and more."
-                url="https://calcguide.in/calculators/student/cgpa-to-percentage-calculator/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-6">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/paths';
-import { SchemaGenerator } from '../../components/SchemaGenerator';
+
 import AuthorBio from '../../components/AuthorBio';
 
 export const metadata = {
@@ -18,12 +18,7 @@ export const metadata = {
 export default function SGPACGPAGuide() {
     return (
         <div className="bg-slate-50 min-h-screen">
-            <SchemaGenerator
-                name="SGPA vs CGPA: The Complete Guide for Indian Students"
-                description="Confused between SGPA and CGPA? Learn the key differences, calculation methods, and how to convert them into a percentage for job applications."
-                type="Article"
-                url="https://calcguide.in/learn/sgpa-vs-cgpa-difference-calculation-guide/"
-            />
+            
 
             <div className="bg-white border-b border-slate-200 py-12">
                 <div className="max-w-4xl mx-auto px-4">

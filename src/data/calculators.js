@@ -306,41 +306,41 @@ export const CALCULATORS = [
         path: ROUTES.CALCULATORS.UTILITY.WEDDING_PLANNER,
     },
 
-    // CREATOR & FREELANCE
+    // BUSINESS & FREELANCE
     {
         title: 'YouTube Earnings',
         desc: 'Estimate income based on views and RPM',
         icon: '📺',
-        category: 'CREATOR',
-        path: ROUTES.CALCULATORS.CREATOR.YOUTUBE_EARNINGS,
+        category: 'BUSINESS',
+        path: ROUTES.CALCULATORS.BUSINESS.YOUTUBE_EARNINGS,
     },
     {
         title: 'Freelancer Rate',
         desc: 'Calculate how much to charge per hour',
         icon: '👨‍💻',
-        category: 'CREATOR',
-        path: ROUTES.CALCULATORS.CREATOR.FREELANCE_RATE,
+        category: 'BUSINESS',
+        path: ROUTES.CALCULATORS.BUSINESS.PROFESSIONAL_RATE,
     },
     {
         title: 'Platform Fee',
         desc: 'Calculate net income after Upwork/PayPal fees',
         icon: '💸',
-        category: 'CREATOR',
-        path: ROUTES.CALCULATORS.CREATOR.PLATFORM_FEE,
+        category: 'BUSINESS',
+        path: ROUTES.CALCULATORS.BUSINESS.PLATFORM_FEE,
     },
     {
         title: 'Import Duty',
         desc: 'Customs duty calculator for international parcels',
         icon: '📦',
-        category: 'CREATOR',
-        path: ROUTES.CALCULATORS.CREATOR.IMPORT_DUTY,
+        category: 'BUSINESS',
+        path: ROUTES.CALCULATORS.BUSINESS.IMPORT_DUTY,
     },
     {
         title: 'Freelance Invoice',
         desc: 'Generate GST-ready invoice breakdown',
         icon: '🧾',
-        category: 'CREATOR',
-        path: ROUTES.CALCULATORS.CREATOR.FREELANCE_INVOICE,
+        category: 'BUSINESS',
+        path: ROUTES.CALCULATORS.BUSINESS.FREELANCE_INVOICE,
     },
 
     // TAX
