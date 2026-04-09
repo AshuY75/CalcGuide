@@ -18,32 +18,32 @@ export default function Footer() {
 
                     {/* Columns */}
                     <div>
+                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Bharat Hub 🇮🇳</h4>
+                        <nav className="flex flex-col space-y-4">
+                            <Link to={ROUTES.BHARAT} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors underline decoration-blue-200 underline-offset-4">Bharat Home</Link>
+                            <Link to={ROUTES.CALCULATORS.LOAN.KCC} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">KCC Calculator</Link>
+                            <Link to={ROUTES.CALCULATORS.LOAN.VILLAGE_INTEREST} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Village Interest</Link>
+                            <Link to={ROUTES.CALCULATORS.GOLD.JEWELLERY} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Gold Jewels</Link>
+                        </nav>
+                    </div>
+
+                    <div>
                         <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Investments</h4>
                         <nav className="flex flex-col space-y-4">
                             <Link to={ROUTES.CALCULATORS.INVESTMENT.SIP} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">SIP Calculator</Link>
                             <Link to={ROUTES.CALCULATORS.INVESTMENT.FD} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">FD Calculator</Link>
                             <Link to={ROUTES.CALCULATORS.INVESTMENT.NPS} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">NPS Calculator</Link>
-                            <Link to={ROUTES.CALCULATORS.INVESTMENT.PPF} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">PPF Calculator</Link>
+                            <Link to={ROUTES.HUBS.INSURANCE} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Insurance Hub</Link>
                         </nav>
                     </div>
 
                     <div>
-                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Tax & Business</h4>
+                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Tax & Real Estate</h4>
                         <nav className="flex flex-col space-y-4">
                             <Link to={ROUTES.CALCULATORS.TAX.INCOME_TAX} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Income Tax (2025)</Link>
-                            <Link to={ROUTES.CALCULATORS.BUSINESS.GST_COMPOSITION} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">GST Composition</Link>
-                            <Link to={ROUTES.CALCULATORS.BUSINESS.MSME_PMEGP} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">PMEGP Subsidy</Link>
-                            <Link to={ROUTES.CALCULATORS.BUSINESS.PROFESSIONAL_RATE} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Freelance Rate</Link>
-                        </nav>
-                    </div>
-
-                    <div>
-                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-6">Real Estate</h4>
-                        <nav className="flex flex-col space-y-4">
                             <Link to={ROUTES.CALCULATORS.CONSTRUCTION.COST} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Construction Cost</Link>
                             <Link to={ROUTES.CALCULATORS.TAX.PROPERTY_TAX} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">LTCG Indexation</Link>
-                            <Link to={ROUTES.CALCULATORS.REAL_ESTATE.STAMP_DUTY} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Stamp Duty</Link>
-                            <Link to={ROUTES.CALCULATORS.REAL_ESTATE.RENT_VS_BUY} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors">Rent vs Buy</Link>
+                            <Link to={ROUTES.LEARN.HOME} className="text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors underline decoration-blue-200 underline-offset-4">Legal & Learn Hub</Link>
                         </nav>
                     </div>
 
